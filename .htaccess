@@ -1,3 +1,4 @@
+<IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
