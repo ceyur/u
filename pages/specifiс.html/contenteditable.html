@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Атрибут contenteditable</title>
+		<link rel="stylesheet" href="../../css/style.css">
+		<link rel="icon" href="../../img/favicon.ico">
+	</head>
+	<body>
+		<div id="info">
+			<p><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родитесльское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial</p>
+			<a class="close" href=""></a>
+		</div>
+		<div id="contenteditable">
+			<a class="close" href="../specific.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5">
+				</svg>
+			</a>
+			<div class="menu">
+				<a href="#information">
+					<svg>
+						<circle fill="#000" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10">
+					</svg>
+				</a>
+				<h1>Атрибут contenteditable</h1>
+				<div></div>
+			</div>
+			<style id="style1" style="margin-top: 20px;" contenteditable="">
+	#style1 {
+		color: yellow;
+		background: mediumaquamarine;
+	}
+ </style>
+			<style id="style2" contenteditable="">
+	#style2 {
+		color: red;
+		background: lightblue;
+	}
+ </style>
+			<div id="div1" contenteditable="">
+	&lt;#div1>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus ipsa dolorum quaerat explicabo commodi doloremque quam perspiciatis ratione, quasi suscipit.
+	&lt;/div>
+ </div>
+			<div id="div2" contenteditable="">
+	&lt;#div2>
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam quis praesentium amet, atque fuga iusto maiores temporibus, eos iste adipisci dolores velit corrupti sunt, laudantium eum eius expedita quisquam aperiam!
+	&lt;/div>
+ </div>
+		</div>
+		<script type="text/javascript">
+			// window.addEventListener('scroll',()=>{document.querySelectorAll(".button").forEach(el=>{el.style.display=pageYOffset>window.innerHeight?"flex":"none"})});
+			window.addEventListener('scroll', () => {
+				document.querySelectorAll(".button").forEach(el => {
+					if (pageYOffset > window.innerHeight) 
+					{
+						el.style.display = "flex";
+					}
+					else 
+					{
+						el.style.display = "none";
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

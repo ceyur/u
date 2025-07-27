@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Псевдоэлементы</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родитесльское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial</p>
+			<a class="close" href=""></a>
+		</div>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5">
+				</svg>
+			</a>
+			<div class="menu">
+				<a href="#information">
+					<svg>
+						<circle fill="#000" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10">
+					</svg>
+				</a>
+				<h1>Псевдоэлементы</h1>
+				<div></div>
+			</div>
+			<p>элемент:<b>before</b> {контент} – применяется для вывода какого-либо контента перед элементом, к которому он добавляется
+Особенности:
+1. При добавлении :before к блочному элементу, значение свойства display может быть только: block, inline, none, list-item, остальные значения будут трактоваться, как block.
+2. При добавлении :before к строчному элементу, display ограничен значениями inline и none, остальные будут трактоваться, как inline.
+<i>a:before {
+	content: "🌵";
+}</i>
+</p>
+			<p>элемент:<b>after</b> {контент} – применяется для вывода какого-либо контента после элементом, к которому он добавляется
+Особенности:
+1. При добавлении :after к блочному элементу, значение свойства display может быть только: block, inline, none, list-item, остальные значения будут трактоваться, как block.
+2. При добавлении :after к строчному элементу, display ограничен значениями inline и none, остальные будут трактоваться, как inline.
+<i>a:after {
+	content: "🍣";
+}</i>
+</p>
+			<p>элемент::<b>selection</b> {свойства} – задаёт стиль выделенной части документа
+<i>body::selection {
+	background: green;
+}</i>
+</p>
+			<p>элемент:<b>first-line</b> {свойства строки} – задаёт стиль первой строки текста, но к ней применяются не все стили
+<i>p:first-line {
+	font-size: 25px;
+}</i>
+</p>
+			<p>элемент:<b>first-letter</b> {свойства символа} – задаёт стиль первого символа текста, но к нему применяются не все стили
+<i>p:first-letter {
+	font-weight: 900;
+}</i>
+</p>
+			<p>элемент::<b>-ms-clear</b> {свойства} – задаёт стиль кнопки для очистки поля ввода в Internet Explorer, которая появляется в правой части поля только при вводе текста
+<i>input::-ms-clear {
+	display: none;
+}</i>
+</p>
+			<p>элемент::<b>-moz-focus-inner</b> {свойства} – задаёт стиль внутренней части кнопки в FireFox
+<i>button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}</i>
+</p>
+		</div>		
+		<script type="text/javascript">
+			// window.addEventListener('scroll',()=>{document.querySelectorAll(".button").forEach(el=>{el.style.display=pageYOffset>window.innerHeight?"flex":"none"})});
+			window.addEventListener('scroll', () => {
+				document.querySelectorAll(".button").forEach(el => {
+					if (pageYOffset > window.innerHeight) 
+					{
+						el.style.display = "flex";
+					}
+					else 
+					{
+						el.style.display = "none";
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
