@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Свойства скроллбара</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="#000" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Свойства скроллбара</h1>
+				<div></div>
+			</header>
+			<p><b>scrollbar-width</b>: значение; – задаёт ширину полосы прокрутки (скроллбара)
+Не работает в WebView на Android и в Safari
+Значения:
+1. auto – ширина скроллбара по умолчанию
+2. thin – боллее тонкая полоса прокрутки
+3. none – полоса прокрутки исчезнет, однако элемент по-прежнему будет прокручиваться
+<i>scrollbar-width: none;</i> (auto)
+</p>
+			<p>↓<b>scrollbar-color</b>:  значение■или■цвет значение■или■цвет; – задаёт цвет ползунка и дорожки
+Не работает в WebView на Android и в Safari
+Значения:
+1. auto – цвет скроллбара по умолчанию
+<i>scrollbar-color: lime green;</i> (auto)
+</p>
+			<p>элемент::<b>-webkit-scrollbar</b> {свойства} – свойства применяются ко всей полосе прокрутки (скроллбару)
+Не работает в FireFox
+<i>::-webkit-scrollbar {
+	background: blue;
+}</i>
+</p>
+			<p>элемент::<b>-webkit-scrollbar-track</b> {свойства} – свойства применяются только к полосе прокрутки (дорожке)
+Не работает в Safari на мобильных устройствах и в FireFox
+<i>.object::-webkit-scrollbar-track {
+	width: 20px;
+}</i>
+</p>
+			<p>элемент::<b>-webkit-scrollbar-track-piece</b> {свойства} – свойства применяются только к видимой части дорожки, не занятой ползунком
+Не работает в Safari на мобильных устройствах и в FireFox
+<i>p::-webkit-scrollbar-track-piece {
+	opacity: 0.5;
+}</i>
+</p>
+			<p>элемент::<b>-webkit-scrollbar-thumb</b> {свойства} – свойства применяются к перетаскиваемому ползунку прокрутки
+Не работает в Safari на мобильных устройствах и в FireFox
+<i>button::-webkit-scrollbar-thumb {
+	border: 3px solid #fff;
+}</i>
+</p>
+			<p>элемент::<b>-webkit-scrollbar-button</b> {свойства} – свойства применяются к кнопкам сверху и снизу дорожки, прокручивающие по одной строке
+Не работает в Safari на мобильных устройствах и в FireFox
+<i>*::-webkit-scrollbar-button {
+	height: 17px;
+}</i>
+</p>
+			<p>элемент::<b>-webkit-scrollbar-corner</b> {свойства} – свойства применяются к уголку на скроллбаре, где пересекаются вертикальная и горизонтальная дорожки
+Работает только с теми элементами, чьи размеры пользователь может изменять (cвойство resizer), не работает в Safari на мобильных устройствах и в FireFox
+<i>#view::-webkit-scrollbar-corner {
+	background: pink;
+}</i>
+</p>
+			<p>элемент::<b>-webkit-resizer</b> {свойства} – свойства применяются кнопке изменения размеров элемента в уголке на скроллбаре, где пересекаются вертикальная и горизонтальная дорожки
+Работает только с теми элементами, чьи размеры пользователь может изменять (cвойство resizer), не работает в FireFox
+<i>div::-webkit-resizer {
+	border-bottom: 10px solid #000;
+}</i>
+</p>
+			<p>элемент:<b>horizontal</b> {свойства} – псевдокласс определяющий, что свойства применятся только к горизонтальному элементу
+Работает только с элементами скроллбара webkit
+<i>div::-webkit-scrollbar-track:horizontal {
+	box-shadow: inset 0 1px 10px green;
+}</i>
+</p>
+			<p>элемент:<b>vertical</b> {свойства} – псевдокласс определяющий, что свойства применятся только к горизонтальному элементу
+Работает только с элементами скроллбара webkit
+<i>div::-webkit-scrollbar-thumb:vertical {
+	background: #118;
+}</i>
+</p>
+			<p>элемент:<b>start</b> {свойства} – псевдокласс определяющий, что свойства применятся к элементу только до ползунка прокрутки (идентично decrement)
+Работает только с элементами скроллбара webkit
+<i>div::-webkit-scrollbar-thumb:start {
+	background: red;
+}</i>
+</p>
+			<p>элемент:<b>end</b> {свойства} – псевдокласс определяющий, что свойства применятся к элементу только после ползунка прокрутки (идентично increment)
+Работает только с элементами скроллбара в webkit
+<i>div::-webkit-scrollbar-thumb:end {
+	box-shadow: 5px 5px 5px grey;
+}</i>
+</p>
+			<p>элемент:<b>window-inactive</b> {свойства} – псевдокласс определяющий, что свойства применятся только тогда, когда окно не активно (находится сзади)
+Работает только с элементами скроллбара в webkit
+<i>div::-webkit-scrollbar-thumb:window-inactive {
+	overflow: clip;
+}</i>
+</p>
+		</div>		
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>

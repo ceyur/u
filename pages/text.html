@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Свойства текста</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Свойства текста</h1>
+				<div></div>
+			</header>
+			<p>↓<b>color</b>: цвет; – задаёт цвет текста
+<i>color: green;</i> (canvastext)
+</p>
+			<p>↓<b>font-size</b>: размер; – задаёт размер текста
+<i>font-size: 25px;</i> (medium)
+</p>
+			<p>↓<b>font-family</b>: имя■шрифта1, имя■шрифта2, тип■шрифта; – задаёт шрифт текста
+Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.
+Типы шрифтов:
+1. serif – шрифты с засечками, антиквенные (шрифт Times)
+2. sans-serif – рубленные шрифты, шрифты без засечек или гротески (шрифт Arial)
+3. cursive – курсивные шрифты
+4. fantasy – декоративные шрифты
+5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)
+<i>font-family: Arial, sans-serif;</i> (браузерное значение)
+</p>
+			<p>@<b>font-face</b> {текст из внешнего файла} – внедряет в документ шрифт из внешнего файла
+Конвертер шрифтов – <a target="_blank" href="https://www.fontconverter.io">https://www.fontconverter.io</a>
+<i>@font-face {
+	font-family: "Caprica";
+	src: url(fonts/caprica-script-personal-use.eot);
+	src: url(fonts/caprica-script-personal-use.eot?#iefix) format("embedded-opentype"),
+		url(fonts/caprica-script-personal-use.woff2) format("woff2"),
+		url(fonts/caprica-script-personal-use.woff) format("woff"),
+		url(fonts/caprica-script-personal-use.ttf) format("truetype"),
+		url(fonts/caprica-script-personal-use.svg#caprica-script-personal-use) format("svg"),
+		url(fonts/caprica-script-personal-use.otf) format("otf");
+}</i>
+</p>
+			<p>↓<b>font-style</b>: начертание; – задаёт начертание текста
+Начертания:
+1. normal – обычное начертание
+2. italic – курсивное начертание
+3. oblique – наклонное начертание
+<i>font-style: italic;</i> (normal)
+</p>
+			<p>↓<b>font-variant</b>: значение; – управляет регистром текста
+Значения:
+1. normal – обычное начертание
+2. small-caps – все символы становятся малыми заглавными
+<i>font-variant: small-caps;</i> (normal)
+</p>
+			<p>↓<b>text-transform</b>: значение; – управляет регистром текста
+Значения:
+1. none – ничего не меняет
+2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся
+3. lowercase – все символы становятся строчными
+4. uppercase – все символы становятся заглавными
+<i>text-transform: uppercase;</i> (none)
+</p>
+			<p>↓<b>font-weight</b>: степень■жирности; – задаёт жирность текста
+Степени жирности:
+1. 100 – thin
+2. 200 – ultralite
+3. 300 – lite
+4. 400 – normal
+5. 500 – medium
+6. 600 – semibold
+7. 700 – bold
+8. 800 – heavy
+9. 900 – black
+<i>font-weight: bold;</i> (normal)
+</p>
+			<p>↓<b>text-shadow</b>: горизонтальное■смещение вертикальное■смещение размер цвет; – добавляет тень тексту
+Значения:
+1. none – к элементу не применяется никакая тень
+<i>text-shadow: 1px 1px 1px black;</i> (none)
+</p>
+			<p><b>text-decoration-line</b>: значение значение; – добавляет оформление текста в виде линии
+Значения:
+1. none – отменяет все эффекты
+2. line-through – создаёт перечёркнутый текст
+3. overline – линия над текстом
+4. underline – линия под текстом
+<i>text-decoration-line: overline underline;</i> (none)
+</p>
+			<p><b>text-decoration-style</b>: значение; – задаёт стиль линии, установленной свойством text-decoration-line
+Значения:
+1. solid – одинарная линия
+2. double – двойная линия
+3. dotted – точечная линия
+4. dashed – пунктирная линия
+5. wavy – волнистая линия
+<i>text-decoration-style: dashed;</i> (solid)
+</p>
+			<p><b>text-decoration-color</b>: цвет; – задаёт цвет линии, установленной свойством text-decoration-line
+<i>text-decoration-color: green;</i> (currentcolor)
+</p>
+			<p><b>text-decoration</b>: text-decoration-line text-decoration-style text-decoration-color; – сокращённая запись для свойств text-decoration-line, text-decoration-style, text-decoration-color
+<i>text-decoration: underline dotted red;</i> (none solid currentcolor)
+</p>
+			<p>↓<b>text-align</b>: значение; – выравнивает текст по горизонтали
+Значения:
+1. left – выравнивание по левому краю
+2. right – выравнивание по правому краю
+3. center – выравнивание по центру
+4. justify – выравнивание по ширине
+<i>text-align: center;</i> (start)
+</p>
+			<p><b>vertical-align</b>: значение■<wbr>или■<wbr>размер■<wbr>смещения; – выравнивает текст по вертикали или сдвигает относительно базовой линии
+Значения:
+для всех элементов, кроме блочных и flex-элементов:
+1. baseline – выравнивает базовую линию элемента по базовой линии родительского элемента
+2. super – выравнивание по верхнему краю
+3. sub – выравнивание по нижнему краю
+4. text-top – верхняя граница элемента выравнивается по самой высокой части текста в текущей строке
+5. text-bottom – нижняя граница элемента выравнивается по самой нижней части текста в текущей строке
+6. top – верхняя граница элемента выравнивается по верхней границе строки
+7. middle – центр элемента выравнивается по нижней границе родительского элемента + половина высоты строчной буквы
+8. bottom – нижняя граница элемента будет выравниваться по нижней границе строки
+для таблиц:
+1. top – ячейка выравнивается по верху строки таблицы
+2. middle – ячейка выравнивается по середине строки таблицы
+3. bottom – ячейка выравнивается по низу строки таблицы
+<i>vertical-align: top;</i> (baseline)
+</p>
+			<p>↓<b>text-indent</b>: размер; – задаёт размер красной строки
+<i>text-indent: 10px;</i> (0)
+</p>
+			<p>↓<b>letter-spacing</b>: размер; – задаёт интервал между символами
+<i>letter-spacing: 5px;</i> (normal)
+</p>
+			<p>↓<b>word-spacing</b>: размер; – задаёт интервал между словами
+<i>word-spacing: 6px;</i> (normal)
+</p>
+			<p>↓<b>line-height</b>: размер; – задаёт межстрочный интервал
+<i>line-height: 7px;</i> (normal)
+</p>
+			<p>↓<b>font</b>: font-style font-variant font-weight font-size/line-height font-family; – сокращённая запись для свойств font-style, font-variant, font-weight, font-size, line-height и font-family
+<i>font: italic normal bold 12px/1.2px Tahoma, Arial, sans-serif;</i>
+</p>
+			<p>↓<b>overflow-wrap</b>: значение; – управляет переносом слов на следующую строку
+Значения:
+1. normal – слова не обрываются и переносятся целиком
+2. break-word – слова, которые не помещаются в строку, обрываются и переносятся
+<i>overflow-wrap: break-word;</i> (normal)
+</p>
+			<p>↓<b>white-space</b>: значение; – управляет пробелами между словами
+Значения:
+1. normal – ничего не меняет, строки переносятся, учитываются теги &lt;br>, не учитываются символы новой строки (Enter) и табуляция
+2. nowrap – запрещает перенос строки, текст может выйти за края объекта
+3. pre – строки переносятся только с помощью тега &lt;br> и символов новой строки (Enter), табуляция учитывается
+4. pre-wrap – строки переносятся, учитываются теги &lt;br>, символы новой строки (Enter) и табуляция
+5. pre-line – строки переносятся, учитываются только теги &lt;br> и символы новой строки (Enter), табуляция не учитывается
+6. break-spaces – идентично pre-wrap, кроме некоторых особенностей
+<i>white-space: nowrap;</i> (normal)
+</p>
+			<p><b>text-overflow</b>: значение; – управляет свойствами обрезки текста, если он не помещается в заданную область
+Значения:
+1. clip – текст обрезается по размеру заданной области
+2. ellipsis – текст обрезается по размеру заданной области, и в конце строки добавляется многоточие
+<i>text-overflow: ellipsis;</i> (clip)
+</p>
+			<p><b>column-count</b>: кол-во; – устанавливает количество колонок в тексте
+<i>column-count: 2;</i> (auto)
+</p>
+			<p><b>column-width</b>: размер; – устанавливает размер колонок в тексте, реальная ширина колонки может быть больше введённого значения
+<i>column-width: auto;</i> (auto)
+</p>
+			<p><b>columns</b>: кол-во размер; – сокращённая запись для свойств column-count и column-width
+<i>column: 4 25%;</i> (auto auto)
+</p>
+			<p><b>column-gap</b>: кол-во; – устанавливает расстояние между колонками
+<i>column-gap: 2;</i> (normal)
+</p>
+			<p><b>column-rule</b>: толщина стиль цвет; – добавляет между колонками разделительную линию
+Стили:
+1. solid – сплошная линия
+2. dotted – линия из точек
+3. dashed – пунктирная линия
+<i>column-rule: auto;</i> (medium solid currentcolor)
+</p>
+		</div>
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>

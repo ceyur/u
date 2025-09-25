@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Флекс-контейнеры</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Флекс-контейнеры</h1>
+				<div></div>
+			</header>
+			<p><b>flex-wrap</b>: значение; – разрешает flex-элементам перемещаться на следующую строку в flex-контейнере
+Значения:
+1. nowrap – flex-элементы не могут перемещаться на следующую строку в flex-контейнере
+2. wrap – flex-элементы смогут перемещаться на следующую строку в flex-контейнере
+3. wrap-reverse – flex-элементы смогут в обратном порядке перемещаться на следующую строку в flex-контейнере
+<i>flex-wrap: wrap;</i> (nowrap)
+</p>
+			<p><b>flex-direction</b>: значение; – задаёт направление расположения flex-элементов в flex-контейнере
+Значения:
+1. row – все flex-элементы располагаются по горизонтали слева направо в flex-контейнере
+2. row-reverse – все flex-элементы располагаются по горизонтали справа налево в flex-контейнере
+3. column – все flex-элементы располагаются по вертикали сверху вниз в flex-контейнере
+4. column-reverse – все flex-элементы располагаются по вертикали снизу вверх в flex-контейнере
+<i>flex-direction: column;</i> (row)
+</p>
+			<p><b>flex-flow</b>: flex-direction flex-wrap; – сокращённая запись для свойств flex-direction и flex-wrap
+<i>flex-flow: row nowrap;</i> (row nowrap)
+</p>
+			<p><b>justify-content</b>: значение; – задаёт выравнивание вдоль основной оси
+Значения:
+1. flex-start – flex-элементы прижимаются к началу основной оси
+2. flex-end – flex-элементы прижимаются к концу основной оси
+3. center – flex-элементы располагаются по центру основной оси
+4. space-between – flex-элементы располагаются равномерно по основной оси, первый элемент находится в начале оси, последний – в конце
+5. space-around – flex-элементы располагаются равномерно по основной оси, к каждому добавляется пространство слева и справа, равное половине расстояния между элементами
+6. space-evenly – flex-элементы располагаются равномерно по основной оси, к каждому добавляется пространство слева и справа, равное расстоянию между элементами
+<i>justify-content: center;</i> (normal)
+</p>
+			<p><b>align-items</b>: значение; – задаёт выравнивание вдоль поперечной оси
+Значения:
+1. stretch – flex-элементы растягиваются на весь размер поперечной оси flex-контейнера
+2. flex-start – flex-элементы прижимаются к началу поперечной оси
+3. flex-end – flex-элементы прижимаются к концу поперечной оси
+4. center – flex-элементы располагаются по центру поперечной оси
+5. baseline – flex-элементы располагаются по базовой линии
+<i>align-items: flex-start;</i> (normal)
+</p>
+		</div>		
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>

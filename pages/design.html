@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Свойства оформления</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Свойства оформления</h1>
+				<div></div>
+			</header>
+			<p><b>width</b>: ширина; – задаёт ширину блочных и некоторых строчных (img) тегов
+<i>width: 150px;</i> (auto)
+Подобные свойства:
+1. min-width – задаёт минимальную ширину
+2. maх-width – задаёт максимальную ширину
+</p>
+			<p><b>height</b>: высота; – задаёт высоту блочных и некоторых строчных (img) тегов
+<i>height: 200px;</i> (auto)
+Подобные свойства:
+1. min-height – задаёт минимальную высоту
+2. maх-height – задаёт максимальную высоту
+</p>
+			<p><b>margin</b>: размер; – задаёт внешний отступ элемента, свойство может быть как положительным, так и отрицательным
+Краткая запись:
+1. margin: со■всех■сторон;
+2. margin: сверху■снизу справа■слева;
+3. margin: сверху справа■слева снизу;
+4. margin: сверху справа снизу слева;
+<i>margin: 10px;</i> (0)
+Подобные свойства:
+1. margin-top – внешний отступ сверху
+2. margin-right – внешний отступ справа
+3. margin-bottom – внешний отступ снизу
+4. margin-left – внешний отступ слева
+</p>
+			<p><b>padding</b>: размер; – задаёт внутренний отступ элемента, свойство может быть как положительным, так и отрицательным
+Краткая запись:
+1. padding: со■всех■сторон;
+2. padding: сверху■снизу справа■слева;
+3. padding: сверху справа■слева снизу;
+4. padding: сверху справа снизу слева;
+<i>padding: 25px;</i> (0)
+Подобные свойства:
+1. padding-top – внутренний отступ сверху
+2. padding-right – внутренний отступ справа
+3. padding-bottom – внутренний отступ снизу
+4. padding-left – внутренний отступ слева
+</p>
+			<p><b>background-color</b>: цвет; – задаёт цвет фона элемента
+<i>background-color: mediumaquamarine;</i> (transparent)
+</p>
+			<p><b>background-image</b>: градиент■или■url("адрес картинки"); – устанавливает фоновое изображение или градиент для элемента
+Создать градиент – <a target="_blank" href="https://www.colorzilla.com/gradient-editor/">https://www.colorzilla.com/<wbr>gradient-editor/</a>
+<i>background-image: url("https://apple.com");</i> (none)
+</p>
+			<p><b>background-position</b>: координаты; – задаёт начальное положение фонового изображения (background-image)
+<i>background-position: 25px 30px;</i> (0% 0%)
+Подобные свойства:
+1. background-position-x – начальное положение фонового изображения по оси x
+2. background-position-y – начальное положение фонового изображения по оси y
+</p>
+			<p><b>background-size</b>: значение■или■размеры; – масштабирует фоновое изображение согласно заданным размерам
+Значения:
+1. auto – если задано одновременно для ширины и высоты (auto auto), размеры фона остаются исходными; если только для одной стороны картинки (100px auto), то размер вычисляется автоматически исходя из пропорций картинки
+2. cover – масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока
+3. contain – масштабирует изображение с сохранением пропорций таким образом, чтобы картинка целиком поместилась внутрь блока
+<i>background-size: contain;</i> (auto auto)
+</p>
+			<p><b>background-repeat</b>: значение; – задаёт повторение фонового изображения (background-image)
+Значения:
+1. repeat – фоновое изображение повторяется по горизонтали и вертикали
+2. repeat-x – фоновый рисунок повторяется только по горизонтали
+3. repeat-y – фоновый рисунок повторяется только по вертикали
+4. space – изображение повторяется столько раз, чтобы полностью заполнить область; если это не удаётся, между картинками добавляется пустое пространство
+5. round – изображение повторяется столько раз, чтобы в области поместилось целое число рисунков; если это не удаётся сделать, то фоновые рисунки масштабируются
+6. no-repeat – устанавливает одно фоновое изображение без повторений, положение которого определяется свойством background-position (по умолчанию в левом верхнем углу)
+<i>background-repeat: repeat;</i> (repeat)
+</p>
+			<p><b>background-attachment</b>: значение; – устанавливает, будет ли прокручиваться фоновое изображение вместе с содержимым элемента
+Значения:
+1. scroll – позволяет перемещаться фону вместе с содержимым
+2. fixed – делает фоновое изображение элемента неподвижным
+3. local – фон фиксируется с учётом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон выходящий за рамки элемента остаётся на месте
+<i>background-attachment: fixed;</i> (scroll)
+</p>
+			<p><b>background-clip</b>: значение; – устанавливает, где будет отображаться фон
+Значения:
+1. border-box – фон отображается до внешнего края границы элемента
+2. padding-box – фон отображается до внутреннего края границы элемента
+3. content-box – фон отображается только внутри контента
+<i>background-clip: border-box;</i> (border-box)
+</p>
+			<p><b>background</b>: background-color background-image background-position/background-size background-repeat background-attachment; – сокращённая запись для свойств background-color, background-image, background-position, background-size, background-repeat, background-attachment
+<i>background: #9cdaff url("img/bg.jpg") center/50% 50% fixed, aquamarine url("img/bg1.jpg") left/25% 25% no-repeat;</i> (transparent none 0% 0%/auto auto repeat scroll)
+</p>
+			<p><b>box-shadow</b>: сдвиг■по■горизонтали сдвиг■по■вертикали радиус расстояние; – добавляет тень к элементу
+Значения:
+1. none – к элементу не применяется никакая тень
+2. inset – тень становится внутри объекта
+<i>box-shadow: inset 0 0 10px black;</i> (none)
+</p>
+			<p><b>opacity</b>: степень■прозрачности; – задаёт степень прозрачности элемента
+<i>opacity: 50%;</i> (1)
+</p>
+		</div>
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>

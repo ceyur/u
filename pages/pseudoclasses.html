@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Псевдоклассы</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Псевдоклассы</h1>
+				<div></div>
+			</header>
+			<p>элемент:<b>hover</b> {свойства элемента} – свойства в фигурных скобках начинают работать при наведении на элемент
+<i>div:hover {
+	color: mediumaquamarine;
+}</i>
+</p>
+			<p>элемент:<b>active</b> {свойства элемента} – срабатывает при нажатии на элемент
+<i>.button:active {
+	padding: 25px;
+}</i>
+</p>
+			<p>элемент:<b>visited</b> {свойства элемента} – срабатывает только для посещённых элементов
+<i>a:visited {
+	text-decoration: underline;
+}</i>
+</p>
+			<p>элемент:<b>focus</b> {свойства элемента} – срабатывает для элементов, находящихся в фокусе (форм, полей ввода)
+<i>form:focus {
+	border: 2px solid #539;
+}</i>
+</p>
+			<p>элемент:<b>first-child</b> {свойства элемента} – срабатывает для первого элемента в блоке
+<i>li:first-child {
+	margin: 25px;
+}</i>
+</p>
+			<p>элемент:<b>last-child</b> {свойства элемента} – срабатывает для последнего элемента в блоке
+<i>ol:last-child {
+	padding: 5px;
+}</i>
+</p>
+			<p>элемент:<b>nth-child</b>(порядковый номер) {свойства элемента} – срабатывает для элемента в блоке, чей порядковый номер указан в псевдоклассе
+<i>div:nth-child(4) {
+	width: 50px;
+}</i>
+</p>
+			<p>элемент:<b>odd</b> {свойства элементов} – срабатывает для элементов с нечётными номерами
+<i>.end:odd {
+	background-color: #000;
+}</i>
+</p>
+			<p>элемент:<b>even</b> {свойства элементов} – срабатывает для элементов с чётными номерами
+<i>#background:even {
+	border: 0;
+}</i>
+</p>
+		</div>		
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>

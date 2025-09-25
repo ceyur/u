@@ -1,0 +1,448 @@
+/*Свойства выделения и скроллбара*/
+::selection {
+	color: white;
+	background: #00a47e;
+}
+::-webkit-scrollbar {
+	width: 17px;
+}
+::-webkit-scrollbar-thumb {
+	background: #00a47e;
+	border: 4px solid white;
+	border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #00ce9e;
+}
+/*::-webkit-scrollbar-button:vertical:start {
+	height: 10px;
+	border-bottom: 10px solid #00a47e;
+	border-right: 8.5px solid transparent;
+	border-left: 8.5px solid transparent;
+}
+::-webkit-scrollbar-button:vertical:start:hover {
+	border-bottom: 10px solid #00ce9e;
+}
+::-webkit-scrollbar-button:vertical:end {
+	height: 10px;
+	border-top: 10px solid #00a47e;
+	border-right: 8.5px solid transparent;
+	border-left: 8.5px solid transparent;
+}
+::-webkit-scrollbar-button:vertical:end:hover {
+	border-top: 10px solid #00ce9e;
+}*/
+/*::-webkit-scrollbar-button {
+	background: #00a47e;
+	border: 2px solid white;
+	border-radius: 50%;
+}
+::-webkit-scrollbar-button:hover {
+	background: #00ce9e;
+}*/
+/*::-webkit-scrollbar-thumb:window-inactive {
+	background: black;
+}*/
+/*Основные свойства---------------------------------------------------------------------------------------------*/
+* {
+	margin: 0;
+	font-size: 25px;
+	text-decoration: none;
+}
+a {
+	color: blue;
+	-webkit-tap-highlight-color: transparent;
+	&:hover {
+		color: #cd00cd;
+	}
+}
+p {
+	margin: 25px;
+	padding: 6px;
+	background: white;
+	border-radius: 15px;
+	box-shadow: 0 0 10px black;
+	white-space: pre-wrap;
+}
+#information {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	margin: auto;
+	max-width: 850px;
+	overflow: auto;
+	scrollbar-width: none;
+	>a {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		cursor: default;
+	}
+	p {
+		position: relative;
+		z-index: 1;
+		.close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 29px;
+			height: 29px;
+			border: 1px solid black;
+			box-shadow: none;
+			&:before,
+			&:after {
+				position: absolute;
+				width: 20px;
+				height: 2.5px;
+			}
+			&:hover {
+				box-shadow: 0 0 10px red;
+				background: white;
+				&:before,
+				&:after {
+					background: black;
+
+				}
+			}
+		}
+	}
+	+a {
+		display: none;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.5);
+		cursor: default;
+	}
+	&:target {
+		display: block;
+		+a {
+			display: block;
+			+* {
+				position: fixed;
+				width: 100%;
+			}
+		}
+	}
+}
+main {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+header {
+	display: flex;
+	a, 
+	div, 
+	svg {
+		width: 29px;
+		height: 29px;
+		stroke: black;
+		stroke-linecap: round;
+	}
+	a {
+		margin: 22.5px 10px 0 22.5px;
+		border: 1px solid black;
+		border-radius: 50%;
+		transition: 0.25s;
+		&:hover {
+			box-shadow: 0 0 10px green;
+			scale: 1.15;
+		}
+	}
+	h1 {
+		flex: 1 1 1%;
+		margin: 20px 0 0;
+		font-size: 30px;
+		text-align: center;
+		+a, 
+		+div {
+			margin: 22.5px 22.5px 0 10px;
+		}
+	}
+}
+nav {
+	flex: 1 1 1%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 12.5px;
+	a {
+		flex: 1 0 25%;
+		display: flex;
+		margin: 12.5px;
+		padding: 6px;
+		box-shadow: 0 0 10px black;
+		border-radius: 4vh;
+		white-space: nowrap;
+		transition: 0.25s;
+		&:hover {
+			color: green;
+			background: rgba(0, 255, 190, 0.25);
+			box-shadow: 0 0 10px green;
+			scale: 1.05;
+		}
+	}
+}
+u {
+	display: block;
+	margin: auto;
+}
+.close {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 2;
+	width: 40px;
+	height: 40px;
+	background: white;
+	box-shadow: 0 0 10px black;
+	border-radius: 50%;
+	transition: 0.25s;
+	&:before, 
+	&:after {
+		content: "";
+		width: 30px;
+		height: 4px;
+		background: black;
+		border-radius: 5px;
+		rotate: 45deg;
+	}
+	&:after {
+		position: fixed;
+		rotate: -45deg;
+	}
+	&:hover {
+		background: #f9e3e2;
+		box-shadow: 0 0 10px #8b0000;
+		scale: 1.15;
+		&:before, 
+		&:after {
+			background: red;
+		}
+	}
+}
+.button {
+	display: none;
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	z-index: 2;
+	background: white;
+	box-shadow: 0 0 10px black;
+	border-radius: 50%;
+	transition: 0.25s;
+	svg {
+		width: 50px;
+		height: 50px;
+		fill: none;
+		stroke: black;
+		stroke-width: 5;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	&:hover {
+		background: #9cdaff;
+		box-shadow: 0 0 10px #00008b;
+		scale: 1.15;
+		svg {
+			stroke: blue;
+		}
+	}
+}
+i {
+	color: green;
+	font-style: normal;
+}
+#i-cursor {
+	color: green;
+	cursor: wait;
+	s {
+		color: black;
+	}
+}
+/*Дополнительные свойства conteneditable и готового кода--------------------------------------------------------*/
+#contenteditable~* {
+	display: block;
+	font-size: 20px;
+	border-radius: 5px;
+	margin: 10px;
+	white-space: pre-wrap;
+}
+#style1 {
+	margin-top: 25px;
+}
+#div1 {
+	color: blue;
+	background: lightpink;
+}
+#div2 {
+	color: pink;
+	background: mediumpurple;
+}
+.code {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 12.5px;
+	>div,
+	>style {
+		flex: 1 0 40%;
+		display: flex;
+		margin: 12.5px;
+		padding: 6px;
+		box-shadow: 0 0 10px black;
+		border-radius: 15px;
+		white-space: pre-wrap;
+		&:nth-child(odd) {
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	style {
+		display: block;
+	}
+}
+.scrollbar {
+	height: 200px;
+	overflow: auto;
+	scrollbar-width: none;
+}
+body .two {
+	padding: 0;
+	>* {
+		margin: 6px;
+	}
+	+div {
+		padding: 0;
+		position: relative;
+		div,
+		style {
+			width: 100%;
+			padding: 6px;
+			border-radius: 15px;
+		}
+		div {
+			display: none;
+		}
+		svg {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 30px;
+			height: 30px;
+			padding: 1px;
+			background: white;
+			border-radius: 50%;
+			transition: 0.25s;
+		}
+		.html1 {
+			display: none;
+		}
+		input {
+			position: absolute;
+			visibility: hidden;
+			top: 10px;
+			right: 10px;
+			z-index: 1;
+			width: 32px;
+			height: 32px;
+			&:before {
+				content: "";
+				visibility: visible;
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				border: 1px solid #000;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: 0.25s;
+			}
+			&:hover {
+				&:before {
+					box-shadow: 0 0 10px #cd00cd;
+					scale: 1.15;
+				}
+				~svg {
+					scale: 1.15;
+				}
+			}
+			&:checked {
+				+.css1 {
+					display: none;
+					+style {
+						display: none;
+						+.html1 {
+							display: block;
+							+div {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+/*Все media-----------------------------------------------------------------------------------------------------*/
+@media (min-width: 850px) and (min-height: 745px) {
+	#information {
+		height: 745px;
+	}
+}
+@media (min-width: 943px) {
+	#a4, 
+	#a5, 
+	#a9, 
+	#a10 {
+		flex: 1 0 40%;
+		&:hover {
+			scale: 1.03;
+		}
+	}
+}
+@media (min-width: 745px) and (max-width: 942px) {
+	nav a:hover {
+		scale: 1.03;
+	}
+	#a1, 
+	#a4, 
+	#a7, 
+	#a10, 
+	#a13 {
+		flex: 1 0 80%;
+		&:hover {
+			scale: 1.02;
+		}
+	}
+}
+@media (max-width: 744px) {
+	nav a {
+		flex: 1 0 80%;
+		&:hover {
+			scale: 1.05;
+		}
+	}
+}
+@media (max-width: 600px) {
+	.code>div,
+	.code>style {
+		flex: 1 0 80%;
+	}
+}
+@media (max-width: 438px) {
+	header h1 {
+		font-size: 25px;
+		margin: 22px 0 0;
+	}
+	* {
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Специфические свойства</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Специфические свойства</h1>
+				<div></div>
+			</header>
+			<p><b>object-fit</b>: значение; – устанавливает соотношение сторон элементов (img, video), если у них задана ширина или высота
+Значения:
+1. fill – размер элемента соответствует заданному, пропорции исходного изображения игнорируются
+2. contain – элемент масштабируется, сохраняя пропорции, так, чтобы целиком поместиться в заданную область
+3. cover – элемент масштабируется, сохраняя пропорции, и обрезается так, чтобы полностью заполнить заданную область
+4. scale-down – размер элемента соответствуют меньшему из размеров при указании значения none или contain
+5. none – размер элемента остаётся исходным, заданный размер игнорируется
+<i>object-fit: cover;</i> (fill)
+</p>
+			<p>↓<b>caret-color</b>: цвет; – задаёт цвет каретки в любом редактируемом элементе (форме)
+Атрибут <a href="specifiс.html/contenteditable.html">contenteditable</a> даёт возможность изменения элемента пользователем
+<i>caret-color: green;</i> (auto)
+</p>
+			<p>↓<b>border-collapse</b>: значение; – задаёт способ отображения границы вокруг ячеек таблицы
+Значения:
+1. separate – каждая ячейка имеет свою рамку
+2. collapse – общая граница для ячеек таблицы
+<i>border-collapse: collapse;</i> (separate)
+</p>
+			<p>↓<b>border-spacing</b>: значение; – устанавливает расстояние между границами ячеек в таблице
+Краткая запись:
+1. border-spacing: по■горизонтали■и■<wbr>вертикали;
+2. border-spacing: по■горизонтали по■вертикали;
+<i>border-spacing: 5px;</i> (0)
+</p>
+			<p>↓<b>caption-side</b>: значение; – устанавливает расстояние между границами ячеек в таблице
+Значения:
+1. top – располагает заголовок по верхнему краю таблицы
+2. bottom – располагает заголовок под таблицей
+<i>caption-side: bottom;</i> (top)
+</p>
+			<p>↓<b>empty-cells</b>: значение; – управляет показом пустых ячеек
+Значения:
+1. show – показывает пустые ячейки
+2. hide – пустые ячейки исчезают, но занимаемое ими место остаётся
+<i>empty-cells: hide;</i> (show)
+</p>
+			<p><b>table-layout</b>: значение; – управляет расчётом размеров таблицы
+Значения:
+1. auto – ширина ячеек и таблиц зависит от содержания
+2. fixed – ширина таблицы, колонка и первая строка ячеек устанавливают размеры таблицы
+<i>table-layout: fixed;</i> (auto)
+</p>
+			<p>↓<b>list-style-image</b>: значение■или■url("адрес картинки"); – устанавливает маркером списка изображение
+Значения:
+1. none – показывает обычный маркер списка
+<i>list-style-image: url("img/icons/marker.png");</i> (none)
+</p>
+			<p>↓<b>list-style-position</b>: значение; – устанавливает, как будет размещаться маркер относительно текста
+Значения:
+1. outside – маркер вынесен за границу списка
+2. inside – маркер обтекается текстом
+<i>list-style-position: outside;</i> (outside)
+</p>
+			<p>↓<b>list-style-type</b>: значение; – устанавливает, как будет размещаться маркер относительно текста
+Значения:
+1. disc – маркеры становятся ●
+2. circle – маркеры становятся ○
+3. square – маркеры становятся ▪️
+4. decimal – маркеры становятся цифрами (1, 2, 3, 4, 5...)
+5. lower-roman – маркеры становятся строчными римскими цифрами (i, ii, iii, iv, v...)
+6. upper-roman – маркеры становятся заглавными римскими цифрами (I, II, III, IV, V...)
+7. lower-alpha – маркеры становятся строчными английскими буквами (a, b, c, d, e...)
+8. upper-alpha – маркеры становятся заглавными английскими буквами (A, B, C, D, E...)
+9. none – маркер исчезает
+<i>list-style-type: decimal;</i> (disc)
+</p>
+			<p>↓<b>list-style</b>: list-style-type list-style-position list-style-image; – сокращённая запись для свойств list-style-type, list-style-position и list-style-image
+<i>list-style: disc url("img/icons/marker.png") inside;</i> (disc outside none)
+</p>
+			<p><b>counter-increment</b>: идентификатор; – увеличение значения счётчика превращений, который задаётся свойством counter-reset. Такой счётчик подсчитывает количество отображений элементов на странице. Может быть отображен, используя функцию counter() или counters() в свойстве content и псевдоэлементы :after и :before. Это позволяет создавать многоуровневые списки, а также списки, в которых нумерация и вид задаются через стили
+<i>counter-increment: li;</i> (none)
+</p>
+			<p><b>counter-reset</b>: идентификатор; – устанавливает идентификатор, в котором будет храниться счётчик отображений определённого элемента, а также начальное значение счётчика. Такой счётчик можно выводить с помощью функции counter() или counters() в свойстве content и псевдоэлементов :after и :before
+<i>counter-reset: li;</i> (none)
+</p>
+		</div>		
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>
