@@ -21,13 +21,13 @@ export function initRouter() {
 
 // Переход по маршруту
 export function navigate(path) {
-  history.pushState({}, "", path);
-  handleRoute();
+  // history.pushState({}, "", path);
+  // handleRoute();
 }
 
 // Обработка маршрута
 function handleRoute() {
-  const path = window.location.pathname;
-  const route = routes[path] ? path : defaultRoute;
-  routes[route]();
+  // const path = window.location.pathname;
+  // const route = routes[path] ? path : defaultRoute;
+  // routes[route]();
 }
