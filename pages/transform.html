@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Трансформация</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Трансформация</h1>
+				<div></div>
+			</header>
+			<p>transform: <b>translate</b>(X, Y); – cдвигает элемент вправо и вниз относительно начального положения объекта
+<i>transform: translate(30px, -15px);</i> (none)
+</p>
+			<p>transform: <b>scale</b>(X, Y); – масштабирует размеры элемента
+Краткая запись:
+1. transform: scale(X■Y);
+<i>transform: scale(1.5, 1.25);</i> (none)
+</p>
+			<p>transform: <b>rotate</b>(Xdeg); – поворачивает элемент по часовой стрелке
+<i>transform: rotate(45deg);</i> (none)
+</p>
+			<p>transform: <b>skew</b>(Xdeg, Ydeg); – деформирует (наклоняет) элемент
+<i>transform: skew(45deg, -10deg);</i> (none)
+</p>
+			<p>transform: <b>matrix</b>(A, B, C, D, E, F); – деформирует (наклоняет) элемент
+A – масштабирует элемент по горизонтали (scale(X))
+B – деформирует (сдвигает) стороны элемента по вертикали (skew(X))
+C – деформирует (сдвигает) стороны элемента по горизонтали (skew(Y))
+D – масштабирует элемент по вертикали (scale(Y))
+E – сдвигает элемент по горизонтали (translate(X))
+F – сдвигает элемент по вертикали (translate(Y))
+<i>transform: matrix(0.5, 0.1, 0.1, 0.5, 10, 15);</i> (none)
+</p>
+			<p><b>transform</b>: translate(X, Y) rotate(Xdeg) scale(X, Y); – сокращённая запись для значений translate(X, Y), rotate(Xdeg) и scale(X, Y)
+<i>transform: translate(30px, 30px) rotate(45deg) scale(0.8);</i> (none)
+</p>
+			<p><b>transform-origin</b>: (X, Y)■или■значения; – смещает центр трансформации, относительно которого происходит изменение элемента
+Значения:
+1. center – центр трансформации в центре элемента
+2. top – центр трансформации сверху элемента
+3. right – центр трансформации справа элемента
+4. bottom – центр трансформации снизу элемента
+5. left – центр трансформации слева элемента
+<i>transform-origin: (25px, -10px);</i> (50% 50% 0)
+</p>
+			<p><b>perspective</b>: (X, Y)■или■значения; – удаляет край элемента, создаёт перспективу
+<i>perspective: (25px, -10px);</i> (none)
+</p>
+			<p><b>perspective-origin</b>: (X, Y)■или■значения; – смещает центр трансформации, относительно которого происходит удаление (perspective)
+Значения:
+1. center – центр трансформации в центре элемента
+2. top – центр трансформации сверху элемента
+3. right – центр трансформации справа элемента
+4. bottom – центр трансформации снизу элемента
+5. left – центр трансформации слева элемента
+<i>perspective-origin: top left;</i> (50% 50%)
+</p>
+			<p>transform: <b>translate3d</b>(X, Y, Z); – cдвигает элемент по 3 осям относительно начального положения объекта
+<i>transform: translate3d(30px, 30px, 30px);</i> (none)
+</p>
+			<p>transform: <b>scale3d</b>(X, Y, Z); – масштабирует размеры элемента по 3 осям
+<i>transform: scale3d(1.5, 1.25);</i> (none)
+</p>
+			<p>transform: <b>rotate3d</b>(X, Y, Z, Ndeg); – поворачивает элемент по часовой стрелке относительно 3 осей
+<i>transform: rotate3d(1, 1, 1, 45deg);</i> (none)
+</p>
+			<p>transform: <b>matrix3d</b>(n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n); – задаёт трёхмерное преобразование, как однородную матрицу размером 4×4 с шестнадцатью значениями в столбцах
+Генератор 3D матриц – <a target="_blank" href="http://ds-overdesign.com/transform/matrix3d.html">http://ds-overdesign.com/<wbr>transform/<wbr>matrix3d.html</a>
+<i>transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);</i> (none)
+</p>
+			<p><b>transform</b>: translate3d(X, Y, Z) rotate3d(X, Y, Z, Ndeg); – сокращённая запись для значений translate(X, Y) и rotate(Xdeg)
+<i>transform: translate3d(30px, 30px,30px) rotate3d(1, 1, 1, 30deg);</i> (none)
+</p>
+			<p><b>transform-style</b>: значение; – устанавливает, как дочерние элементы будут отображаться в 3D-пространстве
+Значения:
+1. flat – устанавливает, что дочерний элемент лежит в той же плоскости, что и родительский
+2. preserve-3d – устанавливает, что дочерний элемент должен быть спозиционирован в 3D-пространстве
+<i>transform-style: preserve-3d;</i> (flat)
+</p>
+			<p><b>backface-visibility</b>: значение; – управляет отображением обратной стороны объекта
+Значения:
+1. visible – обратная сторона элемента видна и отображается через переднюю поверхность элемента зеркально
+2. hidden – обратная сторона не видна, скрываясь за передней поверхностью элемента
+<i>backface-visibility: visible;</i> (visible)
+</p>
+		</div>		
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>

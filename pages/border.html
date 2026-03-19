@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Свойства границы</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Свойства границы</h1>
+				<div></div>
+			</header>
+			<p><b>border</b>: толщина стиль цвет; – задаёт толщину, стиль и цвет внутренней границы элемента
+<i>border: 1px solid #000;</i> (medium none currentcolor)
+Подобные свойства:
+1. border-top – задаёт толщину стиль цвет верхней границы элемента
+2. border-right – задаёт толщину стиль цвет правой границы элемента
+3. border-bottom – задаёт толщину стиль цвет нижней границы элемента
+4. border-left – задаёт толщину стиль цвет левой границы элемента
+</p>
+			<p><b>border-radius</b>: размер■радиуса; – задаёт радиус скругления углов блока
+Краткая запись:
+1. border-radius: со■всех■углов;
+2. border-radius: сверху-слева■снизу-справа сверху-справа■снизу-слева;
+3. border-radius: сверху-слева снизу-слева■сверху-справа снизу-справа;
+4. border-radius: сверху-слева сверху-справа снизу-справа снизу-слева;
+5. border-radius: размер■по■горизонтали/размер■по■вертикали;
+<i>border-radius: 50%;</i> (0)
+</p>
+			<p><b>border-image-source</b>: градиент■или■url("адрес изображения"); – устанавливает изображение или градиент для границы элемента
+<i>border-image-source: url("img/border.png");</i> (none)
+</p>
+			<p><b>border-image-width</b>: толщина; – задаёт толщину границы элемента
+Краткая запись:
+1. border-image-width: со■всех■сторон;
+2. border-image-width: сверху■снизу справа■слева;
+3. border-image-width: сверху справа■слева снизу;
+4. border-image-width: сверху справа снизу слева;
+<i>border-image-width: 10px;</i> (1)
+</p>
+			<p><b>border-image-slice</b>: размер размер размер; – делит изображение на части по указанным размерам
+Краткая запись:
+1. border-image-slice: со■всех■сторон;
+2. border-image-slice: сверху■снизу справа■слева;
+3. border-image-slice: сверху справа■слева снизу;
+4. border-image-slice: сверху справа снизу слева;
+<i>border-image-slice: 10;</i> (100%)
+</p>
+			<p><b>border-image-repeat</b>: значение; – задаёт повтор изображения
+Значения:
+1. stretch – картинка растягивается
+2. repeat – картинка повторяется
+3. round – картинка повторяется и масштабируется, чтобы рамки состояла из целого числа изображений
+4. space – то же, что и repeat
+Краткая запись:
+1. border-image-repeat: со■всех■сторон;
+2. border-image-repeat: сверху■снизу справа■слева;
+3. border-image-repeat: сверху справа■слева снизу;
+4. border-image-repeat: сверху справа снизу слева;
+<i>border-image-repeat: round;</i> (stretch)
+</p>
+			<p><b>border-image-outset</b>: размер■отступа; – задаёт размер отступа границы от элемента
+Краткая запись:
+1. border-image-outset: со■всех■сторон;
+2. border-image-outset: сверху■снизу справа■слева;
+3. border-image-outset: сверху справа■слева снизу;
+4. border-image-outset: сверху справа снизу слева;
+<i>border-image-outset: 5px;</i> (0)
+</p>
+			<p><b>border-image</b>: border-image-source border-image-width border-image-slice border-image-repeat border-image-outset; – сокращённая запись для свойств border-image-source, border-image-width, border-image-slice, border-image-repeat и border-image-outset
+<i>outline: url("img/border.jpg") 15px 15 30 15 round 5px;</i> (none 1 100% stretch 0)
+</p>
+			<p><b>outline</b>: толщина стиль цвет; – задаёт толщину, стиль и цвет внешней границы элемента
+<i>outline: 1px solid #000;</i> (medium none auto)
+</p>
+			<p><b>outline-offset</b>: размер■отступа; – задаёт размер отступа внешней границы от границы элемента
+<i>outline-outset: 5px;</i> (0)
+</p>
+		</div>
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>Анимация</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="icon" href="../img/favicon.ico">
+	</head>
+	<body>
+		<div id="information">
+			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, приминяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+			<a href=""></a>
+		</div>
+		<a href=""></a>
+		<div>
+			<a class="close" href="../index.html"></a>
+			<a class="button" onclick="window.scrollTo(0, 0)">
+				<svg>
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</a>
+			<header>
+				<a href="#information">
+					<svg>
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</a>
+				<h1>Анимация</h1>
+				<div></div>
+			</header>
+			<p>@<b>keyframes</b> имя {значение%{свойства}значение%{свойства}} – создаёт собственную анимацию
+<i>@keyframes color {
+	0% {
+		left: 0%;
+	}
+	50% {
+		border-radius: 0%;
+	}
+	100% {
+		left: 50%;
+	}
+}</i>
+</p>
+			<p><b>animation-name</b>: имя; – устанавливает анимации элементу, можно указать несколько через запятую, приоритет будет у последней записи
+Значения:
+1. none – к элементу не применяется никакая анимация
+<i>animation-name: color;</i> (none)
+</p>
+			<p><b>animation-duration</b>: время; – устанавливает длительность анимации
+<i>animation-duration: 250ms;</i> (0s)
+</p>
+			<p><b>animation-timing-function</b>: значение; – устанавливает стиль анимации, некий сценарий
+Значения:
+1. ease – анимация медленно начинается, быстро разгоняется и замедляется в конце, этому значению соответствует cubic-bezier(0.25,0.1,0.25,1)
+2. ease-in – анимация медленно начинается и плавно ускоряется в конце, этому значению соответствует cubic-bezier(0.42,0,1,1)
+3. ease-out – анимация быстро начинается и плавно замедляется в конце, этому значению соответствует cubic-bezier(0,0,0.58,1)
+4. ease-in-out – анимация медленно начинается и медленно заканчивается, этому значению соответствует cubic-bezier(0.42,0,0.58,1)
+5. linear – анимация происходит равномерно на протяжении всего времени, этому значению соответствует cubic-bezier(0,0,1,1)
+6. steps(шаги, start или end) – разбивает анимацию на некоторое количество шагов и устанавливает когда изменятся свойства: start – свойства изменятся сразу, end – свойства начнут изменяться в конце первого шага
+7. cubic-bezier(1 значение, 2 значение, 3 значение, 4 значение) – позволяет вручную установить значения для кривой ускорения и создать свою собственную анимацию
+<i>animation-timing-function: linear;</i> (ease)
+</p>
+			<p><b>animation-iteration-count</b>: кол-во раз; – устанавливает сколько раз будет повторяться анимация
+Значения:
+1. infinite – анимация будет проигрываться бесконечно
+<i>animation-iteration-count: infinite;</i> (1)
+</p>
+			<p><b>animation-direction</b>: значение; – устанавливает направление анимация
+Значения:
+1. normal – анимация будет проигрываться так как должно быть
+2. reverse – анимация будет проигрываться в обратном порядке
+3. alternate – каждый чётный раз будет проигрываться в обратном порядке
+4. alternate-reverse – каждый нечётный раз будет проигрываться в обратном порядке
+<i>animation-direction: alternate;</i> (normal)
+</p>
+			<p><b>animation-play-state</b>: значение; – позволяет запускать или останавливать анимацию по событию
+Значения:
+1. running – анимация проигрывается
+2. reverse – при наведении анимация останавливается
+<i>animation-play-state: reverse;</i> (running)
+</p>
+			<p><b>animation-delay</b>: значение; – устанавливает время задержки анимации, анимация начинает действовать с некоторой задержкой
+<i>animation-delay: 2s;</i> (0s)
+</p>
+			<p><b>animation-fill-mode</b>: значение; – устанавливает какие стили должны применяться к элементу, когда анимация не проигрывается (по завершению или остановке)
+Значения:
+1. none – к элементу не применяются никакие стили
+2. forwards – элемент будет выглядеть, как выглядел в конце проигрывания анимации (на последнем кадре)
+3. backwards – элемент будет выглядеть, как выглядел изначально (на первом кадре)
+4. both – элемент будет выглядеть, как выглядел в конце проигрывания анимации (на последнем кадре)
+<i>animation-fill-mode: backwards;</i> (none)
+</p>
+			<p><b>animation</b>: animation-name animation-duration animation-timing-function animation-iteration-count animation-direction animation-play-state animation-delay animation-fill-mode; – сокращённая запись для свойств animation-name, animation-duration, animation-timing-function, animation-iteration-count, animation-direction, animation-play-state, animation-delay и animation-fill-mode
+<i>animation: color 1s linear infinite normal running 0s both;</i> (none 0s ease 1 normal running 0s none)
+</p>
+		</div>
+		<script type="text/javascript">
+			var button = document.querySelector(".button");
+			if (pageYOffset > window.innerHeight) {
+				button.style.display = "flex";
+			}
+			else {
+				button.style.display = "none";
+			}
+			window.addEventListener("scroll", () => {
+				if (pageYOffset > window.innerHeight) {
+					button.style.display = "flex";
+				}
+				else {
+					button.style.display = "none";
+				}
+			});
+			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+		</script>
+	</body>
+</html>
