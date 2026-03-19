@@ -23,7 +23,7 @@ export function initUI() {
 //       navigate(path);
 //     });
 //   });
-// }
+}
 
 // Получение контейнера для рендеринга модулей
 export function getMainContainer() {
