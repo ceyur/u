@@ -16,14 +16,14 @@ export function initUI() {
  //  `;
 
   // Привязка кнопок навигации
-  const buttons = app.querySelectorAll("button[data-path]");
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const path = btn.getAttribute("data-path");
-      navigate(path);
-    });
-  });
-}
+//   const buttons = app.querySelectorAll("button[data-path]");
+//   buttons.forEach(btn => {
+//     btn.addEventListener("click", () => {
+//       const path = btn.getAttribute("data-path");
+//       navigate(path);
+//     });
+//   });
+// }
 
 // Получение контейнера для рендеринга модулей
 export function getMainContainer() {
