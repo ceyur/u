@@ -50,13 +50,14 @@ self.addEventListener("fetch", event => {
         return response;
       }
 
-      // Иначе пробуем из сети
-      // return fetch(event.request).catch(() => {
-      //   // Если нет интернета — показываем offline страницу
-      //   if (event.request.mode === "navigate") {
-      //     return caches.match("/offline.html");
-      //   }
-      // });
+      Иначе пробуем из сети
+      return fetch(event.request).catch(() => {
+        // Если нет интернета — показываем offline страницу
+        if (event.request.mode === "navigate") {
+          // return caches.match("/offline.html");
+          return caches.match("/index.html");
+        }
+      });
     })
   );
 });
