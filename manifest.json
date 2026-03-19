@@ -1,4 +1,5 @@
 {
     "name": "Справочник css свойств",
-    "display": "standalone"
+    "display": "standalone",
+    "scope": "/browserpets/"
 }
