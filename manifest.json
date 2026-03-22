@@ -1,7 +1,14 @@
 {
 	"name": "Справочник css свойств",
-	"theme_color": "#66ddaa",
+	"short_name": "Справочник css свойств",
+	"description": "Справочник css свойств",
+	"version": "1",
+	"lang": "ru-RU",
+	"theme_color": "#00ffbe40",
+	"background_color": "#00ffbe40",
 	"display": "standalone",
+	"display_override": ["window-controls-overlay"],
+	"orientation": "portrait",
 	"icons": [
 		{
 			"purpose": "maskable",
