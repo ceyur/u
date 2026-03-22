@@ -1,4 +1,13 @@
 {
-    "name": "Справочник css свойств",
-    "display": "standalone"
+	"name": "Справочник css свойств",
+	"theme_color": "mediumeaquamarine",
+	"display": "standalone",
+	"icons": [
+		{
+			"purpose": "maskable",
+			"src": "Иконка.png",
+			"sizes": "511x511",
+			"type": "image/png"
+		}
+	]
 }
