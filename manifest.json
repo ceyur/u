@@ -4,14 +4,14 @@
 	"description": "Справочник css свойств",
 	"version": "1",
 	"lang": "ru-RU",
-	"theme_color": "#00ffbe66",
-	"background_color": "#00ffbe66",
+	"theme_color": "#57f7d5",
+	"background_color": "#57f7d5",
 	"display": "standalone",
 	"display_override": ["window-controls-overlay"],
 	"orientation": "portrait",
 	"icons": [
 		{
-			"purpose": "maskable",
+			"purpose": "any",
 			"src": "Иконка1020.png",
 			"sizes": "1021x1021",
 			"type": "image/png"
