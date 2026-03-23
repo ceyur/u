@@ -1,20 +1,21 @@
 {
 	"name": "Справочник css свойств",
-	"short_name": "Справочник css свойств",
-	"description": "Справочник css свойств",
+	"short_name": "CSS",
+	"description": "Справочник css свойств для начинающих",
+	"start_url": "index.html"
 	"version": "1",
 	"lang": "ru-RU",
 	"theme_color": "#57f7cf",
 	"background_color": "#57f7cf",
-	"display": "standalone",
-	"display_override": ["window-controls-overlay"],
+	"display": "fullscreen",
+	"display_override": ["fullscreen"],
 	"orientation": "portrait",
 	"icons": [
 		{
 			"purpose": "any",
-			"src": "Иконка1020.png",
-			"sizes": "1021x1021",
-			"type": "image/png"
+			"src": "Иконкаsvg.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
 		}
 	]
 }
