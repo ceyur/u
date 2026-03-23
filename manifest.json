@@ -2,7 +2,7 @@
 	"name": "Справочник css свойств",
 	"short_name": "CSS",
 	"description": "Справочник css свойств для начинающих",
-	"start_url": "index.html"
+	"start_url": "index.html",
 	"version": "1",
 	"lang": "ru-RU",
 	"theme_color": "#57f7cf",
