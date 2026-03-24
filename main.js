@@ -1,5 +1,8 @@
 let routes = {};
 let defaultRoute = null;
+let f = fetch("pages/text.html");
+let text = f.text();
+console.log(text);
 
 // Обработка маршрута
 function handleRoute() {
