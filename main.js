@@ -49,7 +49,7 @@ function initUI() {
 function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
-		// "/text": () => import("../modules/tasks/tasksUI.js").then(mod => mod.renderTasksUI()),
+		"/text": () => document.documentElement.innerHTML = "клро",
 		// "/tasks": () => import("../modules/tasks/tasksUI.js").then(mod => mod.renderTasksUI()),
 		// "/notes": () => import("../modules/notes/notesUI.js").then(mod => mod.renderNotesUI()),
 		// "/tracker": () => import("../modules/tracker/trackerUI.js").then(mod => mod.renderTrackerUI())
