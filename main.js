@@ -49,7 +49,7 @@ function initUI() {
 function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
-		"/text": () => document.documentElement.innerHTML = fetch('pages/text.html').then(response => {return response.text();}).then(html => {
+		"/text": () => fetch('pages/text.html').then(response => {return response.text();}).then(html => {
 			document.documentElement.innerHTML = html;
 		}),
 		// "/tasks": () => import("../modules/tasks/tasksUI.js").then(mod => mod.renderTasksUI()),
