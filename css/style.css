@@ -74,6 +74,8 @@ p {
 	z-index: 2;
 	margin: auto;
 	max-width: 850px;
+	overflow: auto;
+	scrollbar-width: none;
 	>a {
 		position: absolute;
 		top: 0;
