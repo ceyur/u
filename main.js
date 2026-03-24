@@ -57,7 +57,7 @@ function initRouter() {
 		// "/tracker": () => import("../modules/tracker/trackerUI.js").then(mod => mod.renderTrackerUI())
 	};
 
-	defaultRoute = "text"; // По умолчанию открывается Tasks
+	defaultRoute = "/text"; // По умолчанию открывается Tasks
 
 	// Слушаем изменения URL (кнопки браузера)
 	window.addEventListener("popstate", handleRoute);
