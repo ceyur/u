@@ -74,7 +74,7 @@ function initRouter() {
 // Переход по маршруту
 function navigate(path) {
 	//document.location.assign(path);
-	history.pushState({}, "", location.href);
+	history.pushState({}, "", path);
 	handleRoute();
 }
 
