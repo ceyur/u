@@ -6,6 +6,7 @@ let defaultRoute = null;
 
 // Обработка маршрута
 function handleRoute() {
+	console.log(window.location.pathname);
 	const path = window.location.pathname;
 	const route = routes[path] ? path : defaultRoute;
 	routes[route]();
