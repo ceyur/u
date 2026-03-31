@@ -56,7 +56,7 @@ function initRouter() {
 		"/u/text": () => fetch('pages/text.html').then(response => {return response.text();}).then(html => {
 			document.documentElement.innerHTML = html;
 		}),
-		"/u": () => console.log(main),
+		"/u": () => console.log("main"),
 		// "/tasks": () => import("../modules/tasks/tasksUI.js").then(mod => mod.renderTasksUI()),
 		// "/notes": () => import("../modules/notes/notesUI.js").then(mod => mod.renderNotesUI()),
 		// "/tracker": () => import("../modules/tracker/trackerUI.js").then(mod => mod.renderTrackerUI())
