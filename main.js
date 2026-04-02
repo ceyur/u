@@ -39,6 +39,40 @@ function initApp() {
 	registerServiceWorker();
 }
 
+// Инициализация маршрутов
+function initRouter() {
+	// Определяем маршруты и их обработчики
+	routes = {
+		"/u": () => {
+			nav.style.display = "flex";
+			content.innerHTML = "";
+			console.log("main");
+			close.style.display = "none";
+		},
+		"/u/text": () => {
+			content.innerHTML = "<h1>text</h1>"; console.log("text");
+			nav.style.display = "none";
+			close.style.display = "flex";
+		}
+	};
+
+	defaultRoute = "/u"; // По умолчанию
+
+	// Слушаем изменения URL (кнопки браузера)
+	window.addEventListener("popstate", handleRoute);
+
+	// Инициализация маршрута при загрузке
+	handleRoute();
+}
+
+// Обработка маршрута
+function handleRoute() {
+	console.log("window.location.pathname: ", window.location.pathname);
+	const path = window.location.pathname;
+	const route = routes[path] ? path : defaultRoute;
+	routes[route]();
+}
+
 // Инициализация базового UI
 function initUI() {
 	// Привязка кнопок навигации
@@ -57,40 +91,6 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	});
-}
-
-// Обработка маршрута
-function handleRoute() {
-	console.log("window.location.pathname: ", window.location.pathname);
-	const path = window.location.pathname;
-	const route = routes[path] ? path : defaultRoute;
-	routes[route]();
-}
-
-// Инициализация маршрутов
-function initRouter() {
-	// Определяем маршруты и их обработчики
-	routes = {
-		"/u/text": () => {
-			content.innerHTML = "<h1>text</h1>"; console.log("text");
-			nav.style.display = "none";
-			close.style.display = "flex";
-		},
-		"/u": () => {
-			nav.style.display = "flex";
-			content.innerHTML = "";
-			console.log("main");
-			close.style.display = "none";
-		}
-	};
-
-	defaultRoute = "/u"; // По умолчанию открывается Tasks
-
-	// Слушаем изменения URL (кнопки браузера)
-	window.addEventListener("popstate", handleRoute);
-
-	// Инициализация маршрута при загрузке
-	handleRoute();
 }
 
 // Регистрация Service Worker
