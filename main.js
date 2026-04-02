@@ -24,13 +24,13 @@ window.addEventListener('scroll',()=>{document.querySelector(".button").style.di
 function initApp() {
 	console.log("App started");
 
-	// Инициализация UI (создание базовой структуры)
-	initUI();
-	console.log("ïnitUI");
-
 	// Инициализация роутера (переключение между модулями)
 	initRouter();
 	console.log("ïnitRouter");
+
+	// Инициализация UI (создание базовой структуры)
+	initUI();
+	console.log("ïnitUI");
 
 	// Регистрация Service Worker (для PWA)
 	registerServiceWorker();
