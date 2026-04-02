@@ -53,7 +53,7 @@ function initUI() {
 	const button = document.querySelector("#a1");
 	button.addEventListener("click", () => {
 		const path = "/u/text";
-
+		console.log("a1.click");
 		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
