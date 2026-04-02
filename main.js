@@ -2,6 +2,24 @@ let routes = {};
 let defaultRoute = null;
 const main = document.querySelector("main");
 
+var button = document.querySelector(".button");
+if (pageYOffset > window.innerHeight) {
+	button.style.display = "flex";
+}
+else {
+	button.style.display = "none";
+}
+window.addEventListener("scroll", () => {
+	if (pageYOffset > window.innerHeight) {
+		button.style.display = "flex";
+	}
+	else {
+		button.style.display = "none";
+	}
+});
+/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+
 // Точка входа приложения
 function initApp() {
 	console.log("App started");

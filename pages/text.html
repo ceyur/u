@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<title>Свойства текста</title>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="icon" href="../img/favicon.ico">
-	</head>
-	<body>
-		<div id="information">
-			<p><a class="close" href=""></a><b>свойство</b>: значение; – объяснение свойства, его особенности
-Значения:
-1.
-2.
-<i>пример</i> (значение по умолчанию)
-Подобные свойства:
-1.
-2.
-</p>
-			<p>Обозначения:
-1. ↓ – свойство наследуется
-2. ■ – объединение
-</p>
-			<p>Значения, приминяющиеся для всех свойств:
-1. inherit – элемент должен унаследовать родительское значение
-2. initial – элемент должен использовать значение по умолчанию (не браузерное)
-3. revert – элемент должен использовать браузерное значение, а не по умолчанию
-4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
-5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
-</p>
-			<a href=""></a>
-		</div>
-		<a href=""></a>
-		<div>
+<main>
 			<a class="close" href="../index.html"></a>
 			<a class="button" onclick="window.scrollTo(0, 0)">
 				<svg>
@@ -204,25 +170,4 @@
 3. dashed – пунктирная линия
 <i>column-rule: auto;</i> (medium solid currentcolor)
 </p>
-		</div>
-		<script type="text/javascript">
-			var button = document.querySelector(".button");
-			if (pageYOffset > window.innerHeight) {
-				button.style.display = "flex";
-			}
-			else {
-				button.style.display = "none";
-			}
-			window.addEventListener("scroll", () => {
-				if (pageYOffset > window.innerHeight) {
-					button.style.display = "flex";
-				}
-				else {
-					button.style.display = "none";
-				}
-			});
-			/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
-			window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
-		</script>
-	</body>
-</html>
+</main>
