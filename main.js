@@ -72,9 +72,10 @@ function handleRoute() {
 function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
-		"/u/text": () => fetch('pages/text.html').then(response => {return response.text();}).then(html => {
-			main.innerHTML = html;
-		}),
+		"/u/text": () => { main.innerHTML = "<h1>hfbdkgblsdbfg</h1>";
+			//fetch('pages/text.html').then(response => {return response.text();}).then(html => {
+			//main.innerHTML = html;
+		},
 		"/u": () => {
 			main.innerHTML = 
 `<header>
@@ -92,7 +93,7 @@ function initRouter() {
 	</a>
 </header>
 <nav>
-	<a id="a1" >Свойства текста</a>
+	<a id="a1">Свойства текста</a>
 	<a href="pages/elements.html">Свойства элементов</a>
 	<a href="pages/border.html">Свойства границы</a>
 	<a id="a4" href="pages/background.html">Свойства фона</a>
