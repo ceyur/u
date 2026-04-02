@@ -26,9 +26,11 @@ function initApp() {
 
 	// Инициализация UI (создание базовой структуры)
 	initUI();
+	console.log("ïnitUI");
 
 	// Инициализация роутера (переключение между модулями)
 	initRouter();
+	console.log("ïnitRouter");
 
 	// Регистрация Service Worker (для PWA)
 	registerServiceWorker();
