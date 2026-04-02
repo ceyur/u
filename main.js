@@ -3,7 +3,8 @@ let defaultRoute = null;
 const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
-const close = document.querySelector(".close");
+// const close = document.querySelector(".close");
+const close1 = document.querySelector(".close");
 
 // var button = document.querySelector(".button");
 // if (pageYOffset > window.innerHeight) {
@@ -47,12 +48,12 @@ function initRouter() {
 			nav.style.display = "flex";
 			content.innerHTML = "";
 			console.log("main");
-			close.style.display = "none";
+			close1.style.display = "none";
 		},
 		"/u/text": () => {
 			content.innerHTML = "<h1>text</h1>"; console.log("text");
 			nav.style.display = "none";
-			close.style.display = "flex";
+			close1.style.display = "flex";
 		}
 	};
 
