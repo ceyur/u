@@ -4,6 +4,7 @@ const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const close = document.querySelector(".close");
+close.style.display = "none";
 
 // var button = document.querySelector(".button");
 // if (pageYOffset > window.innerHeight) {
@@ -41,19 +42,6 @@ function initApp() {
 
 // Инициализация базового UI
 function initUI() {
-// 	const app = document.getElementById("app");
-// 	app.innerHTML = `
-// 		<header style="padding: 16px; background-color: #1e1e1e; color: #fff; display: flex; justify-content: space-between;">
-// 			<h1>Smart Dashboard</h1>
-// 			<nav>
-// 				<button data-path="/tasks">Tasks</button>
-// 				<button data-path="/notes">Notes</button>
-// 				<button data-path="/tracker">Tracker</button>
-// 			</nav>
-// 		</header>
-// 	<main id="main-content" style="padding: 16px;"></main>
-// `;
-
 	// Привязка кнопок навигации
 	const button = document.querySelector("#a1");
 	button.addEventListener("click", () => {
@@ -85,10 +73,9 @@ function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
 		"/u/text": () => {
-			nav.style.display = "none";
 			content.innerHTML = "<h1>text</h1>"; console.log("text");
-			//fetch('pages/text.html').then(response => {return response.text();}).then(html => {
-			//main.innerHTML = html;
+			nav.style.display = "none";
+			close.style.display = "flex";
 		},
 		"/u": () => {
 			nav.style.display = "flex";
