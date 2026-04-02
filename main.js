@@ -72,7 +72,7 @@ function handleRoute() {
 function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
-		"/u/text": () => { main.innerHTML = "<h1>hfbdkgblsdbfg</h1>";
+		"/u/text": () => { main.innerHTML = "<h1>hfbdkgblsdbfg</h1>"; console.log("text");
 			//fetch('pages/text.html').then(response => {return response.text();}).then(html => {
 			//main.innerHTML = html;
 		},
