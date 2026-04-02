@@ -4,7 +4,6 @@ const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const close = document.querySelector(".close");
-close.style.display = "none";
 
 // var button = document.querySelector(".button");
 // if (pageYOffset > window.innerHeight) {
@@ -81,6 +80,7 @@ function initRouter() {
 			nav.style.display = "flex";
 			content.innerHTML = "";
 			console.log("main");
+			close.style.display = "none";
 		}
 	};
 
