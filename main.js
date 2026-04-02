@@ -1,16 +1,5 @@
 let routes = {};
 let defaultRoute = null;
-// let f = fetch("pages/text.html");
-// let text = f.text();
-// console.log(text);
-
-// Обработка маршрута
-function handleRoute() {
-	console.log(window.location.pathname);
-	const path = window.location.pathname;
-	const route = routes[path] ? path : defaultRoute;
-	routes[route]();
-}
 
 // Точка входа приложения
 function initApp() {
@@ -45,8 +34,19 @@ function initUI() {
 	const button = document.querySelector("#a1");
 	button.addEventListener("click", () => {
 		const path = "/u/text";
-		navigate(path);
+
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
 	});
+}
+
+// Обработка маршрута
+function handleRoute() {
+	console.log("window.location.pathname: ", window.location.pathname);
+	const path = window.location.pathname;
+	const route = routes[path] ? path : defaultRoute;
+	routes[route]();
 }
 
 // Инициализация маршрутов
@@ -54,7 +54,7 @@ function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
 		"/u/text": () => fetch('pages/text.html').then(response => {return response.text();}).then(html => {
-			document.documentElement.innerHTML = html;
+			document.querySelector("main") = html;
 		}),
 		"/u": () => console.log("main"),
 		// "/tasks": () => import("../modules/tasks/tasksUI.js").then(mod => mod.renderTasksUI()),
@@ -68,13 +68,6 @@ function initRouter() {
 	window.addEventListener("popstate", handleRoute);
 
 	// Инициализация маршрута при загрузке
-	handleRoute();
-}
-
-// Переход по маршруту
-function navigate(path) {
-	//document.location.assign(path);
-	history.pushState({}, "", path);
 	handleRoute();
 }
 
@@ -95,7 +88,6 @@ function registerServiceWorker() {
 		console.log("Service Worker not supported");
 	}
 }
-
 
 // Запуск приложения
 initApp();
