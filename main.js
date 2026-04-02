@@ -55,10 +55,10 @@ function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
 		"/u/text": () => fetch('pages/text.html').then(response => {return response.text();}).then(html => {
-			main = html;
+			main.innerHTML = html;
 		}),
 		"/u": () => {
-			main = 
+			main.innerHTML = 
 `<header>
 	<a href="#information">
 		<svg>
