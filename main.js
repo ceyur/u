@@ -45,15 +45,16 @@ function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
 		"/u": () => {
-			nav.style.display = "flex";
 			content.innerHTML = "";
-			console.log("main");
+			nav.style.display = "flex";
 			close1.style.display = "none";
+			console.log("main");
 		},
 		"/u/text": () => {
-			content.innerHTML = "<h1>text</h1>"; console.log("text");
+			content.innerHTML = "<h1>text</h1>";
 			nav.style.display = "none";
 			close1.style.display = "flex";
+			console.log("text");
 		}
 	};
 
