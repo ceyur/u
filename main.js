@@ -85,7 +85,7 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	});
-	close.addEventListener("click", () => {
+	close1.addEventListener("click", () => {
 		const path = "/u";
 		console.log("close.click");
 		// Переход по маршруту
