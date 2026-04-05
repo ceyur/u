@@ -23,6 +23,7 @@ const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const close = document.querySelector("#close");
+const h1 = document.querySelector("h1");
 
 var button = document.querySelector(".button");
 if (pageYOffset > window.innerHeight) {
@@ -71,6 +72,8 @@ function initRouter() {
 		"/u/text": () => {
 			close.style.display = "flex";
 			nav.style.display = "none";
+			document.title = "Свойства текста";
+			h1.textContent = "Свойства текста";
 			Object.values(properties.text).forEach((e) => {
 				p = document.createElement("p");
 				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
