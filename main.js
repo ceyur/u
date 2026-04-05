@@ -71,8 +71,9 @@ function initRouter() {
 		"/u/text": () => {
 			close.style.display = "flex";
 			nav.style.display = "none";
-			div = content.createElement("div");
+			div = document.createElement("div");
 			div.innerHtml = properties.text.color.name;
+			content.append(div);
 			console.log("text");
 		}
 	};
