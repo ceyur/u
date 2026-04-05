@@ -7,7 +7,7 @@ const properties = {
 			example: "green",
 			default: "canvastext"
 		},
-		fsize: {
+		font_size: {
 			name: "font-size",
 			attribute: "размер",
 			description: "задаёт размер текста",
@@ -71,12 +71,12 @@ function initRouter() {
 		"/u/text": () => {
 			close.style.display = "flex";
 			nav.style.display = "none";
-			properties.text.forEach((e) => {
+			Object.values(properties.text).forEach((e) => {
 				p = document.createElement("p");
 				p.innerHTML = e.name;
 				console.log(e.name);
 				content.append(p);
-			)};
+			});
 			console.log("text");
 		}
 	};
