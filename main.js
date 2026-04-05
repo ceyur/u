@@ -4,8 +4,7 @@ const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 // const close = document.querySelector(".close");
-const close1 = document.querySelector("#close");
-console.log(close1.innerHtml);
+const close = document.querySelector("#close");
 
 // var button = document.querySelector(".button");
 // if (pageYOffset > window.innerHeight) {
@@ -48,13 +47,13 @@ function initRouter() {
 		"/u": () => {
 			content.innerHTML = "";
 			nav.style.display = "flex";
-			close1.style.display = "none";
+			close.style.display = "none";
 			console.log("main");
 		},
 		"/u/text": () => {
 			content.innerHTML = "<h1>text</h1>";
 			nav.style.display = "none";
-			close1.style.display = "flex";
+			close.style.display = "flex";
 			console.log("text");
 		}
 	};
@@ -87,7 +86,7 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	});
-	close1.addEventListener("click", () => {
+	close.addEventListener("click", () => {
 		const path = "/u";
 		console.log("close.click");
 		// Переход по маршруту
