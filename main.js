@@ -5,6 +5,7 @@ const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 // const close = document.querySelector(".close");
 const close1 = document.querySelector(".close");
+console.log(close1.innerHtml);
 
 // var button = document.querySelector(".button");
 // if (pageYOffset > window.innerHeight) {
