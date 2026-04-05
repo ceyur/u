@@ -7,7 +7,7 @@ const properties = {
 			example: "green",
 			default: "canvastext"
 		},
-		font-size: {
+		fsize: {
 			name: "font-size",
 			attribute: "размер",
 			description: "задаёт размер текста",
