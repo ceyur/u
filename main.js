@@ -71,8 +71,8 @@ function initRouter() {
 		"/u/text": () => {
 			close.style.display = "flex";
 			nav.style.display = "none";
-			div = document.createElement("div");
-			div.innerHtml = properties.text.color.name;
+			p = document.createElement("p");
+			p.innerHTML = properties.text.color.name;
 			console.log(properties.text.color.name);
 			content.append(div);
 			console.log("text");
