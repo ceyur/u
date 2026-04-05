@@ -71,10 +71,12 @@ function initRouter() {
 		"/u/text": () => {
 			close.style.display = "flex";
 			nav.style.display = "none";
-			p = document.createElement("p");
-			p.innerHTML = properties.text.color.name;
-			console.log(properties.text.color.name);
-			content.append(p);
+			properties.text.forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = e.name;
+				console.log(e.name);
+				content.append(p);
+			)};
 			console.log("text");
 		}
 	};
