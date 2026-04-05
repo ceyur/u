@@ -3,24 +3,23 @@ let defaultRoute = null;
 const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
-// const close = document.querySelector(".close");
 const close = document.querySelector("#close");
 
-// var button = document.querySelector(".button");
-// if (pageYOffset > window.innerHeight) {
-// 	button.style.display = "flex";
-// }
-// else {
-// 	button.style.display = "none";
-// }
-// window.addEventListener("scroll", () => {
-// 	if (pageYOffset > window.innerHeight) {
-// 		button.style.display = "flex";
-// 	}
-// 	else {
-// 		button.style.display = "none";
-// 	}
-// });
+var button = document.querySelector(".button");
+if (pageYOffset > window.innerHeight) {
+	button.style.display = "flex";
+}
+else {
+	button.style.display = "none";
+}
+window.addEventListener("scroll", () => {
+	if (pageYOffset > window.innerHeight) {
+		button.style.display = "flex";
+	}
+	else {
+		button.style.display = "none";
+	}
+});
 /*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
 window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
 
@@ -78,17 +77,17 @@ function handleRoute() {
 // Инициализация базового UI
 function initUI() {
 	// Привязка кнопок навигации
-	const button = document.querySelector("#a1");
-	button.addEventListener("click", () => {
-		const path = "/u/text";
-		console.log("a1.click");
+	close.addEventListener("click", () => {
+		const path = "/u";
+		console.log("close.click");
 		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
 	});
-	close.addEventListener("click", () => {
-		const path = "/u";
-		console.log("close.click");
+	const text = document.querySelector("#a1");
+	text.addEventListener("click", () => {
+		const path = "/u/text";
+		console.log("a1.click");
 		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
