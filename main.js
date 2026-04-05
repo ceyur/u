@@ -1,3 +1,22 @@
+const properties = {
+	text: {
+		color: {
+			name: "color",
+			attribute: "цвет",
+			description: "задаёт цвет текста",
+			example: "green",
+			default: "canvastext"
+		},
+		font-size: {
+			name: "font-size",
+			attribute: "размер",
+			description: "задаёт размер текста",
+			example: "25px",
+			default: "medium"
+		}
+	}
+};
+
 let routes = {};
 let defaultRoute = null;
 const main = document.querySelector("main");
@@ -44,15 +63,16 @@ function initRouter() {
 	// Определяем маршруты и их обработчики
 	routes = {
 		"/u": () => {
-			content.innerHTML = "";
-			nav.style.display = "flex";
 			close.style.display = "none";
+			nav.style.display = "flex";
+			content.innerHTML = "";
 			console.log("main");
 		},
 		"/u/text": () => {
-			content.innerHTML = "<h1>text</h1>";
-			nav.style.display = "none";
 			close.style.display = "flex";
+			nav.style.display = "none";
+			div = content.createElement("div");
+			div.innerHtml = properties.text.color.name;
 			console.log("text");
 		}
 	};
