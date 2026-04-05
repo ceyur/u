@@ -73,8 +73,7 @@ function initRouter() {
 			nav.style.display = "none";
 			Object.values(properties.text).forEach((e) => {
 				p = document.createElement("p");
-				p.innerHTML = e.name;
-				console.log(e.name);
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.descriptuion + "<i>" + e.name + ": " + e.example + ";" + </i>" + "(" + e.default + ")";
 				content.append(p);
 			});
 			console.log("text");
