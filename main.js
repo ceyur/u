@@ -74,7 +74,7 @@ function initRouter() {
 			p = document.createElement("p");
 			p.innerHTML = properties.text.color.name;
 			console.log(properties.text.color.name);
-			content.append(div);
+			content.append(p);
 			console.log("text");
 		}
 	};
