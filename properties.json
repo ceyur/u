@@ -175,5 +175,14 @@
       "example": "1px solid gray",
       "default": "medium solid currentcolor"
     }
+  },
+  "elements": {
+    "width": {
+      "name": "width",
+      "value": "ширина",
+      "description": "задаёт ширину блочных и некоторых строчных (img) тегов",
+      "example": "150px",
+      "default": "auto"
+    }
   }
 }
