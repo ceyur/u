@@ -1,1 +1,179 @@
-
+{
+  "text": {
+    "color": {
+      "name": "color",
+      "value": "цвет",
+      "description": "задаёт цвет текста",
+      "example": "green",
+      "default": "canvastext"
+    },
+    "font_size": {
+      "name": "font-size",
+      "value": "размер",
+      "description": "задаёт размер текста",
+      "example": "25px",
+      "default": "medium"
+    },
+    "font_family": {
+      "name": "font-family",
+      "value": "имя■шрифта1, имя■шрифта2, тип■шрифта",
+      "description": "задаёт шрифт текста<br>Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.<br>Типы шрифтов:<br>1. serif – шрифты с засечками, антиквенные (шрифт Times)<br>2. sans-serif – рубленные шрифты, шрифты без засечек или гротески (шрифт Arial)<br>3. cursive – курсивные шрифты<br>4. fantasy – декоративные шрифты<br>5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)",
+      "example": "Arial, sans-serif",
+      "default": "браузерное значение"
+    },
+    "font_style": {
+      "name": "font-style",
+      "value": "начертание",
+      "description": "задаёт начертание текста<br>Начертания:<br>1. normal – обычное начертание<br>2. italic – курсивное начертание<br>3. oblique – наклонное начертание",
+      "example": "italic",
+      "default": "normal"
+    },
+    "font_variant": {
+      "name": "font-variant",
+      "value": "значение",
+      "description": "управляет регистром текста<br>Значения:<br>1. normal – обычное начертание<br>2. small-caps – все символы становятся малыми заглавными",
+      "example": "small-caps",
+      "default": "normal"
+    },
+    "text_transform": {
+      "name": "text-transform",
+      "value": "значение",
+      "description": "управляет регистром текста<br>Значения:<br>1. none – ничего не меняет<br>2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся<br>3. lowercase – все символы становятся строчными<br>4. uppercase – все символы становятся заглавными",
+      "example": "uppercase",
+      "default": "none"
+    },
+    "font_weight": {
+      "name": "font-weight",
+      "value": "степень■жирности",
+      "description": "задаёт жирность текстаСтепени жирности:<br>1. 100 – thin<br>2. 200 – ultralite<br>3. 300 – lite<br>4. 400 – normal<br>5. 500 – medium<br>6. 600 – semibold<br>7. 700 – bold<br>8. 800 – heavy<br>9. 900 – black",
+      "example": "bold",
+      "default": "normal"
+    },
+    "text_shadow": {
+      "name": "text-shadow",
+      "value": "горизонтальное■смещение вертикальное■смещение размер цвет",
+      "description": "добавляет тень тексту<br>Значения:<br>1. none – к элементу не применяется никакая тень",
+      "example": "1px 1px 2px black",
+      "default": "none"
+    },
+    "text_decoration_line": {
+      "name": "text-decoration-line",
+      "value": "значение значение",
+      "description": "добавляет оформление текста в виде линии<br>Значения:<br>1. none – отменяет все эффекты<br>2. line-through – создаёт перечёркнутый текст<br>3. overline – линия над текстом<br>4. underline – линия под текстом",
+      "example": "overline underline",
+      "default": "none"
+    },
+    "text_decoration_style": {
+      "name": "text-decoration-style",
+      "value": "значение",
+      "description": "задаёт стиль линии, установленной свойством text-decoration-line<br>Значения:<br>1. solid – одинарная линия<br>2. double – двойная линия<br>3. dotted – точечная линия<br>4. dashed – пунктирная линия<br>5. wavy – волнистая линия",
+      "example": "dashed",
+      "default": "solid"
+    },
+    "text_decoration_color": {
+      "name": "text-decoration-color",
+      "value": "цвет",
+      "description": "задаёт цвет линии, установленной свойством text-decoration-line",
+      "example": "green",
+      "default": "currentcolor"
+    },
+    "text_decoration": {
+      "name": "text-decoration",
+      "value": "text-decoration-line text-decoration-style text-decoration-color",
+      "description": "сокращённая запись для свойств text-decoration-line, text-decoration-style, text-decoration-color",
+      "example": "underline dotted red",
+      "default": "none solid currentcolor"
+    },
+    "text_align": {
+      "name": "text-align",
+      "value": "значение",
+      "description": "выравнивает текст по горизонтали<br>Значения:<br>1. left – выравнивание по левому краю<br>2. right – выравнивание по правому краю<br>3. center – выравнивание по центру<br>4. justify – выравнивание по ширине",
+      "example": "center",
+      "default": "start"
+    },
+    "text_indent": {
+      "name": "text-indent",
+      "value": "размер",
+      "description": "задаёт размер красной строки",
+      "example": "10px",
+      "default": "0"
+    },
+    "letter_spacing": {
+      "name": "letter-spacing",
+      "value": "размер",
+      "description": "задаёт интервал между символами",
+      "example": "5px",
+      "default": "normal"
+    },
+    "word_spacing": {
+      "name": "word-spacing",
+      "value": "размер",
+      "description": "задаёт интервал между словами",
+      "example": "6px",
+      "default": "normal"
+    },
+    "line_height": {
+      "name": "line-height",
+      "value": "размер",
+      "description": "задаёт межстрочный интервал",
+      "example": "1.5",
+      "default": "normal"
+    },
+    "overflow_wrap": {
+      "name": "overflow-wrap",
+      "value": "значение",
+      "description": "управляет переносом слов на следующую строку<br>Значения:<br>1. normal – слова не обрываются и переносятся целиком<br>2. break-word – слова, которые не помещаются в строку, обрываются и переносятся",
+      "example": "break-word",
+      "default": "normal"
+    },
+    "white_space": {
+      "name": "white-space",
+      "value": "значение",
+      "description": "Значения:<br>1. normal – ничего не меняет, строки переносятся, учитываются теги &lt;br>, не учитываются символы новой строки (Enter) и табуляция<br>2. nowrap – запрещает перенос строки, текст может выйти за края объекта<br>3. pre – строки переносятся только с помощью тега &lt;br> и символов новой строки (Enter), табуляция учитывается<br>4. pre-wrap – строки переносятся, учитываются теги &lt;br>, символы новой строки (Enter) и табуляция<br>5. pre-line – строки переносятся, учитываются только теги &lt;br> и символы новой строки (Enter), табуляция не учитывается<br>6. break-spaces – идентично pre-wrap, кроме некоторых особенностей",
+      "example": "nowrap",
+      "default": "normal"
+    },
+    "text_overflow": {
+      "name": "text-overflow",
+      "value": "значение",
+      "description": "управляет свойствами обрезки текста, если он не помещается в заданную область<br>Значения:<br>1. clip – текст обрезается по размеру заданной области<br>2. ellipsis – текст обрезается по размеру заданной области, и в конце строки добавляется многоточие",
+      "example": "ellipsis",
+      "default": "clip"
+    },
+    "column_count": {
+      "name": "column-count",
+      "value": "кол-во",
+      "description": "устанавливает количество колонок в тексте",
+      "example": "2",
+      "default": "auto"
+    },
+    "column_width": {
+      "name": "column-width",
+      "value": "размер",
+      "description": "устанавливает размер колонок в тексте, реальная ширина колонки может быть больше введённого значения",
+      "example": "250px",
+      "default": "auto"
+    },
+    "columns": {
+      "name": "columns",
+      "value": "кол-во размер",
+      "description": "сокращённая запись для column-count и column-width",
+      "example": "4 25%",
+      "default": "auto auto"
+    },
+    "column_gap": {
+      "name": "column-gap",
+      "value": "размер",
+      "description": "устанавливает интервал между колонками",
+      "example": "20px",
+      "default": "normal"
+    },
+    "column_rule": {
+      "name": "column-rule",
+      "value": "толщина стиль цвет",
+      "description": "добавляет между колонками разделительную линию<br>Стили:<br>1. solid – сплошная линия<br>2. dotted – линия из точек<br>3. dashed – пунктирная линия",
+      "example": "1px solid gray",
+      "default": "medium solid currentcolor"
+    }
+  }
+}
