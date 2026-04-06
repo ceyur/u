@@ -115,6 +115,114 @@ function initRouter() {
 				content.append(p);
 			});
 			console.log("text");
+		},
+		"/u/position": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Позиционирование";
+			h1.textContent = "Позиционирование";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/scrollbar": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Свойства скроллбара";
+			h1.textContent = "Свойства скроллбара";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/flex-containers": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Флекс-контейнеры";
+			h1.textContent = "Флекс-контейнеры";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/flex-elements": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Флекс-элементы";
+			h1.textContent = "Флекс-элементы";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/pseudoclasses": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Псевдоклассы";
+			h1.textContent = "Псевдоклассы";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/pseudoelements": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Псевдоэлементы";
+			h1.textContent = "Псевдоэлементы";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/transitions": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Переходы";
+			h1.textContent = "Переходы";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/animation": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Анимация";
+			h1.textContent = "Анимация";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/transform": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Трансформация";
+			h1.textContent = "Трансформация";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
 		}
 	};
 
