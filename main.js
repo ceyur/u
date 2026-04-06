@@ -75,6 +75,42 @@ function initRouter() {
 				content.append(p);
 			});
 			console.log("text");
+		},
+		"/u/elements": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Свойства элементов";
+			h1.textContent = "Свойства элементов";
+			Object.values(properties.elements).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/border": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Свойства границы";
+			h1.textContent = "Свойства границы";
+			Object.values(properties.border).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
+		},
+		"/u/background": () => {
+			close.style.display = "flex";
+			nav.style.display = "none";
+			document.title = "Свойства фона";
+			h1.textContent = "Свойства фона";
+			Object.values(properties.background).forEach((e) => {
+				p = document.createElement("p");
+				p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+				content.append(p);
+			});
+			console.log("text");
 		}
 	};
 
