@@ -140,7 +140,7 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	});
-	const text = document.querySelector("#text");
+	const text = document.querySelector("#a1");
 	text.addEventListener("click", () => {
 		const path = "/u/text";
 		console.log("text.click");
