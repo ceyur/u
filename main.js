@@ -333,6 +333,31 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	};
+	
+	const transitions = document.querySelector("#transitions");
+	transitions.onclick = () => {
+		const path = "/u/transitions";
+		console.log("transitions.click");
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
+	};
+	const animation = document.querySelector("#animation");
+	animation.onclick = () => {
+		const path = "/u/animation";
+		console.log("animation.click");
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
+	};
+	const transform = document.querySelector("#a13");
+	transform.onclick = () => {
+		const path = "/u/transform";
+		console.log("transform.click");
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
+	};
 	close_info.onclick = () => {
 		information.style.display = "none";
 		document.querySelector("#information+a").style.display = "none";
