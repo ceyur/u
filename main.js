@@ -269,6 +269,14 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	};
+	const border = document.querySelector("#border");
+	border.onclick = () => {
+		const path = "/u/elements";
+		console.log("elements.click");
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
+	};
 	close_info.onclick = () => {
 		information.style.display = "none";
 		document.querySelector("#information+a").style.display = "none";
