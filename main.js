@@ -138,30 +138,30 @@ function handleRoute() {
 // Инициализация базового UI
 function initUI() {
 	// Привязка кнопок навигации
-	close.addEventListener("click", () => {
+	close.onclick = () => {
 		const path = "/u";
 		console.log("close.click");
 		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
-	});
+	};
 	const text = document.querySelector("#a1");
-	text.addEventListener("click", () => {
+	text.onclick = () => {
 		const path = "/u/text";
 		console.log("text.click");
 		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
-	});
+	};
 	const elements = document.querySelector("#elements");
-	elements.addEventListener("click", () => {
+	elements.onclick = () => {
 		const path = "/u/elements";
 		console.log("elements.click");
 		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
-	});
-	close.onclick = () => {
+	};
+	close_info.onclick = () => {
 		information.style.display = "none";
 		document.querySelector("#information+a").style.display = "none";
 		document.querySelector("#information+a+*").style.position = "relative";
