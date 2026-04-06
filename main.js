@@ -365,6 +365,7 @@ function initUI() {
 		document.querySelector("#information+a+*").style.width = "auto";
 	};
 	button_info.onclick = () => {
+		content.innerHTML = "";
 		information.style.display = "block";
 		document.querySelector("#information+a").style.display = "block";
 		document.querySelector("#information+a+*").style.position = "fixed";
