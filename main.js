@@ -60,6 +60,8 @@ function initRouter() {
 		"/u": () => {
 			close.style.display = "none";
 			nav.style.display = "flex";
+			document.title = "Свойства элементов css";
+			h1.textContent = "Свойства элементов css";
 			content.innerHTML = "";
 			console.log("main");
 		},
