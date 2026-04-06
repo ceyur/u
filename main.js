@@ -7,6 +7,7 @@ const close = document.querySelector("#close");
 const h1 = document.querySelector("h1");
 const information = document.querySelector("#information");
 const button_info = document.querySelector("#button_info");
+const close_info = document.querySelector("#close_info");
 
 fetch('./properties.json')
   .then(response => {
@@ -160,6 +161,12 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	});
+	close.onclick = () => {
+		information.style.display = "none";
+		document.querySelector("#information+a").style.display = "none";
+		document.querySelector("#information+a+*").style.position = "relative";
+		document.querySelector("#information+a+*").style.width = "auto";
+	};
 	button_info.onclick = () => {
 		information.style.display = "block";
 		document.querySelector("#information+a").style.display = "block";
