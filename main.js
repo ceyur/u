@@ -17,7 +17,6 @@ fetch('./properties.json')
 		properties = data;
     	console.log(data);
 		initApp();
-		console.log("ïnitRouter");
   });
 
 var button = document.querySelector(".button");
