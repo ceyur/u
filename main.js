@@ -5,6 +5,8 @@ const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const close = document.querySelector("#close");
 const h1 = document.querySelector("h1");
+const information = document.querySelector("#information");
+const button_info = document.querySelector("#button_info");
 
 fetch('./properties.json')
   .then(response => {
@@ -158,6 +160,12 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	});
+	button_info.onclick = () => {
+		information.style.display = "block";
+		document.querySelector("#information+a").style.display = "block";
+		document.querySelector("#information+a+*").style.position = "fixed";
+		document.querySelector("#information+a+*").style.width = "100%";
+	};
 }
 
 // Регистрация Service Worker
