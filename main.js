@@ -1,22 +1,3 @@
-const properties = {
-	text: {
-		color: {
-			name: "color",
-			attribute: "цвет",
-			description: "задаёт цвет текста",
-			example: "green",
-			default: "canvastext"
-		},
-		font_size: {
-			name: "font-size",
-			attribute: "размер",
-			description: "задаёт размер текста",
-			example: "25px",
-			default: "medium"
-		}
-	}
-};
-
 let routes = {};
 let defaultRoute = null;
 const main = document.querySelector("main");
@@ -24,6 +5,20 @@ const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const close = document.querySelector("#close");
 const h1 = document.querySelector("h1");
+
+fetch('./properties.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Ошибка загрузки');
+    }
+    return response.json();
+  })
+  .then(data => {
+		properties = data;
+    	console.log(data);
+		initApp();
+		console.log("ïnitRouter");
+  });
 
 var button = document.querySelector(".button");
 if (pageYOffset > window.innerHeight) {
@@ -115,6 +110,11 @@ function initUI() {
 		const path = "/u/text";
 		console.log("a1.click");
 		// Переход по маршруту
+		Object.values(properties.text).forEach((e) => {
+			p = document.createElement("p");
+			p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+			content.append(p);
+		});
 		history.pushState({}, "", path);
 		handleRoute();
 	});
