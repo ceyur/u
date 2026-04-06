@@ -309,6 +309,30 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	};
+	const flex_elements = document.querySelector("#flex-elements");
+	flex_elements.onclick = () => {
+		const path = "/u/flex-elements";
+		console.log("flex-elements.click");
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
+	};
+	const pseudoclasses = document.querySelector("#a9");
+	pseudoclasses.onclick = () => {
+		const path = "/u/pseudoclasses";
+		console.log("pseudoclasses.click");
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
+	};
+	const pseudoelements = document.querySelector("#a10");
+	pseudoelements.onclick = () => {
+		const path = "/u/pseudoelements";
+		console.log("pseudoelements.click");
+		// Переход по маршруту
+		history.pushState({}, "", path);
+		handleRoute();
+	};
 	close_info.onclick = () => {
 		information.style.display = "none";
 		document.querySelector("#information+a").style.display = "none";
