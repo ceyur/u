@@ -141,16 +141,19 @@ function initUI() {
 		history.pushState({}, "", path);
 		handleRoute();
 	});
-	const text = document.querySelector("#a1");
+	const text = document.querySelector("#text");
 	text.addEventListener("click", () => {
 		const path = "/u/text";
-		console.log("a1.click");
+		console.log("text.click");
 		// Переход по маршруту
-		Object.values(properties.text).forEach((e) => {
-			p = document.createElement("p");
-			p.innerHTML = "<b>" + e.name + "</b>: " + e.attribute + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
-			content.append(p);
-		});
+		history.pushState({}, "", path);
+		handleRoute();
+	});
+	const elements = document.querySelector("#elements");
+	elements.addEventListener("click", () => {
+		const path = "/u/elements";
+		console.log("elements.click");
+		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
 	});
