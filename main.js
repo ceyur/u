@@ -1,9 +1,9 @@
 (function(l) {
-	if (l.search.indexOf('p=/') !== -1) {
-        const path = l.search.split('p=')[1].split('&')[0];
-        const newPath = l.pathname.slice(0, l.pathname.lastIndexOf('/')) + path;
+	if (l.search.includes("p=/")) {
+		const path = l.search.split('p=')[1].split('&')[0];
+		const newPath = l.pathname.slice(0, l.pathname.lastIndexOf('/')) + path;
 		window.history.replaceState(null, null, newPath + l.hash);
-    }
+	}
 }(window.location));
 
 function go (title, name) {
