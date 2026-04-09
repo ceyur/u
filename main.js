@@ -12,7 +12,7 @@ function go (title, name) {
 };
 
 const routes = {
-	"/u": () => {
+	"/u/": () => {
 		close.style.display = "none";
 		nav.style.display = "flex";
 		document.title = "Свойства элементов css";
@@ -34,7 +34,7 @@ const routes = {
 	"/u/animation": () => go("Анимация", "animation"),
 	"/u/transform": () => go("Трансформация", "transform")
 };
-const defaultRoute = "/u";
+const defaultRoute = "/u/";
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const close = document.querySelector("#close");
@@ -106,7 +106,7 @@ function initUI() {
 	/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
 	window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
 	close.onclick = () => {
-		const path = "/u";
+		const path = "/u/";
 		history.pushState({}, "", path);
 		handleRoute();
 		console.log("close.click");
