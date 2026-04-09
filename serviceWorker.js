@@ -1,6 +1,6 @@
 const cacheName = "v2";
 const filesForCache = [
-  "./",
+//  "./",
 //  "./index.html",
 //   "/src/styles.css",
 //  "./main.js",
