@@ -1,35 +1,32 @@
-const CACHE_NAME = "v1";
-
-const ASSETS_TO_CACHE = [
+const cacheName = "v2";
+const filesForCache = [
   "./",
 //  "./index.html",
-//  "./manifest.json",
-
+//   "/src/styles.css",
 //  "./main.js",
-
-//   "/src/styles.css"
+//  "./manifest.json"
 ];
 
 // Установка Service Worker
 self.addEventListener("install", event => {
-  console.log("Service Worker installing...");
+  console.log("Service Worker ", cacheName, " installing...");
 
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(ASSETS_TO_CACHE);
+    caches.open(cacheName).then(cache => {
+      return cache.addAll(filesForCache);
     })
   );
 });
 
 // Активация (очистка старых кэшей)
 self.addEventListener("activate", event => {
-  console.log("Service Worker activating...");
+  console.log("Service Worker ", cacheName, " activating...");
 
   event.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
         keys.map(key => {
-          if (key !== CACHE_NAME) {
+          if (key !== cacheName) {
             return caches.delete(key);
           }
         })
@@ -51,7 +48,6 @@ self.addEventListener("fetch", event => {
       return fetch(event.request).catch(() => {
         // Если нет интернета — показываем offline страницу
         if (event.request.mode === "navigate") {
-          // return caches.match("/offline.html");
           return caches.match("/index.html");
         }
       });
