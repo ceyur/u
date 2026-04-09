@@ -35,11 +35,11 @@ const routes = {
 	"/u/transform": () => go("Трансформация", "transform")
 };
 const defaultRoute = "/u";
-// const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
+const close = document.querySelector("#close");
 const h1 = document.querySelector("h1");
-const information = document.querySelector("#information");
+// const information = document.querySelector("#information");
 
 fetch('./properties.json')
 .then(response => {
@@ -105,7 +105,6 @@ function initUI() {
 	});
 	/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
 	window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
-	const close = document.querySelector("#close");
 	close.onclick = () => {
 		const path = "/u";
 		history.pushState({}, "", path);
