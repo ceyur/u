@@ -3,14 +3,11 @@ const CACHE_NAME = "v1";
 const ASSETS_TO_CACHE = [
   "./",
 //  "./index.html",
-//  "/offline.html",
 //  "./manifest.json",
 
 //  "./main.js",
 
-  // "/src/styles/reset.css",
-  // "/src/styles/variables.css",
-  // "/src/styles/main.css"
+//   "/src/styles.css"
 ];
 
 // Установка Service Worker
