@@ -8,7 +8,7 @@ function go (title, name) {
 		p.innerHTML = "<b>" + e.name + "</b>: " + e.value + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
 		content.append(p);
 	});
-	console.log("/u/", name);
+	console.log("/u/" + name);
 };
 
 const routes = {
@@ -38,11 +38,8 @@ const defaultRoute = "/u";
 // const main = document.querySelector("main");
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
-const close = document.querySelector("#close");
 const h1 = document.querySelector("h1");
 const information = document.querySelector("#information");
-const button_info = document.querySelector("#button_info");
-const close_info = document.querySelector("#close_info");
 
 fetch('./properties.json')
 .then(response => {
@@ -55,24 +52,6 @@ return response.json();
 	properties = data;
 	initApp();
 });
-
-const button = document.querySelector(".button");
-if (pageYOffset > window.innerHeight) {
-	button.style.display = "flex";
-}
-else {
-	button.style.display = "none";
-}
-window.addEventListener("scroll", () => {
-	if (pageYOffset > window.innerHeight) {
-		button.style.display = "flex";
-	}
-	else {
-		button.style.display = "none";
-	}
-});
-/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
-window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
 
 // Точка входа приложения
 function initApp() {
@@ -109,94 +88,115 @@ function handleRoute() {
 // Инициализация базового UI
 function initUI() {
 	// Привязка кнопок навигации
+	const button = document.querySelector(".button");
+	if (pageYOffset > window.innerHeight) {
+		button.style.display = "flex";
+	}
+	else {
+		button.style.display = "none";
+	}
+	window.addEventListener("scroll", () => {
+		if (pageYOffset > window.innerHeight) {
+			button.style.display = "flex";
+		}
+		else {
+			button.style.display = "none";
+		}
+	});
+	/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
+	window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+	const close = document.querySelector("#close");
 	close.onclick = () => {
 		const path = "/u";
-		console.log("close.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("close.click");
+	};
+	const button_info = document.querySelector("#button_info");
+	button_info.onclick = () => {
+		content.innerHTML = "";
+		information.style.display = "block";
+		document.querySelector("#information+a").style.display = "block";
+		document.querySelector("#information+a+*").style.position = "fixed";
+		document.querySelector("#information+a+*").style.width = "100%";
+	};
+	const close_info = document.querySelector("#close_info");
+	close_info.onclick = () => {
+		information.style.display = "none";
+		document.querySelector("#information+a").style.display = "none";
+		document.querySelector("#information+a+*").style.position = "relative";
+		document.querySelector("#information+a+*").style.width = "auto";
 	};
 	const text = document.querySelector("#a1");
 	text.onclick = () => {
 		const path = "/u/text";
-		console.log("text.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("text.click");
 	};
 	const elements = document.querySelector("#elements");
 	elements.onclick = () => {
 		const path = "/u/elements";
-		console.log("elements.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("elements.click");
 	};
 	const border = document.querySelector("#border");
 	border.onclick = () => {
 		const path = "/u/border";
-		console.log("border.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("border.click");
 	};
 	const background = document.querySelector("#a4");
 	background.onclick = () => {
 		const path = "/u/background";
-		console.log("background.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("background.click");
 	};
 	const position = document.querySelector("#a5");
 	position.onclick = () => {
 		const path = "/u/position";
-		console.log("position.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("position.click");
 	};
 	const scrollbar = document.querySelector("#scrollbar");
 	scrollbar.onclick = () => {
 		const path = "/u/scrollbar";
-		console.log("scrollbar.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("scrollbar.click");
 	};
 	const flex_containers = document.querySelector("#a7");
 	flex_containers.onclick = () => {
 		const path = "/u/flex-containers";
-		console.log("flex-containers.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("flex-containers.click");
 	};
 	const flex_elements = document.querySelector("#flex-elements");
 	flex_elements.onclick = () => {
 		const path = "/u/flex-elements";
-		console.log("flex-elements.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("flex-elements.click");
 	};
 	const pseudoclasses = document.querySelector("#a9");
 	pseudoclasses.onclick = () => {
 		const path = "/u/pseudoclasses";
-		console.log("pseudoclasses.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("pseudoclasses.click");
 	};
 	const pseudoelements = document.querySelector("#a10");
 	pseudoelements.onclick = () => {
 		const path = "/u/pseudoelements";
-		console.log("pseudoelements.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("pseudoelements.click");
 	};
-	
 	const transitions = document.querySelector("#transitions");
 	transitions.onclick = () => {
 		const path = "/u/transitions";
@@ -208,31 +208,16 @@ function initUI() {
 	const animation = document.querySelector("#animation");
 	animation.onclick = () => {
 		const path = "/u/animation";
-		console.log("animation.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
+		console.log("animation.click");
 	};
 	const transform = document.querySelector("#a13");
 	transform.onclick = () => {
 		const path = "/u/transform";
-		console.log("transform.click");
-		// Переход по маршруту
 		history.pushState({}, "", path);
 		handleRoute();
-	};
-	close_info.onclick = () => {
-		information.style.display = "none";
-		document.querySelector("#information+a").style.display = "none";
-		document.querySelector("#information+a+*").style.position = "relative";
-		document.querySelector("#information+a+*").style.width = "auto";
-	};
-	button_info.onclick = () => {
-		content.innerHTML = "";
-		information.style.display = "block";
-		document.querySelector("#information+a").style.display = "block";
-		document.querySelector("#information+a+*").style.position = "fixed";
-		document.querySelector("#information+a+*").style.width = "100%";
+		console.log("transform.click");
 	};
 }
 
