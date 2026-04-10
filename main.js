@@ -40,7 +40,14 @@ const routes = {
 	"/u/pseudoelements": () => go("Псевдоэлементы", "pseudoelements"),
 	"/u/transitions": () => go("Переходы", "transitions"),
 	"/u/animation": () => go("Анимация", "animation"),
-	"/u/transform": () => go("Трансформация", "transform")
+	"/u/transform": () => go("Трансформация", "transform"),
+	"information": () => {
+		content.innerHTML = "";
+		information.style.display = "block";
+		document.querySelector("#information+a").style.display = "block";
+		document.querySelector("#information+a+*").style.position = "fixed";
+		document.querySelector("#information+a+*").style.width = "100%";
+	}
 };
 const defaultRoute = "/u/";
 const content = document.querySelector("#content");
