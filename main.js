@@ -6,7 +6,7 @@
 	}
 }(window.location));
 
-function go (title, name) {
+function go(title, name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	document.title = title;
