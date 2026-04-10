@@ -28,6 +28,7 @@ const routes = {
 		content.innerHTML = "";
 		console.log("/u");
 	},
+	"information": () => window.location.hash = "information",
 	"/u/text": () => go("Свойства текста", "text"),
 	"/u/elements": () => go("Свойства элементов", "elements"),
 	"/u/border": () => go("Свойства границы", "border"),
@@ -40,10 +41,7 @@ const routes = {
 	"/u/pseudoelements": () => go("Псевдоэлементы", "pseudoelements"),
 	"/u/transitions": () => go("Переходы", "transitions"),
 	"/u/animation": () => go("Анимация", "animation"),
-	"/u/transform": () => go("Трансформация", "transform"),
-	"information": () => {
-		window.location.hash = "information";
-	}
+	"/u/transform": () => go("Трансформация", "transform")
 };
 const defaultRoute = "/u/";
 const content = document.querySelector("#content");
@@ -124,11 +122,10 @@ function initUI() {
 	};
 	const button_info = document.querySelector("#button_info");
 	button_info.onclick = () => {
-		content.innerHTML = "";
-		information.style.display = "block";
-		document.querySelector("#information+a").style.display = "block";
-		document.querySelector("#information+a+*").style.position = "fixed";
-		document.querySelector("#information+a+*").style.width = "100%";
+		const path = window.location.pathname + "/information";
+		history.pushState({}, "", path);
+		routes.information();
+		console.log("button_info.click");
 	};
 	const close_info = document.querySelector("#close_info");
 	close_info.onclick = () => {
