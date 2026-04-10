@@ -42,11 +42,7 @@ const routes = {
 	"/u/animation": () => go("Анимация", "animation"),
 	"/u/transform": () => go("Трансформация", "transform"),
 	"information": () => {
-		content.innerHTML = "";
-		information.style.display = "block";
-		document.querySelector("#information+a").style.display = "block";
-		document.querySelector("#information+a+*").style.position = "fixed";
-		document.querySelector("#information+a+*").style.width = "100%";
+		window.location.hash = "information";
 	}
 };
 const defaultRoute = "/u/";
