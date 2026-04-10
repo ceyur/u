@@ -2,7 +2,7 @@ const cacheName = "v1";
 const filesForCache = [
 //  "./",
 //  "./index.html",
-//   "/src/styles.css",
+//   "/css/styles.css",
 //  "./main.js",
 //  "./manifest.json"
 ];
