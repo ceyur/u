@@ -122,9 +122,9 @@ function initUI() {
 	};
 	const button_info = document.querySelector("#button_info");
 	button_info.onclick = () => {
+		routes.information();
 		const path = window.location.pathname + "/information";
 		history.pushState({}, "", path);
-		routes.information();
 		console.log("button_info.click");
 	};
 	const close_info = document.querySelector("#close_info");
