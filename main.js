@@ -126,7 +126,7 @@ function initUI() {
 		document.querySelector("#information+a").style.display = "block";
 		document.querySelector("#information+a+*").style.position = "fixed";
 		document.querySelector("#information+a+*").style.width = "100%";
-		const path = window.location.pathname.replace("/information", "");
+		const path = window.location.pathname + "information";
 		history.pushState({}, "", path);
 		console.log("button_info.click");
 	};
@@ -136,7 +136,7 @@ function initUI() {
 		document.querySelector("#information+a").style.display = "none";
 		document.querySelector("#information+a+*").style.position = "relative";
 		document.querySelector("#information+a+*").style.width = "auto";
-		const path = window.location.pathname + "information";
+		const path = window.location.pathname.replace("/information", "");
 		history.pushState({}, "", path);
 		console.log("button_info.click");
 	};
