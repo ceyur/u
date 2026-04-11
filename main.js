@@ -116,16 +116,38 @@ function initRouter() {
 // 	const route = routes[path] ? path : defaultRoute;
 // 	routes[route]();
 // }
+// function handleRoute() {
+// 	console.log("window.location.pathname: ", window.location.pathname);
+// 	const path = window.location.pathname.split("/");
+// 	console.log(path);
+// 	const n = path.at(-2) == "information" ? -3 : -2;
+// 	const route = routes[path.at(n)] ? path.at(n) : defaultRoute;
+// 	routes[route]();
+// 	if (n == -3) {
+// 		routes.information();
+// 	}
+// }
 function handleRoute() {
-	console.log("window.location.pathname: ", window.location.pathname);
-	const path = window.location.pathname.split("/");
-	console.log(path);
-	const n = path.at(-2) == "information" ? -3 : -2;
-	const route = routes[path.at(n)] ? path.at(n) : defaultRoute;
-	routes[route]();
-	if (n == -3) {
-		routes.information();
-	}
+    // Получаем массив сегментов, убирая пустые (например, ["u", "text", "information"])
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    
+    // Проверяем наличие "information" в конце
+    const isInfo = segments.at(-1) === "information";
+    
+    // Основной раздел — это последний элемент (или предпоследний, если в конце info)
+    const pageKey = isInfo ? segments.at(-2) : segments.at(-1);
+    
+    // Очищаем контент перед отрисовкой новой страницы
+    content.innerHTML = "";
+
+    // Определяем роут. Если pageKey нет в списке, используем "u" (главную)
+    const routeAction = routes[pageKey] || routes["u"];
+    routeAction();
+
+    // Если в пути было /information/, вызываем доп. функцию открытия окна
+    if (isInfo) {
+        routes.information();
+    }
 }
 
 function route(path) {
