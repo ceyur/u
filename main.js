@@ -118,6 +118,12 @@ function handleRoute() {
 	}
 }
 
+route(path) {
+	history.pushState({}, "", path);
+	handleRoute();
+	console.log(path + " click");
+}
+
 // Инициализация базового UI
 function initUI() {
 	// Привязка кнопок навигации
@@ -138,120 +144,55 @@ function initUI() {
 	});
 	/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
 	window.addEventListener("scroll",()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
-	close.onclick = () => {
-		const path = "/u/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("close.click");
-	};
+	
+	close.onclick = () => route("/u/");
+	
 	const button_info = document.querySelector("#button_info");
-	button_info.onclick = () => {
-		const path = window.location.pathname + "information/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("button_info.click");
-	};
+	button_info.onclick = () => route(window.location.pathname + "information/");
+	
 	const close_info = document.querySelectorAll(".close_info");
 	close_info.forEach((e) => {
-		e.onclick = () => {
-			const path = window.location.pathname.replace("information/", "");
-			history.pushState({}, "", path);
-			handleRoute();
-			console.log("button_info.click");
-		};
+		e.onclick = () => route(window.location.pathname.replace("information/", ""));
 	});
+	
 	const text = document.querySelector("#a1");
-	text.onclick = () => {
-		const path = "/u/text/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("text.click");
-	};
+	text.onclick = () => route("/u/text/");
+	
 	const elements = document.querySelector("#elements");
-	elements.onclick = () => {
-		const path = "/u/elements/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("elements.click");
-	};
+	elements.onclick = () => route("/u/elements/");
+	
 	const border = document.querySelector("#border");
-	border.onclick = () => {
-		const path = "/u/border/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("border.click");
-	};
+	border.onclick = () => route("/u/border/");
+	
 	const background = document.querySelector("#a4");
-	background.onclick = () => {
-		const path = "/u/background/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("background.click");
-	};
+	background.onclick = () => route("/u/background/");
+	
 	const position = document.querySelector("#a5");
-	position.onclick = () => {
-		const path = "/u/position/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("position.click");
-	};
+	position.onclick = () => route("/u/position/");
+	
 	const scrollbar = document.querySelector("#scrollbar");
-	scrollbar.onclick = () => {
-		const path = "/u/scrollbar/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("scrollbar.click");
-	};
+	scrollbar.onclick = () => route("/u/scrollbar/");
+	
 	const flex_containers = document.querySelector("#a7");
-	flex_containers.onclick = () => {
-		const path = "/u/flex-containers/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("flex-containers.click");
-	};
+	flex_containers.onclick = () => route("/u/flex-containers/");
+	
 	const flex_elements = document.querySelector("#flex-elements");
-	flex_elements.onclick = () => {
-		const path = "/u/flex-elements/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("flex-elements.click");
-	};
+	flex_elements.onclick = () => route("/u/flex-elements/");
+	
 	const pseudoclasses = document.querySelector("#a9");
-	pseudoclasses.onclick = () => {
-		const path = "/u/pseudoclasses/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("pseudoclasses.click");
-	};
+	pseudoclasses.onclick = () => route("/u/pseudoclasses/");
+	
 	const pseudoelements = document.querySelector("#a10");
-	pseudoelements.onclick = () => {
-		const path = "/u/pseudoelements/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("pseudoelements.click");
-	};
+	pseudoelements.onclick = () => route("/u/pseudoelements/");
+	
 	const transitions = document.querySelector("#transitions");
-	transitions.onclick = () => {
-		const path = "/u/transitions/";
-		console.log("transitions.click");
-		// Переход по маршруту
-		history.pushState({}, "", path);
-		handleRoute();
-	};
+	transitions.onclick = () => route("/u/transitions/");
+	
 	const animation = document.querySelector("#animation");
-	animation.onclick = () => {
-		const path = "/u/animation/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("animation.click");
-	};
+	animation.onclick = () => route("/u/animation/");
+	
 	const transform = document.querySelector("#a13");
-	transform.onclick = () => {
-		const path = "/u/transform/";
-		history.pushState({}, "", path);
-		handleRoute();
-		console.log("transform.click");
-	};
+	transform.onclick = () => route("/u/transform/");
 }
 
 // Регистрация Service Worker
