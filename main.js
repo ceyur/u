@@ -24,7 +24,7 @@ function go(title, name) {
 };
 
 const routes = {
-	"/u/": () => {
+	"u": () => {
 		close.style.display = "none";
 		nav.style.display = "flex";
 		document.title = "Свойства элементов css";
@@ -42,19 +42,19 @@ const routes = {
 		document.querySelector("#information+a+*").style.position = "fixed";
 		document.querySelector("#information+a+*").style.width = "100%";
 	},
-	"/u/text/": () => go("Свойства текста", "text"),
-	"/u/elements/": () => go("Свойства элементов", "elements"),
-	"/u/border/": () => go("Свойства границы", "border"),
-	"/u/background/": () => go("Свойства фона", "background"),
-	"/u/position/": () => go("Позиционирование", "position"),
-	"/u/scrollbar/": () => go("Свойства скроллбара", "scrollbar"),
-	"/u/flex-containers/": () => go("Флекс-контейнеры", "flex_containers"),
-	"/u/flex-elements/": () => go("Флекс-элементы", "flex_elements"),
-	"/u/pseudoclasses/": () => go("Псевдоклассы", "pseudoclasses"),
-	"/u/pseudoelements/": () => go("Псевдоэлементы", "pseudoelements"),
-	"/u/transitions/": () => go("Переходы", "transitions"),
-	"/u/animation/": () => go("Анимация", "animation"),
-	"/u/transform/": () => go("Трансформация", "transform")
+	"text": () => go("Свойства текста", "text"),
+	"elements": () => go("Свойства элементов", "elements"),
+	"border": () => go("Свойства границы", "border"),
+	"background": () => go("Свойства фона", "background"),
+	"position": () => go("Позиционирование", "position"),
+	"scrollbar": () => go("Свойства скроллбара", "scrollbar"),
+	"flex-containers": () => go("Флекс-контейнеры", "flex_containers"),
+	"flex-elements": () => go("Флекс-элементы", "flex_elements"),
+	"pseudoclasses": () => go("Псевдоклассы", "pseudoclasses"),
+	"pseudoelements": () => go("Псевдоэлементы", "pseudoelements"),
+	"transitions": () => go("Переходы", "transitions"),
+	"animation": () => go("Анимация", "animation"),
+	"transform": () => go("Трансформация", "transform")
 };
 const defaultRoute = "/u/";
 const content = document.querySelector("#content");
