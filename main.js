@@ -136,7 +136,7 @@ function initUI() {
 		document.querySelector("#information+a").style.display = "none";
 		document.querySelector("#information+a+*").style.position = "relative";
 		document.querySelector("#information+a+*").style.width = "auto";
-		const path = window.location.pathname.replace("/information", "");
+		const path = window.location.pathname.replace("information", "");
 		history.pushState({}, "", path);
 		console.log("button_info.click");
 	};
