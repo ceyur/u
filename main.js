@@ -16,6 +16,10 @@ function go(title, name) {
 		p.innerHTML = "<b>" + e.name + "</b>: " + e.value + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
 		content.append(p);
 	});
+	information.style.display = "none";
+	document.querySelector("#information+a").style.display = "none";
+	document.querySelector("#information+a+*").style.position = "relative";
+	document.querySelector("#information+a+*").style.width = "auto";
 	console.log("/u/" + name + "/");
 };
 
@@ -27,6 +31,10 @@ const routes = {
 		h1.textContent = "Свойства элементов css";
 		content.innerHTML = "";
 		console.log("/u/");
+		information.style.display = "none";
+		document.querySelector("#information+a").style.display = "none";
+		document.querySelector("#information+a+*").style.position = "relative";
+		document.querySelector("#information+a+*").style.width = "auto";
 	},
 	"information": () => {
 		information.style.display = "block";
