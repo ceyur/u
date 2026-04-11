@@ -66,7 +66,7 @@ const routes = {
 	"animation": () => go("Анимация", "animation"),
 	"transform": () => go("Трансформация", "transform")
 };
-const defaultRoute = "/u/";
+const defaultRoute = "u";
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const close = document.querySelector("#close");
