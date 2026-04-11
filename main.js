@@ -1,3 +1,10 @@
+// (function(l) {
+// 	if (l.search.includes("p=/")) {
+// 		const path = l.search.split("p=")[1].split("&")[0];
+// 		const newPath = l.pathname.replace(/\/$/, "").slice(0, l.pathname.lastIndexOf("/") + 1) + path;
+// 		window.history.replaceState(null, null, newPath + l.hash);
+// 	}
+// }(window.location));
 (function(l) {
     const params = new URLSearchParams(l.search);
     const p = params.get('p'); // Получаем значение "value/information/"
