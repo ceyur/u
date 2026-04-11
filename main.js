@@ -28,7 +28,12 @@ const routes = {
 		content.innerHTML = "";
 		console.log("/u");
 	},
-	//"information": () => window.location.hash = "information",
+	"information": () => {
+		information.style.display = "block";
+		document.querySelector("#information+a").style.display = "block";
+		document.querySelector("#information+a+*").style.position = "fixed";
+		document.querySelector("#information+a+*").style.width = "100%";
+	},
 	"/u/text": () => go("Свойства текста", "text"),
 	"/u/elements": () => go("Свойства элементов", "elements"),
 	"/u/border": () => go("Свойства границы", "border"),
