@@ -3,15 +3,19 @@
 <head>
     <meta charset="utf-8">
     <title>Загрузка...</title>
-    <link rel="icon" href="img/favicon.ico">
+    <!-- Используем абсолютный путь к иконке от корня проекта -->
+    <link rel="icon" href="/u/img/favicon.ico">
     <script type="text/javascript">
-        // Перенаправляем на index.html и передаем путь в параметре ?p=
-        var segmentCount = 1; // так как сайт в папке /u/
         var l = window.location;
-        l.replace(
-            l.protocol + "//" + l.hostname + "/" + l.pathname.split("/")[1] + "/?p=/" +
-            l.pathname.split("/").slice(segmentCount + 1).join("/") + l.search
-        );
+        // Находим часть пути, которая идет после "/u/"
+        // Например: из "/u/value/information/" получим "value/information/"
+        var pathAfterU = l.pathname.split('/u/')[1] || "";
+        
+        // Формируем новый URL: всегда возвращаемся в корень /u/
+        var newUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+                     '/u/?p=' + encodeURIComponent(pathAfterU) + l.search + l.hash;
+        
+        l.replace(newUrl);
     </script>
 </head>
 <body></body>
