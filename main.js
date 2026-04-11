@@ -118,7 +118,7 @@ function handleRoute() {
 	}
 }
 
-route(path) {
+function route(path) {
 	history.pushState({}, "", path);
 	handleRoute();
 	console.log(path + " click");
