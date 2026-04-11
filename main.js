@@ -102,10 +102,10 @@ function handleRoute() {
 	console.log("window.location.pathname: ", window.location.pathname);
 	const path = window.location.pathname.split("/");
 	console.log(path);
-	const n = path.at(-1) == "information" ? -2 : -1;
+	const n = path.at(-1) == "information" ? -3 : -2;
 	const route = routes[path.at(n)] ? path.at(n) : defaultRoute;
 	routes[route]();
-	if (n == -2) {
+	if (n == -3) {
 		routes.information();
 	}
 }
