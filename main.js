@@ -1,7 +1,7 @@
 (function(l) {
 	if (l.search.includes("p=/")) {
-		const path = l.search.split('p=')[1].split('&')[0];
-		const newPath = l.pathname.slice(0, l.pathname.lastIndexOf('/')) + path;
+		const path = l.search.split("p=")[1].split("&")[0];
+		const newPath = l.pathname.slice(0, l.pathname.lastIndexOf("/")) + path;
 		window.history.replaceState(null, null, newPath + l.hash);
 	}
 }(window.location));
@@ -28,7 +28,7 @@ const routes = {
 		content.innerHTML = "";
 		console.log("/u");
 	},
-	"information": () => window.location.hash = "information",
+	//"information": () => window.location.hash = "information",
 	"/u/text": () => go("Свойства текста", "text"),
 	"/u/elements": () => go("Свойства элементов", "elements"),
 	"/u/border": () => go("Свойства границы", "border"),
@@ -50,10 +50,10 @@ const close = document.querySelector("#close");
 const h1 = document.querySelector("h1");
 // const information = document.querySelector("#information");
 
-fetch('./properties.json')
+fetch("./properties.json")
 .then(response => {
 if (!response.ok) {
-  throw new Error('Ошибка загрузки');
+  throw new Error("Ошибка загрузки");
 }
 return response.json();
 })
@@ -113,7 +113,7 @@ function initUI() {
 		}
 	});
 	/*document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none";
-	window.addEventListener('scroll',()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
+	window.addEventListener("scroll",()=>{document.querySelector(".button").style.display=pageYOffset>window.innerHeight?"flex":"none"});*/
 	close.onclick = () => {
 		const path = "/u/";
 		history.pushState({}, "", path);
@@ -122,8 +122,11 @@ function initUI() {
 	};
 	const button_info = document.querySelector("#button_info");
 	button_info.onclick = () => {
-		routes.information();
-		const path = window.location.pathname + "/information";
+		information.style.display = "block";
+		document.querySelector("#information+a").style.display = "block";
+		document.querySelector("#information+a+*").style.position = "fixed";
+		document.querySelector("#information+a+*").style.width = "100%";
+		const path = window.location.pathname.replace("/information", "");
 		history.pushState({}, "", path);
 		console.log("button_info.click");
 	};
@@ -133,6 +136,9 @@ function initUI() {
 		document.querySelector("#information+a").style.display = "none";
 		document.querySelector("#information+a+*").style.position = "relative";
 		document.querySelector("#information+a+*").style.width = "auto";
+		const path = window.location.pathname + "information";
+		history.pushState({}, "", path);
+		console.log("button_info.click");
 	};
 	const text = document.querySelector("#a1");
 	text.onclick = () => {
