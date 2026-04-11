@@ -110,7 +110,6 @@ function handleRoute() {
 	}
 }
 
-
 // Инициализация базового UI
 function initUI() {
 	// Привязка кнопок навигации
@@ -144,13 +143,14 @@ function initUI() {
 		handleRoute();
 		console.log("button_info.click");
 	};
-	const close_info = document.querySelector("#close_info");
-	close_info.onclick = () => {
+	const close_info = document.querySelectorAll(".close_info");
+	close_info.forEach((e) => {
+		e.onclick = () => {
 		const path = window.location.pathname.replace("information/", "");
 		history.pushState({}, "", path);
 		handleRoute();
 		console.log("button_info.click");
-	};
+	});
 	const text = document.querySelector("#a1");
 	text.onclick = () => {
 		const path = "/u/text/";
