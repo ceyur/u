@@ -80,7 +80,7 @@ const close = document.querySelector("#close");
 const h1 = document.querySelector("h1");
 // const information = document.querySelector("#information");
 
-fetch("/properties.json")
+fetch("/u/properties.json")
 .then(response => {
 if (!response.ok) {
   throw new Error("Ошибка загрузки");
