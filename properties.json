@@ -518,7 +518,7 @@
       "default": "нет"
     }
   },
-  "animations": {
+  "animation": {
     "animation_name": {
       "name": "animation-name",
       "value": "имя",
