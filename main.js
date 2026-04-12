@@ -5,30 +5,6 @@
 		window.history.replaceState(null, null, newPath + l.hash);
 	}
 }(window.location));
-// (function(l) {
-// 	if (l.search.includes("p=/")) {
-// 		const path = l.search.split("p=")[1].split("&")[0];
-// 		const newPath = l.pathname.replace(/\/$/, "").slice(0, l.pathname.lastIndexOf("/") + 1) + path;
-// 		window.history.replaceState(null, null, newPath + l.hash);
-// 	}
-// }(window.location));
-// (function(l) {
-//     const params = new URLSearchParams(l.search);
-//     const p = params.get('p'); // Получаем значение "value/information/"
-
-//     if (p) {
-//         // Формируем чистый путь: корень /u/ + путь из параметра p
-//         // slice(0, -1) убирает лишний параметр p из строки поиска для чистоты
-//         let cleanSearch = l.search.replace(/[?&]p=[^&]+/, '').replace(/^&/, '?');
-        
-//         // Собираем новый путь. Гарантируем правильные слеши.
-//         const newPath = '/u/' + p.replace(/^\//, ''); 
-        
-//         window.history.replaceState(null, null, newPath + cleanSearch + l.hash);
-        
-//         // Теперь твой роутер handleRoute() увидит правильный pathname: "/u/value/information/"
-//     }
-// }(window.location));
 
 function go(title, name) {
 	close.style.display = "flex";
