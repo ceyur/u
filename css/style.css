@@ -120,16 +120,6 @@ p {
 		background: rgba(0, 0, 0, 0.5);
 		cursor: default;
 	}
-	&:target {
-		display: block;
-		+a {
-			display: block;
-			+* {
-				position: fixed;
-				width: 100%;
-			}
-		}
-	}
 }
 main {
 	display: flex;
