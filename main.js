@@ -40,15 +40,16 @@ function update() {
 	let path = window.location.pathname.split("/");
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
+	let newPath;
 	if (lastPath == "information") {
-		let newPath = secondLastPath;
+		newPath = secondLastPath;
 		info.visible();
 	}
 	else {
-		let newPath = lastPath;
+		newPath = lastPath;
 	}
 	if (paths.includes(newPath)) {
-		go(lastPath);
+		go(newPath);
 	}
 	else {
 		main();
