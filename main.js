@@ -21,9 +21,8 @@ function createApp() {
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
-		console.log(window.location.search);
 		const path = window.location.search.replace("?p=", "");
-		const newPath = "/u/" + path;
+		const newPath = "/u" + path;
 		window.history.replaceState(null, null, newPath);
 	}
 }
@@ -40,11 +39,12 @@ function update() {
 	const path = window.location.pathname.split("/");
 	const lastPath = path.at(-2);
 	const secondLastPath = path.at(-3);
-	if (lastPath == "information" && ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"].includes(secondLastPath)) {
+	const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
+	if (lastPath == "information" && paths.includes(secondLastPath)) {
 		go(secondLastPath);
-		infoVisible();
+		info.visible();
 	}
-	else if (["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"].includes(lastPath)) {
+	else if (paths.includes(lastPath)) {
 		go(lastPath);
 	}
 	else {
@@ -75,7 +75,7 @@ function createButtons() {
 	}
 	document.querySelector("#button_info").onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
-		infoVisible();
+		info.visible();
 	};
 	document.querySelectorAll(".close_info").forEach((e) => {
 		let path = window.location.pathname.split("/").at(-3);
@@ -103,44 +103,45 @@ function createButtons() {
 	document.querySelector("#transform").onclick = () => goName("transform");
 }
 
-function goName(name) {
-	history.pushState(null, null, "/u/" + name + "/");
-	go(name);
-}
-
 function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
-	infoHidden();
+	info.hidden();
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
 	h1.innerHTML = "Свойства элементов css";
 }
 
+function goName(name) {
+	history.pushState(null, null, "/u/" + name + "/");
+	go(name);
+}
+
 function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
-	infoHidden();
+	info.hidden();
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	Object.values(properties[name]).forEach((e) => {
 		if (e == properties[name].title) return;
 		let p = document.createElement("p");
-		p.innerHTML = "<b>" + e.name + "</b>: " + e.value + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
+		p.innerHTML = "<b>${e.name}</b>: ${e.value}; – ${e.description}<br><i>${e.name}: ${e.example};</i> (${e.default})";
 		content.append(p);
 	});
 }
 
-function infoVisible() {
-	document.querySelector("#information").style.display = "block";
-	document.querySelector("#information+a").style.display = "block";
-	document.querySelector("#information+a+*").style.position = "fixed";
-	document.querySelector("#information+a+*").style.width = "100%";
-}
-
-function infoHidden() {
-	document.querySelector("#information").style.display = "none";
-	document.querySelector("#information+a").style.display = "none";
-	document.querySelector("#information+a+*").style.position = "relative";
-	document.querySelector("#information+a+*").style.width = "auto";
-}
+const info = {
+	visible: function() {
+		document.querySelector("#information").style.display = "block";
+		document.querySelector("#information+a").style.display = "block";
+		document.querySelector("#information+a+*").style.position = "fixed";
+		document.querySelector("#information+a+*").style.width = "100%";
+	},
+	hidden: function() {
+		document.querySelector("#information").style.display = "none";
+		document.querySelector("#information+a").style.display = "none";
+		document.querySelector("#information+a+*").style.position = "relative";
+		document.querySelector("#information+a+*").style.width = "auto";
+	}
+};
