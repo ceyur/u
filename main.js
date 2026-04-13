@@ -39,7 +39,7 @@ function update() {
 	const path = window.location.pathname.split("/");
 	const lastPath = path.at(-2);
 	const secondLastPath = path.at(-3);
-	if (lastPath == "information") {
+	if (lastPath == "information" && ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"].includes(secondLastPath)) {
 		go(secondLastPath);
 		infoVisible();
 	}
@@ -77,7 +77,14 @@ function createButtons() {
 		infoVisible();
 	};
 	document.querySelectorAll(".close_info").forEach((e) => {
-		e.onclick = () => goName(window.location.pathname.split("/").at(-3));
+		let path = window.location.pathname.split("/").at(-3);
+		if (path == "u") {
+			history.pushState(null, null, "/u/");
+			main();
+		}
+		else {
+			e.onclick = () => goName();
+		}
 	});
 	
 	document.querySelector("#text").onclick = () => goName("text");
@@ -116,8 +123,7 @@ function go(name) {
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	Object.values(properties[name]).forEach((e) => {
-		//if (e == properties[name].title) return;
-		if (e == "title") return;
+		if (e == properties[name].title) return;
 		let p = document.createElement("p");
 		p.innerHTML = "<b>" + e.name + "</b>: " + e.value + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
 		content.append(p);
