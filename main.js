@@ -93,7 +93,13 @@ function createButtons() {
 			// 	goName(path);
 			// }
 			let path = window.location.pathname.split("/").at(-3);
-			history.pushState(null, null, "/" + path + "/");
+			if (path == "u") {
+				history.pushState(null, null, "/u/");
+			}
+			else {
+				history.pushState(null, null, "/u/" + path + "/");
+			}
+			//history.pushState(null, null, "/" + path + "/");
 			info.hidden();
 		}
 	});
