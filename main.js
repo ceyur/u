@@ -94,7 +94,10 @@ function createButtons() {
 	});
 	
 	paths.forEach(name => {
-	    document.querySelector(`#${name}`).onclick = () => goName(name);
+	    document.querySelector(`#${name}`).onclick = () => {
+	    	history.pushState(null, null, "/u/" + name + "/");
+			go(name);
+	    };
 	});
 }
 
@@ -105,11 +108,6 @@ function main() {
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
 	h1.innerHTML = "Свойства элементов css";
-}
-
-function goName(name) {
-	history.pushState(null, null, "/u/" + name + "/");
-	go(name);
 }
 
 function go(name) {
