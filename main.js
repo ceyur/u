@@ -40,8 +40,13 @@ function update() {
 	const lastPath = path.at(-2);
 	const secondLastPath = path.at(-3);
 	const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
-	if (lastPath == "information" && paths.includes(secondLastPath)) {
-		go(secondLastPath);
+	if (lastPath == "information") {
+		if (paths.includes(secondLastPath)) {
+			go(secondLastPath);
+		}
+		else {
+			main();
+		}
 		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
@@ -88,13 +93,6 @@ function createButtons() {
 			// 	goName(path);
 			// }
 			let path = window.location.pathname.split("/").at(-3);
-			// if (path == "u") {
-			// 	history.pushState(null, null, "/u/");
-			// 	main();
-			// }
-			// else {
-			// 	goName(path);
-			// }
 			history.pushState(null, null, "/" + path + "/");
 			info.hidden();
 		}
