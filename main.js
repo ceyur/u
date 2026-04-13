@@ -85,7 +85,7 @@ function createButtons() {
 				main();
 			}
 			else {
-				goName();
+				goName(path);
 			}
 		}
 	});
