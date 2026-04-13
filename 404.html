@@ -9,8 +9,9 @@
         var segmentCount = 1; // так как сайт в папке /u/
         var l = window.location;
         l.replace(
-            l.protocol + "//" + l.hostname + "/" + l.pathname.split("/")[1] + "/?p=/" +
-            l.pathname.split("/").slice(segmentCount + 1).join("/") + l.search
+            "https://ceyur.github.io/u/?p=/" + widow.location.pathname.split("/").slice(2).join("/")
+            //l.protocol + "//" + l.hostname + "/" + l.pathname.split("/")[1] + "/?p=/" +
+            //l.pathname.split("/").slice(segmentCount + 1).join("/") + l.search
         );
     </script>
 </head>
