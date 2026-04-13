@@ -41,10 +41,12 @@ function update() {
 	const secondLastPath = path.at(-3);
 	const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 	if (lastPath == "information" && paths.includes(secondLastPath)) {
+		console.log("click1");
 		go(secondLastPath);
 		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
+		console.log("click1");
 		go(lastPath);
 	}
 	else {
