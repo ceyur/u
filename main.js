@@ -79,6 +79,7 @@ function createButtons() {
 	};
 	document.querySelectorAll(".close_info").forEach((e) => {
 		let path = window.location.pathname.split("/").at(-3);
+		console.log(path);
 		if (path == "u") {
 			history.pushState(null, null, "/u/");
 			main();
