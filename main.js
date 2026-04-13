@@ -125,6 +125,7 @@ function go(name) {
 	info.hidden();
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
+	content.innerHTML = "";
 	Object.values(properties[name]).forEach((e) => {
 		if (e == properties[name].title) return;
 		let p = document.createElement("p");
