@@ -41,12 +41,10 @@ function update() {
 	const secondLastPath = path.at(-3);
 	const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 	if (lastPath == "information" && paths.includes(secondLastPath)) {
-		console.log("click1");
 		go(secondLastPath);
 		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
-		console.log("click2");
 		go(lastPath);
 	}
 	else {
@@ -80,15 +78,15 @@ function createButtons() {
 		info.visible();
 	};
 	document.querySelectorAll(".close_info").forEach((e) => {
-		let path = window.location.pathname.split("/").at(-3);
-		console.log(path);
-		if (path == "u") {
-			history.pushState(null, null, "/u/");
-			main();
-		}
-		else {
-			console.log(1);
-			e.onclick = () => goName();
+		e.onclick = () => {
+			let path = window.location.pathname.split("/").at(-3);
+			if (path == "u") {
+				history.pushState(null, null, "/u/");
+				main();
+			}
+			else {
+				goName();
+			}
 		}
 	});
 	
