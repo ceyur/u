@@ -5,14 +5,7 @@
     <title>Загрузка...</title>
     <link rel="icon" href="img/favicon.ico">
     <script type="text/javascript">
-        // Перенаправляем на index.html и передаем путь в параметре ?p=
-        var segmentCount = 1; // так как сайт в папке /u/
-        var l = window.location;
-        l.replace(
-            "https://ceyur.github.io/u/?p=/" + widow.location.pathname.split("/").slice(2).join("/")
-            //l.protocol + "//" + l.hostname + "/" + l.pathname.split("/")[1] + "/?p=/" +
-            //l.pathname.split("/").slice(segmentCount + 1).join("/") + l.search
-        );
+        l.replace("https://ceyur.github.io/u/?p=/" + window.location.pathname.split("/").slice(2).join("/"));
     </script>
 </head>
 <body></body>
