@@ -399,10 +399,10 @@ body .two {
 	}
 }
 @media (min-width: 943px) {
-	#a4, 
-	#a5, 
-	#a9, 
-	#a10 {
+	#background,
+	#position,
+	#pseudoclasses,
+	#pseudoelements {
 		flex: 1 0 40%;
 		&:hover {
 			scale: 1.03;
@@ -413,11 +413,11 @@ body .two {
 	nav a:hover {
 		scale: 1.03;
 	}
-	#a1, 
-	#a4, 
-	#a7, 
-	#a10, 
-	#a13 {
+	#text,
+	#background,
+	#flex-containers,
+	#pseudoelements,
+	#transfor {
 		flex: 1 0 80%;
 		&:hover {
 			scale: 1.02;
