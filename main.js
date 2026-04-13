@@ -46,7 +46,7 @@ function update() {
 		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
-		console.log("click1");
+		console.log("click2");
 		go(lastPath);
 	}
 	else {
