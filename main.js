@@ -87,6 +87,7 @@ function createButtons() {
 			main();
 		}
 		else {
+			console.log(1);
 			e.onclick = () => goName();
 		}
 	});
