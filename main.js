@@ -87,6 +87,15 @@ function createButtons() {
 			// else {
 			// 	goName(path);
 			// }
+			let path = window.location.pathname.split("/").at(-3);
+			// if (path == "u") {
+			// 	history.pushState(null, null, "/u/");
+			// 	main();
+			// }
+			// else {
+			// 	goName(path);
+			// }
+			history.pushState(null, null, "/" + path + "/");
 			info.hidden();
 		}
 	});
