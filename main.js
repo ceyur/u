@@ -116,7 +116,7 @@ function go(name) {
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	Object.keys(properties[name]).forEach((e) => {
-		if (e == properties[name]title) return;
+		if (e == properties[name].title) return;
 		let p = document.createElement("p");
 		p.innerHTML = "<b>" + e.name + "</b>: " + e.value + "; – " + e.description +"<br><i>" + e.name + ": " + e.example + ";" + "</i> " + "(" + e.default + ")";
 		content.append(p);
