@@ -177,6 +177,7 @@ nav {
 			color: green;
 			background: rgba(0, 255, 190, 0.25);
 			box-shadow: 0 0 10px green;
+			cursor: pointer;
 			scale: 1.05;
 		}
 	}
