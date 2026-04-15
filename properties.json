@@ -178,6 +178,7 @@
     }
   },
   "elements": {
+    "title": "Свойства элементов",
     "width": {
       "name": "width",
       "value": "ширина",
@@ -187,6 +188,7 @@
     }
   },
   "border": {
+    "title": "Свойства границы",
     "border_width": {
       "name": "border-width",
       "value": "толщина",
@@ -224,6 +226,7 @@
     }
   },
   "background": {
+    "title": "Свойства фона",
     "background_color": {
       "name": "background-color",
       "value": "цвет",
@@ -261,6 +264,7 @@
     }
   },
   "position": {
+    "title": "Позиционирование",
     "position": {
       "name": "position",
       "value": "тип",
@@ -298,6 +302,7 @@
     }
   },
   "scrollbar": {
+    "title": "Свойства скроллбара",
     "scrollbar_width": {
       "name": "scrollbar-width",
       "value": "толщина",
@@ -335,6 +340,7 @@
     }
   },
   "flex_containers": {
+    "title": "Флекс-контейнеры",
     "flex_direction": {
       "name": "flex-direction",
       "value": "направление",
@@ -372,6 +378,7 @@
     }
   },
   "flex_elements": {
+    "title": "Флекс-элементы",
     "flex_grow": {
       "name": "flex-grow",
       "value": "коэффициент",
@@ -409,6 +416,7 @@
     }
   },
   "pseudoclasses": {
+    "title": "Псевдоклассы",
     "hover": {
       "name": ":hover",
       "value": "наведение",
@@ -446,6 +454,7 @@
     }
   },
   "pseudoelements": {
+    "title": "Псевдоэлементы",
     "before": {
       "name": "::before",
       "value": "вставка до",
@@ -483,6 +492,7 @@
     }
   },
   "transitions": {
+    "title": "Переходы",
     "transition_property": {
       "name": "transition-property",
       "value": "свойство",
@@ -520,6 +530,7 @@
     }
   },
   "animation": {
+    "title": "Анимация",
     "animation_name": {
       "name": "animation-name",
       "value": "имя",
@@ -557,6 +568,7 @@
     }
   },
   "transform": {
+    "title": "Трансформация",
     "transform": {
       "name": "transform",
       "value": "преобразование",
