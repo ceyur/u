@@ -7,7 +7,7 @@
 	"lang": "ru-RU",
 	"theme_color": "#57f7cf",
 	"background_color": "#57f7cf",
-	"display": "fullscreen",
+	"display": "standalone",
 	"display_override": ["fullscreen"],
 	"orientation": "portrait",
 	"icons": [
