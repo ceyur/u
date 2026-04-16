@@ -8,7 +8,6 @@
 	"theme_color": "#57f7cf",
 	"background_color": "#57f7cf",
 	"display": "standalone",
-	"display_override": ["fullscreen"],
 	"orientation": "portrait",
 	"icons": [
 		{
