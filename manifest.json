@@ -12,10 +12,10 @@
 	"orientation": "portrait",
 	"icons": [
 		{
-			"purpose": "any",
 			"src": "Иконка.png",
-			"sizes": "any",
-			"type": "image/svg+xml"
+			"sizes": "512x512",
+		    "type": "image/png",
+		    "purpose": "maskable"
 		}
 	]
 }
