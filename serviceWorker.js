@@ -5,7 +5,7 @@ const filesForCache = [
 //  "./css/styles.css",
 //  "./scripts.js",
 //  "./manifest.json",
-//  "./properties.json"
+  "./properties.json"
 ];
 
 // Установка Service Worker
