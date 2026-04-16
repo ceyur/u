@@ -339,7 +339,7 @@
       "default": "none"
     }
   },
-  "flex_containers": {
+  "flex-containers": {
     "title": "Флекс-контейнеры",
     "flex_direction": {
       "name": "flex-direction",
@@ -377,7 +377,7 @@
       "default": "0"
     }
   },
-  "flex_elements": {
+  "flex-elements": {
     "title": "Флекс-элементы",
     "flex_grow": {
       "name": "flex-grow",
