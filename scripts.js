@@ -31,7 +31,9 @@ function ifReload() {
 function createServiceWorker() {
 	if ("serviceWorker" in navigator) {
 		window.addEventListener("load", () => {
-			navigator.serviceWorker.register("/u/serviceWorker.js");
+			navigator.serviceWorker.register("/u/serviceWorker.js")
+				.then(reg => console.log('✅ SW registered'))
+            	.catch(err => console.log('❌ SW error:', err));
 		});
 	}
 }
