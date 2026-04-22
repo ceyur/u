@@ -5,13 +5,13 @@ const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
 let properties;
 
-if ("serviceWorker" in navigator) {
-	window.addEventListener("load", () => {
-		navigator.serviceWorker.register("/u/serviceWorker.js")
-			.then(reg => console.log('✅ SW registered'))
-			.catch(err => console.log('❌ SW error:', err));
-	});
-}
+// if ("serviceWorker" in navigator) {
+// 	window.addEventListener("load", () => {
+// 		navigator.serviceWorker.register("/u/serviceWorker.js")
+// 			.then(reg => console.log('✅ SW registered'))
+// 			.catch(err => console.log('❌ SW error:', err));
+// 	});
+// }
 
 fetch("/u/properties.json")
 .then(response => response.json())
@@ -26,6 +26,7 @@ function createApp() {
 	window.addEventListener("popstate", update);
 	update();
 	createButtons();
+	navigator.serviceWorker.register("/u/serviceWorker.js");
 }
 
 function ifReload() {
