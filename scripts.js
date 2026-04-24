@@ -22,7 +22,6 @@ fetch("/u/properties.json")
 
 function createApp() {
 	ifReload();
-	// createServiceWorker();
 	window.addEventListener("popstate", update);
 	update();
 	createButtons();
@@ -36,16 +35,6 @@ function ifReload() {
 		window.history.replaceState(null, null, newPath);
 	}
 }
-
-// function createServiceWorker() {
-// 	if ("serviceWorker" in navigator) {
-// 		window.addEventListener("load", () => {
-// 			navigator.serviceWorker.register("/u/serviceWorker.js")
-// 				.then(reg => console.log('✅ SW registered'))
-//             	.catch(err => console.log('❌ SW error:', err));
-// 		});
-// 	}
-// }
 
 function update() {
 	let path = window.location.pathname.split("/");
