@@ -1,5 +1,5 @@
-const cacheName = "v1";
-const filesForCache = [
+const version = "v1";
+const files = [
  // "./",
  // "./index.html",
  // "./css/styles.css",
@@ -8,42 +8,35 @@ const filesForCache = [
  //  "./properties.json"
 ];
 
-self.addEventListener("install", event => {
-  console.log("Service Worker ", cacheName, " installing...");
-  
-  event.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache.addAll(filesForCache);
-    })
-  );
+self.addEventListener("install", e => {
+  e.waitUntil(caches.open(version).then(c => c.addAll(files)));
+  console.log("Service Worker ", version, " installing...");
 });
 
-self.addEventListener("activate", event => {
-  console.log("Service Worker ", cacheName, " activating...");
-
-  event.waitUntil(
+self.addEventListener("activate", e => {
+  e.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
-        keys.map(key => {
-          if (key !== cacheName) {
-            return caches.delete(key);
+        keys.map(k => {
+          if (k !== version) {
+            return caches.delete(k);
           }
         })
       );
     })
   );
+  console.log("Service Worker ", version, " activating...");
 });
 
-// Перехват запросов (fetch)
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      if (response) {
-        return response;
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(r => {
+      if (r) {
+        return r;
       }
 
-      return fetch(event.request).catch(() => {
-        if (event.request.mode === "navigate") {
+      return fetch(e.request).catch(() => {
+        if (e.request.mode === "navigate") {
           return caches.match("/index.html");
         }
       });
