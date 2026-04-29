@@ -12,7 +12,7 @@
 	"icons": [
 		{
 			"src": "Иконка.png",
-			"sizes": "512x512",
+			"sizes": "511x511",
 		    "type": "image/png",
 		    "purpose": "maskable"
 		}
