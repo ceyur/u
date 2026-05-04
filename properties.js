@@ -2,13 +2,13 @@ export const properties = {
   text: {
     title: "Свойства текста",
     color: {
-      name "color",
-      value "цвет",
+      name: "color",
+      value: "цвет",
       description: "задаёт цвет текста",
       example: "green",
       default: "canvastext"
     },
-    font_size {
+    font_size: {
       name: "font-size",
       value: "размер",
       description: "задаёт размер текста",
