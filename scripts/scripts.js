@@ -1,9 +1,10 @@
+import {properties} from "/u/properties.js";
 const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
-let properties;
+// let properties;
 
 // if ("serviceWorker" in navigator) {
 // 	window.addEventListener("load", () => {
@@ -13,12 +14,14 @@ let properties;
 // 	});
 // }
 
-fetch("/u/properties.json")
-.then(response => response.json())
-.then(data => {
-	properties = data;
-	createApp();
-});
+// fetch("/u/properties.json")
+// .then(response => response.json())
+// .then(data => {
+// 	properties = data;
+// 	createApp();
+// });
+
+createApp();
 
 function createApp() {
 	ifReload();
