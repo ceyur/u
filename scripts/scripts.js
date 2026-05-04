@@ -1,4 +1,4 @@
-import {properties} from "./u/properties.js";
+import {properties} from "/u/properties.js";
 const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
@@ -28,7 +28,7 @@ function createApp() {
 	window.addEventListener("popstate", update);
 	update();
 	createButtons();
-	navigator.serviceWorker.register("./u/scripts/serviceWorker.js");
+	navigator.serviceWorker.register("/u/scripts/serviceWorker.js");
 }
 
 function ifReload() {
