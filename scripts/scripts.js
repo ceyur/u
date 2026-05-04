@@ -28,7 +28,7 @@ function createApp() {
 	window.addEventListener("popstate", update);
 	update();
 	createButtons();
-	navigator.serviceWorker.register("/u/scripts/serviceWorker.js");
+	navigator.serviceWorker.register("./u/scripts/serviceWorker.js");
 }
 
 function ifReload() {
