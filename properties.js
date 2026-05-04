@@ -1,4 +1,4 @@
-const properties = {
+export const properties = {
   text: {
     title: "Свойства текста",
     color: {
