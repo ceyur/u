@@ -8,8 +8,12 @@
 		}   
 	</style>
 
-	<rect fill="#000" x="0" y="0" width="15" height="5"/>
-	<rect fill="#3CC982" x="0" y="4.5" width="15" height="11"/>
+	<clipPath id="mask">
+		<rect x="0" y="0" width="15" height="15" rx="3"/>
+    </clipPath>
+
+	<rect fill="#000" x="0" y="0" width="15" height="5" clip-path="url(#mask)"/>
+	<rect fill="#3CC982" x="0" y="4.5" width="15" height="11" clip-path="url(#mask)"/>
 
 	<circle fill="#EB534E" cx="3.5" cy="3" r="0.5"/>
 	<circle fill="#EFC535" cx="5.5" cy="3" r="0.5"/>
