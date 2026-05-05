@@ -21,8 +21,6 @@ const close = document.querySelector("#close");
 // 	createApp();
 // });
 
-createApp();
-
 function createApp() {
 	ifReload();
 	window.addEventListener("popstate", update);
@@ -144,3 +142,5 @@ const info = {
 		document.querySelector("#information+a+*").style.width = "auto";
 	}
 };
+
+createApp();
