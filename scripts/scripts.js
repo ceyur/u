@@ -1,4 +1,4 @@
-import {properties} from "/u/properties.js";
+import {properties} from "/u/scripts/properties.js";
 const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
