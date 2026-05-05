@@ -2,32 +2,32 @@ export const properties = {
   text: {
     title: "Свойства текста",
     color: {
-      name: "color",
-      value: "цвет",
-      description: "задаёт цвет текста",
-      example: "green",
-      default: "canvastext"
+name: "color",
+value: "цвет",
+description: "задаёт цвет текста",
+example: "green",
+default: "canvastext"
     },
     font_size: {
-      name: "font-size",
-      value: "размер",
-      description: "задаёт размер текста",
-      example: "25px",
-      default: "medium"
+name: "font-size",
+value: "размер",
+description: "задаёт размер текста",
+example: "25px",
+default: "medium"
     },
     font_family: {
-      name: "font-family",
-      value: "имя■шрифта1, имя■шрифта2, тип■шрифта",
-      description: `задаёт шрифт текста
-      Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.
-      Типы шрифтов:
-      1. serif – шрифты с засечками, антиквенные (шрифт Times)
-      2. sans-serif – рубленные шрифты, шрифты без засечек или гротески (шрифт Arial)
-      3. cursive – курсивные шрифты
-      4. fantasy – декоративные шрифты
-      5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)`,
-      example: "Arial, sans-serif",
-      default: "браузерное значение"
+name: "font-family",
+value: "имя■шрифта1, имя■шрифта2, тип■шрифта",
+description: `задаёт шрифт текста
+Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.
+Типы шрифтов:
+1. serif – шрифты с засечками, антиквенные (шрифт Times)
+2. sans-serif – рубленные шрифты, шрифты без засечек или гротески (шрифт Arial)
+3. cursive – курсивные шрифты
+4. fantasy – декоративные шрифты
+5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)`,
+example: "Arial, sans-serif",
+default: "браузерное значение"
     }
   }}
 //     "font-style": {
