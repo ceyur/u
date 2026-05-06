@@ -84,6 +84,7 @@ function createButtons() {
 		nav.style.display = "none";
 		document.querySelector("#code").style.display = "block";
 		document.querySelector("#button_code").style.display = "none";
+		history.pushState(null, null, "/u/code/");
 	};
 	
 	paths.forEach(name => {
