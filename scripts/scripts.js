@@ -98,6 +98,7 @@ function createButtons() {
 function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
+	document.querySelector("#button_code").style.display = "block";
 	info.hidden();
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
