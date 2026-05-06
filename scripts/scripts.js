@@ -1,33 +1,9 @@
 import {properties} from "/u/scripts/properties.js";
-const paths = ["text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
+const paths = ["code", "text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
-// let properties;
-
-// if ("serviceWorker" in navigator) {
-// 	window.addEventListener("load", () => {
-// 		navigator.serviceWorker.register("/u/scripts/serviceWorker.js")
-// 			.then(reg => console.log('✅ SW registered'))
-// 			.catch(err => console.log('❌ SW error:', err));
-// 	});
-// }
-
-// fetch("/u/properties.json")
-// .then(response => response.json())
-// .then(data => {
-// 	properties = data;
-// 	createApp();
-// });
-
-function createApp() {
-	ifReload();
-	window.addEventListener("popstate", update);
-	update();
-	createButtons();
-	navigator.serviceWorker.register("/u/scripts/serviceWorker.js");
-}
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -150,4 +126,23 @@ const info = {
 	}
 };
 
-createApp();
+ifReload();
+window.addEventListener("popstate", update);
+update();
+createButtons();
+navigator.serviceWorker.register("/u/scripts/serviceWorker.js");
+
+// if ("serviceWorker" in navigator) {
+// 	window.addEventListener("load", () => {
+// 		navigator.serviceWorker.register("/u/scripts/serviceWorker.js")
+// 			.then(reg => console.log('✅ SW registered'))
+// 			.catch(err => console.log('❌ SW error:', err));
+// 	});
+// }
+
+// fetch("/u/properties.json")
+// .then(response => response.json())
+// .then(data => {
+// 	properties = data;
+// 	createApp();
+// });
