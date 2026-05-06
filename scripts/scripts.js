@@ -4,6 +4,7 @@ const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
+const button_code = document.querySelector("#button_code");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -34,7 +35,12 @@ function update() {
 		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
-		go(lastPath);
+		if (lastPath == code) {
+			
+		}
+		else {
+			go(lastPath);
+		}
 	}
 	else {
 		main();
@@ -79,12 +85,9 @@ function createButtons() {
 		}
 	});
 
-	document.querySelector("#button_code").onclick = () => {
-		close.style.display = "flex";
-		nav.style.display = "none";
-		document.querySelector("#code").style.display = "block";
-		document.querySelector("#button_code").style.display = "none";
+	button_code.onclick = () => {
 		history.pushState(null, null, "/u/code/");
+		code();
 	};
 	
 	paths.forEach(name => {
@@ -98,18 +101,29 @@ function createButtons() {
 function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
-	document.querySelector("#button_code").style.display = "block";
+	button_code.style.display = "block";
 	info.hidden();
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
 	h1.innerHTML = "Свойства элементов css";
 }
 
+function code() {
+	close.style.display = "flex";
+	nav.style.display = "none";
+	button_code.style.display = "none";
+	info.hidden();
+	content.innerHTML = "";
+	document.querySelector("#code").style.display = "block";
+	document.title = "Готовый код";
+	h1.innerHTML = "Готовый код";
+}
+
 function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	info.hidden();
-	document.querySelector("#button_code").style.display = "none";
+	button_code.style.display = "none";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	content.innerHTML = "";
