@@ -78,6 +78,13 @@ function createButtons() {
 			info.hidden();
 		}
 	});
+
+	document.querySelector("#code").onclick = () => {
+		close.style.display = "flex";
+		nav.style.display = "none";
+		document.querySelector("#code").style.display = "block";
+		document.querySelector("#button_code").style.display = "none";
+	};
 	
 	paths.forEach(name => {
 	    document.querySelector(`#${name}`).onclick = () => {
@@ -100,6 +107,7 @@ function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	info.hidden();
+	document.querySelector("#button_code").style.display = "none";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	content.innerHTML = "";
