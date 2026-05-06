@@ -9,7 +9,7 @@
 	</style>
 
 	<clipPath id="mask">
-		<rect x="0" y="0" width="15" height="15" rx="3"/>
+		<rect x="1" y="1" width="13" height="13" rx="3"/>
     </clipPath>
 
 	<rect fill="#000" x="0" y="0" width="15" height="5" clip-path="url(#mask)"/>
