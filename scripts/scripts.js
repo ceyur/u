@@ -35,7 +35,7 @@ function update() {
 		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
-		if (lastPath == code) {
+		if (lastPath == "code") {
 			code();
 		}
 		else {
