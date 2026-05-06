@@ -36,7 +36,7 @@ function update() {
 	}
 	else if (paths.includes(lastPath)) {
 		if (lastPath == code) {
-			
+			code();
 		}
 		else {
 			go(lastPath);
