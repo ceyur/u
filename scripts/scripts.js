@@ -102,6 +102,7 @@ function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
 	button_code.style.display = "block";
+	document.querySelector("#code").style.display = "none";
 	info.hidden();
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
