@@ -9,7 +9,7 @@ const button_code = document.querySelector("#button_code");
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
 		console.log("window.location.search: ", window.location.search);
-		let path = window.location.search.replace("?p=", "").replace("/", "");
+		let path = window.location.search.replace("?p=/", "").replace("/", "");
 		console.log("path: ", path);
 		if (!paths.includes(path)) {
 			window.history.replaceState(null, null, "/u/");
