@@ -79,7 +79,7 @@ function createButtons() {
 		}
 	});
 
-	document.querySelector("#code").onclick = () => {
+	document.querySelector("#button_code").onclick = () => {
 		close.style.display = "flex";
 		nav.style.display = "none";
 		document.querySelector("#code").style.display = "block";
