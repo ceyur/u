@@ -31,7 +31,9 @@ function createApp() {
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
+		console.log("window.location.search: ", window.location.search);
 		let path = window.location.search.replace("?p=", "");
+		console.log("path: ", path);
 		let newPath = "/u" + path;
 		window.history.replaceState(null, null, newPath);
 	}
