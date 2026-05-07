@@ -70,15 +70,18 @@ function createButtons() {
 	});
 	
 	close.onclick = () => {
+		e.preventDefault();
 		history.pushState(null, null, "/u/");
 		main();
 	}
 	document.querySelector("#button_info").onclick = () => {
+		e.preventDefault(); 
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 	};
 	document.querySelectorAll(".close_info").forEach((e) => {
 		e.onclick = () => {
+			e.preventDefault();
 			let path = window.location.pathname.split("/").at(-3);
 			if (path == "u") {
 				history.pushState(null, null, "/u/");
@@ -91,12 +94,14 @@ function createButtons() {
 	});
 
 	button_code.onclick = () => {
+		e.preventDefault(); 
 		history.pushState(null, null, "/u/code/");
 		code();
 	};
 	
 	paths.forEach(name => {
 	    document.querySelector(`#${name}`).onclick = () => {
+			e.preventDefault();
 	    	history.pushState(null, null, "/u/" + name + "/");
 			go(name);
 	    };
