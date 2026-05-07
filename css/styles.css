@@ -54,6 +54,7 @@ a {
 	-webkit-tap-highlight-color: transparent;
 	&:hover {
 		color: #cd00cd;
+		cursor: pointer;
 	}
 }
 p {
@@ -119,6 +120,9 @@ p {
 		height: 100vh;
 		background: rgba(0, 0, 0, 0.5);
 		cursor: default;
+		&:hover {
+			cursor: auto;
+		}
 	}
 }
 main {
