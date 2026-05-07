@@ -11,12 +11,12 @@ function ifReload() {
 		console.log("window.location.search: ", window.location.search);
 		let path = window.location.search.replace("?p=/", "").replace("/", "");
 		console.log("path: ", path);
-		if (!paths.includes(path)) {
-			window.history.replaceState(null, null, "/u/");
-		}
-		else {
+		if (paths.includes(path)) {
 			let newPath = "/u/" + path + "/";
 			window.history.replaceState(null, null, newPath);
+		}
+		else {
+			window.history.replaceState(null, null, "/u/");
 		}
 	}
 }
@@ -27,7 +27,12 @@ function update() {
 	let secondLastPath = path.at(-3);
 	if (lastPath == "information") {
 		if (paths.includes(secondLastPath)) {
-			go(secondLastPath);
+			if (secondLastPath == "code") {
+				code();
+			}
+			else {
+				go(secondLastPath);
+			}
 		}
 		else {
 			main();
@@ -101,7 +106,7 @@ function createButtons() {
 function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
-	button_code.style.overflow = "visible";
+	button_code.style.visibility = "visible";
 	document.querySelector("#code").style.display = "none";
 	info.hidden();
 	content.innerHTML = "";
@@ -112,7 +117,7 @@ function main() {
 function code() {
 	close.style.display = "flex";
 	nav.style.display = "none";
-	button_code.style.overflow = "hidden";
+	button_code.style.visibility = "hidden";
 	info.hidden();
 	content.innerHTML = "";
 	document.querySelector("#code").style.display = "block";
@@ -124,7 +129,7 @@ function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	info.hidden();
-	button_code.style.overflow = "hidden";
+	button_code.style.visibility = "hidden";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	content.innerHTML = "";
