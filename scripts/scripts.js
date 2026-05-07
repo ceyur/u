@@ -101,7 +101,7 @@ function createButtons() {
 function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
-	button_code.style.display = "block";
+	button_code.style.overflow = "visible";
 	document.querySelector("#code").style.display = "none";
 	info.hidden();
 	content.innerHTML = "";
@@ -112,7 +112,7 @@ function main() {
 function code() {
 	close.style.display = "flex";
 	nav.style.display = "none";
-	button_code.style.display = "none";
+	button_code.style.overflow = "hidden";
 	info.hidden();
 	content.innerHTML = "";
 	document.querySelector("#code").style.display = "block";
@@ -124,7 +124,7 @@ function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	info.hidden();
-	button_code.style.display = "none";
+	button_code.style.overflow = "hidden";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	content.innerHTML = "";
