@@ -29,7 +29,8 @@ description: `задаёт шрифт текста
 example: "Arial, sans-serif",
 default: "браузерное значение"
     }
-  }}
+  }
+};
 //     "font-style": {
 //       "name": "font-style",
 //       "value": "начертание",
