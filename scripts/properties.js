@@ -171,6 +171,7 @@ export const properties = {
 "default": ""
 		},
 		"overflow-wrap": {
+"start": "↓",
 "name": "overflow-wrap",
 "value": `: значение; – управляет переносом слов на следующую строку
 Значения:
@@ -180,6 +181,7 @@ export const properties = {
 "default": " (normal)"
 		},
 		"white-space": {
+"start": "↓",
 "name": "white-space",
 "value": `: значение; – управляет пробелами между словами
 Значения:
@@ -193,6 +195,7 @@ export const properties = {
 "default": " (normal)"
 		},
 		"text-overflow": {
+"start": "",
 "name": "text-overflow",
 "value": `: значение; – управляет свойствами обрезки текста, если он не помещается в заданную область
 Значения:
@@ -202,30 +205,35 @@ export const properties = {
 "default": " (clip)"
 		},
 		"column-count": {
+"start": "",
 "name": "column-count",
 "value": ": кол-во; – устанавливает количество колонок в тексте",
 "example": "2",
 "default": " (auto)"
 		},
 		"column-width": {
+"start": "",
 "name": "column-width",
 "value": ": размер; – устанавливает размер колонок в тексте, реальная ширина колонки может быть больше введённого значения",
 "example": "250px",
 "default": " (auto)"
 		},
 		"columns": {
+"start": "",
 "name": "columns",
 "value": ": кол-во размер; – сокращённая запись",
 "example": "4 25%",
 "default": " (auto auto)"
 		},
 		"column-gap": {
+"start": "",
 "name": "column-gap",
 "value": ": размер; – устанавливает интервал между колонками",
 "example": "20px",
 "default": " (normal)"
 		},
 		"column-rule": {
+"start": "",
 "name": "column-rule",
 "value": `: толщина стиль цвет; – добавляет между колонками разделительную линию
 Стили:
@@ -235,6 +243,12 @@ export const properties = {
 "example": "1px solid gray",
 "default": " (medium solid currentcolor)"
 		}
+	},
+	"elements": {
+		"title": "Свойства элементов"
+	},
+	"border": {
+		"title": "Свойства элементов"
 	}
 };
 
@@ -250,7 +264,7 @@ export const properties = {
 //     }
 //   },
 //   "border": {
-//     "title": "Свойства границы",
+//     "title": "Свойства элементов",
 //     "border-width": {
 //       "name": "border-width",
 //       "value": "толщина",
