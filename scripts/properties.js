@@ -108,43 +108,67 @@ export const properties = {
 		"text-decoration": {
 "start": "",
 "name": "text-decoration",
-"value": `: значение1 значение1 цвет  – сокращённая запись для свойств text-decoration-line, text-decoration-style, text-decoration-color`,
+"value": `: линия стиль■линии цвет – подчёркивает текст линией
+Линии:
+1. none – отменяет все эффекты
+2. line-through – создаёт перечёркнутый текст
+3. overline – линия над текстом
+4. underline – линия под текстом
+Стили линий:
+1. solid – одинарная линия
+2. double – двойная линия
+3. dotted – точечная линия
+4. dashed – пунктирная линия
+5. wavy – волнистая линия`,
 "example": "underline dotted red",
 "default": " (none solid currentcolor)"
-     }
+     	},
+		"text-align": {
+"start": "↓",
+"name": "text-align",
+"value": `: значение – выравнивает текст по горизонтали
+Значения:
+1. left – выравнивание по левому краю
+2. right – выравнивание по правому краю
+3. center – выравнивание по центру
+4. justify – выравнивание по ширине`,
+"example": "center",
+"default": " (start)"
+		},
+		"text-indent": {
+"start": "↓",
+"name": "text-indent",
+"value": ": размер",
+"description": "задаёт размер красной строки",
+"example": "10px",
+"default": " (0)"
+		},
+		"letter-spacing": {
+"start": "↓",
+"name": "letter-spacing",
+"value": ": размер – задаёт интервал между символами",
+"example": "5px",
+"default": " (normal)"
+		},
+		"word-spacing": {
+"start": "↓",
+"name": "word-spacing",
+"value": ": размер – задаёт интервал между словами",
+"example": "6px",
+"default": " (normal)"
+		},
+		"line-height": {
+"start": "↓",
+"name": "line-height",
+"value": ": размер – задаёт межстрочный интервал",
+"example": "1.5",
+"default": " (normal)"
+		}
 	}
 };
 
 
-//     "text-decoration-line": {
-//       "name": "text-decoration-line",
-//       "value": "значение значение",
-//       "description": "добавляет оформление текста в виде линии<br>Значения:<br>1. none – отменяет все эффекты<br>2. line-through – создаёт перечёркнутый текст<br>3. overline – линия над текстом<br>4. underline – линия под текстом",
-//       "example": "overline underline",
-//       "default": "none"
-//     },
-//     "text-decoration-style": {
-//       "name": "text-decoration-style",
-//       "value": "значение",
-//       "description": "задаёт стиль линии, установленной свойством text-decoration-line<br>Значения:<br>1. solid – одинарная линия<br>2. double – двойная линия<br>3. dotted – точечная линия<br>4. dashed – пунктирная линия<br>5. wavy – волнистая линия",
-//       "example": "dashed",
-//       "default": "solid"
-//     },
-//     "text-decoration-color": {
-//       "name": "text-decoration-color",
-//       "value": "цвет",
-//       "description": "задаёт цвет линии, установленной свойством text-decoration-line",
-//       "example": "green",
-//       "default": "currentcolor"
-//     },
-//     
-//     "text-align": {
-//       "name": "text-align",
-//       "value": "значение",
-//       "description": "выравнивает текст по горизонтали<br>Значения:<br>1. left – выравнивание по левому краю<br>2. right – выравнивание по правому краю<br>3. center – выравнивание по центру<br>4. justify – выравнивание по ширине",
-//       "example": "center",
-//       "default": "start"
-//     },
+
 //     "text-indent": {
 //       "name": "text-indent",
 //       "value": "размер",
