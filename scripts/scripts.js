@@ -133,7 +133,7 @@ function go(name) {
 		if (e == properties[name].title) return;
 		let p = document.createElement("p");
 		p.innerHTML = `${e.start}<b>${e.name}</b>${e.value}
-<i>${e.name}: ${e.example};</i> (${e.default})`;
+<i>${e.name}: ${e.example};</i>${e.default}`;
 		content.append(p);
 	});
 }
