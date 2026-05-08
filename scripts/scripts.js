@@ -80,15 +80,12 @@ function createButtons() {
 		info.visible();
 	};
 	document.querySelectorAll(".close_info").forEach((e) => {
+		let path = window.location.pathname.split("/").at(-3);
+		let newPath = path == "u" ? "" : path + "/";
+		e.href = "/u/" + newPath;
 		e.onclick = () => {
 			e.preventDefault();
-			let path = window.location.pathname.split("/").at(-3);
-			if (path == "u") {
-				history.pushState(null, null, "/u/");
-			}
-			else {
-				history.pushState(null, null, "/u/" + path + "/");
-			}
+			history.pushState(null, null, "/u/" + newPath);
 			info.hidden();
 		}
 	});
