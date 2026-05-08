@@ -1,24 +1,24 @@
 export const properties = {
-  text: {
-    title: "Свойства текста",
-    color: {
-start: "↓",
-name: "color",
-value: ": цвет  – задаёт цвет текста",
-example: "green",
-default: " (canvastext)"
-    },
-    font_size: {
-start: "↓",
-name: "font-size",
-value: ": размер – задаёт размер текста",
-example: "25px",
-default: " (medium)"
-    },
-    font_family: {
-start: "↓",
-name: "font-family",
-value: `: имя■шрифта1, имя■шрифта2, тип■шрифта – задаёт шрифт текста
+	"text": {
+		"title": "Свойства текста",
+		"color": {
+"start": "↓",
+"name": "color",
+"value": ": цвет  – задаёт цвет текста",
+"example": "green",
+"default": " (canvastext)"
+		},
+		"font-size": {
+"start": "↓",
+"name": "font-size",
+"value": ": размер – задаёт размер текста",
+"example": "25px",
+"default": " (medium)"
+		},
+		"font-family": {
+"start": "↓",
+"name": "font-family",
+"value": `: имя■шрифта1, имя■шрифта2, тип■шрифта – задаёт шрифт текста
 Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.
 Типы шрифтов:
 1. serif – шрифты с засечками, антиквенные (шрифт Times)
@@ -26,16 +26,16 @@ value: `: имя■шрифта1, имя■шрифта2, тип■шрифта 
 3. cursive – курсивные шрифты
 4. fantasy – декоративные шрифты
 5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)`,
-example: "Arial, sans-serif",
-default: " (браузерное значение)"
-    },
-    font_face: {
-start: "@",
-name: "font-face",
-value: `{текст из внешнего файла} – внедряет в документ шрифт из внешнего файла
+"example": "Arial, sans-serif",
+"default": " (браузерное значение)"
+		},
+		"font-face": {
+"start": "@",
+"name": "font-face",
+"value": `{текст из внешнего файла} – внедряет в документ шрифт из внешнего файла
 Конвертер шрифтов – https://www.fontconverter.io`,
-example: `@font-face {
-font-family: "Caprica";
+"example": `@font-face {
+	font-family: "Caprica";
 	src: url(fonts/caprica-script-personal-use.eot);
 	src: url(fonts/caprica-script-personal-use.eot?#iefix) format("embedded-opentype"),
 		url(fonts/caprica-script-personal-use.woff2) format("woff2"),
@@ -44,52 +44,67 @@ font-family: "Caprica";
 		url(fonts/caprica-script-personal-use.svg#caprica-script-personal-use) format("svg"),
 		url(fonts/caprica-script-personal-use.otf) format("otf");
 }`,
-default: ""
-    },
-    font_style: {
-start: "↓",
-name: "font-style",
-value: `: начертание – задаёт начертание текста
+"default": ""
+		},
+		"font-style": {
+"start": "↓",
+"name": "font-style",
+"value": `: начертание – задаёт начертание текста
 Начертания:
 1. normal – обычное начертание
 2. italic – курсивное начертание
 3. oblique – наклонное начертание`,
-example: "italic",
-default: " (normal)"
-    },
-  	font_variant: {
-start: "↓",
-name: "font-variant",
-value: `: значение – управляет регистром текста
+"example": "italic",
+"default": " (normal)"
+		},
+		"font-variant": {
+"start": "↓",
+"name": "font-variant",
+"value": `: значение – управляет регистром текста
 Значения:
 1. normal – обычное начертание
 2. small-caps – все символы становятся малыми заглавными`,
-example: "small-caps",
-default: " (normal)"
-    },
- 	"text-transform": {
+"example": "small-caps",
+"default": " (normal)"
+		},
+		"text-transform": {
 "name": "text-transform",
 "value": "значение",
-"description": "управляет регистром текста<br>Значения:<br>1. none – ничего не меняет<br>2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся<br>3. lowercase – все символы становятся строчными<br>4. uppercase – все символы становятся заглавными",
+"description": `управляет регистром текста
+Значения:
+1. none – ничего не меняет
+2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся
+3. lowercase – все символы становятся строчными
+4. uppercase – все символы становятся заглавными`,
 "example": "uppercase",
-"default": "none"
-	},
-	font_weight: {
+"default": " (none)"
+		},
+		"font-weight": {
+"start": "↓",
 "name": "font-weight",
-"value": "степень■жирности",
-"description": "задаёт жирность текстаСтепени жирности:<br>1. 100 – thin<br>2. 200 – ultralite<br>3. 300 – lite<br>4. 400 – normal<br>5. 500 – medium<br>6. 600 – semibold<br>7. 700 – bold<br>8. 800 – heavy<br>9. 900 – black",
+"value": `степень■жирности – задаёт жирность текстаСтепени жирности:
+1. 100 – thin
+2. 200 – ultralite
+3. 300 – lite
+4. 400 – normal
+5. 500 – medium
+6. 600 – semibold
+7. 700 – bold
+8. 800 – heavy
+9. 900 – black`,
 "example": "bold",
-"default": "normal"
-	},
-	text_shadow: {
+"default": " (normal)"
+		},
+		"text-shadow": {
+"start": "↓",
 "name": "text-shadow",
-"value": "горизонтальное■смещение вертикальное■смещение размер цвет",
-"description": "добавляет тень тексту<br>Значения:<br>1. none – к элементу не применяется никакая тень",
+"value": `: горизонтальное■смещение вертикальное■смещение размер цвет – добавляет тень тексту
+Значения:
+1. none – к элементу не применяется никакая тень`,
 "example": "1px 1px 2px black",
-"default": "none"
+"default": " (none)"
+		}
 	}
-    
-  }
 };
 
 //     
