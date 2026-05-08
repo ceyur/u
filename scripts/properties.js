@@ -2,23 +2,23 @@ export const properties = {
   text: {
     title: "Свойства текста",
     color: {
+start: "↓",
 name: "color",
-value: "цвет",
-description: "задаёт цвет текста",
+value: ": цвет  – задаёт цвет текста",
 example: "green",
 default: "canvastext"
     },
     font_size: {
+start: "↓",
 name: "font-size",
-value: "размер",
-description: "задаёт размер текста",
+value: ": размер – задаёт размер текста",
 example: "25px",
 default: "medium"
     },
     font_family: {
+start: "↓",
 name: "font-family",
-value: "имя■шрифта1, имя■шрифта2, тип■шрифта",
-description: `задаёт шрифт текста
+value: `: имя■шрифта1, имя■шрифта2, тип■шрифта – задаёт шрифт текста
 Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.
 Типы шрифтов:
 1. serif – шрифты с засечками, антиквенные (шрифт Times)
@@ -28,23 +28,51 @@ description: `задаёт шрифт текста
 5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)`,
 example: "Arial, sans-serif",
 default: "браузерное значение"
+    },
+    font_face: {
+start: "@",
+name: "font-face",
+value: `{текст из внешнего файла} – внедряет в документ шрифт из внешнего файла
+Конвертер шрифтов – https://www.fontconverter.io`,
+example: `@font-face {
+font-family: "Caprica";
+	src: url(fonts/caprica-script-personal-use.eot);
+	src: url(fonts/caprica-script-personal-use.eot?#iefix) format("embedded-opentype"),
+		url(fonts/caprica-script-personal-use.woff2) format("woff2"),
+		url(fonts/caprica-script-personal-use.woff) format("woff"),
+		url(fonts/caprica-script-personal-use.ttf) format("truetype"),
+		url(fonts/caprica-script-personal-use.svg#caprica-script-personal-use) format("svg"),
+		url(fonts/caprica-script-personal-use.otf) format("otf");
+}`,
+default: ""
+    },
+    font_style: {
+start: "↓",
+name: "font-style",
+value: `: начертание – задаёт начертание текста
+Начертания:
+1. normal – обычное начертание
+2. italic – курсивное начертание
+3. oblique – наклонное начертание`,
+example: "italic",
+default: "normal"
+    },
+  	font_variant: {
+start: "↓",
+name: "font-variant",
+value: `: значение – управляет регистром текста
+Значения:
+1. normal – обычное начертание
+2. small-caps – все символы становятся малыми заглавными`,
+example: "small-caps",
+default: "normal"
     }
+
+    
   }
 };
-//     "font-style": {
-//       "name": "font-style",
-//       "value": "начертание",
-//       "description": "задаёт начертание текста<br>Начертания:<br>1. normal – обычное начертание<br>2. italic – курсивное начертание<br>3. oblique – наклонное начертание",
-//       "example": "italic",
-//       "default": "normal"
-//     },
-//     "font-variant": {
-//       "name": "font-variant",
-//       "value": "значение",
-//       "description": "управляет регистром текста<br>Значения:<br>1. normal – обычное начертание<br>2. small-caps – все символы становятся малыми заглавными",
-//       "example": "small-caps",
-//       "default": "normal"
-//     },
+
+//     
 //     "text-transform": {
 //       "name": "text-transform",
 //       "value": "значение",
