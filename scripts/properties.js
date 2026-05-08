@@ -33,7 +33,7 @@ export const properties = {
 "start": "@",
 "name": "font-face",
 "value": `{текст из внешнего файла} – внедряет в документ шрифт из внешнего файла
-Конвертер шрифтов – https://www.fontconverter.io`,
+Конвертер шрифтов – <a target="_blank" href="https://www.fontconverter.io">https://www.fontconverter.io</a>`,
 "example": `@font-face {
 	font-family: "Caprica";
 	src: url(fonts/caprica-script-personal-use.eot);
