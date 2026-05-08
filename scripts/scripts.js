@@ -75,7 +75,7 @@ function createButtons() {
 		main();
 	}
 	document.querySelector("#button_info").onclick = () => {
-		e.preventDefault(); 
+		//e.preventDefault(); 
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 	};
