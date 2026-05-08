@@ -70,35 +70,29 @@ function createButtons() {
 	});
 	
 	close.onclick = () => {
-		e.preventDefault();
 		history.pushState(null, null, "/u/");
 		main();
 	}
 	document.querySelector("#button_info").onclick = () => {
-		//e.preventDefault(); 
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 	};
 	document.querySelectorAll(".close_info").forEach((e) => {
-		let path = window.location.pathname.split("/").at(-3);
-		let newPath = path == "u" ? "" : path + "/";
-		e.href = "/u/" + newPath;
 		e.onclick = () => {
-			e.preventDefault();
+			let path = window.location.pathname.split("/").at(-3);
+			let newPath = path == "u" ? "" : path + "/";
 			history.pushState(null, null, "/u/" + newPath);
 			info.hidden();
 		}
 	});
 
 	button_code.onclick = () => {
-		e.preventDefault(); 
 		history.pushState(null, null, "/u/code/");
 		code();
 	};
 	
 	paths.forEach(name => {
 	    document.querySelector(`#${name}`).onclick = () => {
-			e.preventDefault();
 	    	history.pushState(null, null, "/u/" + name + "/");
 			go(name);
 	    };
