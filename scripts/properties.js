@@ -104,7 +104,15 @@ export const properties = {
 1. none – к элементу не применяется никакая тень`,
 "example": "1px 1px 2px black",
 "default": " (none)"
-		}
+		},
+		"text-decoration": {
+"start": "",
+"name": "text-decoration",
+"value": `: значение значение цвет ",
+"description": "сокращённая запись для свойств text-decoration-line, text-decoration-style, text-decoration-color",
+"example": "underline dotted red",
+"default": " (none solid currentcolor)"
+//     },
 	}
 };
 
@@ -122,14 +130,7 @@ export const properties = {
 //       "description": "задаёт жирность текстаСтепени жирности:<br>1. 100 – thin<br>2. 200 – ultralite<br>3. 300 – lite<br>4. 400 – normal<br>5. 500 – medium<br>6. 600 – semibold<br>7. 700 – bold<br>8. 800 – heavy<br>9. 900 – black",
 //       "example": "bold",
 //       "default": "normal"
-//     },
-//     "text-shadow": {
-//       "name": "text-shadow",
-//       "value": "горизонтальное■смещение вертикальное■смещение размер цвет",
-//       "description": "добавляет тень тексту<br>Значения:<br>1. none – к элементу не применяется никакая тень",
-//       "example": "1px 1px 2px black",
-//       "default": "none"
-//     },
+//     }
 //     "text-decoration-line": {
 //       "name": "text-decoration-line",
 //       "value": "значение значение",
@@ -151,13 +152,7 @@ export const properties = {
 //       "example": "green",
 //       "default": "currentcolor"
 //     },
-//     "text-decoration": {
-//       "name": "text-decoration",
-//       "value": "text-decoration-line text-decoration-style text-decoration-color",
-//       "description": "сокращённая запись для свойств text-decoration-line, text-decoration-style, text-decoration-color",
-//       "example": "underline dotted red",
-//       "default": "none solid currentcolor"
-//     },
+//     
 //     "text-align": {
 //       "name": "text-align",
 //       "value": "значение",
