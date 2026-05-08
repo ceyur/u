@@ -4,7 +4,7 @@ export const properties = {
 		"color": {
 "start": "↓",
 "name": "color",
-"value": ": цвет;  – задаёт цвет текста",
+"value": ": цвет; – задаёт цвет текста",
 "example": "green",
 "default": " (canvastext)"
 		},
@@ -122,7 +122,7 @@ export const properties = {
 5. wavy – волнистая линия`,
 "example": "underline dotted red",
 "default": " (none solid currentcolor)"
-     	},
+		},
 		"text-align": {
 "start": "↓",
 "name": "text-align",
@@ -166,7 +166,7 @@ export const properties = {
 		"font": {
 "start": "↓",
 "name": "font",
-"value": ": font-style font-variant font-weight font-size/line-height font-family;  – сокрашённая запись",
+"value": ": font-style font-variant font-weight font-size/line-height font-family; – сокрашённая запись",
 "example": "italic normal bold 12px/1.2px Tahoma, Arial, sans-serif",
 "default": ""
 		},
