@@ -4,21 +4,21 @@ export const properties = {
 		"color": {
 "start": "↓",
 "name": "color",
-"value": ": цвет  – задаёт цвет текста",
+"value": ": цвет;  – задаёт цвет текста",
 "example": "green",
 "default": " (canvastext)"
 		},
 		"font-size": {
 "start": "↓",
 "name": "font-size",
-"value": ": размер – задаёт размер текста",
+"value": ": размер; – задаёт размер текста",
 "example": "25px",
 "default": " (medium)"
 		},
 		"font-family": {
 "start": "↓",
 "name": "font-family",
-"value": `: имя■шрифта1, имя■шрифта2, тип■шрифта – задаёт шрифт текста
+"value": `: имя■шрифта1, имя■шрифта2, тип■шрифта; – задаёт шрифт текста
 Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.
 Типы шрифтов:
 1. serif – шрифты с засечками, антиквенные (шрифт Times)
@@ -49,7 +49,7 @@ export const properties = {
 		"font-style": {
 "start": "↓",
 "name": "font-style",
-"value": `: начертание – задаёт начертание текста
+"value": `: начертание; – задаёт начертание текста
 Начертания:
 1. normal – обычное начертание
 2. italic – курсивное начертание
@@ -60,7 +60,7 @@ export const properties = {
 		"font-variant": {
 "start": "↓",
 "name": "font-variant",
-"value": `: значение – управляет регистром текста
+"value": `: значение; – управляет регистром текста
 Значения:
 1. normal – обычное начертание
 2. small-caps – все символы становятся малыми заглавными`,
@@ -70,7 +70,7 @@ export const properties = {
 		"text-transform": {
 "start": "↓",
 "name": "text-transform",
-"value": `: значение – управляет регистром текста
+"value": `: значение; – управляет регистром текста
 Значения:
 1. none – ничего не меняет
 2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся
@@ -82,7 +82,7 @@ export const properties = {
 		"font-weight": {
 "start": "↓",
 "name": "font-weight",
-"value": `: степень■жирности – задаёт жирность текста
+"value": `: степень■жирности; – задаёт жирность текста
 Степени жирности:
 1. 100 – thin
 2. 200 – ultralite
@@ -99,7 +99,7 @@ export const properties = {
 		"text-shadow": {
 "start": "↓",
 "name": "text-shadow",
-"value": `: горизонтальное■смещение вертикальное■смещение размер цвет – добавляет тень тексту
+"value": `: горизонтальное■смещение вертикальное■смещение размер цвет; – добавляет тень тексту
 Значения:
 1. none – к элементу не применяется никакая тень`,
 "example": "1px 1px 2px black",
@@ -108,7 +108,7 @@ export const properties = {
 		"text-decoration": {
 "start": "",
 "name": "text-decoration",
-"value": `: линия стиль■линии цвет – подчёркивает текст линией
+"value": `: линия стиль■линии цвет; – подчёркивает текст линией
 Линии:
 1. none – отменяет все эффекты
 2. line-through – создаёт перечёркнутый текст
@@ -126,7 +126,7 @@ export const properties = {
 		"text-align": {
 "start": "↓",
 "name": "text-align",
-"value": `: значение – выравнивает текст по горизонтали
+"value": `: значение; – выравнивает текст по горизонтали
 Значения:
 1. left – выравнивание по левому краю
 2. right – выравнивание по правому краю
@@ -138,122 +138,98 @@ export const properties = {
 		"text-indent": {
 "start": "↓",
 "name": "text-indent",
-"value": ": размер",
-"description": "задаёт размер красной строки",
+"value": ": размер; – задаёт размер красной строки",
 "example": "10px",
 "default": " (0)"
 		},
 		"letter-spacing": {
 "start": "↓",
 "name": "letter-spacing",
-"value": ": размер – задаёт интервал между символами",
+"value": ": размер; – задаёт интервал между символами",
 "example": "5px",
 "default": " (normal)"
 		},
 		"word-spacing": {
 "start": "↓",
 "name": "word-spacing",
-"value": ": размер – задаёт интервал между словами",
+"value": ": размер; – задаёт интервал между словами",
 "example": "6px",
 "default": " (normal)"
 		},
 		"line-height": {
 "start": "↓",
 "name": "line-height",
-"value": ": размер – задаёт межстрочный интервал",
+"value": ": размер; – задаёт межстрочный интервал",
 "example": "1.5",
 "default": " (normal)"
+		},
+		"font": {
+"start": "↓",
+"name": "font",
+"value": ": font-style font-variant font-weight font-size/line-height font-family;  – сокрашённая запись",
+"example": "italic normal bold 12px/1.2px Tahoma, Arial, sans-serif",
+"default": ""
+		},
+		"overflow-wrap": {
+"name": "overflow-wrap",
+"value": "значение",
+"description": "управляет переносом слов на следующую строку<br>Значения:<br>1. normal – слова не обрываются и переносятся целиком<br>2. break-word – слова, которые не помещаются в строку, обрываются и переносятся",
+"example": "break-word",
+"default": "normal"
+		},
+		"white-space": {
+"name": "white-space",
+"value": "значение",
+"description": "Значения:<br>1. normal – ничего не меняет, строки переносятся, учитываются теги &lt;br>, не учитываются символы новой строки (Enter) и табуляция<br>2. nowrap – запрещает перенос строки, текст может выйти за края объекта<br>3. pre – строки переносятся только с помощью тега &lt;br> и символов новой строки (Enter), табуляция учитывается<br>4. pre-wrap – строки переносятся, учитываются теги &lt;br>, символы новой строки (Enter) и табуляция<br>5. pre-line – строки переносятся, учитываются только теги &lt;br> и символы новой строки (Enter), табуляция не учитывается<br>6. break-spaces – идентично pre-wrap, кроме некоторых особенностей",
+"example": "nowrap",
+"default": "normal"
+		},
+		"text-overflow": {
+"name": "text-overflow",
+"value": "значение",
+"description": "управляет свойствами обрезки текста, если он не помещается в заданную область<br>Значения:<br>1. clip – текст обрезается по размеру заданной области<br>2. ellipsis – текст обрезается по размеру заданной области, и в конце строки добавляется многоточие",
+"example": "ellipsis",
+"default": "clip"
+		},
+		"column-count": {
+"name": "column-count",
+"value": "кол-во",
+"description": "устанавливает количество колонок в тексте",
+"example": "2",
+"default": "auto"
+		},
+		"column-width": {
+"name": "column-width",
+"value": "размер",
+"description": "устанавливает размер колонок в тексте, реальная ширина колонки может быть больше введённого значения",
+"example": "250px",
+"default": "auto"
+		},
+		"columns": {
+"name": "columns",
+"value": "кол-во размер",
+"description": "сокращённая запись для column-count и column-width",
+"example": "4 25%",
+"default": "auto auto"
+		},
+		"column-gap": {
+"name": "column-gap",
+"value": "размер",
+"description": "устанавливает интервал между колонками",
+"example": "20px",
+"default": "normal"
+		},
+		"column-rule": {
+"name": "column-rule",
+"value": "толщина стиль цвет",
+"description": "добавляет между колонками разделительную линию<br>Стили:<br>1. solid – сплошная линия<br>2. dotted – линия из точек<br>3. dashed – пунктирная линия",
+"example": "1px solid gray",
+"default": "medium solid currentcolor"
 		}
 	}
 };
 
 
-
-//     "text-indent": {
-//       "name": "text-indent",
-//       "value": "размер",
-//       "description": "задаёт размер красной строки",
-//       "example": "10px",
-//       "default": "0"
-//     },
-//     "letter-spacing": {
-//       "name": "letter-spacing",
-//       "value": "размер",
-//       "description": "задаёт интервал между символами",
-//       "example": "5px",
-//       "default": "normal"
-//     },
-//     "word-spacing": {
-//       "name": "word-spacing",
-//       "value": "размер",
-//       "description": "задаёт интервал между словами",
-//       "example": "6px",
-//       "default": "normal"
-//     },
-//     "line-height": {
-//       "name": "line-height",
-//       "value": "размер",
-//       "description": "задаёт межстрочный интервал",
-//       "example": "1.5",
-//       "default": "normal"
-//     },
-//     "overflow-wrap": {
-//       "name": "overflow-wrap",
-//       "value": "значение",
-//       "description": "управляет переносом слов на следующую строку<br>Значения:<br>1. normal – слова не обрываются и переносятся целиком<br>2. break-word – слова, которые не помещаются в строку, обрываются и переносятся",
-//       "example": "break-word",
-//       "default": "normal"
-//     },
-//     "white-space": {
-//       "name": "white-space",
-//       "value": "значение",
-//       "description": "Значения:<br>1. normal – ничего не меняет, строки переносятся, учитываются теги &lt;br>, не учитываются символы новой строки (Enter) и табуляция<br>2. nowrap – запрещает перенос строки, текст может выйти за края объекта<br>3. pre – строки переносятся только с помощью тега &lt;br> и символов новой строки (Enter), табуляция учитывается<br>4. pre-wrap – строки переносятся, учитываются теги &lt;br>, символы новой строки (Enter) и табуляция<br>5. pre-line – строки переносятся, учитываются только теги &lt;br> и символы новой строки (Enter), табуляция не учитывается<br>6. break-spaces – идентично pre-wrap, кроме некоторых особенностей",
-//       "example": "nowrap",
-//       "default": "normal"
-//     },
-//     "text-overflow": {
-//       "name": "text-overflow",
-//       "value": "значение",
-//       "description": "управляет свойствами обрезки текста, если он не помещается в заданную область<br>Значения:<br>1. clip – текст обрезается по размеру заданной области<br>2. ellipsis – текст обрезается по размеру заданной области, и в конце строки добавляется многоточие",
-//       "example": "ellipsis",
-//       "default": "clip"
-//     },
-//     "column-count": {
-//       "name": "column-count",
-//       "value": "кол-во",
-//       "description": "устанавливает количество колонок в тексте",
-//       "example": "2",
-//       "default": "auto"
-//     },
-//     "column-width": {
-//       "name": "column-width",
-//       "value": "размер",
-//       "description": "устанавливает размер колонок в тексте, реальная ширина колонки может быть больше введённого значения",
-//       "example": "250px",
-//       "default": "auto"
-//     },
-//     "columns": {
-//       "name": "columns",
-//       "value": "кол-во размер",
-//       "description": "сокращённая запись для column-count и column-width",
-//       "example": "4 25%",
-//       "default": "auto auto"
-//     },
-//     "column-gap": {
-//       "name": "column-gap",
-//       "value": "размер",
-//       "description": "устанавливает интервал между колонками",
-//       "example": "20px",
-//       "default": "normal"
-//     },
-//     "column-rule": {
-//       "name": "column-rule",
-//       "value": "толщина стиль цвет",
-//       "description": "добавляет между колонками разделительную линию<br>Стили:<br>1. solid – сплошная линия<br>2. dotted – линия из точек<br>3. dashed – пунктирная линия",
-//       "example": "1px solid gray",
-//       "default": "medium solid currentcolor"
-//     }
-//   },
 //   "elements": {
 //     "title": "Свойства элементов",
 //     "width": {
