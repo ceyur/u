@@ -132,7 +132,8 @@ function go(name) {
 	Object.values(properties[name]).forEach((e) => {
 		if (e == properties[name].title) return;
 		let p = document.createElement("p");
-		p.innerHTML = `<b>${e.name}</b>: ${e.value}; – ${e.description}<br><i>${e.name}: ${e.example};</i> (${e.default})`;
+		p.innerHTML = `${e.start}<b>${e.name}</b>${e.value}
+<i>${e.name}: ${e.example};</i> (${e.default})`;
 		content.append(p);
 	});
 }
