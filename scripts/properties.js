@@ -108,29 +108,14 @@ export const properties = {
 		"text-decoration": {
 "start": "",
 "name": "text-decoration",
-"value": `: значение значение цвет ",
-"description": "сокращённая запись для свойств text-decoration-line, text-decoration-style, text-decoration-color",
+"value": `: значение1 значение1 цвет  – сокращённая запись для свойств text-decoration-line, text-decoration-style, text-decoration-color`,
 "example": "underline dotted red",
 "default": " (none solid currentcolor)"
-//     },
+     }
 	}
 };
 
-//     
-//     "text-transform": {
-//       "name": "text-transform",
-//       "value": "значение",
-//       "description": "управляет регистром текста<br>Значения:<br>1. none – ничего не меняет<br>2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся<br>3. lowercase – все символы становятся строчными<br>4. uppercase – все символы становятся заглавными",
-//       "example": "uppercase",
-//       "default": "none"
-//     },
-//     "font-weight": {
-//       "name": "font-weight",
-//       "value": "степень■жирности",
-//       "description": "задаёт жирность текстаСтепени жирности:<br>1. 100 – thin<br>2. 200 – ultralite<br>3. 300 – lite<br>4. 400 – normal<br>5. 500 – medium<br>6. 600 – semibold<br>7. 700 – bold<br>8. 800 – heavy<br>9. 900 – black",
-//       "example": "bold",
-//       "default": "normal"
-//     }
+
 //     "text-decoration-line": {
 //       "name": "text-decoration-line",
 //       "value": "значение значение",
