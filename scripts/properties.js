@@ -68,9 +68,9 @@ export const properties = {
 "default": " (normal)"
 		},
 		"text-transform": {
+"start": "↓",
 "name": "text-transform",
-"value": "значение",
-"description": `управляет регистром текста
+"value": `: значение – управляет регистром текста
 Значения:
 1. none – ничего не меняет
 2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся
@@ -82,7 +82,8 @@ export const properties = {
 		"font-weight": {
 "start": "↓",
 "name": "font-weight",
-"value": `степень■жирности – задаёт жирность текстаСтепени жирности:
+"value": `: степень■жирности – задаёт жирность текста
+Степени жирности:
 1. 100 – thin
 2. 200 – ultralite
 3. 300 – lite
