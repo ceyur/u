@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
 	<style>
 		.none {
 			stroke:#000;
@@ -11,7 +11,7 @@
 	<path fill="#848484" d="M0.5 4.5v-2l2 -2h10l2 2v2z"/>
 	<path fill="#3CC982" d="M0.5 4.5v8l2 2h10l2 -2v-8z"/>
 
-	<rect class="none" x="0.5" y="0.5" width="14" height="14" rx="3"/>
+	<rect class="none" x="0.5" y="0.5" width="14" height="14" rx="3" shape-rendering="crispEdges"/>
 	<line stroke="#000" x1="0.5" y1="4.5" x2="14.5" y2="4.5"/>
 
 	<circle fill="#000" cx="3" cy="2.5" r="0.5"/>
