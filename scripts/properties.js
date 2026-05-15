@@ -247,7 +247,7 @@ export const properties = {
 	"elements": {
 		"title": "Свойства элементов",
 		"box-sizing": {
-"start": "↓",
+"start": "",
 "name": "box-sizing",
 "value": `: значение; – изменяет алгоритм расчёта ширины и высоты элемента
 Значения:
@@ -258,7 +258,7 @@ export const properties = {
 "default": " (content-box)"
 		},
 		"user-select": {
-"start": "↓",
+"start": "",
 "name": "user-select",
 "value": `: значение; – управляет выделением текста
 Значения:
@@ -271,7 +271,7 @@ export const properties = {
 "default": " (auto)"
 		},
 		"overflow": {
-"start": "↓",
+"start": "",
 "name": "overflow",
 "value": `: значение; – управляет отображением полос прокрутки
 Значения:
@@ -287,7 +287,7 @@ export const properties = {
 "default": " (visible)"
 		},
 		"resize": {
-"start": "↓",
+"start": "",
 "name": "resize",
 "value": `: значение; – управляет возможностью изменения размеров элемента пользователем
 Значения:
@@ -299,7 +299,7 @@ export const properties = {
 "default": " (none)"
 		},
 		"display": {
-"start": "↓",
+"start": "",
 "name": "display",
 "value": `: значение; – задаёт, как элемент должен быть показан в документе
 Значения:
@@ -339,7 +339,7 @@ export const properties = {
 "default": " (visible)"
 		},
 		"float": {
-"start": "↓",
+"start": "",
 "name": "float",
 "value": `: значение; – устанавливает, по какой стороне будет выравниваться элемент, при этом остальные элементы будут обтекать его с других сторон
 Значения:
@@ -350,7 +350,7 @@ export const properties = {
 "default": " (none)"
 		},
 		"clear": {
-"start": "↓",
+"start": "",
 "name": "clear",
 "value": `: значение; – устанавливает, с какой стороны элемента запрещено его обтекание другими элементами
 Если установлено обтекание элемента float, свойство clear отменяет его действие.
