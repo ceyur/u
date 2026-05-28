@@ -5,7 +5,7 @@ export const properties = {
 "start": "↓",
 "name": "color",
 "value": ": цвет; – задаёт цвет текста",
-"example": "green",
+"example": "rgba(0, 30, 45, 0.5)",
 "default": " (canvastext)"
 		},
 		"font-size": {
@@ -18,15 +18,14 @@ export const properties = {
 		"font-family": {
 "start": "↓",
 "name": "font-family",
-"value": `: имя■шрифта1, имя■шрифта2, тип■шрифта; – задаёт шрифт текста
-Если на компьютере пользователя нет шрифта1, то загружается следующий (шрифт2). Если и его нет, то загружается шрифт указанного типа.
+"value": `: шрифт; – задаёт шрифт текста
 Типы шрифтов:
 1. serif – шрифты с засечками, антиквенные (шрифт Times)
 2. sans-serif – рубленные шрифты, шрифты без засечек или гротески (шрифт Arial)
 3. cursive – курсивные шрифты
 4. fantasy – декоративные шрифты
 5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)`,
-"example": "Arial, sans-serif",
+"example": "Arial, Courier New, monospace",
 "default": " (браузерное значение)"
 		},
 		"font-face": {
