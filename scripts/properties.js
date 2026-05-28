@@ -204,24 +204,10 @@ export const properties = {
 "example": "nowrap",
 "default": " (normal)"
 		},
-		"column-count": {
-"start": "",
-"name": "column-count",
-"value": ": кол-во; – устанавливает количество колонок в тексте",
-"example": "2",
-"default": " (auto)"
-		},
-		"column-width": {
-"start": "",
-"name": "column-width",
-"value": ": размер; – устанавливает размер колонок в тексте, реальная ширина колонки может быть больше введённого значения",
-"example": "250px",
-"default": " (auto)"
-		},
 		"columns": {
 "start": "",
 "name": "columns",
-"value": ": кол-во размер; – сокращённая запись",
+"value": ": кол-во размер; – устанавливает количество и размер колонок в тексте",
 "example": "4 25%",
 "default": " (auto auto)"
 		},
