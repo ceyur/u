@@ -180,6 +180,16 @@ export const properties = {
 "example": "break-word",
 "default": " (normal)"
 		},
+		"text-overflow": {
+"start": "",
+"name": "text-overflow",
+"value": `: значение; – управляет свойствами обрезки текста, если он не помещается в заданную область
+Значения:
+1. clip – текст обрезается по размеру заданной области
+2. ellipsis – текст обрезается по размеру заданной области, и в конце строки добавляется многоточие`,
+"example": "ellipsis",
+"default": " (clip)"
+		},
 		"white-space": {
 "start": "↓",
 "name": "white-space",
@@ -193,16 +203,6 @@ export const properties = {
 6. break-spaces – идентично pre-wrap, кроме некоторых особенностей`,
 "example": "nowrap",
 "default": " (normal)"
-		},
-		"text-overflow": {
-"start": "",
-"name": "text-overflow",
-"value": `: значение; – управляет свойствами обрезки текста, если он не помещается в заданную область
-Значения:
-1. clip – текст обрезается по размеру заданной области
-2. ellipsis – текст обрезается по размеру заданной области, и в конце строки добавляется многоточие`,
-"example": "ellipsis",
-"default": " (clip)"
 		},
 		"column-count": {
 "start": "",
