@@ -509,7 +509,7 @@ export const properties = {
 		}
 	},
 	"flex-containers": {
-		"title": "Flexbox свойства",
+		"title": "Флекс-контейнеры",
 		"flex-wrap": {
 "start": "",
 "name": "flex-wrap",
