@@ -4,7 +4,7 @@ const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
-const button_code = document.querySelector("#button_code");
+const go_code = document.querySelector("#go-code");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -73,11 +73,11 @@ function createButtons() {
 		history.pushState(null, null, "/u/");
 		main();
 	}
-	document.querySelector("#button_info").onclick = () => {
+	document.querySelector("#go-info").onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 	};
-	document.querySelectorAll(".close_info").forEach((e) => {
+	document.querySelectorAll(".close-info").forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path == "u" ? "" : path + "/";
@@ -86,13 +86,13 @@ function createButtons() {
 		}
 	});
 
-	button_code.onclick = () => {
+	go-code.onclick = () => {
 		history.pushState(null, null, "/u/code/");
 		code();
 	};
 	
 	paths.forEach(name => {
-	    document.querySelector(`#${name}`).onclick = () => {
+	    document.querySelector(`#go-${name}`).onclick = () => {
 	    	history.pushState(null, null, "/u/" + name + "/");
 			go(name);
 	    };
@@ -102,7 +102,7 @@ function createButtons() {
 function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
-	button_code.style.visibility = "visible";
+	go_code.style.visibility = "visible";
 	document.querySelector("#code").style.display = "none";
 	info.hidden();
 	content.innerHTML = "";
@@ -113,7 +113,7 @@ function main() {
 function code() {
 	close.style.display = "flex";
 	nav.style.display = "none";
-	button_code.style.visibility = "hidden";
+	go_code.style.visibility = "hidden";
 	info.hidden();
 	content.innerHTML = "";
 	document.querySelector("#code").style.display = "block";
@@ -125,7 +125,7 @@ function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	info.hidden();
-	button_code.style.visibility = "hidden";
+	go_code.style.visibility = "hidden";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
 	content.innerHTML = "";
