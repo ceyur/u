@@ -508,7 +508,7 @@ export const properties = {
 "default": " (auto)"
 		}
 	},
-	"flexbox": {
+	"flex-containers": {
 		"title": "Flexbox свойства",
 		"flex-wrap": {
 "start": "",
