@@ -134,7 +134,7 @@ function go(name) {
 		let p = document.createElement("p");
 		p.id = e.name;
 		p.innerHTML = `${e.start}<b>${e.name}</b>${e.value}
-<i>${e.name}: ${e.example};</i>${e.default}`;
+<i>${e.example}</i>${e.default}`;
 		content.append(p);
 	});
 }
