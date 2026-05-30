@@ -633,8 +633,6 @@ export const properties = {
 "default": ""
 		}
 	}
-}
-	
 };
 
 
