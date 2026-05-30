@@ -5,14 +5,14 @@ export const properties = {
 "start": "↓",
 "name": "color",
 "value": ": цвет; – задаёт цвет текста",
-"example": "rgba(0, 30, 45, 0.5)",
+"example": "color: rgba(0, 30, 45, 0.5);",
 "default": " (canvastext)"
 		},
 		"font-size": {
 "start": "↓",
 "name": "font-size",
 "value": ": размер; – задаёт размер текста",
-"example": "25px",
+"example": "font-size: 25px;",
 "default": " (medium)"
 		},
 		"font-family": {
@@ -25,7 +25,7 @@ export const properties = {
 3. cursive – курсивные шрифты
 4. fantasy – декоративные шрифты
 5. monospace – моноширинные шрифты, ширина каждого символа одинакова (шрифт Courier)`,
-"example": "Arial, Courier New, monospace",
+"example": "font-family: Arial, Courier New, monospace;",
 "default": " (браузерное значение)"
 		},
 		"font-face": {
@@ -53,7 +53,7 @@ export const properties = {
 1. normal – обычное начертание
 2. italic – курсивное начертание
 3. oblique – наклонное начертание`,
-"example": "italic",
+"example": "font-style: italic;",
 "default": " (normal)"
 		},
 		"font-variant": {
@@ -63,7 +63,7 @@ export const properties = {
 Значения:
 1. normal – обычное начертание
 2. small-caps – все символы становятся малыми заглавными`,
-"example": "small-caps",
+"example": "font-variant: small-caps;",
 "default": " (normal)"
 		},
 		"text-transform": {
@@ -75,7 +75,7 @@ export const properties = {
 2. capitalize – первый символ каждого слова будет заглавным, остальные не изменятся
 3. lowercase – все символы становятся строчными
 4. uppercase – все символы становятся заглавными`,
-"example": "uppercase",
+"example": "text-transform: uppercase;",
 "default": " (none)"
 		},
 		"font-weight": {
@@ -92,7 +92,7 @@ export const properties = {
 7. 700 – bold
 8. 800 – heavy
 9. 900 – black`,
-"example": "bold",
+"example": "font-weight: bold;",
 "default": " (normal)"
 		},
 		"text-shadow": {
@@ -101,7 +101,7 @@ export const properties = {
 "value": `: горизонтальное■смещение вертикальное■смещение размер цвет; – добавляет тень тексту
 Значения:
 1. none – к элементу не применяется никакая тень`,
-"example": "1px 1px 2px black",
+"example": "text-shadow: 1px 1px 2px black;",
 "default": " (none)"
 		},
 		"text-decoration": {
@@ -119,7 +119,7 @@ export const properties = {
 3. dotted – точечная линия
 4. dashed – пунктирная линия
 5. wavy – волнистая линия`,
-"example": "underline dotted red",
+"example": "text-decoration: underline dotted red;",
 "default": " (none solid currentcolor)"
 		},
 		"text-align": {
@@ -131,42 +131,42 @@ export const properties = {
 2. right – выравнивание по правому краю
 3. center – выравнивание по центру
 4. justify – выравнивание по ширине`,
-"example": "center",
+"example": "text-align: center;",
 "default": " (start)"
 		},
 		"text-indent": {
 "start": "↓",
 "name": "text-indent",
 "value": ": размер; – задаёт размер красной строки",
-"example": "10px",
+"example": "text-indent: 10px;",
 "default": " (0)"
 		},
 		"letter-spacing": {
 "start": "↓",
 "name": "letter-spacing",
 "value": ": размер; – задаёт интервал между символами",
-"example": "5px",
+"example": "letter-spacing: 5px;",
 "default": " (normal)"
 		},
 		"word-spacing": {
 "start": "↓",
 "name": "word-spacing",
 "value": ": размер; – задаёт интервал между словами",
-"example": "6px",
+"example": "word-spacing: 6px;",
 "default": " (normal)"
 		},
 		"line-height": {
 "start": "↓",
 "name": "line-height",
 "value": ": размер; – задаёт межстрочный интервал",
-"example": "1.5",
+"example": "line-height: 1.5;",
 "default": " (normal)"
 		},
 		"font": {
 "start": "↓",
 "name": "font",
 "value": ": font-style font-variant font-weight font-size/line-height font-family; – сокращённая запись",
-"example": "italic normal bold 12px/1.2px Tahoma, Arial, sans-serif",
+"example": "font: italic normal bold 12px/1.2px Tahoma, Arial, sans-serif;",
 "default": ""
 		},
 		"overflow-wrap": {
@@ -176,7 +176,7 @@ export const properties = {
 Значения:
 1. normal – слова не обрываются и переносятся целиком
 2. break-word – слова, которые не помещаются в строку, обрываются и переносятся`,
-"example": "break-word",
+"example": "overflow-wrap: break-word;",
 "default": " (normal)"
 		},
 		"text-overflow": {
@@ -186,7 +186,7 @@ export const properties = {
 Значения:
 1. clip – текст обрезается по размеру заданной области
 2. ellipsis – текст обрезается по размеру заданной области, и в конце строки добавляется многоточие`,
-"example": "ellipsis",
+"example": "text-overflow: ellipsis;",
 "default": " (clip)"
 		},
 		"white-space": {
@@ -200,21 +200,21 @@ export const properties = {
 4. pre-wrap – строки переносятся, учитываются теги &lt;br>, символы новой строки (Enter) и табуляция
 5. pre-line – строки переносятся, учитываются только теги &lt;br> и символы новой строки (Enter), табуляция не учитывается
 6. break-spaces – идентично pre-wrap, кроме некоторых особенностей`,
-"example": "nowrap",
+"example": "white-space: nowrap;",
 "default": " (normal)"
 		},
 		"columns": {
 "start": "",
 "name": "columns",
 "value": ": кол-во размер; – устанавливает количество и размер колонок в тексте",
-"example": "4 25%",
+"example": "columns: 4 25%;",
 "default": " (auto auto)"
 		},
 		"column-gap": {
 "start": "",
 "name": "column-gap",
 "value": ": размер; – устанавливает интервал между колонками",
-"example": "20px",
+"example": "column-gap: 20px;",
 "default": " (normal)"
 		},
 		"column-rule": {
@@ -225,7 +225,7 @@ export const properties = {
 1. solid – сплошная линия
 2. dotted – линия из точек
 3. dashed – пунктирная линия`,
-"example": "1px solid gray",
+"example": "column-rule: 1px solid gray;",
 "default": " (medium solid currentcolor)"
 		}
 	},
@@ -239,7 +239,7 @@ export const properties = {
 1. content-box – свойства width и height задают ширину и высоту контента и не включают в себя значения полей (padding), границ (border) и отступов (margin)
 2. padding-box – свойства width и height задают ширину и высоту контента и включают в себя значения полей (padding), но не границ (border) и отступов (margin)
 3. border-box – свойства width и height задают ширину и высоту контента и включают в себя только значения полей (padding), границ (border), но не отступы (margin)`,
-"example": "border-box",
+"example": "box-sizing: border-box;",
 "default": " (content-box)"
 		},
 		"user-select": {
@@ -252,7 +252,7 @@ export const properties = {
 3. all – выделяется сразу весь элемент
 4. contain – выделение будет ограничено границами элемента
 5. none – запрещает выделять текст`,
-"example": "none",
+"example": "user-select: none;",
 "default": " (auto)"
 		},
 		"overflow": {
@@ -268,7 +268,7 @@ export const properties = {
 Подобные свойства:
 1. overflow-x – управляет отображением вертикальной полосы прокрутки
 2. overflow-y – управляет отображением горизонтальной полосы прокрутки`,
-"example": "auto",
+"example": "overflow: auto;",
 "default": " (visible)"
 		},
 		"resize": {
@@ -280,7 +280,7 @@ export const properties = {
 2. both – размеры можно изменять
 3. horizontal – размеры можно изменять только по горизонтали
 4. vertical – размеры можно изменять только по вертикали`,
-"example": "both",
+"example": "resize: both;",
 "default": " (none)"
 		},
 		"display": {
@@ -309,7 +309,7 @@ export const properties = {
 19. table-column – элемент реагирует, как html-элемент &lt;col>
 20. table-row – элемент реагирует, как html-элемент &lt;tr>
 21. none – элемент не отображается`,
-"example": "block",
+"example": "display: block;",
 "default": " (inline)"
 		},
 		"visibility": {
@@ -320,7 +320,7 @@ export const properties = {
 1. visible – элемент виден
 2. hidden – элемент становится невидимым
 3. collapse – строки, колонки или ячейки таблицы исчезают, таблица перестраивается по новой`,
-"example": "hidden",
+"example": "visibility: hidden;",
 "default": " (visible)"
 		},
 		"float": {
@@ -331,7 +331,7 @@ export const properties = {
 1. none – всегда добавляются полосы прокрутки
 2. left – выравнивает элемент по левому краю, а все остальные элементы обтекают его по правой стороне
 3. right – отображается только область внутри элемента, остальное обрезается`,
-"example": "left",
+"example": "float: left;",
 "default": " (none)"
 		},
 		"clear": {
@@ -344,7 +344,7 @@ export const properties = {
 2. left – отменяет обтекание с левой стороны элемента
 3. right – отменяет обтекание с правой стороны элемента
 4. both – отменяет обтекание элемента одновременно с правого и левого края`,
-"example": "both",
+"example": "clear: both;",
 "default": " (none)"
 		}
 	},
@@ -354,7 +354,7 @@ export const properties = {
 "start": "",
 "name": "border",
 "value": ": толщина стиль цвет; – задаёт толщину, стиль и цвет внутренней границы элемента",
-"example": "1px solid #000",
+"example": "border: 1px solid #000;",
 "default": ` (medium none currentcolor)
 Подобные свойства:
 1. border-top – задаёт толщину стиль цвет верхней границы элемента
@@ -372,14 +372,14 @@ export const properties = {
 3. border-radius: сверху-слева снизу-слева■сверху-справа снизу-справа;
 4. border-radius: сверху-слева сверху-справа снизу-справа снизу-слева;
 5. border-radius: размер■по■горизонтали/размер■по■вертикали;`,
-"example": "50%",
+"example": "border-radius: 50%;",
 "default": " (0)"
 		},
 		"border-image-source": {
 "start": "",
 "name": "border-image-source",
 "value": `: градиент■или■url("адрес изображения"); – устанавливает изображение или градиент для границы элемента`,
-"example": `url("img/border.png")`,
+"example": `border-image-source: url("img/border.png");`,
 "default": " (none)"
 		},
 		"border-image-width": {
@@ -391,7 +391,7 @@ export const properties = {
 2. border-image-width: сверху■снизу справа■слева;
 3. border-image-width: сверху справа■слева снизу;
 4. border-image-width: сверху справа снизу слева;`,
-"example": "10px",
+"example": "border-image-width: 10px;",
 "default": " (1)"
 		},
 		"border-image-slice": {
@@ -403,7 +403,7 @@ export const properties = {
 2. border-image-slice: сверху■снизу справа■слева;
 3. border-image-slice: сверху справа■слева снизу;
 4. border-image-slice: сверху справа снизу слева;`,
-"example": "10",
+"example": "border-image-slice: 10;",
 "default": " (100%)"
 		},
 		"border-image-repeat": {
@@ -420,7 +420,7 @@ export const properties = {
 2. border-image-repeat: сверху■снизу справа■слева;
 3. border-image-repeat: сверху справа■слева снизу;
 4. border-image-repeat: сверху справа снизу слева;`,
-"example": "round",
+"example": "border-image-repeat: round;",
 "default": " (stretch)"
 		},
 		"border-image-outset": {
@@ -432,28 +432,28 @@ export const properties = {
 2. border-image-outset: сверху■снизу справа■слева;
 3. border-image-outset: сверху справа■слева снизу;
 4. border-image-outset: сверху справа снизу слева;`,
-"example": "5px",
+"example": "border-image-outset: 5px;",
 "default": " (0)"
 		},
 		"border-image": {
 "start": "",
 "name": "border-image",
 "value": `: border-image-source border-image-width border-image-slice border-image-repeat border-image-outset; – сокращённая запись для свойств border-image-source, border-image-width, border-image-slice, border-image-repeat и border-image-outset`,
-"example": `url("img/border.jpg") 15px 15 30 15 round 5px`,
+"example": `border-image: url("img/border.jpg") 15px 15 30 15 round 5px;`,
 "default": " (none 1 100% stretch 0)"
 		},
 		"outline": {
 "start": "",
 "name": "outline",
 "value": `: толщина стиль цвет; – задаёт толщину, стиль и цвет внешней границы элемента`,
-"example": "1px solid #000",
+"example": "outline: 1px solid #000;",
 "default": " (medium none auto)"
 		},
 		"outline-offset": {
 "start": "",
 "name": "outline-offset",
 "value": `: размер■отступа; – задаёт размер отступа внешней границы от границы элемента`,
-"example": "5px",
+"example": "outline-offset: 5px;",
 "default": " (0)"
 		}
 	},
@@ -469,42 +469,42 @@ export const properties = {
 3. absolute – элемент позиционируется относительно ближайшего родителя с relative, absolute, fixed или sticky
 4. fixed – элемент позиционируется относительно окна браузера
 5. sticky – элемент позиционируется как static но когда верхняя граница элемента будет находиться на расстоянии, указанном в параметре top, от верхней границы окна браузера (либо указанном в параметре bottom от нижней), он останется в этом положении относительно окна до тех пор пока его нижняя граница не упрется в другой sticky элемент или конец родительского элемента`,
-"example": "absolute",
+"example": "position: absolute;",
 "default": " (static)"
 		},
 		"top": {
 "start": "",
 "name": "top",
 "value": `: размер; – задаёт размер верхнего внутреннего отступа для позиционируемого элемента`,
-"example": "50px",
+"example": "top: 50px;",
 "default": " (auto)"
 		},
 		"right": {
 "start": "",
 "name": "right",
 "value": `: размер; – задаёт размер верхнего внутреннего отступа для позиционируемого элемента`,
-"example": "20px",
+"example": "right: 20px;",
 "default": " (auto)"
 		},
 		"bottom": {
 "start": "",
 "name": "bottom",
 "value": `: размер; – задаёт размер верхнего внутреннего отступа для позиционируемого элемента`,
-"example": "30%",
+"example": "bottom: 30%;",
 "default": " (auto)"
 		},
 		"left": {
 "start": "",
 "name": "left",
 "value": `: размер; – задаёт размер верхнего внутреннего отступа для позиционируемого элемента`,
-"example": "230px",
+"example": "left: 230px;",
 "default": " (auto)"
 		},
 		"z-index": {
 "start": "",
 "name": "z-index",
 "value": `: значение; – задаёт наложение элементов по оси Z (0 – элемент снизу, 1 – элемент сверху) для элемента со значениями позиционирования relative, absolute и fixed, можно указывать любое значение`,
-"example": "100",
+"example": "z-index: 100;",
 "default": " (auto)"
 		}
 	},
@@ -514,14 +514,14 @@ export const properties = {
 "start": "",
 "name": "scrollbar-width",
 "value": ": значение; – задаёт ширину полосы прокрутки (скроллбара)\nНе работает в WebView на Android и в Safari\nЗначения:\n1. auto – ширина скроллбара по умолчанию\n2. thin – боллее тонкая полоса прокрутки\n3. none – полоса прокрутки исчезнет, однако элемент по-прежнему будет прокручиваться",
-"example": "none",
+"example": "scrollbar-width: none;",
 "default": " (auto)"
 		},
 		"scrollbar-color": {
 "start": "↓",
 "name": "scrollbar-color",
 "value": ": значение■или■цвет значение■или■цвет; – задаёт цвет ползунка и дорожки\nНе работает в WebView на Android и в Safari\nЗначения:\n1. auto – цвет скроллбара по умолчанию",
-"example": "lime green",
+"example": "scrollbar-color: lime green;",
 "default": " (auto)"
 		},
 		"::-webkit-scrollbar": {
