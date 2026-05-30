@@ -349,7 +349,113 @@ export const properties = {
 		}
 	},
 	"border": {
-		"title": "Свойства элементов"
+		"title": "Свойства границ",
+		"border": {
+"start": "",
+"name": "border",
+"value": `: толщина стиль цвет; – задаёт толщину, стиль и цвет внутренней границы элемента
+Подобные свойства:
+1. border-top – задаёт толщину стиль цвет верхней границы элемента
+2. border-right – задаёт толщину стиль цвет правой границы элемента
+3. border-bottom – задаёт толщину стиль цвет нижней границы элемента
+4. border-left – задаёт толщину стиль цвет левой границы элемента`,
+"example": "1px solid #000",
+"default": " (medium none currentcolor)"
+		},
+		"border-radius": {
+"start": "",
+"name": "border-radius",
+"value": `: размер■радиуса; – задаёт радиус скругления углов блока
+Краткая запись:
+1. border-radius: со■всех■углов;
+2. border-radius: сверху-слева■снизу-справа сверху-справа■снизу-слева;
+3. border-radius: сверху-слева снизу-слева■сверху-справа снизу-справа;
+4. border-radius: сверху-слева сверху-справа снизу-справа снизу-слева;
+5. border-radius: размер■по■горизонтали/размер■по■вертикали;`,
+"example": "50%",
+"default": " (0)"
+		},
+		"border-image-source": {
+"start": "",
+"name": "border-image-source",
+"value": `: градиент■или■url("адрес изображения"); – устанавливает изображение или градиент для границы элемента`,
+"example": `url("img/border.png")`,
+"default": " (none)"
+		},
+		"border-image-width": {
+"start": "",
+"name": "border-image-width",
+"value": `: толщина; – задаёт толщину границы элемента
+Краткая запись:
+1. border-image-width: со■всех■сторон;
+2. border-image-width: сверху■снизу справа■слева;
+3. border-image-width: сверху справа■слева снизу;
+4. border-image-width: сверху справа снизу слева;`,
+"example": "10px",
+"default": " (1)"
+		},
+		"border-image-slice": {
+"start": "",
+"name": "border-image-slice",
+"value": `: размер размер размер; – делит изображение на части по указанным размерам
+Краткая запись:
+1. border-image-slice: со■всех■сторон;
+2. border-image-slice: сверху■снизу справа■слева;
+3. border-image-slice: сверху справа■слева снизу;
+4. border-image-slice: сверху справа снизу слева;`,
+"example": "10",
+"default": " (100%)"
+		},
+		"border-image-repeat": {
+"start": "",
+"name": "border-image-repeat",
+"value": `: значение; – задаёт повтор изображения
+Значения:
+1. stretch – картинка растягивается
+2. repeat – картинка повторяется
+3. round – картинка повторяется и масштабируется, чтобы рамки состояла из целого числа изображений
+4. space – то же, что и repeat
+Краткая запись:
+1. border-image-repeat: со■всех■сторон;
+2. border-image-repeat: сверху■снизу справа■слева;
+3. border-image-repeat: сверху справа■слева снизу;
+4. border-image-repeat: сверху справа снизу слева;`,
+"example": "round",
+"default": " (stretch)"
+		},
+		"border-image-outset": {
+"start": "",
+"name": "border-image-outset",
+"value": `: размер■отступа; – задаёт размер отступа границы от элемента
+Краткая запись:
+1. border-image-outset: со■всех■сторон;
+2. border-image-outset: сверху■снизу справа■слева;
+3. border-image-outset: сверху справа■слева снизу;
+4. border-image-outset: сверху справа снизу слева;`,
+"example": "5px",
+"default": " (0)"
+		},
+		"border-image": {
+"start": "",
+"name": "border-image",
+"value": `: border-image-source border-image-width border-image-slice border-image-repeat border-image-outset; – сокращённая запись для свойств border-image-source, border-image-width, border-image-slice, border-image-repeat и border-image-outset`,
+"example": `url("img/border.jpg") 15px 15 30 15 round 5px`,
+"default": " (none 1 100% stretch 0)"
+		},
+		"outline": {
+"start": "",
+"name": "outline",
+"value": `: толщина стиль цвет; – задаёт толщину, стиль и цвет внешней границы элемента`,
+"example": "1px solid #000",
+"default": " (medium none auto)"
+		},
+		"outline-offset": {
+"start": "",
+"name": "outline-offset",
+"value": `: размер■отступа; – задаёт размер отступа внешней границы от границы элемента`,
+"example": "5px",
+"default": " (0)"
+		}
 	},
 	"position": {
 		"title": "Позиционирование",
