@@ -266,7 +266,7 @@ u {
 	}
 }
 /*Дополнительные свойства conteneditable и готового кода--------------------------------------------------------*/
-#contenteditable~* {
+/* #contenteditable~* {
 	display: block;
 	font-size: 20px;
 	border-radius: 5px;
@@ -283,7 +283,7 @@ u {
 #div2 {
 	color: pink;
 	background: mediumpurple;
-}
+} */
 .code {
 	display: flex;
 	flex-wrap: wrap;
@@ -394,10 +394,10 @@ body .two {
 	}
 }
 @media (min-width: 943px) {
-	#background,
-	#position,
-	#pseudoclasses,
-	#pseudoelements {
+	#go-background,
+	#go-position,
+	#go-pseudoclasses,
+	#go-pseudoelements {
 		flex: 1 0 40%;
 		&:hover {
 			scale: 1.03;
@@ -408,11 +408,11 @@ body .two {
 	nav a:hover {
 		scale: 1.03;
 	}
-	#text,
-	#background,
-	#flex-containers,
-	#pseudoelements,
-	#transform {
+	#go-text,
+	#go-background,
+	#go-flex-containers,
+	#go-pseudoelements,
+	#go-transform {
 		flex: 1 0 80%;
 		&:hover {
 			scale: 1.02;
