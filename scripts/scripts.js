@@ -86,7 +86,7 @@ function createButtons() {
 		}
 	});
 
-	go-code.onclick = () => {
+	go_code.onclick = () => {
 		history.pushState(null, null, "/u/code/");
 		code();
 	};
