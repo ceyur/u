@@ -592,9 +592,9 @@ export const properties = {
 "example": "scrollbar-color: lime green;",
 "default": " (auto)"
 		},
-		"::-webkit-scrollbar": {
-"start": "элемент",
-"name": "::-webkit-scrollbar",
+		"-webkit-scrollbar": {
+"start": "элемент::",
+"name": "-webkit-scrollbar",
 "value": `{свойства} – свойства применяются ко всей полосе прокрутки (скроллбару)
 Не работает в FireFox`,
 "example": `::-webkit-scrollbar {
@@ -602,9 +602,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		"::-webkit-scrollbar-track": {
-"start": "элемент",
-"name": "::-webkit-scrollbar-track",
+		"-webkit-scrollbar-track": {
+"start": "элемент::",
+"name": "-webkit-scrollbar-track",
 "value": `{свойства} – свойства применяются только к полосе прокрутки (дорожке)
 Не работает в Safari на мобильных устройствах и в FireFox`,
 "example": `.object::-webkit-scrollbar-track {
@@ -612,9 +612,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		"::-webkit-scrollbar-track-piece": {
-"start": "элемент",
-"name": "::-webkit-scrollbar-track-piece",
+		"-webkit-scrollbar-track-piece": {
+"start": "элемент::",
+"name": "-webkit-scrollbar-track-piece",
 "value": `{свойства} – свойства применяются только к видимой части дорожки, не занятой ползунком
 Не работает в Safari на мобильных устройствах и в FireFox`,
 "example": `p::-webkit-scrollbar-track-piece {
@@ -622,9 +622,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		"::-webkit-scrollbar-thumb": {
-"start": "элемент",
-"name": "::-webkit-scrollbar-thumb",
+		"-webkit-scrollbar-thumb": {
+"start": "элемент::",
+"name": "-webkit-scrollbar-thumb",
 "value": `{свойства} – свойства применяются к перетаскиваемому ползунку прокрутки
 Не работает в Safari на мобильных устройствах и в FireFox`,
 "example": `button::-webkit-scrollbar-thumb {
@@ -632,9 +632,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		"::-webkit-scrollbar-button": {
-"start": "элемент",
-"name": "::-webkit-scrollbar-button",
+		"-webkit-scrollbar-button": {
+"start": "элемент::",
+"name": "-webkit-scrollbar-button",
 "value": `{свойства} – свойства применяются к кнопкам сверху и снизу дорожки, прокручивающие по одной строке
 Не работает в Safari на мобильных устройствах и в FireFox`,
 "example": `*::-webkit-scrollbar-button {
@@ -642,9 +642,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		"::-webkit-scrollbar-corner": {
-"start": "элемент",
-"name": "::-webkit-scrollbar-corner",
+		"-webkit-scrollbar-corner": {
+"start": "элемент::",
+"name": "-webkit-scrollbar-corner",
 "value": `{свойства} – свойства применяются к уголку на скроллбаре, где пересекаются вертикальная и горизонтальная дорожки
 Работает только с теми элементами, чьи размеры пользователь может изменять (cвойство resizer), не работает в Safari на мобильных устройствах и в FireFox`,
 "example": `#view::-webkit-scrollbar-corner {
@@ -652,9 +652,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		"::-webkit-resizer": {
-"start": "элемент",
-"name": "::-webkit-resizer",
+		"-webkit-resizer": {
+"start": "элемент::",
+"name": "-webkit-resizer",
 "value": `{свойства} – свойства применяются кнопке изменения размеров элемента в уголке на скроллбаре, где пересекаются вертикальная и горизонтальная дорожки
 Работает только с теми элементами, чьи размеры пользователь может изменять (cвойство resizer), не работает в FireFox`,
 "example": `div::-webkit-resizer {
@@ -662,9 +662,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		":horizontal": {
-"start": "элемент",
-"name": ":horizontal",
+		"horizontal": {
+"start": "элемент:",
+"name": "horizontal",
 "value": `{свойства} – псевдокласс определяющий, что свойства применятся только к горизонтальному элементу
 Работает только с элементами скроллбара webkit`,
 "example": `div::-webkit-scrollbar-track:horizontal {
@@ -672,9 +672,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		":vertical": {
-"start": "элемент",
-"name": ":vertical",
+		"vertical": {
+"start": "элемент:",
+"name": "vertical",
 "value": `{свойства} – псевдокласс определяющий, что свойства применятся только к горизонтальному элементу
 Работает только с элементами скроллбара webkit`,
 "example": `div::-webkit-scrollbar-thumb:vertical {
@@ -682,9 +682,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		":start": {
-"start": "элемент",
-"name": ":start",
+		"start": {
+"start": "элемент:",
+"name": "start",
 "value": `{свойства} – псевдокласс определяющий, что свойства применятся к элементу только до ползунка прокрутки (идентично decrement)
 Работает только с элементами скроллбара webkit`,
 "example": `div::-webkit-scrollbar-thumb:start {
@@ -692,9 +692,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		":end": {
-"start": "элемент",
-"name": ":end",
+		"end": {
+"start": "элемент:",
+"name": "end",
 "value": `{свойства} – псевдокласс определяющий, что свойства применятся к элементу только после ползунка прокрутки (идентично increment)
 Работает только с элементами скроллбара в webkit`,
 "example": `div::-webkit-scrollbar-thumb:end {
@@ -702,9 +702,9 @@ export const properties = {
 }`,
 "default": ""
 		},
-		":window-inactive": {
-"start": "элемент",
-"name": ":window-inactive",
+		"window-inactive": {
+"start": "элемент:",
+"name": "window-inactive",
 "value": `{свойства} – псевдокласс определяющий, что свойства применятся только тогда, когда окно не активно (находится сзади)
 Работает только с элементами скроллбара в webkit`,
 "example": `div::-webkit-scrollbar-thumb:window-inactive {
