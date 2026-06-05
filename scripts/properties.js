@@ -853,7 +853,7 @@ export const properties = {
 "default": ""
 		}
 	},
-	"peudoelements": {
+	"pseudoelements": {
 		"title": "Псевдоэлементы",
 		"before": {
 "start": "элемент:",
