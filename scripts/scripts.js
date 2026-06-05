@@ -1,5 +1,5 @@
 import {properties} from "/u/scripts/properties.js";
-const paths = ["code", "text", "elements", "border", "background", "position", "scrollbar", "flex-containers", "flex-elements", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
+const paths = ["code", "text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const content = document.querySelector("#content");
 const nav = document.querySelector("nav");
 const h1 = document.querySelector("h1");
