@@ -768,6 +768,90 @@ export const properties = {
 }`,
 "default": ""
 		}
+	},
+	"pseudoclasses": {
+		"title": "Псевдоклассы",
+		"hover": {
+"start": "элемент:",
+"name": "hover",
+"value": `{свойства элемента} – свойства в фигурных скобках начинают работать при наведении на элемент`,
+"example": `div:hover {
+	color: mediumaquamarine;
+}`,
+"default": ""
+		},
+		"active": {
+"start": "элемент:",
+"name": "active",
+"value": `{свойства элемента} – срабатывает при нажатии на элемент`,
+"example": `.button:active {
+	padding: 25px;
+}`,
+"default": ""
+		},
+		"visited": {
+"start": "элемент:",
+"name": "visited",
+"value": `{свойства элемента} – срабатывает только для посещённых элементов`,
+"example": `a:visited {
+	text-decoration: underline;
+}`,
+"default": ""
+		},
+		"focus": {
+"start": "элемент:",
+"name": "focus",
+"value": `{свойства элемента} – срабатывает для элементов, находящихся в фокусе (форм, полей ввода)`,
+"example": `form:focus {
+	border: 2px solid #539;
+}`,
+"default": ""
+		},
+		"first-child": {
+"start": "элемент:",
+"name": "first-child",
+"value": `{свойства элемента} – срабатывает для первого элемента в блоке`,
+"example": `li:first-child {
+	margin: 25px;
+}`,
+"default": ""
+		},
+		"last-child": {
+"start": "элемент:",
+"name": "last-child",
+"value": `{свойства элемента} – срабатывает для последнего элемента в блоке`,
+"example": `ol:last-child {
+	padding: 5px;
+}`,
+"default": ""
+		},
+		"nth-child": {
+"start": "элемент:",
+"name": "nth-child",
+"value": `(порядковый номер) {свойства элемента} – срабатывает для элемента в блоке, чей порядковый номер указан в псевдоклассе`,
+"example": `div:nth-child(4) {
+	width: 50px;
+}`,
+"default": ""
+		},
+		"odd": {
+"start": "элемент:",
+"name": "odd",
+"value": `{свойства элементов} – срабатывает для элементов с нечётными номерами`,
+"example": `.end:odd {
+	background-color: #000;
+}`,
+"default": ""
+		},
+		"even": {
+"start": "элемент:",
+"name": "even",
+"value": `{свойства элементов} – срабатывает для элементов с чётными номерами`,
+"example": `#background:even {
+	border: 0;
+}`,
+"default": ""
+		}
 	}
 };
 
