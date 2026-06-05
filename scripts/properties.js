@@ -438,7 +438,7 @@ export const properties = {
 		"border-image": {
 "start": "",
 "name": "border-image",
-"value": `: border-image-source border-image-width border-image-slice border-image-repeat border-image-outset; – сокращённая запись для свойств border-image-source, border-image-width, border-image-slice, border-image-repeat и border-image-outset`,
+"value": `: border-image-source border-image-width border-image-slice border-image-repeat border-image-outset; – сокращённая запись`,
 "example": `border-image: url("img/border.jpg") 15px 15 30 15 round 5px;`,
 "default": " (none 1 100% stretch 0)"
 		},
@@ -622,7 +622,7 @@ export const properties = {
 "value": ": flex-grow flex-shrink flex-basis; – сокращённая запись",
 "example": "flex: 1 0 auto;",
 "default": " (0 1 auto)"
-		}	
+		}
 	},
 	"scrollbar": {
 		"title": "Свойства скроллбара",
@@ -924,6 +924,54 @@ export const properties = {
 	border: 0;
 }`,
 "default": ""
+		}
+	},
+	"transitions": {
+		"title": "Переходы",
+		"transition-duration": {
+"start": "",
+"name": "transition-duration",
+"value": ": время; – устанавливает время, за которое одно значение свойства переходит в другое, осуществляется переход",
+"example": "transition-duration: 0,5s;",
+"default": " (0s)"
+		},
+		"transition-property": {
+"start": "",
+"name": "transition-property",
+"value": `: свойство, свойство; – указывает на css-свойства, к которым будет применён переход
+Значения:
+1. all – применяются все свойства`,
+"example": "transition-property: color;",
+"default": " (all)"
+		},
+		"transition-delay": {
+"start": "",
+"name": "transition-delay",
+"value": ": время; – устанавливает время задержки перехода, переход начинает действовать с некоторой задержкой",
+"example": "transition-delay: 0s;",
+"default": " (0s)"
+		},
+		"transition-timing-function": {
+"start": "",
+"name": "transition-timing-function",
+"value": `: значение; – устанавливает стиль перехода, некий сценарий, по которому будет осуществятся анимация
+Значения:
+1. ease – переход медленно начинается, быстро разгоняется и замедляется в конце, этому значению соответствует cubic-bezier(0.25,0.1,0.25,1)
+2. ease-in – переход медленно начинается и плавно ускоряется в конце, этому значению соответствует cubic-bezier(0.42,0,1,1)
+3. ease-out – переход быстро начинается и плавно замедляется в конце, этому значению соответствует cubic-bezier(0,0,0.58,1)
+4. ease-in-out – переход медленно начинается и медленно заканчивается, этому значению соответствует cubic-bezier(0.42,0,0.58,1)
+5. linear – переход происходит равномерно на протяжении всего времени, этому значению соответствует cubic-bezier(0,0,1,1)
+6. steps(шаги, start или end) – разбивает анимацию на некоторое количество шагов и устанавливает когда изменятся свойства: start – свойства изменятся сразу, end – свойства начнут изменяться в конце первого шага
+7. cubic-bezier(1 значение, 2 значение, 3 значение, 4 значение) – позволяет вручную установить значения для кривой ускорения и создать свою собственную анимацию`,
+"example": "transition-timing-function: ease-in-out;",
+"default": " (ease)"
+		},
+		"transition": {
+"start": "",
+"name": "transition",
+"value": ": transition-property transition-duration transition-timing-function transition-delay, свойства второго перехода, идущего следующим; – сокращённая запись",
+"example": "transition: background-color 0.5s cubic-bezier(0,1,1,0) 0s, width 1s linear 0.1s;",
+"default": " (all 0s ease 0s)"
 		}
 	}
 };
