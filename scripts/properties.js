@@ -571,14 +571,14 @@ export const properties = {
 	"flex-elements": {
 		"title": "Флекс-элементы",
 		"order": {
-"start": "↓",
+"start": "",
 "name": "order",
 "value": ": номер■flex-элемента; – управляет порядком, в котором располагаются flex-элементы внутри flex-контейнера",
 "example": "order: 1;",
 "default": " (0)"
 		},
 		"align-self": {
-"start": "↓",
+"start": "",
 "name": "align-self",
 "value": `: значение; – переопределяет для конкретного flex-элемента выравнивание вдоль поперечной оси
 Значения:
@@ -590,14 +590,14 @@ export const properties = {
 "default": " (auto)"
 		},
 		"flex-basis": {
-"start": "↓",
+"start": "",
 "name": "flex-basis",
 "value": ": размер; – задаёт размер элемента по умолчанию, до распределения оставшегося пространства",
 "example": "flex-basis: 300px;",
 "default": " (auto)"
 		},
 		"flex-grow": {
-"start": "↓",
+"start": "",
 "name": "flex-grow",
 "value": `: значение; – управляет возможностью элемента увеличиваться в размере, заполняя весь flex-контейнер
 Значения:
@@ -607,7 +607,7 @@ export const properties = {
 "default": " (0)"
 		},
 		"flex-shrink": {
-"start": "↓",
+"start": "",
 "name": "flex-shrink",
 "value": `: значение; – управляет возможностью элемента уменьшаться в размере, заполняя весь flex-контейнер
 Значения:
@@ -617,7 +617,7 @@ export const properties = {
 "default": " (1)"
 		},
 		"flex": {
-"start": "↓",
+"start": "",
 "name": "flex",
 "value": ": flex-grow flex-shrink flex-basis; – сокращённая запись",
 "example": "flex: 1 0 auto;",
