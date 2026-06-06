@@ -457,6 +457,9 @@ export const properties = {
 "default": " (0)"
 		}
 	},
+	"background": {
+		"title": "Свойства фона"
+	},
 	"position": {
 		"title": "Позиционирование",
 		"position": {
