@@ -976,436 +976,255 @@ export const properties = {
 "example": "transition: background-color 0.5s cubic-bezier(0,1,1,0) 0s, width 1s linear 0.1s;",
 "default": " (all 0s ease 0s)"
 		}
+	},
+	"animation": {
+		"title": "Анимация",
+		"@keyframes": {
+"start": "",
+"name": "@keyframes",
+"value": "имя {значение%{свойства}значение%{свойства}} – создаёт собственную анимацию",
+"example": `@keyframes color {
+	0% {
+		left: 0%;
+	}
+	50% {
+		border-radius: 0%;
+	}
+	100% {
+		left: 50%;
+	}
+}`,
+"default": ""
+		},
+		"animation-name": {
+"start": "",
+"name": "animation-name",
+"value": `: имя; – устанавливает анимации элементу, можно указать несколько через запятую, приоритет будет у последней записи
+Значения:
+1. none – к элементу не применяется никакая анимация`,
+"example": "animation-name: color;",
+"default": " (none)"
+		},
+		"animation-duration": {
+"start": "",
+"name": "animation-duration",
+"value": ": время; – устанавливает длительность анимации",
+"example": "animation-duration: 250ms;",
+"default": " (0s)"
+		},
+		"animation-timing-function": {
+"start": "",
+"name": "animation-timing-function",
+"value": `: значение; – устанавливает стиль анимации, некий сценарий
+Значения:
+1. ease – анимация медленно начинается, быстро разгоняется и замедляется в конце, этому значению соответствует cubic-bezier(0.25,0.1,0.25,1)
+2. ease-in – анимация медленно начинается и плавно ускоряется в конце, этому значению соответствует cubic-bezier(0.42,0,1,1)
+3. ease-out – анимация быстро начинается и плавно замедляется в конце, этому значению соответствует cubic-bezier(0,0,0.58,1)
+4. ease-in-out – анимация медленно начинается и медленно заканчивается, этому значению соответствует cubic-bezier(0.42,0,0.58,1)
+5. linear – анимация происходит равномерно на протяжении всего времени, этому значению соответствует cubic-bezier(0,0,1,1)
+6. steps(шаги, start или end) – разбивает анимацию на некоторое количество шагов и устанавливает когда изменятся свойства: start – свойства изменятся сразу, end – свойства начнут изменяться в конце первого шага
+7. cubic-bezier(1 значение, 2 значение, 3 значение, 4 значение) – позволяет вручную установить значения для кривой ускорения и создать свою собственную анимацию`,
+"example": "animation-timing-function: linear;",
+"default": " (ease)"
+		},
+		"animation-iteration-count": {
+"start": "",
+"name": "animation-iteration-count",
+"value": `: кол-во раз; – устанавливает сколько раз будет повторяться анимация
+Значения:
+1. infinite – анимация будет проигрываться бесконечно`,
+"example": "animation-iteration-count: infinite;",
+"default": " (1)"
+		},
+		"animation-direction": {
+"start": "",
+"name": "animation-direction",
+"value": `: значение; – устанавливает направление анимация
+Значения:
+1. normal – анимация будет проигрываться так как должно быть
+2. reverse – анимация будет проигрываться в обратном порядке
+3. alternate – каждый чётный раз будет проигрываться в обратном порядке
+4. alternate-reverse – каждый нечётный раз будет проигрываться в обратном порядке`,
+"example": "animation-direction: alternate;",
+"default": " (normal)"
+		},
+		"animation-play-state": {
+"start": "",
+"name": "animation-play-state",
+"value": `: значение; – позволяет запускать или останавливать анимацию по событию
+Значения:
+1. running – анимация проигрывается
+2. reverse – при наведении анимация останавливается`,
+"example": "animation-play-state: reverse;",
+"default": " (running)"
+		},
+		"animation-delay": {
+"start": "",
+"name": "animation-delay",
+"value": ": значение; – устанавливает время задержки анимации, анимация начинает действовать с некоторой задержкой",
+"example": "animation-delay: 2s;",
+"default": " (0s)"
+		},
+		"animation-fill-mode": {
+"start": "",
+"name": "animation-fill-mode",
+"value": `: значение; – устанавливает какие стили должны применяться к элементу, когда анимация не проигрывается (по завершению или остановке)
+Значения:
+1. none – к элементу не применяются никакие стили
+2. forwards – элемент будет выглядеть, как выглядел в конце проигрывания анимации (на последнем кадре)
+3. backwards – элемент будет выглядеть, как выглядел изначально (на первом кадре)
+4. both – элемент будет выглядеть, как выглядел в конце проигрывания анимации (на последнем кадре)`,
+"example": "animation-fill-mode: backwards;",
+"default": " (none)"
+		},
+		"animation": {
+"start": "",
+"name": "animation",
+"value": ": animation-name animation-duration animation-timing-function animation-iteration-count animation-direction animation-play-state animation-delay animation-fill-mode; – сокращённая запись",
+"example": "animation: color 1s linear infinite normal running 0s both;",
+"default": " (none 0s ease 1 normal running 0s none)"
+		}
+	},
+	"transform": {
+		"title": "Трансформация",
+		"transform-translate": {
+"start": "",
+"name": "transform",
+"value": ": translate(X, Y); – cдвигает элемент вправо и вниз относительно начального положения объекта",
+"example": "transform: translate(30px, -15px);",
+"default": " (none)"
+		},
+		"transform-scale": {
+"start": "",
+"name": "transform",
+"value": `: scale(X, Y); – масштабирует размеры элемента
+Краткая запись:
+1. transform: scale(X■Y);`,
+"example": "transform: scale(1.5, 1.25);",
+"default": " (none)"
+		},
+		"transform-rotate": {
+"start": "",
+"name": "transform",
+"value": ": rotate(Xdeg); – поворачивает элемент по часовой стрелке",
+"example": "transform: rotate(45deg);",
+"default": " (none)"
+		},
+		"transform-skew": {
+"start": "",
+"name": "transform",
+"value": ": skew(Xdeg, Ydeg); – наклоняет элемент",
+"example": "transform: skew(45deg, -10deg);",
+"default": " (none)"
+		},
+		"transform-matrix": {
+"start": "",
+"name": "transform",
+"value": `: matrix(A, B, C, D, E, F); – деформирует (наклоняет) элемент
+A – масштабирует элемент по горизонтали (scale(X))
+B – деформирует (сдвигает) стороны элемента по вертикали (skew(X))
+C – деформирует (сдвигает) стороны элемента по горизонтали (skew(Y))
+D – масштабирует элемент по вертикали (scale(Y))
+E – сдвигает элемент по горизонтали (translate(X))
+F – сдвигает элемент по вертикали (translate(Y))`,
+"example": "transform: matrix(0.5, 0.1, 0.1, 0.5, 10, 15);",
+"default": " (none)"
+		},
+		"transform-combined": {
+"start": "",
+"name": "transform",
+"value": ": translate(X, Y) rotate(Xdeg) scale(X, Y); – сокращённая запись",
+"example": "transform: translate(30px, 30px) rotate(45deg) scale(0.8);",
+"default": " (none)"
+		},
+		"transform-origin": {
+"start": "",
+"name": "transform-origin",
+"value": `: (X, Y)■или■значения; – смещает центр трансформации, относительно которого происходит изменение элемента
+Значения:
+1. center – центр трансформации в центре элемента
+2. top – центр трансформации сверху элемента
+3. right – центр трансформации справа элемента
+4. bottom – центр трансформации снизу элемента
+5. left – центр трансформации слева элемента`,
+"example": "transform-origin: (25px, -10px);",
+"default": " (50% 50% 0)"
+		},
+		"perspective": {
+"start": "",
+"name": "perspective",
+"value": ": (X, Y)■или■значения; – удаляет край элемента, создаёт перспективу",
+"example": "perspective: (25px, -10px);",
+"default": " (none)"
+		},
+		"perspective-origin": {
+"start": "",
+"name": "perspective-origin",
+"value": `: (X, Y)■или■значения; – смещает центр трансформации, относительно которого происходит удаление (perspective)
+Значения:
+1. center – центр трансформации в центре элемента
+2. top – центр трансформации сверху элемента
+3. right – центр трансформации справа элемента
+4. bottom – центр трансформации снизу элемента
+5. left – центр трансформации слева элемента`,
+"example": "perspective-origin: top left;",
+"default": " (50% 50%)"
+		},
+		"transform-translate3d": {
+"start": "",
+"name": "transform",
+"value": ": translate3d(X, Y, Z); – cдвигает элемент по 3 осям относительно начального положения объекта",
+"example": "transform: translate3d(30px, 30px, 30px);",
+"default": " (none)"
+		},
+		"transform-scale3d": {
+"start": "",
+"name": "transform",
+"value": ": scale3d(X, Y, Z); – масштабирует размеры элемента по 3 осям",
+"example": "transform: scale3d(1.5, 1.25);",
+"default": " (none)"
+		},
+		"transform-rotate3d": {
+"start": "",
+"name": "transform",
+"value": ": rotate3d(X, Y, Z, Ndeg); – поворачивает элемент по часовой стрелке относительно 3 осей",
+"example": "transform: rotate3d(1, 1, 1, 45deg);",
+"default": " (none)"
+		},
+		"transform-matrix3d": {
+"start": "",
+"name": "transform",
+"value": `: matrix3d(n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n); – задаёт трёхмерное преобразование, как однородную матрицу размером 4×4 с шестнадцатью значениями в столбцах
+Генератор 3D матриц – http://ds-overdesign.com/transform/matrix3d.html`,
+"example": "transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);",
+"default": " (none)"
+		},
+		"transform-3d-combined": {
+"start": "",
+"name": "transform",
+"value": ": translate3d(X, Y, Z) rotate3d(X, Y, Z, Ndeg); – сокращённая запись",
+"example": "transform: translate3d(30px, 30px,30px) rotate3d(1, 1, 1, 30deg);",
+"default": " (none)"
+		},
+		"transform-style": {
+"start": "",
+"name": "transform-style",
+"value": `: значение; – устанавливает, как дочерние элементы будут отображаться в 3D-пространстве
+Значения:
+1. flat – устанавливает, что дочерний элемент лежит в той же плоскости, что и родительский
+2. preserve-3d – устанавливает, что дочерний элемент должен быть спозиционирован в 3D-пространстве`,
+"example": "transform-style: preserve-3d;",
+"default": " (flat)"
+		},
+		"backface-visibility": {
+"start": "",
+"name": "backface-visibility",
+"value": `: значение; – управляет отображением обратной стороны объекта
+Значения:
+1. visible – обратная сторона элемента видна и отображается через переднюю поверхность элемента зеркально
+2. hidden – обратная сторона не видна, скрываясь за передней поверхностью элемента`,
+"example": "backface-visibility: visible;",
+"default": " (visible)"
+		}
 	}
 };
-
-
-//   "elements": {
-//     "title": "Свойства элементов",
-//     "width": {
-//       "name": "width",
-//       "value": "ширина",
-//       "description": "задаёт ширину блочных и некоторых строчных (img) тегов",
-//       "example": "150px",
-//       "default": "auto"
-//     }
-//   },
-//   "border": {
-//     "title": "Свойства элементов",
-//     "border-width": {
-//       "name": "border-width",
-//       "value": "толщина",
-//       "description": "задаёт толщину линии границы со всех сторон или по отдельности",
-//       "example": "2px 1px 3px",
-//       "default": "medium"
-//     },
-//     "border-style": {
-//       "name": "border-style",
-//       "value": "стиль",
-//       "description": "задаёт тип линии границы. Без этого свойства граница не отобразится",
-//       "example": "solid dashed dotted double",
-//       "default": "none"
-//     },
-//     "border-color": {
-//       "name": "border-color",
-//       "value": "цвет",
-//       "description": "задаёт цвет границы. Наследует цвет текста, если не указан явно",
-//       "example": "#ff5733 rgb(0,100,200)",
-//       "default": "currentcolor"
-//     },
-//     "border-radius": {
-//       "name": "border-radius",
-//       "value": "скругление",
-//       "description": "скругляет углы элемента. Принимает 1-4 значения или дробные радиусы",
-//       "example": "10px 50% 20px/10px",
-//       "default": "0"
-//     },
-//     "border-image": {
-//       "name": "border-image",
-//       "value": "изображение",
-//       "description": "заменяет обычную границу на изображение с заданными отступами и способом заполнения",
-//       "example": "url(border.png) 30 round",
-//       "default": "none"
-//     }
-//   },
-//   "background": {
-//     "title": "Свойства фона",
-//     "background-color": {
-//       "name": "background-color",
-//       "value": "цвет",
-//       "description": "задаёт сплошной цвет фона элемента",
-//       "example": "rgba(255,255,255,0.8) hsl(120, 100%, 50%)",
-//       "default": "transparent"
-//     },
-//     "background-image": {
-//       "name": "background-image",
-//       "value": "изображение",
-//       "description": "задаёт одно или несколько фоновых изображений или градиентов",
-//       "example": "url('bg.jpg'), linear-gradient(to bottom, #fff, #ccc)",
-//       "default": "none"
-//     },
-//     "background-repeat": {
-//       "name": "background-repeat",
-//       "value": "повторение",
-//       "description": "управляет повторением фонового изображения по осям",
-//       "example": "repeat-x no-repeat space round",
-//       "default": "repeat"
-//     },
-//     "background-position": {
-//       "name": "background-position",
-//       "value": "позиция",
-//       "description": "задаёт начальную позицию фонового изображения относительно контейнера",
-//       "example": "center top 20px 50% left 10px bottom 20px",
-//       "default": "0% 0%"
-//     },
-//     "background-size": {
-//       "name": "background-size",
-//       "value": "размер",
-//       "description": "задаёт размер фонового изображения. Может растягивать или обрезать по контейнеру",
-//       "example": "cover contain 100px 200px 50% auto",
-//       "default": "auto auto"
-//     }
-//   },
-//   "position": {
-//     "title": "Позиционирование",
-//     "position": {
-//       "name": "position",
-//       "value": "тип",
-//       "description": "определяет метод позиционирования элемента в потоке документа",
-//       "example": "relative absolute fixed sticky",
-//       "default": "static"
-//     },
-//     "top": {
-//       "name": "top",
-//       "value": "смещение",
-//       "description": "задаёт смещение верхнего края элемента от ближайшего позиционированного родителя",
-//       "example": "50px -20px 10%",
-//       "default": "auto"
-//     },
-//     "left": {
-//       "name": "left",
-//       "value": "смещение",
-//       "description": "задаёт смещение левого края элемента от ближайшего позиционированного родителя",
-//       "example": "0px 2rem -5%",
-//       "default": "auto"
-//     },
-//     "z-index": {
-//       "name": "z-index",
-//       "value": "порядок",
-//       "description": "управляет порядком наложения элементов по оси Z (глубина). Работает только с non-static позиционированием",
-//       "example": "10 -1 999",
-//       "default": "auto"
-//     },
-//     "clip-path": {
-//       "name": "clip-path",
-//       "value": "область",
-//       "description": "обрезает видимую область элемента по заданной фигуре",
-//       "example": "circle(50%) inset(10px) polygon(0 0, 100% 0, 50% 100%)",
-//       "default": "none"
-//     }
-//   },
-//   "scrollbar": {
-//     "title": "Свойства скроллбара",
-//     "scrollbar-width": {
-//       "name": "scrollbar-width",
-//       "value": "толщина",
-//       "description": "задаёт толщину полосы прокрутки (поддерживается Firefox)",
-//       "example": "thin auto none",
-//       "default": "auto"
-//     },
-//     "scrollbar-color": {
-//       "name": "scrollbar-color",
-//       "value": "цвета",
-//       "description": "задаёт цвет ползунка и фона трека прокрутки (поддерживается Firefox)",
-//       "example": "#888 #f1f1f1 dark light",
-//       "default": "auto"
-//     },
-//     "overflow": {
-//       "name": "overflow",
-//       "value": "обработка",
-//       "description": "управляет отображением содержимого, выходящего за границы элемента, и появлением скроллбаров",
-//       "example": "hidden scroll auto visible clip",
-//       "default": "visible"
-//     },
-//     "overscroll-behavior": {
-//       "name": "overscroll-behavior",
-//       "value": "поведение",
-//       "description": "контролирует, что происходит при достижении границы прокрутки (отключение 'резинового' эффекта или скролла родителя)",
-//       "example": "contain auto none",
-//       "default": "auto"
-//     },
-//     "scroll-snap-type": {
-//       "name": "scroll-snap-type",
-//       "value": "привязка",
-//       "description": "включает магнитную привязку скролла к дочерним элементам",
-//       "example": "x mandatory y proximity both",
-//       "default": "none"
-//     }
-//   },
-//   "flex-containers": {
-//     "title": "Флекс-контейнеры",
-//     "flex-direction": {
-//       "name": "flex-direction",
-//       "value": "направление",
-//       "description": "задаёт направление главной оси и порядок следования элементов",
-//       "example": "row column row-reverse column-reverse",
-//       "default": "row"
-//     },
-//     "justify-content": {
-//       "name": "justify-content",
-//       "value": "выравнивание",
-//       "description": "выравнивает элементы вдоль главной оси и распределяет свободное пространство",
-//       "example": "center space-between space-around space-evenly",
-//       "default": "flex-start"
-//     },
-//     "align-items": {
-//       "name": "align-items",
-//       "value": "выравнивание",
-//       "description": "выравнивает элементы вдоль поперечной оси внутри flex-контейнера",
-//       "example": "stretch center baseline flex-end",
-//       "default": "stretch"
-//     },
-//     "flex-wrap": {
-//       "name": "flex-wrap",
-//       "value": "перенос",
-//       "description": "разрешает или запрещает перенос flex-элементов на новую строку/столбец",
-//       "example": "wrap nowrap wrap-reverse",
-//       "default": "nowrap"
-//     },
-//     "gap": {
-//       "name": "gap",
-//       "value": "отступы",
-//       "description": "задаёт фиксированные отступы между строками и столбцами flex-элементов",
-//       "example": "10px 1rem 20px 40px",
-//       "default": "0"
-//     }
-//   },
-//   "flex-elements": {
-//     "title": "Флекс-элементы",
-//     "flex-grow": {
-//       "name": "flex-grow",
-//       "value": "коэффициент",
-//       "description": "определяет, насколько элемент может увеличиться относительно других элементов при наличии свободного места",
-//       "example": "0 1 2",
-//       "default": "0"
-//     },
-//     "flex-shrink": {
-//       "name": "flex-shrink",
-//       "value": "коэффициент",
-//       "description": "определяет, насколько элемент может сжаться относительно других при нехватке места",
-//       "example": "0 1 2",
-//       "default": "1"
-//     },
-//     "flex-basis": {
-//       "name": "flex-basis",
-//       "value": "базовый размер",
-//       "description": "задаёт начальный размер элемента до распределения свободного пространства",
-//       "example": "auto 200px 30% max-content",
-//       "default": "auto"
-//     },
-//     "align-self": {
-//       "name": "align-self",
-//       "value": "переопределение",
-//       "description": "переопределяет выравнивание конкретного flex-элемента по поперечной оси",
-//       "example": "center flex-end baseline stretch",
-//       "default": "auto"
-//     },
-//     "order": {
-//       "name": "order",
-//       "value": "порядок",
-//       "description": "изменяет визуальный порядок отображения элемента без изменения HTML-структуры",
-//       "example": "-1 0 5 10",
-//       "default": "0"
-//     }
-//   },
-//   "pseudoclasses": {
-//     "title": "Псевдоклассы",
-//     "hover": {
-//       "name": ":hover",
-//       "value": "наведение",
-//       "description": "применяет стили, когда курсор мыши находится над элементом",
-//       "example": "a:hover { color: red; }",
-//       "default": "не применяется"
-//     },
-//     "focus": {
-//       "name": ":focus",
-//       "value": "фокус",
-//       "description": "применяет стили, когда элемент получает фокус (через Tab или клик)",
-//       "example": "input:focus { outline: 2px solid blue; }",
-//       "default": "не применяется"
-//     },
-//     "active": {
-//       "name": ":active",
-//       "value": "нажатие",
-//       "description": "применяет стили в момент нажатия кнопки мыши или клавиши",
-//       "example": "button:active { transform: scale(0.98); }",
-//       "default": "не применяется"
-//     },
-//     "nth-child": {
-//       "name": ":nth-child()",
-//       "value": "порядковый номер",
-//       "description": "выбирает элементы по формуле или ключевым словам среди всех дочерних",
-//       "example": "li:nth-child(odd) .item:nth-child(3n)",
-//       "default": "не применяется"
-//     },
-//     "not": {
-//       "name": ":not()",
-//       "value": "исключение",
-//       "description": "инвертирует выборку, применяя стили ко всем элементам, кроме указанных",
-//       "example": "div:not(.hidden) input:not([type='submit'])",
-//       "default": "не применяется"
-//     }
-//   },
-//   "pseudoelements": {
-//     "title": "Псевдоэлементы",
-//     "before": {
-//       "name": "::before",
-//       "value": "вставка до",
-//       "description": "создаёт виртуальный дочерний элемент, вставляемый перед содержимым основного",
-//       "example": ".box::before { content: '★ '; }",
-//       "default": "content: none"
-//     },
-//     "after": {
-//       "name": "::after",
-//       "value": "вставка после",
-//       "description": "создаёт виртуальный дочерний элемент, вставляемый после содержимого основного",
-//       "example": ".link::after { content: ' →'; }",
-//       "default": "content: none"
-//     },
-//     "first-line": {
-//       "name": "::first-line",
-//       "value": "первая строка",
-//       "description": "применяет стили только к первой строке текстового блока",
-//       "example": "p::first-line { font-weight: bold; }",
-//       "default": "наследует от элемента"
-//     },
-//     "placeholder": {
-//       "name": "::placeholder",
-//       "value": "подсказка",
-//       "description": "стилизирует текст-заполнитель в полях ввода форм",
-//       "example": "input::placeholder { color: gray; opacity: 0.5; }",
-//       "default": "зависит от браузера"
-//     },
-//     "selection": {
-//       "name": "::selection",
-//       "value": "выделение",
-//       "description": "задаёт внешний вид текста, выделенного пользователем мышью или клавиатурой",
-//       "example": "::selection { background: yellow; color: black; }",
-//       "default": "синий фон, белый текст (браузерное)"
-//     }
-//   },
-//   "transitions": {
-//     "title": "Переходы",
-//     "transition-property": {
-//       "name": "transition-property",
-//       "value": "свойство",
-//       "description": "указывает, какое CSS-свойство будет анимироваться при изменении",
-//       "example": "all opacity transform width",
-//       "default": "all"
-//     },
-//     "transition-duration": {
-//       "name": "transition-duration",
-//       "value": "длительность",
-//       "description": "задаёт время, за которое происходит плавный переход",
-//       "example": "0.3s 500ms 1s",
-//       "default": "0s"
-//     },
-//     "transition-timing-function": {
-//       "name": "transition-timing-function",
-//       "value": "плавность",
-//       "description": "определяет кривую скорости изменения значения во времени",
-//       "example": "ease linear ease-in-out cubic-bezier(0.68, -0.55, 0.27, 1.55)",
-//       "default": "ease"
-//     },
-//     "transition-delay": {
-//       "name": "transition-delay",
-//       "value": "задержка",
-//       "description": "задаёт паузу перед началом воспроизведения перехода",
-//       "example": "0.1s 200ms 0.5s",
-//       "default": "0s"
-//     },
-//     "transition-shorthand": {
-//       "name": "transition",
-//       "value": "сокращение",
-//       "description": "сокращённая запись всех свойств перехода в одном объявлении",
-//       "example": "opacity 0.3s ease-in-out 0.1s",
-//       "default": "нет"
-//     }
-//   },
-//   "animation": {
-//     "title": "Анимация",
-//     "animation-name": {
-//       "name": "animation-name",
-//       "value": "имя",
-//       "description": "привязывает элемент к набору ключевых кадров (@keyframes)",
-//       "example": "fadeIn slideUp pulse",
-//       "default": "none"
-//     },
-//     "animation-duration": {
-//       "name": "animation-duration",
-//       "value": "длительность",
-//       "description": "задаёт время выполнения одного цикла анимации",
-//       "example": "1s 2.5s 800ms",
-//       "default": "0s"
-//     },
-//     "animation-iteration-count": {
-//       "name": "animation-iteration-count",
-//       "value": "повторы",
-//       "description": "устанавливает количество циклов воспроизведения анимации",
-//       "example": "infinite 3 5",
-//       "default": "1"
-//     },
-//     "animation-direction": {
-//       "name": "animation-direction",
-//       "value": "направление",
-//       "description": "определяет, воспроизводится ли анимация в обратном порядке или чередуется",
-//       "example": "reverse alternate alternate-reverse",
-//       "default": "normal"
-//     },
-//     "animation-fill-mode": {
-//       "name": "animation-fill-mode",
-//       "value": "заполнение",
-//       "description": "задаёт стили элемента до начала и после завершения анимации",
-//       "example": "forwards backwards both",
-//       "default": "none"
-//     }
-//   },
-//   "transform": {
-//     "title": "Трансформация",
-//     "transform": {
-//       "name": "transform",
-//       "value": "преобразование",
-//       "description": "применяет 2D или 3D трансформации: сдвиг, поворот, масштаб, наклон",
-//       "example": "translateX(50px) rotate(45deg) scale(1.2)",
-//       "default": "none"
-//     },
-//     "transform-origin": {
-//       "name": "transform-origin",
-//       "value": "точка опоры",
-//       "description": "задаёт точку, относительно которой выполняется трансформация",
-//       "example": "center top left 50% 50% 0px",
-//       "default": "50% 50% 0"
-//     },
-//     "transform-style": {
-//       "name": "transform-style",
-//       "value": "3D контекст",
-//       "description": "указывает, должны ли дочерние элементы рендериться в 3D-пространстве или сплющиваться",
-//       "example": "preserve-3d flat",
-//       "default": "flat"
-//     },
-//     "perspective": {
-//       "name": "perspective",
-//       "value": "глубина",
-//       "description": "задаёт расстояние от зрителя до плоскости Z=0, влияя на эффект 3D-глубины",
-//       "example": "1000px 50rem 800",
-//       "default": "none"
-//     },
-//     "backface-visibility": {
-//       "name": "backface-visibility",
-//       "value": "видимость тыла",
-//       "description": "определяет, видна ли обратная сторона элемента при повороте на 180° и более",
-//       "example": "hidden visible",
-//       "default": "visible"
-//     }
-//   }
-// }
