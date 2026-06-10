@@ -459,6 +459,89 @@ export const properties = {
 	},
 	"background": {
 		"title": "Свойства фона"
+		"background-color": {
+"start": "",
+"name": "background-color",
+"value": ": цвет; – задаёт цвет фона элемента",
+"example": "background-color: mediumaquamarine;",
+"default": " (transparent)"
+		},
+		"background-image": {
+"start": "",
+"name": "background-image",
+"value": `: градиент■или■url("адрес картинки"); – устанавливает фоновое изображение или градиент для элемента
+Создать градиент – https://www.colorzilla.com/gradient-editor/`,
+"example": `background-image: url("https://apple.com");`,
+"default": " (none)"
+		},
+		"background-position": {
+"start": "",
+"name": "background-position",
+"value": `: координаты; – задаёт начальное положение фонового изображения (background-image)
+Подобные свойства:
+1. background-position-x – начальное положение фонового изображения по оси x
+2. background-position-y – начальное положение фонового изображения по оси y`,
+"example": "background-position: 25px 30px;",
+"default": " (0% 0%)"
+		},
+		"background-size": {
+"start": "",
+"name": "background-size",
+"value": `: значение■или■размеры; – масштабирует фоновое изображение согласно заданным размерам
+Значения:
+1. auto – если задано одновременно для ширины и высоты (auto auto), размеры фона остаются исходными; если только для одной стороны картинки (100px auto), то размер вычисляется автоматически исходя из пропорций картинки
+2. cover – масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока
+3. contain – масштабирует изображение с сохранением пропорций таким образом, чтобы картинка целиком поместилась внутрь блока`,
+"example": "background-size: contain;",
+"default": " (auto auto)"
+		},
+		"background-repeat": {
+"start": "",
+"name": "background-repeat",
+"value": `: значение; – задаёт повторение фонового изображения (background-image)
+Значения:
+1. repeat – фоновое изображение повторяется по горизонтали и вертикали
+2. repeat-x – фоновый рисунок повторяется только по горизонтали
+3. repeat-y – фоновый рисунок повторяется только по вертикали
+4. space – изображение повторяется столько раз, чтобы полностью заполнить область; если это не удаётся, между картинками добавляется пустое пространство
+5. round – изображение повторяется столько раз, чтобы в области поместилось целое число рисунков; если это не удаётся сделать, то фоновые рисунки масштабируются
+6. no-repeat – устанавливает одно фоновое изображение без повторений, положение которого определяется свойством background-position (по умолчанию в левом верхнем углу)`,
+"example": "background-repeat: repeat;",
+"default": " (repeat)"
+		},
+		"background-attachment": {
+"start": "",
+"name": "background-attachment",
+"value": `: значение; – устанавливает, будет ли прокручиваться фоновое изображение вместе с содержимым элемента
+Значения:
+1. scroll – позволяет перемещаться фону вместе с содержимым
+2. fixed – делает фоновое изображение элемента неподвижным
+3. local – фон фиксируется с учётом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон выходящий за рамки элемента остаётся на месте`,
+"example": "background-attachment: fixed;",
+"default": " (scroll)"
+		},
+		"background-clip": {
+"start": "",
+"name": "background-clip",
+"value": `: значение; – устанавливает, где будет отображаться фон
+Значения:
+1. border-box – фон отображается до внешнего края границы элемента
+2. padding-box – фон отображается до внутреннего края границы элемента
+3. content-box – фон отображается только внутри контента`,
+"example": "background-clip: border-box;",
+"default": " (border-box)"
+		},
+		"background": {
+"start": "",
+"name": "background",
+"value": ": background-color background-image background-position/background-size background-repeat background-attachment; – сокращённая запись",
+"example": "background: #9cdaff url("img/bg.jpg") center/50% 50% fixed, aquamarine url("img/bg1.jpg") left/25% 25% no-repeat;",
+"default": " (transparent none 0% 0%/auto auto repeat scroll)"
+		}
+	}
+
+
+		
 	},
 	"position": {
 		"title": "Позиционирование",
