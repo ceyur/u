@@ -325,6 +325,23 @@ export const properties = {
 "example": "overflow: auto;",
 "default": " (visible)"
 		},
+		"box-shadow": {
+			"start": "",
+			"name": "box-shadow",
+			"value": `: сдвиг■по■горизонтали сдвиг■по■вертикали радиус расстояние; – добавляет тень к элементу
+Значения:
+1. none – к элементу не применяется никакая тень
+2. inset – тень становится внутри объекта`,
+			"example": "box-shadow: inset 0 0 10px black;",
+			"default": " (none)"
+		},
+		"opacity": {
+			"start": "",
+			"name": "opacity",
+			"value": ": степень■прозрачности; – задаёт степень прозрачности элемента",
+			"example": "opacity: 50%;",
+			"default": " (1)"
+		},
 		"resize": {
 "start": "",
 "name": "resize",
