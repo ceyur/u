@@ -535,7 +535,7 @@ export const properties = {
 "start": "",
 "name": "background",
 "value": ": background-color background-image background-position/background-size background-repeat background-attachment; – сокращённая запись",
-"example": "background: #9cdaff url("img/bg.jpg") center/50% 50% fixed, aquamarine url("img/bg1.jpg") left/25% 25% no-repeat;",
+"example": `background: #9cdaff url("img/bg.jpg") center/50% 50% fixed, aquamarine url("img/bg1.jpg") left/25% 25% no-repeat;`,
 "default": " (transparent none 0% 0%/auto auto repeat scroll)"
 		}		
 	},
