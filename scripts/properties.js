@@ -458,7 +458,7 @@ export const properties = {
 		}
 	},
 	"background": {
-		"title": "Свойства фона"
+		"title": "Свойства фона",
 		"background-color": {
 "start": "",
 "name": "background-color",
