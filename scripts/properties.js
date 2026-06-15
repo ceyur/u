@@ -672,7 +672,7 @@ export const properties = {
 "value": ": background-color background-image background-position/background-size background-repeat background-attachment; – сокращённая запись",
 "example": `background: #9cdaff url("img/bg.jpg") center/50% 50% fixed, aquamarine url("img/bg1.jpg") left/25% 25% no-repeat;`,
 "default": " (transparent none 0% 0%/auto auto repeat scroll)"
-		}		
+		}
 	},
 	"position": {
 		"title": "Позиционирование",
@@ -753,7 +753,7 @@ export const properties = {
 		"flex-flow": {
 "start": "",
 "name": "flex-flow",
-"value": ": flex-direction flex-wrap; – сокращённая запись для свойств flex-direction и flex-wrap",
+"value": ": flex-direction flex-wrap; – сокращённая запись",
 "example": "flex-flow: row nowrap;",
 "default": " (row nowrap)"
 		},
@@ -1301,14 +1301,14 @@ export const properties = {
 	},
 	"transform": {
 		"title": "Трансформация",
-		"transform-translate": {
+		"translate": {
 "start": "transform: ",
 "name": "translate",
 "value": "(X, Y); – cдвигает элемент вправо и вниз относительно начального положения объекта",
 "example": "transform: translate(30px, -15px);",
 "default": " (none)"
 		},
-		"transform-scale": {
+		"scale": {
 "start": "transform: ",
 "name": "scale",
 "value": `(X, Y); – масштабирует размеры элемента
@@ -1317,21 +1317,21 @@ export const properties = {
 "example": "transform: scale(1.5, 1.25);",
 "default": " (none)"
 		},
-		"transform-rotate": {
+		"rotate": {
 "start": "transform: ",
 "name": "rotate",
 "value": "(Xdeg); – поворачивает элемент по часовой стрелке",
 "example": "transform: rotate(45deg);",
 "default": " (none)"
 		},
-		"transform-skew": {
+		"skew": {
 "start": "transform: ",
 "name": "skew",
 "value": "(Xdeg, Ydeg); – наклоняет элемент",
 "example": "transform: skew(45deg, -10deg);",
 "default": " (none)"
 		},
-		"transform-matrix": {
+		"matrix": {
 "start": "transform: ",
 "name": "matrix",
 "value": `(A, B, C, D, E, F); – деформирует (наклоняет) элемент
@@ -1384,28 +1384,28 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 "example": "perspective-origin: top left;",
 "default": " (50% 50%)"
 		},
-		"transform-translate3d": {
+		"translate3d": {
 "start": "transform: ",
 "name": "translate3d",
 "value": "(X, Y, Z); – cдвигает элемент по 3 осям относительно начального положения объекта",
 "example": "transform: translate3d(30px, 30px, 30px);",
 "default": " (none)"
 		},
-		"transform-scale3d": {
+		"scale3d": {
 "start": "transform: ",
 "name": "scale3d",
 "value": "(X, Y, Z); – масштабирует размеры элемента по 3 осям",
 "example": "transform: scale3d(1.5, 1.25);",
 "default": " (none)"
 		},
-		"transform-rotate3d": {
+		"rotate3d": {
 "start": "transform: ",
 "name": "rotate3d",
 "value": "(X, Y, Z, Ndeg); – поворачивает элемент по часовой стрелке относительно 3 осей",
 "example": "transform: rotate3d(1, 1, 1, 45deg);",
 "default": " (none)"
 		},
-		"transform-matrix3d": {
+		"matrix3d": {
 "start": "transform: ",
 "name": "matrix3d",
 "value": `(n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n); – задаёт трёхмерное преобразование, как однородную матрицу размером 4×4 с шестнадцатью значениями в столбцах
@@ -1413,7 +1413,7 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 "example": "transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);",
 "default": " (none)"
 		},
-		"transform-3d": {
+		"transform3d": {
 "start": "",
 "name": "transform",
 "value": ": translate3d(X, Y, Z) rotate3d(X, Y, Z, Ndeg); – сокращённая запись",
