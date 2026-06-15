@@ -31,8 +31,7 @@ export const properties = {
 		"font-face": {
 "start": "@",
 "name": "font-face",
-"value": ` {текст из внешнего файла} – внедряет в документ шрифт из внешнего файла
-Конвертер шрифтов – <a target="_blank" href="https://www.fontconverter.io">https://www.fontconverter.io</a>`,
+"value": " {текст из внешнего файла} – внедряет в документ шрифт из внешнего файла",
 "example": `@font-face {
 	font-family: "Caprica";
 	src: url(fonts/caprica-script-personal-use.eot);
@@ -606,8 +605,7 @@ export const properties = {
 		"background-image": {
 "start": "",
 "name": "background-image",
-"value": `: градиент■или■url("адрес картинки"); – устанавливает фоновое изображение или градиент для элемента
-Создать градиент – https://www.colorzilla.com/gradient-editor/`,
+"value": `: градиент■или■url("адрес картинки"); – устанавливает фоновое изображение или градиент для элемента`,
 "example": `background-image: url("https://apple.com");`,
 "default": " (none)"
 		},
