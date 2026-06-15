@@ -1385,35 +1385,35 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 "default": " (50% 50%)"
 		},
 		"transform-translate3d": {
-"start": "",
-"name": "transform",
-"value": ": translate3d(X, Y, Z); – cдвигает элемент по 3 осям относительно начального положения объекта",
+"start": "transform: ",
+"name": "translate3d",
+"value": "(X, Y, Z); – cдвигает элемент по 3 осям относительно начального положения объекта",
 "example": "transform: translate3d(30px, 30px, 30px);",
 "default": " (none)"
 		},
 		"transform-scale3d": {
-"start": "",
-"name": "transform",
-"value": ": scale3d(X, Y, Z); – масштабирует размеры элемента по 3 осям",
+"start": "transform: ",
+"name": "scale3d",
+"value": "(X, Y, Z); – масштабирует размеры элемента по 3 осям",
 "example": "transform: scale3d(1.5, 1.25);",
 "default": " (none)"
 		},
 		"transform-rotate3d": {
-"start": "",
-"name": "transform",
-"value": ": rotate3d(X, Y, Z, Ndeg); – поворачивает элемент по часовой стрелке относительно 3 осей",
+"start": "transform: ",
+"name": "rotate3d",
+"value": "(X, Y, Z, Ndeg); – поворачивает элемент по часовой стрелке относительно 3 осей",
 "example": "transform: rotate3d(1, 1, 1, 45deg);",
 "default": " (none)"
 		},
 		"transform-matrix3d": {
-"start": "",
-"name": "transform",
-"value": `: matrix3d(n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n); – задаёт трёхмерное преобразование, как однородную матрицу размером 4×4 с шестнадцатью значениями в столбцах
+"start": "transform: ",
+"name": "matrix3d",
+"value": `(n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n); – задаёт трёхмерное преобразование, как однородную матрицу размером 4×4 с шестнадцатью значениями в столбцах
 Генератор 3D матриц – http://ds-overdesign.com/transform/matrix3d.html`,
 "example": "transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);",
 "default": " (none)"
 		},
-		"transform-3d-combined": {
+		"transform-3d": {
 "start": "",
 "name": "transform",
 "value": ": translate3d(X, Y, Z) rotate3d(X, Y, Z, Ndeg); – сокращённая запись",
