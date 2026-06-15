@@ -1302,39 +1302,39 @@ export const properties = {
 	"transform": {
 		"title": "Трансформация",
 		"transform-translate": {
-"start": "",
-"name": "transform",
-"value": ": translate(X, Y); – cдвигает элемент вправо и вниз относительно начального положения объекта",
+"start": "transform: ",
+"name": "translate",
+"value": "(X, Y); – cдвигает элемент вправо и вниз относительно начального положения объекта",
 "example": "transform: translate(30px, -15px);",
 "default": " (none)"
 		},
 		"transform-scale": {
-"start": "",
-"name": "transform",
-"value": `: scale(X, Y); – масштабирует размеры элемента
+"start": "transform: ",
+"name": "scale",
+"value": `(X, Y); – масштабирует размеры элемента
 Краткая запись:
 1. transform: scale(X■Y);`,
 "example": "transform: scale(1.5, 1.25);",
 "default": " (none)"
 		},
 		"transform-rotate": {
-"start": "",
-"name": "transform",
-"value": ": rotate(Xdeg); – поворачивает элемент по часовой стрелке",
+"start": "transform: ",
+"name": "rotate",
+"value": "(Xdeg); – поворачивает элемент по часовой стрелке",
 "example": "transform: rotate(45deg);",
 "default": " (none)"
 		},
 		"transform-skew": {
-"start": "",
-"name": "transform",
-"value": ": skew(Xdeg, Ydeg); – наклоняет элемент",
+"start": "transform: ",
+"name": "skew",
+"value": "(Xdeg, Ydeg); – наклоняет элемент",
 "example": "transform: skew(45deg, -10deg);",
 "default": " (none)"
 		},
 		"transform-matrix": {
-"start": "",
-"name": "transform",
-"value": `: matrix(A, B, C, D, E, F); – деформирует (наклоняет) элемент
+"start": "transform: ",
+"name": "matrix",
+"value": `(A, B, C, D, E, F); – деформирует (наклоняет) элемент
 A – масштабирует элемент по горизонтали (scale(X))
 B – деформирует (сдвигает) стороны элемента по вертикали (skew(X))
 C – деформирует (сдвигает) стороны элемента по горизонтали (skew(Y))
@@ -1344,7 +1344,7 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 "example": "transform: matrix(0.5, 0.1, 0.1, 0.5, 10, 15);",
 "default": " (none)"
 		},
-		"transform-combined": {
+		"transform": {
 "start": "",
 "name": "transform",
 "value": ": translate(X, Y) rotate(Xdeg) scale(X, Y); – сокращённая запись",
