@@ -1320,10 +1320,10 @@ export const properties = {
 	},
 	"animation": {
 		"title": "Анимация",
-		"@keyframes": {
-"start": "",
-"name": "@keyframes",
-"value": "имя {значение%{свойства}значение%{свойства}} – создаёт собственную анимацию",
+		"keyframes": {
+"start": "@",
+"name": "keyframes",
+"value": " имя {значение%{свойства}значение%{свойства}} – создаёт собственную анимацию",
 "example": `@keyframes color {
 	0% {
 		left: 0%;
