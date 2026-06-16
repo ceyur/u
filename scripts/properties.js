@@ -1395,8 +1395,8 @@ export const properties = {
 "value": `: значение; – позволяет запускать или останавливать анимацию по событию
 Значения:
 1. running – анимация проигрывается
-2. reverse – при наведении анимация останавливается`,
-"example": "animation-play-state: reverse;",
+2. paused – анимация останавливается`,
+"example": "animation-play-state: paused;",
 "default": " (running)"
 		},
 		"animation-delay": {
