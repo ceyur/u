@@ -1494,8 +1494,8 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 		"perspective": {
 "start": "",
 "name": "perspective",
-"value": ": (X, Y)■или■значения; – создаёт перспективу",
-"example": "perspective: (25px, -10px);",
+"value": ": размер; – создаёт перспективу",
+"example": "perspective: 25px;",
 "default": " (none)"
 		},
 		"perspective-origin": {
