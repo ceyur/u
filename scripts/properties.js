@@ -1276,7 +1276,7 @@ export const properties = {
 "start": "",
 "name": "transition-duration",
 "value": ": время; – устанавливает время, за которое одно значение свойства переходит в другое, осуществляется переход",
-"example": "transition-duration: 0,5s;",
+"example": "transition-duration: 0.5s;",
 "default": " (0s)"
 		},
 		"transition-property": {
@@ -1438,10 +1438,8 @@ export const properties = {
 		"scale": {
 "start": "transform: ",
 "name": "scale",
-"value": `(X, Y); – масштабирует размеры элемента
-Краткая запись:
-1. transform: scale(X■Y);`,
-"example": "transform: scale(1.5, 1.25);",
+"value": "(X, Y); – масштабирует размеры элемента"
+"example": "transform: scale(1.5);",
 "default": " (none)"
 		},
 		"rotate": {
@@ -1481,14 +1479,14 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 		"transform-origin": {
 "start": "",
 "name": "transform-origin",
-"value": `: (X, Y)■или■значения; – смещает центр трансформации, относительно которого происходит изменение элемента
+"value": `: x y z; – смещает центр трансформации, относительно которого происходит изменение элемента
 Значения:
 1. center – центр трансформации в центре элемента
 2. top – центр трансформации сверху элемента
 3. right – центр трансформации справа элемента
 4. bottom – центр трансформации снизу элемента
 5. left – центр трансформации слева элемента`,
-"example": "transform-origin: (25px, -10px);",
+"example": "transform-origin: 25px -10px;",
 "default": " (50% 50% 0)"
 		},
 		"perspective": {
@@ -1501,7 +1499,7 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 		"perspective-origin": {
 "start": "",
 "name": "perspective-origin",
-"value": `: (X, Y)■или■значения; – смещает центр перспективы
+"value": `: x y; – смещает центр перспективы
 Значения:
 1. center – центр перспективы в центре элемента
 2. top – центр перспективы сверху элемента
