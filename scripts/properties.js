@@ -312,8 +312,7 @@ export const properties = {
 "value": `: значение; – изменяет алгоритм расчёта ширины и высоты элемента
 Значения:
 1. content-box – свойства width и height задают ширину и высоту контента и не включают в себя значения полей (padding), границ (border) и отступов (margin)
-2. padding-box – свойства width и height задают ширину и высоту контента и включают в себя значения полей (padding), но не границ (border) и отступов (margin)
-3. border-box – свойства width и height задают ширину и высоту контента и включают в себя только значения полей (padding), границ (border), но не отступы (margin)`,
+2. border-box – свойства width и height задают ширину и высоту контента и включают в себя только значения полей (padding), границ (border), но не отступы (margin)`,
 "example": "box-sizing: border-box;",
 "default": " (content-box)"
 		},
