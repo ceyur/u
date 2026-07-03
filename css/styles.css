@@ -166,7 +166,7 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 12.5px;
-	a {
+	button {
 		flex: 1 0 25%;
 		display: flex;
 		margin: 12.5px;
@@ -420,7 +420,7 @@ body .two {
 	}
 }
 @media (max-width: 744px) {
-	nav a {
+	nav button {
 		flex: 1 0 80%;
 		&:hover {
 			scale: 1.05;
