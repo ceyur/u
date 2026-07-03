@@ -518,7 +518,7 @@ export const properties = {
 35. zoom-out – курсор указывает что можно уменьшить размер элемента
 36. grab – курсор указывает на захват чего-то
 37. grabbing – курсор указывает на захват чего-то`,
-"example": "cursor: wait;",
+"example": "cursor: wait, auto;",
 "default": " (auto)"
 		}
 	},
