@@ -83,8 +83,8 @@ export const properties = {
 "value": `: степень■жирности; – задаёт жирность текста
 Степени жирности:
 1. 100 – thin
-2. 200 – ultralite
-3. 300 – lite
+2. 200 – ultralight
+3. 300 – light
 4. 400 – normal
 5. 500 – medium
 6. 600 – semibold
@@ -870,7 +870,7 @@ export const properties = {
 "name": "align-self",
 "value": `: значение; – переопределяет для конкретного flex-элемента выравнивание вдоль поперечной оси
 Значения:
-1. auto – наследует значение align-items flex-контейнера илл использует stretch
+1. auto – наследует значение align-items flex-контейнера или использует stretch
 2. stretch – flex-элементы растягиваются на весь размер поперечной оси flex-контейнера
 2. flex-start – flex-элементы прижимаются к началу поперечной оси
 3. flex-end – flex-элементы прижимаются к концу поперечной оси
