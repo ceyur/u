@@ -1439,7 +1439,7 @@ export const properties = {
 		"scale": {
 "start": "transform: ",
 "name": "scale",
-"value": "(X, Y); – масштабирует размеры элемента"
+"value": "(X, Y); – масштабирует размеры элемента",
 "example": "transform: scale(1.5);",
 "default": " (none)"
 		},
