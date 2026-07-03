@@ -644,7 +644,7 @@ export const properties = {
 "start": "",
 "name": "background-image",
 "value": `: градиент■или■url("адрес картинки"); – устанавливает фоновое изображение или градиент для элемента`,
-"example": `background-image: url("https://apple.com");`,
+"example": `background-image: url("img/img.jpg");`,
 "default": " (none)"
 		},
 		"background-position": {
