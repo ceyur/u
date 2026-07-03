@@ -47,6 +47,7 @@
 * {
 	margin: 0;
 	font-size: 25px;
+	font-family: serif;
 	text-decoration: none;
 }
 a {
@@ -56,6 +57,10 @@ a {
 		color: #cd00cd;
 		cursor: pointer;
 	}
+}
+button {
+	color: blue;
+	border: none;
 }
 p {
 	margin: 25px;
