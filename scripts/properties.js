@@ -1521,7 +1521,7 @@ F – сдвигает элемент по вертикали (translate(Y))`,
 "start": "transform: ",
 "name": "scale3d",
 "value": "(X, Y, Z); – масштабирует размеры элемента по 3 осям",
-"example": "transform: scale3d(1.5, 1.25);",
+"example": "transform: scale3d(1.5, 1.25, 1.3);",
 "default": " (none)"
 		},
 		"rotate3d": {
