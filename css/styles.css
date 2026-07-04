@@ -59,8 +59,8 @@ a {
 	}
 }
 button {
-	color: blue;
 	border: none;
+	background: #fff;
 }
 p {
 	margin: 25px;
@@ -178,6 +178,7 @@ nav {
 		justify-content: center;
 		align-items: center;
 		padding: 6px;
+		color: blue;
 		box-shadow: 0 0 10px black;
 		border-radius: 4vh;
 		white-space: nowrap;
@@ -186,7 +187,6 @@ nav {
 			color: green;
 			background: rgba(0, 255, 190, 0.25);
 			box-shadow: 0 0 10px green;
-			cursor: pointer;
 			scale: 1.05;
 		}
 	}
