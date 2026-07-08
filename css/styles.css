@@ -134,9 +134,9 @@ p {
 .visible {
 	#information {
 		display: block;
-		+button {
+		& + button {
 			display: block;
-			+* {
+			& + * {
 				position: fixed;
 				width: 100%;
 			}
@@ -146,9 +146,9 @@ p {
 .hidden {
 	#information {
 		display: none;
-		+button {
+		& + button {
 			display: none;
-			+* {
+			& + * {
 				position: relative;
 				width: auto;
 			}
