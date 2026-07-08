@@ -132,22 +132,26 @@ p {
 	}
 }
 .visible {
-	display: block;
-	+button {
+	#information {
 		display: block;
-		+* {
-			position: fixed;
-			width: 100%;
+		+button {
+			display: block;
+			+* {
+				position: fixed;
+				width: 100%;
+			}
 		}
 	}
 }
 .hidden {
-	display: none;
-	+button {
+	#information {
 		display: none;
-		+* {
-			position: relative;
-			width: auto;
+		+button {
+			display: none;
+			+* {
+				position: relative;
+				width: auto;
+			}
 		}
 	}
 }
