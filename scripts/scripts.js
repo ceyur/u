@@ -16,16 +16,43 @@ const go_code = document.querySelector("#go-code");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
-		console.log("window.location.search: ", window.location.search);
-		let path = window.location.search.replace("?p=/", "");
+		/*console.log("window.location.search: ", window.location.search);
+		let allPath = window.location.search.replace("?p=/", "");
+		console.log("allPath: ", allPath);
+		if (allPath.includes("information/")) {
+			let path = allPath.replace("information/", "")
+			console.log("path: ", path);
+			if (paths.includes(path)) {
+				let newPath = "/u/" + path + "information/";
+				window.history.replaceState(null, null, newPath);
+			}
+			else {
+				let newPath = "/u/" + path + "information/";
+				window.history.replaceState(null, null, "/u/");
+			}
+		}*/
+
+		let path = window.location.search.replace("?p=/", "").split("/");
 		console.log("path: ", path);
-		if (paths.includes(path)) {
-			let newPath = "/u/" + path + "/";
+		let lastPath = path.at(-2);
+		if (path.length > 2) {
+			let secondLastPath = allPath.at(-3);
+			if (paths.includes(secondLastPath)) {
+				let newPath = "/u/" + secondLastPath + "/information/";
+				window.history.replaceState(null, null, newPath);
+			}
+			else {
+				window.history.replaceState(null, null, "/u/information/");
+			}
+		}
+		else if (paths.includes(lastPath)) {
+			let newPath = "/u/" + lastPath + "/";
 			window.history.replaceState(null, null, newPath);
 		}
 		else {
 			window.history.replaceState(null, null, "/u/");
 		}
+		
 	}
 }
 
