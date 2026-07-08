@@ -46,8 +46,7 @@
 /*Основные свойства---------------------------------------------------------------------------------------------*/
 * {
 	margin: 0;
-	font-size: 25px;
-	font-family: serif;
+	font: 25px serif;
 	text-decoration: none;
 	scrollbar-color: #00a47e white;
 }
