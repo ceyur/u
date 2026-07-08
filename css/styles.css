@@ -83,6 +83,13 @@ p {
 	max-width: 850px;
 	overflow: auto;
 	scrollbar-width: none;
+	> button {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		cursor: default;
+	}
 	p {
 		position: relative;
 		z-index: 1;
@@ -111,44 +118,17 @@ p {
 			}
 		}
 	}
-	& > button {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		cursor: default;
-	}
-	& + button {
-		display: none;
-		position: absolute;
-		z-index: 1;
-		width: 100%;
-		height: 100vh;
-		background: rgba(0, 0, 0, 0.5);
-		cursor: default;
-		&:hover {
-			cursor: auto;
-		}
-	}
-	&.visible {
-		display: block;
-		& + button {
-			display: block;
-			& + * {
-				position: fixed;
-				width: 100%;
-			}
-		}
-	}
-	&.hidden {
-		display: none;
-		& + button {
-			display: none;
-			& + * {
-				position: relative;
-				width: auto;
-			}
-		}
+}
+#overlay {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	cursor: default;
+	&:hover {
+		cursor: auto;
 	}
 }
 main {
