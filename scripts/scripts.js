@@ -1,11 +1,17 @@
 import {properties} from "/u/scripts/properties.js";
 const paths = ["code", "text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
-const content = document.querySelector("#content");
+
+const information = document.querySelector("#information");
+const overlay = document.querySelector("overlay");
+const main = document.querySelector("main");
+const header = document.querySelector("header");
 const nav = document.querySelector("nav");
+const content = document.querySelector("#content");
+const code = document.querySelector("#code");
+
 const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
 const go_code = document.querySelector("#go-code");
-const information = document.querySelector("#information");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -38,7 +44,8 @@ function update() {
 		else {
 			main();
 		}
-		information.className = "visible";
+		information.hidden = false;
+		overlay.hidden = false;
 	}
 	else if (paths.includes(lastPath)) {
 		if (lastPath == "code") {
@@ -76,14 +83,16 @@ function createButtons() {
 	}
 	document.querySelector("#go-info").onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
-		information.className = "visible";
+		information.hidden = false;
+		overlay.hidden = false;
 	};
 	document.querySelectorAll(".close-info").forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path == "u" ? "" : path + "/";
 			history.pushState(null, null, "/u/" + newPath);
-			information.className = "hidden";
+			information.hidden = true;
+			overlay.hidden = true;
 		}
 	});
 
@@ -105,7 +114,8 @@ function main() {
 	nav.style.display = "flex";
 	go_code.style.visibility = "visible";
 	document.querySelector("#code").style.display = "none";
-	information.className = "hidden";
+	information.hidden = true;
+	overlay.hidden = true;
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
 	h1.innerHTML = "Свойства элементов css";
@@ -115,7 +125,8 @@ function code() {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	go_code.style.visibility = "hidden";
-	information.className = "hidden";
+	information.hidden = true;
+	overlay.hidden = true;
 	content.innerHTML = "";
 	document.querySelector("#code").style.display = "block";
 	document.title = "Готовый код";
@@ -125,7 +136,8 @@ function code() {
 function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
-	information.className = "hidden";
+	information.hidden = true;
+	overlay.hidden = true;
 	go_code.style.visibility = "hidden";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
