@@ -62,7 +62,7 @@ function update() {
 }
 
 function createButtons() {
-	button.onclick = window.scrollTo(0, 0);
+	button.onclick = () => window.scrollTo(0, 0);
 	if (window.scrollY > window.innerHeight) {
 		button.style.display = "flex";
 	}
