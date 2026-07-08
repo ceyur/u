@@ -2,7 +2,7 @@ import {properties} from "/u/scripts/properties.js";
 const paths = ["code", "text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 
 const information = document.querySelector("#information");
-const overlay = document.querySelector("overlay");
+const overlay = document.querySelector("#overlay");
 //const main = document.querySelector("main");
 //const header = document.querySelector("header");
 const nav = document.querySelector("nav");
