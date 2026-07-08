@@ -118,7 +118,7 @@ p {
 			}
 		}
 	}
-	+button {
+	& + button {
 		/*display: none;*/
 		position: absolute;
 		z-index: 1;
@@ -130,24 +130,24 @@ p {
 			cursor: auto;
 		}
 	}
-}
-.visible {
-	display: block;
-	& + button {
+	&.visible {
 		display: block;
-		& + * {
-			position: fixed;
-			width: 100%;
+		& + button {
+			display: block;
+			& + * {
+				position: fixed;
+				width: 100%;
+			}
 		}
 	}
-}
-.hidden {
-	display: none;
-	& + button {
+	&.hidden {
 		display: none;
-		& + * {
-			position: relative;
-			width: auto;
+		& + button {
+			display: none;
+			& + * {
+				position: relative;
+				width: auto;
+			}
 		}
 	}
 }
