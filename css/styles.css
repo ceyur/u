@@ -55,7 +55,6 @@ a {
 	-webkit-tap-highlight-color: transparent;
 	&:hover {
 		color: #cd00cd;
-		cursor: pointer;
 	}
 }
 button {
