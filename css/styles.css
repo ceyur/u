@@ -72,6 +72,7 @@ p {
 	white-space: pre-wrap;
 }
 #information {
+	display: none;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -118,6 +119,7 @@ p {
 		}
 	}
 	+button {
+		display: none;
 		position: absolute;
 		z-index: 1;
 		width: 100%;
@@ -128,26 +130,25 @@ p {
 			cursor: auto;
 		}
 	}
-	.visible {
+}
+.visible {
+	display: block;
+	+button {
 		display: block;
-		+button {
-			display: block;
-			+* {
-				position: fixed;
-				width: 100%;
-			}
+		+* {
+			position: fixed;
+			width: 100%;
 		}
 	}
-	.hidden {
-		/*display: none;
-		+button {
-			display: none;
-			+* {
-				position: relative;
-				width: auto;
-			}
-		}*/
-		color: blue;
+}
+.hidden {
+	display: none;
+	+button {
+		display: none;
+		+* {
+			position: relative;
+			width: auto;
+		}
 	}
 }
 main {
