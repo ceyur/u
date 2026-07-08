@@ -82,7 +82,7 @@ p {
 	max-width: 850px;
 	overflow: auto;
 	scrollbar-width: none;
-	>a {
+	>button {
 		position: absolute;
 		top: 0;
 		width: 100%;
@@ -117,7 +117,7 @@ p {
 			}
 		}
 	}
-	+a {
+	+button {
 		display: none;
 		position: absolute;
 		z-index: 1;
