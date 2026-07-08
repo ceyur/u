@@ -4,13 +4,14 @@ const paths = ["code", "text", "elements", "border", "background", "position", "
 const information = document.querySelector("#information");
 const overlay = document.querySelector("#overlay");
 //const main = document.querySelector("main");
+const close = document.querySelector("#close");
+const button = document.querySelector("#button");
 //const header = document.querySelector("header");
+const h1 = document.querySelector("h1");
 const nav = document.querySelector("nav");
 const content = document.querySelector("#content");
 //const code = document.querySelector("#code");
 
-const h1 = document.querySelector("h1");
-const close = document.querySelector("#close");
 const go_code = document.querySelector("#go-code");
 
 function ifReload() {
@@ -61,7 +62,7 @@ function update() {
 }
 
 function createButtons() {
-	const button = document.querySelector(".button");
+	button.onclick = window.scrollTo(0, 0);
 	if (window.scrollY > window.innerHeight) {
 		button.style.display = "flex";
 	}
