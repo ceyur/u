@@ -5,6 +5,7 @@ const nav = document.querySelector("nav");
 const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
 const go_code = document.querySelector("#go-code");
+const information = document.querySelector("#information");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -37,7 +38,7 @@ function update() {
 		else {
 			main();
 		}
-		info.visible();
+		information.className = "visible";
 	}
 	else if (paths.includes(lastPath)) {
 		if (lastPath == "code") {
@@ -75,14 +76,14 @@ function createButtons() {
 	}
 	document.querySelector("#go-info").onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
-		info.visible();
+		information.className = "visible";
 	};
 	document.querySelectorAll(".close-info").forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path == "u" ? "" : path + "/";
 			history.pushState(null, null, "/u/" + newPath);
-			info.hidden();
+			information.className = "hidden";
 		}
 	});
 
@@ -104,7 +105,7 @@ function main() {
 	nav.style.display = "flex";
 	go_code.style.visibility = "visible";
 	document.querySelector("#code").style.display = "none";
-	info.hidden();
+	information.className = "hidden";
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
 	h1.innerHTML = "Свойства элементов css";
@@ -114,7 +115,7 @@ function code() {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	go_code.style.visibility = "hidden";
-	info.hidden();
+	information.className = "hidden";
 	content.innerHTML = "";
 	document.querySelector("#code").style.display = "block";
 	document.title = "Готовый код";
@@ -124,7 +125,7 @@ function code() {
 function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
-	info.hidden();
+	information.className = "hidden";
 	go_code.style.visibility = "hidden";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
@@ -138,21 +139,6 @@ function go(name) {
 		content.append(p);
 	});
 }
-
-const info = {
-	visible: function() {
-		document.querySelector("#information").style.display = "block";
-		document.querySelector("#information+a").style.display = "block";
-		document.querySelector("#information+a+*").style.position = "fixed";
-		document.querySelector("#information+a+*").style.width = "100%";
-	},
-	hidden: function() {
-		document.querySelector("#information").style.display = "none";
-		document.querySelector("#information+a").style.display = "none";
-		document.querySelector("#information+a+*").style.position = "relative";
-		document.querySelector("#information+a+*").style.width = "auto";
-	}
-};
 
 ifReload();
 window.addEventListener("popstate", update);
