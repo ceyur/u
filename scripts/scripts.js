@@ -17,7 +17,7 @@ const go_code = document.querySelector("#go-code");
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
 		console.log("window.location.search: ", window.location.search);
-		let path = window.location.search.replace("?p=/", "").replace("/", "");
+		let path = window.location.search.replace("?p=/", "");
 		console.log("path: ", path);
 		if (paths.includes(path)) {
 			let newPath = "/u/" + path + "/";
