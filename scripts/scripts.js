@@ -19,7 +19,9 @@ function ifReload() {
 		let path = window.location.search.replace("?p=/", "").split("/");
 		console.log("path: ", path);
 		let lastPath = path.at(-2);
+		console.log("lastPath: ", lastPath);
 		let secondLastPath = path.at(-3);
+		console.log("secondLastPath: ", secondLastPath);
 		if (lastPath == "information") {
 			if (paths.includes(secondLastPath)) {
 				let newPath = "/u/" + secondLastPath + "/information/";
