@@ -3,11 +3,11 @@ const paths = ["code", "text", "elements", "border", "background", "position", "
 
 const information = document.querySelector("#information");
 const overlay = document.querySelector("overlay");
-const main = document.querySelector("main");
-const header = document.querySelector("header");
+//const main = document.querySelector("main");
+//const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const content = document.querySelector("#content");
-const code = document.querySelector("#code");
+//const code = document.querySelector("#code");
 
 const h1 = document.querySelector("h1");
 const close = document.querySelector("#close");
