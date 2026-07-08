@@ -139,14 +139,15 @@ p {
 		}
 	}
 	.hidden {
-		display: none;
+		/*display: none;
 		+button {
 			display: none;
 			+* {
 				position: relative;
 				width: auto;
 			}
-		}
+		}*/
+		color: blue;
 	}
 }
 main {
