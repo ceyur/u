@@ -3,7 +3,7 @@
 	color: white;
 	background: #00a47e;
 }
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
 	width: 17px;
 }
 ::-webkit-scrollbar-thumb {
@@ -13,7 +13,7 @@
 }
 ::-webkit-scrollbar-thumb:hover {
 	background: #00ce9e;
-}
+}*/
 /*::-webkit-scrollbar-button:vertical:start {
 	height: 10px;
 	border-bottom: 10px solid #00a47e;
@@ -49,6 +49,7 @@
 	font-size: 25px;
 	font-family: serif;
 	text-decoration: none;
+	scrollbar-color: #00a47e white;
 }
 a {
 	color: blue;
