@@ -13,8 +13,8 @@ const code = document.querySelector("#code");
 const close = document.querySelector("#close");
 const button = document.querySelector("#button");
 const go_code = document.querySelector("#go-code");
-const go-info = document.querySelector("#go-info");
-const close-info = document.querySelector(".close-info");
+const go_info = document.querySelector("#go-info");
+const close_info = document.querySelector(".close-info");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -95,11 +95,11 @@ function createButtons() {
 		codeView();
 	};
 	
-	go-info.onclick = () => {
+	go_info.onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 	};
-	close-info.forEach((e) => {
+	close_info.forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path == "u" ? "" : path + "/";
