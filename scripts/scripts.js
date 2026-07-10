@@ -14,7 +14,7 @@ const close = document.querySelector("#close");
 const button = document.querySelector("#button");
 const go_code = document.querySelector("#go-code");
 const go_info = document.querySelector("#go-info");
-const close_info = document.querySelector(".close-info");
+const close_info = document.querySelectorAll(".close-info");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
