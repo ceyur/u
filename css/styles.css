@@ -138,15 +138,14 @@ main {
 }
 header {
 	display: flex;
-	a, 
-	div, 
+	button,
 	svg {
 		width: 29px;
 		height: 29px;
 		stroke: black;
 		stroke-linecap: round;
 	}
-	a {
+	button {
 		margin: 22.5px 10px 0 22.5px;
 		border: 1px solid black;
 		border-radius: 50%;
@@ -161,8 +160,7 @@ header {
 		margin: 20px 0 0;
 		font-size: 30px;
 		text-align: center;
-		+a, 
-		+div {
+		+ button {
 			margin: 22.5px 22.5px 0 10px;
 		}
 	}
