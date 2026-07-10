@@ -51,34 +51,34 @@ function update() {
 	if (lastPath == "information") {
 		if (paths.includes(secondLastPath)) {
 			if (secondLastPath == "code") {
-				codeView();
+				codeVisible();
 			}
 			else {
 				go(secondLastPath);
 			}
 		}
 		else {
-			main();
+			mainVisible();
 		}
 		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
 		if (lastPath == "code") {
-			codeView();
+			codeVisible();
 		}
 		else {
 			go(lastPath);
 		}
 	}
 	else {
-		main();
+		mainVisible();
 	}
 }
 
 function createButtons() {
 	close.onclick = () => {
 		history.pushState(null, null, "/u/");
-		main();
+		mainVisible();
 	}
 	
 	button.onclick = () => window.scrollTo(0, 0);
@@ -93,7 +93,7 @@ function createButtons() {
 	
 	goCode.onclick = () => {
 		history.pushState(null, null, "/u/code/");
-		codeView();
+		codeVisible();
 	};
 	
 	goInfo.onclick = () => {
@@ -117,7 +117,7 @@ function createButtons() {
 	});
 }
 
-function main() {
+function mainVisible() {
 	go_code.style.visibility = "visible";
 	info.hidden();
 	nav.style.display = "flex";
@@ -128,7 +128,7 @@ function main() {
 	h1.innerHTML = "Свойства элементов css";
 }
 
-function codeView() {
+function codeVisible() {
 	go_code.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
