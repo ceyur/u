@@ -3,14 +3,14 @@ const paths = ["code", "text", "elements", "border", "background", "position", "
 
 const information = document.querySelector("#information");
 const overlay = document.querySelector("#overlay");
-//const main = document.querySelector("main");
+// const main = document.querySelector("main");
 const close = document.querySelector("#close");
 const button = document.querySelector("#button");
-//const header = document.querySelector("header");
+// const header = document.querySelector("header");
 const h1 = document.querySelector("h1");
 const nav = document.querySelector("nav");
 const content = document.querySelector("#content");
-//const code = document.querySelector("#code");
+const code = document.querySelector("#code");
 
 const go_code = document.querySelector("#go-code");
 
@@ -123,7 +123,7 @@ function main() {
 	close.style.display = "none";
 	nav.style.display = "flex";
 	go_code.style.visibility = "visible";
-	document.querySelector("#code").style.display = "none";
+	code.style.display = "none";
 	info.hidden();
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
@@ -136,7 +136,7 @@ function code() {
 	go_code.style.visibility = "hidden";
 	info.hidden();
 	content.innerHTML = "";
-	document.querySelector("#code").style.display = "block";
+	code.style.display = "block";
 	document.title = "Готовый код";
 	h1.innerHTML = "Готовый код";
 }
