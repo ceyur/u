@@ -4,15 +4,17 @@ const paths = ["code", "text", "elements", "border", "background", "position", "
 const information = document.querySelector("#information");
 const overlay = document.querySelector("#overlay");
 // const main = document.querySelector("main");
-const close = document.querySelector("#close");
-const button = document.querySelector("#button");
 // const header = document.querySelector("header");
 const h1 = document.querySelector("h1");
 const nav = document.querySelector("nav");
 const content = document.querySelector("#content");
 const code = document.querySelector("#code");
 
+const close = document.querySelector("#close");
+const button = document.querySelector("#button");
 const go_code = document.querySelector("#go-code");
+const go-info = document.querySelector("#go-info");
+const close-info = document.querySelector(".close-info");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -73,13 +75,12 @@ function update() {
 }
 
 function createButtons() {
+	close.onclick = () => {
+		history.pushState(null, null, "/u/");
+		main();
+	}
+	
 	button.onclick = () => window.scrollTo(0, 0);
-	if (window.scrollY > window.innerHeight) {
-		button.style.display = "flex";
-	}
-	else {
-		button.style.display = "none";
-	}
 	window.addEventListener("scroll", () => {
 		if (window.scrollY > window.innerHeight) {
 			button.style.display = "flex";
@@ -89,15 +90,16 @@ function createButtons() {
 		}
 	});
 	
-	close.onclick = () => {
-		history.pushState(null, null, "/u/");
-		main();
-	}
-	document.querySelector("#go-info").onclick = () => {
+	go_code.onclick = () => {
+		history.pushState(null, null, "/u/code/");
+		codeView();
+	};
+	
+	go-info.onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 	};
-	document.querySelectorAll(".close-info").forEach((e) => {
+	close-info.forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path == "u" ? "" : path + "/";
@@ -105,11 +107,6 @@ function createButtons() {
 			info.hidden();
 		}
 	});
-
-	go_code.onclick = () => {
-		history.pushState(null, null, "/u/code/");
-		code();
-	};
 	
 	paths.forEach(name => {
 	    document.querySelector(`#go-${name}`).onclick = () => {
@@ -120,35 +117,36 @@ function createButtons() {
 }
 
 function main() {
-	close.style.display = "none";
-	nav.style.display = "flex";
 	go_code.style.visibility = "visible";
-	code.style.display = "none";
 	info.hidden();
+	nav.style.display = "flex";
+	code.style.display = "none";
 	content.innerHTML = "";
+	close.style.display = "none";
 	document.title = "Свойства элементов css";
 	h1.innerHTML = "Свойства элементов css";
 }
 
-function code() {
-	close.style.display = "flex";
-	nav.style.display = "none";
+function codeView() {
 	go_code.style.visibility = "hidden";
 	info.hidden();
-	content.innerHTML = "";
+	nav.style.display = "none";
 	code.style.display = "block";
+	content.innerHTML = "";
+	close.style.display = "flex";
 	document.title = "Готовый код";
 	h1.innerHTML = "Готовый код";
 }
 
 function go(name) {
-	close.style.display = "flex";
-	nav.style.display = "none";
-	info.hidden();
 	go_code.style.visibility = "hidden";
+	info.hidden();
+	nav.style.display = "none";
+	code.style.display = "none";
+	content.innerHTML = "";
+	close.style.display = "flex";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
-	content.innerHTML = "";
 	Object.values(properties[name]).forEach((e) => {
 		if (e == properties[name].title) return;
 		let p = document.createElement("p");
