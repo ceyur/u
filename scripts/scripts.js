@@ -50,7 +50,7 @@ function update() {
 	if (lastPath == "information") {
 		if (paths.includes(secondLastPath)) {
 			if (secondLastPath == "code") {
-				code();
+				codeView();
 			}
 			else {
 				go(secondLastPath);
@@ -63,7 +63,7 @@ function update() {
 	}
 	else if (paths.includes(lastPath)) {
 		if (lastPath == "code") {
-			code();
+			codeView();
 		}
 		else {
 			go(lastPath);
