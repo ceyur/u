@@ -23,6 +23,7 @@ function ifReload() {
 		console.log("allPath: ", allPath);
 		if (allPath.includes("information")) {
 			let path = allPath - "information";
+			console.log("path: ", path);
 			if (paths.includes(path)) {
 				let newPath = "/u/" + path + "/";
 				window.history.replaceState(null, null, newPath);
