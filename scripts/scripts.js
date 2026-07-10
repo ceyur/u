@@ -47,7 +47,7 @@ function ifReload() {
 		let finalPath = ifInfo ? newPath + "information/" : newPath;
 		window.history.replaceState(null, null, "/u/" + finalPath);
 	}
-	console.log("Reload: ", window.location.search);
+	console.log("Reload: ", window.location.pathname);
 }
 
 function update() {
