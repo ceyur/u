@@ -136,18 +136,19 @@ main {
 }
 header {
 	display: flex;
-	button,
-	svg {
-		width: 29px;
-		height: 29px;
-		stroke: black;
-		stroke-linecap: round;
-	}
 	button {
+		width: 31px;
+		height: 31px;
 		margin: 22.5px 10px 0 22.5px;
 		border: 1px solid black;
 		border-radius: 50%;
 		transition: 0.25s;
+		svg {
+			width: 29px;
+			height: 29px;
+			stroke: black;
+			stroke-linecap: round;
+		}
 		&:hover {
 			box-shadow: 0 0 10px green;
 			scale: 1.15;
