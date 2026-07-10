@@ -85,7 +85,7 @@ i {
 	max-width: 850px;
 	overflow: auto;
 	scrollbar-width: none;
-	> button {
+	button:first-child {
 		position: absolute;
 		top: 0;
 		width: 100%;
