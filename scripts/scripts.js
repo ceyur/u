@@ -161,13 +161,13 @@ const info = {
 	visible: function() {
 		information.style.display = "block";
 		overlay.style.display = "block";
-		ocument.querySelector("#overlay+*").style.position = "fixed";
+		document.querySelector("#overlay+*").style.position = "fixed";
 		document.querySelector("#overlay+*").style.width = "100%";
 	},
 	hidden: function() {
 		information.style.display = "none";
 		overlay.style.display = "none";
-		ocument.querySelector("#overlay+*").style.position = "relative";
+		document.querySelector("#overlay+*").style.position = "relative";
 		document.querySelector("#overlay+*").style.width = "auto";
 	}
 };
