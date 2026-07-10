@@ -19,17 +19,17 @@ const closeInfo = document.querySelectorAll(".close-info");
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
 		console.log("window.location.search: ", window.location.search);
-		let allPath = window.location.search.replace("?p=/", "").replace("/", "");
+		let allPath = window.location.search.replace("?p=/", "").replaceAll("/", "");
 		console.log("allPath: ", allPath);
 		if (allPath.includes("information")) {
-			let path = allPath - "information";
+			let path = allPath.replace("information", "");
 			console.log("path: ", path);
 			if (paths.includes(path)) {
-				let newPath = "/u/" + path + "/";
+				let newPath = "/u/" + path + "/information/";
 				window.history.replaceState(null, null, newPath);
 			}
 			else {
-				window.history.replaceState(null, null, "/u/");
+				window.history.replaceState(null, null, "/u/information/");
 			}
 		}
 		else if (paths.includes(allPath)) {
