@@ -1,4 +1,4 @@
-import {properties} from "/u/scripts/properties.js";
+import "/u/scripts/properties.js";
 const paths = ["code", "text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 
 const information = document.querySelector("#information");
@@ -57,8 +57,7 @@ function update() {
 		else {
 			main();
 		}
-		information.style.display = "block";
-		overlay.style.display = "block";
+		info.visible();
 	}
 	else if (paths.includes(lastPath)) {
 		if (lastPath == "code") {
@@ -96,16 +95,14 @@ function createButtons() {
 	}
 	document.querySelector("#go-info").onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
-		information.hidden = false;
-		overlay.hidden = false;
+		info.visible();
 	};
 	document.querySelectorAll(".close-info").forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path == "u" ? "" : path + "/";
 			history.pushState(null, null, "/u/" + newPath);
-			information.hidden = true;
-			overlay.hidden = true;
+			info.hidden();
 		}
 	});
 
@@ -127,8 +124,7 @@ function main() {
 	nav.style.display = "flex";
 	go_code.style.visibility = "visible";
 	document.querySelector("#code").style.display = "none";
-	information.hidden = true;
-	overlay.hidden = true;
+	info.hidden();
 	content.innerHTML = "";
 	document.title = "Свойства элементов css";
 	h1.innerHTML = "Свойства элементов css";
@@ -138,8 +134,7 @@ function code() {
 	close.style.display = "flex";
 	nav.style.display = "none";
 	go_code.style.visibility = "hidden";
-	information.hidden = true;
-	overlay.hidden = true;
+	info.hidden();
 	content.innerHTML = "";
 	document.querySelector("#code").style.display = "block";
 	document.title = "Готовый код";
@@ -149,8 +144,7 @@ function code() {
 function go(name) {
 	close.style.display = "flex";
 	nav.style.display = "none";
-	information.hidden = true;
-	overlay.hidden = true;
+	info.hidden();
 	go_code.style.visibility = "hidden";
 	document.title = properties[name].title;
 	h1.innerHTML = properties[name].title;
@@ -164,6 +158,21 @@ function go(name) {
 		content.append(p);
 	});
 }
+
+const info = {
+	visible: function() {
+		information.style.display = "block";
+		overlay.style.display = "block";
+		ocument.querySelector("#overlay+*").style.position = "fixed";
+		document.querySelector("#overlay+*").style.width = "100%";
+	},
+	hidden: function() {
+		information.style.display = "none";
+		overlay.style.display = "none";
+		ocument.querySelector("#overlay+*").style.position = "relative";
+		document.querySelector("#overlay+*").style.width = "auto";
+	}
+};
 
 ifReload();
 window.addEventListener("popstate", update);
