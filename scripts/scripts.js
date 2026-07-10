@@ -73,6 +73,7 @@ function update() {
 	if (lastPath == "information") {
 		if (paths.includes(secondLastPath)) {
 			go(secondLastPath);
+		}
 		else if (secondLastPath == "code") {
 			codeVisible();
 		}
@@ -83,6 +84,7 @@ function update() {
 	}
 	else if (paths.includes(lastPath)) {
 		go(lastPath);
+	}
 	else if (lastPath == "code") {
 		codeVisible();
 	}
