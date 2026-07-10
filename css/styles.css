@@ -69,6 +69,10 @@ p {
 	box-shadow: 0 0 10px black;
 	white-space: pre-wrap;
 }
+i {
+	color: green;
+	font-style: normal;
+}
 #information {
 	display: none;
 	position: fixed;
@@ -190,7 +194,7 @@ nav {
 	}
 }
 .close {
-	display: none;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: fixed;
@@ -227,7 +231,7 @@ nav {
 	}
 }
 .button {
-	display: none;
+	display: block;
 	position: fixed;
 	right: 50px;
 	bottom: 50px;
@@ -254,20 +258,6 @@ nav {
 		}
 	}
 }
-i {
-	color: green;
-	font-style: normal;
-}
-u {
-	display: block;
-}
-#i-cursor {
-	color: green;
-	cursor: wait;
-	s {
-		color: black;
-	}
-}
 /*Дополнительные свойства conteneditable и готового кода--------------------------------------------------------*/
 /* #contenteditable~* {
 	display: block;
@@ -287,6 +277,16 @@ u {
 	color: pink;
 	background: mediumpurple;
 } */
+u {
+	display: block;
+}
+#i-cursor {
+	color: green;
+	cursor: wait;
+	s {
+		color: black;
+	}
+}
 .code {
 	display: flex;
 	flex-wrap: wrap;
