@@ -118,7 +118,7 @@ function createButtons() {
 }
 
 function mainVisible() {
-	go_code.style.visibility = "visible";
+	goCode.style.visibility = "visible";
 	info.hidden();
 	nav.style.display = "flex";
 	code.style.display = "none";
@@ -129,7 +129,7 @@ function mainVisible() {
 }
 
 function codeVisible() {
-	go_code.style.visibility = "hidden";
+	goCode.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
 	code.style.display = "block";
@@ -140,7 +140,7 @@ function codeVisible() {
 }
 
 function go(name) {
-	go_code.style.visibility = "hidden";
+	goCode.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
 	code.style.display = "none";
