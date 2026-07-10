@@ -3,7 +3,7 @@ const paths = ["code", "text", "elements", "border", "background", "position", "
 
 const information = document.querySelector("#information");
 const overlay = document.querySelector("#overlay");
-// const main = document.querySelector("main");
+const main = document.querySelector("main");
 // const header = document.querySelector("header");
 const h1 = document.querySelector("h1");
 const nav = document.querySelector("nav");
@@ -12,12 +12,13 @@ const code = document.querySelector("#code");
 
 const close = document.querySelector("#close");
 const button = document.querySelector("#button");
-const go_code = document.querySelector("#go-code");
-const go_info = document.querySelector("#go-info");
-const close_info = document.querySelectorAll(".close-info");
+const goCode = document.querySelector("#go-code");
+const goInfo = document.querySelector("#go-info");
+const closeInfo = document.querySelectorAll(".close-info");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
+		console.log("window.location.search: ", window.location.search);
 		let path = window.location.search.replace("?p=/", "").split("/");
 		console.log("path: ", path);
 		let lastPath = path.at(-2);
@@ -90,16 +91,16 @@ function createButtons() {
 		}
 	});
 	
-	go_code.onclick = () => {
+	goCode.onclick = () => {
 		history.pushState(null, null, "/u/code/");
 		codeView();
 	};
 	
-	go_info.onclick = () => {
+	goInfo.onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 	};
-	close_info.forEach((e) => {
+	closeInfo.forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path == "u" ? "" : path + "/";
@@ -161,14 +162,14 @@ const info = {
 	visible: function() {
 		information.style.display = "block";
 		overlay.style.display = "block";
-		document.querySelector("#overlay+*").style.position = "fixed";
-		document.querySelector("#overlay+*").style.width = "100%";
+		main.style.position = "fixed";
+		main.style.width = "100%";
 	},
 	hidden: function() {
 		information.style.display = "none";
 		overlay.style.display = "none";
-		document.querySelector("#overlay+*").style.position = "relative";
-		document.querySelector("#overlay+*").style.width = "auto";
+		main.style.position = "relative";
+		main.style.width = "auto";
 	}
 };
 
