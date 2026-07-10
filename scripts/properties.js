@@ -1,4 +1,4 @@
-export default const properties = {
+export default {
 	"text": {
 		"title": "Свойства текста",
 		"color": {
