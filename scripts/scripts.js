@@ -18,53 +18,36 @@ const closeInfo = document.querySelectorAll(".close-info");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
-		console.log("window.location.search: ", window.location.search);
-		let allPath = window.location.search.replace("?p=/", "").replaceAll("/", "");
-		console.log("allPath: ", allPath);
-		if (allPath.includes("information")) {
-			let path = allPath.replace("information", "");
-			console.log("path: ", path);
-			if (paths.includes(path)) {
-				let newPath = "/u/" + path + "/information/";
-				window.history.replaceState(null, null, newPath);
-			}
-			else {
-				window.history.replaceState(null, null, "/u/information/");
-			}
-		}
-		else if (paths.includes(allPath)) {
-			let newPath = "/u/" + allPath + "/";
-			window.history.replaceState(null, null, newPath);
-		}
-		else {
-			window.history.replaceState(null, null, "/u/");
-		}
+		// console.log("window.location.search: ", window.location.search);
+		// let allPath = window.location.search.replace("?p=", "").replaceAll("/", "");
+		// console.log("allPath: ", allPath);
+		// if (allPath.includes("information")) {
+		// 	let path = allPath.replace("information", "");
+		// 	console.log("path: ", path);
+		// 	if (paths.includes(path)) {
+		// 		let newPath = "/u/" + path + "/information/";
+		// 		window.history.replaceState(null, null, newPath);
+		// 	}
+		// 	else {
+		// 		window.history.replaceState(null, null, "/u/information/");
+		// 	}
+		// }
+		// else if (paths.includes(allPath)) {
+		// 	let newPath = "/u/" + allPath + "/";
+		// 	window.history.replaceState(null, null, newPath);
+		// }
+		// else {
+		// 	window.history.replaceState(null, null, "/u/");
+		// }
 
-		
-	// 	console.log("window.location.search: ", window.location.search);
-	// 	let path = window.location.search.replace("?p=/", "").split("/");
-	// 	console.log("path: ", path);
-	// 	let lastPath = path.at(-2);
-	// 	console.log("lastPath: ", lastPath);
-	// 	let secondLastPath = path.at(-3);
-	// 	console.log("secondLastPath: ", secondLastPath);
-	// 	if (lastPath == "information") {
-	// 		if (paths.includes(secondLastPath)) {
-	// 			let newPath = "/u/" + secondLastPath + "/information/";
-	// 			window.history.replaceState(null, null, newPath);
-	// 		}
-	// 		else {
-	// 			window.history.replaceState(null, null, "/u/information/");
-	// 		}
-	// 	}
-	// 	else if (paths.includes(lastPath)) {
-	// 		let newPath = "/u/" + lastPath + "/";
-	// 		window.history.replaceState(null, null, newPath);
-	// 	}
-	// 	else {
-	// 		window.history.replaceState(null, null, "/u/");
-	// 	}
+		let allPath = window.location.search.replace("?p=", "").replaceAll("/", "");
+		let ifInfo = allPath.includes("information");
+		let basePath = ifInfo ? allPath.replace("information", "") : allPath;
+		let newPath = paths.includes(basePath) ? basePath + "/" : "";
+		let finalPath = ifInfo ? newPath + "information/" : newPath;
+		window.history.replaceState(null, null, "/u/" + finalPath);
 	}
+	console.log("Reload: ", window.location.search);
 }
 
 function update() {
