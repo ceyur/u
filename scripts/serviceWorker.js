@@ -2,7 +2,7 @@ const version = "v1";
 const files = [
  // "./",
  // "./index.html",
- // "./styles/styles.css",
+ // "./css/styles.css",
  // "./scripts/scripts.js",
  // "./scripts/properties.js",
  // "./manifest.json"
