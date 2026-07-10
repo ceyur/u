@@ -2,10 +2,10 @@ const version = "v1";
 const files = [
  // "./",
  // "./index.html",
- // "./css/styles.css",
- // "./scripts.js",
- // "./manifest.json",
- //  "./properties.json"
+ // "./styles/styles.css",
+ // "./scripts/scripts.js",
+ // "./scripts/properties.js",
+ // "./manifest.json"
 ];
 
 self.addEventListener("install", e => {
