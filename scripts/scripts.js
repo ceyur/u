@@ -1,4 +1,4 @@
-import "/u/scripts/properties.js";
+import properties from "/u/scripts/properties.js";
 const paths = ["code", "text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 
 const information = document.querySelector("#information");
