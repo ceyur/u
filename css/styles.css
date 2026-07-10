@@ -46,9 +46,12 @@
 /*Основные свойства---------------------------------------------------------------------------------------------*/
 * {
 	margin: 0;
+	padding: 0;
 	font-size: 25px;
 	font-family: serif;
 	text-decoration: none;
+	background: transparent;
+	border: none;
 	scrollbar-color: #00a47e white;
 }
 a {
@@ -57,11 +60,6 @@ a {
 	&:hover {
 		color: #cd00cd;
 	}
-}
-button {
-	border: none;
-	background: #fff;
-	padding: 0;
 }
 p {
 	margin: 25px;
