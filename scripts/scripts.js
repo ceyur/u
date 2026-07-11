@@ -18,63 +18,57 @@ const closeInfo = document.querySelectorAll(".close-info");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
-		// console.log("window.location.search: ", window.location.search);
-		// let allPath = window.location.search.replace("?p=", "").replaceAll("/", "");
-		// console.log("allPath: ", allPath);
-		// if (allPath.includes("information")) {
-		// 	let path = allPath.replace("information", "");
-		// 	console.log("path: ", path);
-		// 	if (paths.includes(path)) {
-		// 		let newPath = "/u/" + path + "/information/";
-		// 		window.history.replaceState(null, null, newPath);
-		// 	}
-		// 	else {
-		// 		window.history.replaceState(null, null, "/u/information/");
-		// 	}
-		// }
-		// else if (paths.includes(allPath)) {
-		// 	let newPath = "/u/" + allPath + "/";
-		// 	window.history.replaceState(null, null, newPath);
-		// }
-		// else {
-		// 	window.history.replaceState(null, null, "/u/");
-		// }
-
-		let allPath = window.location.search.replace("?p=", "").replaceAll("/", "");
-		let ifInfo = allPath.includes("information");
-		let basePath = ifInfo ? allPath.replace("information", "") : allPath;
+		let path = window.location.search.replace("?p=", "").replaceAll("/", "");
+		let ifInfo = path.includes("information");
+		let basePath = path.replace("information", "");
 		let newPath = paths.includes(basePath) ? basePath + "/" : "";
 		let finalPath = ifInfo ? newPath + "information/" : newPath;
 		window.history.replaceState(null, null, "/u/" + finalPath);
+		console.log("Reload: ", window.location.pathname);
 	}
-	console.log("Reload: ", window.location.pathname);
 }
 
 function update() {
+	// let path = window.location.pathname.split("/");
+	// let lastPath = path.at(-2);
+	// let secondLastPath = path.at(-3);
+	// if (lastPath == "information") {
+	// 	if (paths.includes(secondLastPath)) {
+	// 		go(secondLastPath);
+	// 	}
+	// 	else if (secondLastPath == "code") {
+	// 		codeVisible();
+	// 	}
+	// 	else {
+	// 		mainVisible();
+	// 	}
+	// 	info.visible();
+	// }
+	// else if (paths.includes(lastPath)) {
+	// 	go(lastPath);
+	// }
+	// else if (lastPath == "code") {
+	// 	codeVisible();
+	// }
+	// else {
+	// 	mainVisible();
+	// }
+
+
+
+
 	let path = window.location.pathname.split("/");
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
-	if (lastPath == "information") {
-		if (paths.includes(secondLastPath)) {
-			go(secondLastPath);
-		}
-		else if (secondLastPath == "code") {
-			codeVisible();
-		}
-		else {
-			mainVisible();
-		}
-		info.visible();
-	}
-	else if (paths.includes(lastPath)) {
-		go(lastPath);
-	}
-	else if (lastPath == "code") {
-		codeVisible();
-	}
-	else {
-		mainVisible();
-	}
+	let ifInfo = lastPath.includes("information");
+	let basePath = ifInfo ? secondLastPath : lastPath;
+
+	if (paths.includes(basePath)) go(basePath);
+	else if (basePath == "code") codeVisible();
+	else mainVisible();
+	
+	if (ifInfo) info.visible();
+	console.log("Update: ", window.location.pathname);
 }
 
 function createButtons() {
@@ -127,7 +121,7 @@ function mainVisible() {
 	content.innerHTML = "";
 	close.style.display = "none";
 	document.title = "Свойства элементов css";
-	h1.innerHTML = "Свойства элементов css";
+	h1.textContent = "Свойства элементов css";
 }
 
 function codeVisible() {
@@ -138,7 +132,7 @@ function codeVisible() {
 	content.innerHTML = "";
 	close.style.display = "flex";
 	document.title = "Готовый код";
-	h1.innerHTML = "Готовый код";
+	h1.textContent = "Готовый код";
 }
 
 function go(name) {
@@ -149,7 +143,7 @@ function go(name) {
 	content.innerHTML = "";
 	close.style.display = "flex";
 	document.title = properties[name].title;
-	h1.innerHTML = properties[name].title;
+	h1.textContent = properties[name].title;
 	Object.values(properties[name]).forEach((e) => {
 		if (e == properties[name].title) return;
 		let p = document.createElement("p");
@@ -165,13 +159,11 @@ const info = {
 		information.style.display = "block";
 		overlay.style.display = "block";
 		main.style.position = "fixed";
-		main.style.width = "100%";
 	},
 	hidden: function() {
 		information.style.display = "none";
 		overlay.style.display = "none";
 		main.style.position = "relative";
-		main.style.width = "auto";
 	}
 };
 
