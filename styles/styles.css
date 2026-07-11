@@ -272,7 +272,7 @@ u {
 /*Все media-----------------------------------------------------------------------------------------------------*/
 @media (min-width: 850px) and (min-height: 745px) {
 	#information {
-		height: 745px;
+		height: 724px;
 	}
 }
 @media (min-width: 943px) {
