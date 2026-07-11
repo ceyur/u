@@ -29,34 +29,6 @@ function ifReload() {
 }
 
 function update() {
-	// let path = window.location.pathname.split("/");
-	// let lastPath = path.at(-2);
-	// let secondLastPath = path.at(-3);
-	// if (lastPath == "information") {
-	// 	if (paths.includes(secondLastPath)) {
-	// 		go(secondLastPath);
-	// 	}
-	// 	else if (secondLastPath == "code") {
-	// 		codeVisible();
-	// 	}
-	// 	else {
-	// 		mainVisible();
-	// 	}
-	// 	info.visible();
-	// }
-	// else if (paths.includes(lastPath)) {
-	// 	go(lastPath);
-	// }
-	// else if (lastPath == "code") {
-	// 	codeVisible();
-	// }
-	// else {
-	// 	mainVisible();
-	// }
-
-
-
-
 	let path = window.location.pathname.split("/");
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
@@ -64,7 +36,7 @@ function update() {
 	let basePath = ifInfo ? secondLastPath : lastPath;
 
 	if (paths.includes(basePath)) go(basePath);
-	else if (basePath == "code") codeVisible();
+	else if (basePath === "code") codeVisible();
 	else mainVisible();
 	
 	if (ifInfo) info.visible();
@@ -75,6 +47,7 @@ function createButtons() {
 	close.onclick = () => {
 		history.pushState(null, null, "/u/");
 		mainVisible();
+		console.log("close.click");
 	}
 	
 	button.onclick = () => window.scrollTo(0, 0);
@@ -90,18 +63,21 @@ function createButtons() {
 	goCode.onclick = () => {
 		history.pushState(null, null, "/u/code/");
 		codeVisible();
+		console.log("go-code.click");
 	};
 	
 	goInfo.onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
+		console.log("go-info.click");
 	};
 	closeInfo.forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
-			let newPath = path == "u" ? "" : path + "/";
+			let newPath = path === "u" ? "" : path + "/";
 			history.pushState(null, null, "/u/" + newPath);
 			info.hidden();
+			console.log("close-info.click");
 		}
 	});
 	
@@ -109,6 +85,7 @@ function createButtons() {
 	    document.querySelector(`#go-${name}`).onclick = () => {
 	    	history.pushState(null, null, "/u/" + name + "/");
 			go(name);
+			console.log(`go-${name}.click`);
 	    };
 	});
 }
@@ -122,6 +99,7 @@ function mainVisible() {
 	close.style.display = "none";
 	document.title = "Свойства элементов css";
 	h1.textContent = "Свойства элементов css";
+	window.scrollTo(0, 0);
 }
 
 function codeVisible() {
@@ -133,6 +111,7 @@ function codeVisible() {
 	close.style.display = "flex";
 	document.title = "Готовый код";
 	h1.textContent = "Готовый код";
+	window.scrollTo(0, 0);
 }
 
 function go(name) {
@@ -152,6 +131,7 @@ function go(name) {
 <i>${e.example}</i>${e.default}`;
 		content.append(p);
 	});
+	window.scrollTo(0, 0);
 }
 
 const info = {
