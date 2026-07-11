@@ -101,3 +101,9 @@ body .two {
 		}	
 	}
 }
+@media (max-width: 600px) {
+	.code>div,
+	.code>style {
+		flex: 1 0 80%;
+	}
+}
