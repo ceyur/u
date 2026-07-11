@@ -124,7 +124,7 @@ function go(name) {
 	document.title = properties[name].title;
 	h1.textContent = properties[name].title;
 	Object.values(properties[name]).forEach((e) => {
-		if (e == properties[name].title) return;
+		if (e === properties[name].title) return;
 		let p = document.createElement("p");
 		p.id = e.name;
 		p.innerHTML = `${e.start}<b>${e.name}</b>${e.value}
