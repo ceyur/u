@@ -62,9 +62,7 @@ button {
 	border: none;
 	background: transparent;
 	font-family: serif;
-	&:hover {
-		cursor: pointer;
-	}
+	cursor: pointer;
 }
 p {
 	margin: 25px;
@@ -134,9 +132,7 @@ i {
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.5);
 	cursor: default;
-	&:hover {
-		cursor: auto;
-	}
+	cursor: auto;
 }
 main {
 	display: flex;
