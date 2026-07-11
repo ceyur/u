@@ -259,24 +259,6 @@ nav {
 	}
 }
 /*Дополнительные свойства conteneditable и готового кода--------------------------------------------------------*/
-/* #contenteditable~* {
-	display: block;
-	font-size: 20px;
-	border-radius: 5px;
-	margin: 10px;
-	white-space: pre-wrap;
-}
-#style1 {
-	margin-top: 25px;
-}
-#div1 {
-	color: blue;
-	background: lightpink;
-}
-#div2 {
-	color: pink;
-	background: mediumpurple;
-} */
 u {
 	display: block;
 }
@@ -285,109 +267,6 @@ u {
 	cursor: wait;
 	s {
 		color: black;
-	}
-}
-.code {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 12.5px;
-	>div,
-	>style {
-		flex: 1 0 40%;
-		display: flex;
-		margin: 12.5px;
-		padding: 6px;
-		box-shadow: 0 0 10px black;
-		border-radius: 15px;
-		white-space: pre-wrap;
-		&:nth-child(odd) {
-			align-items: center;
-			justify-content: center;
-		}
-	}
-	style {
-		display: block;
-	}
-}
-.scrollbar {
-	height: 200px;
-	overflow: auto;
-	scrollbar-width: none;
-}
-body .two {
-	padding: 0;
-	>* {
-		margin: 6px;
-	}
-	+div {
-		padding: 0;
-		position: relative;
-		div,
-		style {
-			width: 100%;
-			padding: 6px;
-			border-radius: 15px;
-		}
-		div {
-			display: none;
-		}
-		svg {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			width: 30px;
-			height: 30px;
-			padding: 1px;
-			background: white;
-			border-radius: 50%;
-			transition: 0.25s;
-		}
-		.html1 {
-			display: none;
-		}
-		input {
-			position: absolute;
-			visibility: hidden;
-			top: 10px;
-			right: 10px;
-			z-index: 1;
-			width: 32px;
-			height: 32px;
-			&:before {
-				content: "";
-				visibility: visible;
-				position: absolute;
-				width: 30px;
-				height: 30px;
-				border: 1px solid #000;
-				border-radius: 50%;
-				cursor: pointer;
-				transition: 0.25s;
-			}
-			&:hover {
-				&:before {
-					box-shadow: 0 0 10px #cd00cd;
-					scale: 1.15;
-				}
-				~svg {
-					scale: 1.15;
-				}
-			}
-			&:checked {
-				+.css1 {
-					display: none;
-					+style {
-						display: none;
-						+.html1 {
-							display: block;
-							+div {
-								display: block;
-							}
-						}
-					}
-				}
-			}
-		}	
 	}
 }
 /*Все media-----------------------------------------------------------------------------------------------------*/
