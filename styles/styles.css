@@ -263,13 +263,6 @@ nav {
 u {
 	display: block;
 }
-#i-cursor {
-	color: green;
-	cursor: wait;
-	s {
-		color: black;
-	}
-}
 /*Все media-----------------------------------------------------------------------------------------------------*/
 @media (min-width: 850px) and (min-height: 745px) {
 	#information {
