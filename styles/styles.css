@@ -51,10 +51,10 @@
 	font-family: serif;
 	text-decoration: none;
 	scrollbar-color: #00a47e white;
+	-webkit-tap-highlight-color: transparent;
 }
 a {
 	color: blue;
-	-webkit-tap-highlight-color: transparent;
 	&:hover {
 		color: #cd00cd;
 	}
@@ -108,7 +108,6 @@ i {
 			box-shadow: none;
 			&:before,
 			&:after {
-				/*position: absolute;*/
 				width: 20px;
 				height: 2.5px;
 			}
@@ -259,10 +258,6 @@ nav {
 		}
 	}
 }
-/*Дополнительные свойства----------------------------------------------------------------------------------------*/
-u {
-	display: block;
-}
 /*Все media-----------------------------------------------------------------------------------------------------*/
 @media (min-width: 850px) and (min-height: 745px) {
 	#information {
@@ -281,7 +276,7 @@ u {
 	}
 }
 @media (min-width: 745px) and (max-width: 942px) {
-	nav a:hover {
+	nav button:hover {
 		scale: 1.03;
 	}
 	#go-text,
