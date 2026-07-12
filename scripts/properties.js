@@ -481,42 +481,43 @@ export default {
 "name": "cursor",
 "value": `: значение; – задаёт вид курсора мыши при наведении на элемент
 Значения:
-<div style="cursor: default;">2. default – курсор по умолчанию</div>
-<div style="cursor: none;">3. none – указывает на отсутствие курсора для элемента</div>
-<div style="cursor: context-menu;">4. context-menu – наличие контекстного меню</div>
-<div style="cursor: help;">5. help – наличие справочной информации</div>
-<div style="cursor: pointer;">6. pointer – курсор-указатель</div>
-<div style="cursor: progress;">7. progress – указывает, что программа работает или находится в процессе</div>
-<div style="cursor: wait;">8. wait – указывает, что нужно дождаться завершения работы программы</div>
-<div style="cursor: cell;">9. cell – курсор укажет, если будет возможность выбрать ячейки</div>
-<div style="cursor: crosshair;">10. crosshair – курсор в виде большого знака "+"</div>
-<div style="cursor: text;">11. text – текстовый курсор</div>
-12. url(адрес картинки) – ваш собственный курсор. Поддерживаются файлы .cur и .ani
-<div style="cursor: vertical-text;">13. vertical-text – курсор указывает на наличие вертикального текста</div>
-<div style="cursor: alias;">14. alias – курсор указывает, что есть возможность создать псевдоним чего-то</div>
-<div style="cursor: copy;">15. copy – курсор указывает, что есть возможность копировать что-то</div>
-<div style="cursor: move;">16. move – курсор указывает, что есть возможность переместить что-то</div>
-<div style="cursor: no-drop;">17. no-drop – курсор указывает, что нельзя перетащить и опустить элемент</div>
-<div style="cursor: not-allowed;">18. not-allowed – курсор указывает, что невозможно выполнить запрашиваемое действие</div>
-<div style="cursor: all-scroll;">19. all-scroll – курсор укажет, если будет возможность прокручивания в каком-либо направлении</div>
-<div style="cursor: col-resize;">20. col-resize – курсор указывает, что размер колонки может быть изменен по горизонтали</div>
-<div style="cursor: row-resize;">21. row-resize – курсор указывает, что размер строки может быть изменен по вертикали</div>
-<div style="cursor: n-resize;">22. n-resize – курсор указывает, что размер блока может быть растянут вверх</div>
-<div style="cursor: s-resize;">23. s-resize – курсор указывает, что размер блока может быть растянут вниз</div>
-<div style="cursor: e-resize;">24. e-resize – курсор указывает, что размер блока может быть растянут вправо</div>
-<div style="cursor: w-resize;">25. w-resize – курсор указывает, что размер блока может быть растянут влево</div>
-<div style="cursor: ns-resize;">26. ns-resize – курсор указывает на двунаправленное изменение размера курсора</div>
-<div style="cursor: ew-resize;">27. ew-resize – курсор указывает на двунаправленное изменение размера курсора</div>
-<div style="cursor: ne-resize;">28. ne-resize – курсор указывает, что размер блока может быть растянут вверх и вправо</div>
-<div style="cursor: nw-resize;">29. nw-resize – курсор указывает, что размер блока может быть растянут вверх и влево</div>
-<div style="cursor: se-resize;">30. se-resize – курсор указывает, что размер блока может быть растянут вниз и вправо</div>
-<div style="cursor: sw-resize;">31. sw-resize – курсор указывает, что размер блока может быть растянут вниз и влево</div>
-<div style="cursor: nesw-resize;">32. nesw-resize – курсор указывает на двунаправленное изменение размера курсора</div>
-<div style="cursor: nwse-resize;">33. nwse-resize – курсор указывает на двунаправленное изменение размера курсора</div>
-<div style="cursor: zoom-in;">34. zoom-in – курсор указывает, что можно увеличить размер элемента</div>
-<div style="cursor: zoom-out;">35. zoom-out – курсор указывает что можно уменьшить размер элемента</div>
-<div style="cursor: grab;">36. grab – курсор указывает на захват чего-то</div>
-<div style="cursor: grabbing;">37. grabbing – курсор указывает на захват чего-то</div>`,
+<span cursor="auto">1. auto – браузер сам определяет курсор</span>
+<span style="cursor: default;">2. default – курсор по умолчанию</span>
+<span style="cursor: none;">3. none – указывает на отсутствие курсора для элемента</span>
+<span style="cursor: context-menu;">4. context-menu – наличие контекстного меню</span>
+<span style="cursor: help;">5. help – наличие справочной информации</span>
+<span style="cursor: pointer;">6. pointer – курсор-указатель</span>
+<span style="cursor: progress;">7. progress – указывает, что программа работает или находится в процессе</span>
+<span style="cursor: wait;">8. wait – указывает, что нужно дождаться завершения работы программы</span>
+<span style="cursor: cell;">9. cell – курсор укажет, если будет возможность выбрать ячейки</span>
+<span style="cursor: crosshair;">10. crosshair – курсор в виде большого знака "+"</span>
+<span style="cursor: text;">11. text – текстовый курсор</span>
+<span>12. url(адрес картинки) – ваш собственный курсор. Поддерживаются файлы .cur и .ani</span>
+<span style="cursor: vertical-text;">13. vertical-text – курсор указывает на наличие вертикального текста</span>
+<span style="cursor: alias;">14. alias – курсор указывает, что есть возможность создать псевдоним чего-то</span>
+<span style="cursor: copy;">15. copy – курсор указывает, что есть возможность копировать что-то</span>
+<span style="cursor: move;">16. move – курсор указывает, что есть возможность переместить что-то</span>
+<span style="cursor: no-drop;">17. no-drop – курсор указывает, что нельзя перетащить и опустить элемент</span>
+<span style="cursor: not-allowed;">18. not-allowed – курсор указывает, что невозможно выполнить запрашиваемое действие</span>
+<span style="cursor: all-scroll;">19. all-scroll – курсор укажет, если будет возможность прокручивания в каком-либо направлении</span>
+<span style="cursor: col-resize;">20. col-resize – курсор указывает, что размер колонки может быть изменен по горизонтали</span>
+<span style="cursor: row-resize;">21. row-resize – курсор указывает, что размер строки может быть изменен по вертикали</span>
+<span style="cursor: n-resize;">22. n-resize – курсор указывает, что размер блока может быть растянут вверх</span>
+<span style="cursor: s-resize;">23. s-resize – курсор указывает, что размер блока может быть растянут вниз</span>
+<span style="cursor: e-resize;">24. e-resize – курсор указывает, что размер блока может быть растянут вправо</span>
+<span style="cursor: w-resize;">25. w-resize – курсор указывает, что размер блока может быть растянут влево</span>
+<span style="cursor: ns-resize;">26. ns-resize – курсор указывает на двунаправленное изменение размера курсора</span>
+<span style="cursor: ew-resize;">27. ew-resize – курсор указывает на двунаправленное изменение размера курсора</span>
+<span style="cursor: ne-resize;">28. ne-resize – курсор указывает, что размер блока может быть растянут вверх и вправо</span>
+<span style="cursor: nw-resize;">29. nw-resize – курсор указывает, что размер блока может быть растянут вверх и влево</span>
+<span style="cursor: se-resize;">30. se-resize – курсор указывает, что размер блока может быть растянут вниз и вправо</span>
+<span style="cursor: sw-resize;">31. sw-resize – курсор указывает, что размер блока может быть растянут вниз и влево</span>
+<span style="cursor: nesw-resize;">32. nesw-resize – курсор указывает на двунаправленное изменение размера курсора</span>
+<span style="cursor: nwse-resize;">33. nwse-resize – курсор указывает на двунаправленное изменение размера курсора</span>
+<span style="cursor: zoom-in;">34. zoom-in – курсор указывает, что можно увеличить размер элемента</span>
+<span style="cursor: zoom-out;">35. zoom-out – курсор указывает что можно уменьшить размер элемента</span>
+<span style="cursor: grab;">36. grab – курсор указывает на захват чего-то</span>
+<span style="cursor: grabbing;">37. grabbing – курсор указывает на захват чего-то</span>`,
 "example": "cursor: wait, auto;",
 "default": " (auto)"
 		}
