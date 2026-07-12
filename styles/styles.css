@@ -258,6 +258,10 @@ nav {
 		}
 	}
 }
+span {
+	display: inline-block;
+	width: 100%;
+}
 /*Все media-----------------------------------------------------------------------------------------------------*/
 @media (min-width: 850px) and (min-height: 745px) {
 	#information {
