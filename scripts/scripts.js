@@ -98,7 +98,7 @@ function goMain() {
 	content.innerHTML = "";
 	close.style.display = "none";
 	document.title = "Свойства элементов css";
-	h1.textContent = "Свойства элементов css";
+	h1.innerHTML = "Свойства элементов css";
 	window.scrollTo(0, 0);
 }
 
@@ -110,7 +110,7 @@ function goCode() {
 	content.innerHTML = "";
 	close.style.display = "flex";
 	document.title = "Готовый код";
-	h1.textContent = "Готовый код";
+	h1.innerHTML = "Готовый код";
 	window.scrollTo(0, 0);
 }
 
@@ -123,7 +123,7 @@ function go(name) {
 	content.innerHTML = "";
 	close.style.display = "flex";
 	document.title = properties[name].title;
-	h1.textContent = properties[name].title;
+	h1.innerHTML = properties[name].title;
 	Object.values(properties[name]).forEach((e) => {
 		if (e === properties[name].title) return;
 		let p = document.createElement("p");
