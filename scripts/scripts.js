@@ -36,8 +36,8 @@ function update() {
 	let basePath = ifInfo ? secondLastPath : lastPath;
 
 	if (paths.includes(basePath)) go(basePath);
-	else if (basePath === "code") codeVisible();
-	else mainVisible();
+	else if (basePath === "code") goCode();
+	else goMain();
 	
 	if (ifInfo) info.visible();
 	console.log("Update: ", window.location.pathname);
@@ -46,7 +46,7 @@ function update() {
 function createButtons() {
 	close.onclick = () => {
 		history.pushState(null, null, "/u/");
-		mainVisible();
+		goMain();
 		console.log("close.click");
 	}
 	
@@ -62,7 +62,7 @@ function createButtons() {
 	
 	goCode.onclick = () => {
 		history.pushState(null, null, "/u/code/");
-		codeVisible();
+		goCode();
 		console.log("go-code.click");
 	};
 	
@@ -90,7 +90,7 @@ function createButtons() {
 	});
 }
 
-function mainVisible() {
+function goMain() {
 	goCode.style.visibility = "visible";
 	info.hidden();
 	nav.style.display = "flex";
@@ -102,7 +102,7 @@ function mainVisible() {
 	window.scrollTo(0, 0);
 }
 
-function codeVisible() {
+function goCode() {
 	goCode.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
