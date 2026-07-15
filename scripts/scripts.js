@@ -116,7 +116,6 @@ function goCode() {
 
 function go(name) {
 	go_code.style.visibility = "hidden";
-	console.log("go_code.hidden");
 	info.hidden();
 	nav.style.display = "none";
 	code.style.display = "none";
@@ -133,7 +132,6 @@ function go(name) {
 		content.append(p);
 	});
 	window.scrollTo(0, 0);
-	console.log("content.load");
 }
 
 const info = {
