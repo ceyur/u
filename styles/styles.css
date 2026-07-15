@@ -123,7 +123,7 @@ i {
 		}
 	}
 
-	.visible {
+	&.visible {
 		display: block;
 		+ button {
 			display: block;
@@ -132,7 +132,7 @@ i {
 			}
 		}
 	}
-	.hidden {
+	&.hidden {
 		display: none;
 		+ button {
 			display: none;
