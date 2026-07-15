@@ -138,14 +138,16 @@ function go(name) {
 
 const info = {
 	visible: function() {
-		information.style.display = "block";
-		overlay.style.display = "block";
-		main.style.position = "fixed";
+		// information.style.display = "block";
+		// overlay.style.display = "block";
+		// main.style.position = "fixed";
+		information.className = "visible";
 	},
 	hidden: function() {
-		information.style.display = "none";
-		overlay.style.display = "none";
-		main.style.position = "relative";
+		// information.style.display = "none";
+		// overlay.style.display = "none";
+		// main.style.position = "relative";
+		information.className = "hidden";
 	}
 };
 
