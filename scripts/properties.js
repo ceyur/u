@@ -724,7 +724,7 @@ export default {
 		}
 	},
 	"position": {
-		"title": "Позиционирование",
+		"title": "Позицио&shy;нирование",
 		"position": {
 "start": "",
 "name": "position",
