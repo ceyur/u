@@ -12,9 +12,9 @@ const code = document.querySelector("#code");
 
 const close = document.querySelector("#close");
 const button = document.querySelector("#button");
-const goCode = document.querySelector("#go-code");
-const goInfo = document.querySelector("#go-info");
-const closeInfo = document.querySelectorAll(".close-info");
+const go_code = document.querySelector("#go-code");
+const go_info = document.querySelector("#go-info");
+const close_info = document.querySelectorAll(".close-info");
 
 function ifReload() {
 	if (window.location.search.includes("p=/")) {
@@ -60,18 +60,18 @@ function createButtons() {
 		}
 	});
 	
-	goCode.onclick = () => {
+	go_code.onclick = () => {
 		history.pushState(null, null, "/u/code/");
 		goCode();
 		console.log("go-code.click");
 	};
 	
-	goInfo.onclick = () => {
+	go_info.onclick = () => {
 		history.pushState(null, null, window.location.pathname + "information/");
 		info.visible();
 		console.log("go-info.click");
 	};
-	closeInfo.forEach((e) => {
+	close_info.forEach((e) => {
 		e.onclick = () => {
 			let path = window.location.pathname.split("/").at(-3);
 			let newPath = path === "u" ? "" : path + "/";
@@ -91,7 +91,7 @@ function createButtons() {
 }
 
 function goMain() {
-	goCode.style.visibility = "visible";
+	go_code.style.visibility = "visible";
 	info.hidden();
 	nav.style.display = "flex";
 	code.style.display = "none";
@@ -103,7 +103,7 @@ function goMain() {
 }
 
 function goCode() {
-	goCode.style.visibility = "hidden";
+	go_code.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
 	code.style.display = "block";
@@ -115,7 +115,8 @@ function goCode() {
 }
 
 function go(name) {
-	goCode.style.visibility = "hidden";
+	go_code.style.visibility = "hidden";
+	console.log("go_code.hidden");
 	info.hidden();
 	nav.style.display = "none";
 	code.style.display = "none";
@@ -132,6 +133,7 @@ function go(name) {
 		content.append(p);
 	});
 	window.scrollTo(0, 0);
+	console.log("content.load");
 }
 
 const info = {
