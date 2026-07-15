@@ -122,6 +122,25 @@ i {
 			}
 		}
 	}
+
+	.visible {
+		display: block;
+		+ button {
+			display: block;
+			+ main {
+				position: fixed;
+			}
+		}
+	}
+	.hidden {
+		display: none;
+		+ button {
+			display: none;
+			+ main {
+				position: relative;
+			}
+		}
+	}
 }
 #overlay {
 	display: none;
