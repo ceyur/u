@@ -1,4 +1,22 @@
-.code {
+* {
+	margin: 0;
+}
+iframe {
+	margin: 25px;
+	padding: 6px;
+	height: 200px;
+	border: none;
+	box-shadow: 0 0 10px black;
+	border-radius: 25px;
+}
+#parallelogram {
+	width: 150px;
+	height: 112px;
+	background: black;
+	margin: 0 10px;
+	transform: skew(-10deg);
+}
+/*.code {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 12.5px;
@@ -106,4 +124,4 @@ body .two {
 	.code>style {
 		flex: 1 0 80%;
 	}
-}
+}*/
