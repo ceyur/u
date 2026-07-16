@@ -1,6 +1,12 @@
+#code {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 12.5px;
+}
 iframe {
+	flex: 1 1 40%;
 	display: block;
-	margin: 25px;
+	margin: 12.5px;
 	padding: 6px;
 	height: 200px;
 	border: none;
