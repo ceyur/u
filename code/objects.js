@@ -1,6 +1,6 @@
 export default {
   "parallelogram": {
-    "html": "<div id="parallelogram"></div>",
+    "html": `<div id="parallelogram"></div>`,
     "css": `#parallelogram {
       width: 150px;
     	height: 112px;
