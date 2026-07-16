@@ -106,7 +106,7 @@ function goCode() {
 	go_code.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
-	code.style.display = "block";
+	code.style.display = "flex";
 	content.innerHTML = "";
 	close.style.display = "flex";
 	document.title = "Готовый код";
