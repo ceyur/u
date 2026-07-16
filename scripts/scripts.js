@@ -111,6 +111,7 @@ function goCode() {
 	close.style.display = "flex";
 	document.title = "Готовый код";
 	h1.innerHTML = "Готовый код";
+	import "/u/code/code.js";
 	window.scrollTo(0, 0);
 }
 
