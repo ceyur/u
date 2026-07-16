@@ -1,4 +1,5 @@
 iframe {
+	display: block;
 	margin: 25px;
 	padding: 6px;
 	height: 200px;
