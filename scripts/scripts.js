@@ -21,7 +21,7 @@ function ifReload() {
 		let path = window.location.search.replace("?p=", "").replaceAll("/", "");
 		let ifInfo = path.includes("information");
 		let basePath = path.replace("information", "");
-		let newPath = paths.includes(basePath) ? basePath + "/" : "";
+		let newPath = paths.includes(basePath) ||| basePath === "code" ? basePath + "/" : "";
 		let finalPath = ifInfo ? newPath + "information/" : newPath;
 		window.history.replaceState(null, null, "/u/" + finalPath);
 		console.log("Reload: ", window.location.pathname);
