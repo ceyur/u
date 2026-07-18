@@ -15,6 +15,9 @@ Object.keys(objects).forEach(key => {
   	justify-content: center;
   	align-items: center;
   }
-${objects[key].css}</style>`;
+  ${objects[key].css}</style>`;
   code.appendChild(iframe);
+
+  let div = document.querySelector("div");
+  div.textContent = objects[key].html;
 });
