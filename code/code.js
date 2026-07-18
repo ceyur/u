@@ -18,7 +18,7 @@ Object.keys(objects).forEach(key => {
   ${objects[key].css}</style>`;
   code.appendChild(iframe);
 
-  let div = document.querySelector("div");
+  let div = document.createElement("div");
   div.textContent = objects[key].html;
   code.appendChild(div);
 });
