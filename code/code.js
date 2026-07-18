@@ -20,4 +20,5 @@ Object.keys(objects).forEach(key => {
 
   let div = document.querySelector("div");
   div.textContent = objects[key].html;
+  code.appendChild(div);
 });
