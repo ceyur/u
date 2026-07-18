@@ -2,19 +2,19 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding: 12.5px;
-}
-iframe {
-	flex: 1 1 40%;
-	display: block;
-	margin: 12.5px;
-	padding: 6px;
-	border: none;
-	box-shadow: 0 0 10px black;
-	border-radius: 25px;
-}
-div {
-	flex: 1 1 40%;
-	margin: 12.5px;
+	iframe {
+		flex: 1 1 40%;
+		display: block;
+		margin: 12.5px;
+		padding: 6px;
+		border: none;
+		box-shadow: 0 0 10px black;
+		border-radius: 25px;
+	}
+	div {
+		flex: 1 1 40%;
+		margin: 12.5px;
+	}
 }
 /*.code {
 	display: flex;
