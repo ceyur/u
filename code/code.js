@@ -20,11 +20,11 @@ Object.keys(objects).forEach(key => {
   code.appendChild(iframe);
 
   let div = document.createElement("div");
-  let html = objects[key].html;
-  let css = objects[key].css;
-  let js = objects[key].js;
-  div.innerHTML = `<p class="html">${html}</p>
-  <p class="css" style="display: none;">${css}</p>
-  <p class="js" style="display: none;">${js}</p>`;
+  div.innerHTML = `<p class="html"></p>
+  <p class="css" style="display: none;"></p>
+  <p class="js" style="display: none;"></p>`;
+  div.querySelector('.html').textContent = objects[key].html;
+  div.querySelector('.css').textContent = objects[key].css;
+  div.querySelector('.js').textContent = objects[key].js;
   code.appendChild(div);
 });
