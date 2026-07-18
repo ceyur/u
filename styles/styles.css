@@ -217,7 +217,7 @@ nav {
 		rotate: 45deg;
 	}
 	&:after {
-		position: fixed;
+		position: absolute;
 		rotate: -45deg;
 	}
 	&:hover {
