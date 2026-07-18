@@ -21,7 +21,7 @@ Object.keys(objects).forEach(key => {
 
   let div = document.createElement("div");
   div.innerHTML = `<p class="html">${objects[key].html}</p>
-  <p class="css" style="display="none">${objects[key].css}</p>
-  <p class="js" style="display="none">${objects[key].js}</p>`;
+  <p class="css" style="display: none;">${objects[key].css}</p>
+  <p class="js" style="display: none;">${objects[key].js}</p>`;
   code.appendChild(div);
 });
