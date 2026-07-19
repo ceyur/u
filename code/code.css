@@ -16,6 +16,7 @@
 		margin: 12.5px;
 		p {
 			margin: 0;
+			height: calc(100% - 12px);
 		}
 	}
 }
