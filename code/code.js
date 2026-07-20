@@ -19,12 +19,12 @@ Object.keys(objects).forEach(key => {
   <style>${styleInIframe}${objects[key].css}</style>"></iframe>`;
   code.appendChild(div);
 
-  let div = document.createElement("div");
+  let div1 = document.createElement("div");
   div.innerHTML = `<p class="html"></p>
   <p class="css" style="display: none;"></p>
   <p class="js" style="display: none;"></p>`;
-  div.querySelector('.html').textContent = objects[key].html;
-  div.querySelector('.css').textContent = objects[key].css;
-  div.querySelector('.js').textContent = objects[key].js;
-  code.appendChild(div);
+  div1.querySelector('.html').textContent = objects[key].html;
+  div1.querySelector('.css').textContent = objects[key].css;
+  div1.querySelector('.js').textContent = objects[key].js;
+  code.appendChild(div1);
 });
