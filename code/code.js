@@ -15,7 +15,8 @@ let styleInIframe = `html,
 Object.keys(objects).forEach(key => {
   let div = document.createElement("div");
   div.id = key;
-  div.innerHTML = `<svg viewBox="0 0 2 2" width="29px" height="29px"><path d="M0 0L1 1L2 0"/></svg><iframe srcdoc="${objects[key].html}
+  //<svg viewBox="0 0 2 2" width="29px" height="29px"><path d="M0 0L1 1L2 0"/></svg>
+  div.innerHTML = `<iframe srcdoc="${objects[key].html}
   <style>${styleInIframe}${objects[key].css}</style>"></iframe>`;
   code.appendChild(div);
 
