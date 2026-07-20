@@ -4,12 +4,14 @@
 	padding: 12.5px;
 	div:nth-child(odd) {
 		flex: 1 1 46%;
-		display: block;
-		margin: 12.5px;
-		padding: 6px;
-		border: none;
-		box-shadow: 0 0 10px black;
-		border-radius: 15px;
+		iframe {
+			display: block;
+			margin: 12.5px;
+			padding: 6px;
+			border: none;
+			box-shadow: 0 0 10px black;
+			border-radius: 15px;
+		}
 		&:before {
 			content: url("data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 24 24' width='16' height='16'><path fill='%23ff0000' d='M12 2L2 22h20L12 2z'/></svg>");
 			position: absolute;
