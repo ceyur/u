@@ -285,7 +285,7 @@ nav {
 	}
 	#go-text,
 	#go-background,
-	#go-flex-containers,
+	#go-flex-elements,
 	#go-pseudoelements,
 	#go-transform {
 		flex: 1 0 80%;
