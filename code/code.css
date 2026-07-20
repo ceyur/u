@@ -5,6 +5,15 @@
 	div:nth-child(odd) {
 		flex: 1 1 46%;
 		position: relative;
+		button {
+			position: absolute;
+			bottom: 24px;
+			right: 24px;
+			width: 29px;
+			height: 29px;
+			border: 1px solid black;
+			border-radius: 50%;
+		}
 		iframe {
 			display: block;
 			margin: 12.5px;
@@ -13,16 +22,6 @@
 			border: none;
 			box-shadow: 0 0 10px black;
 			border-radius: 15px;
-		}
-		&:before {
-			content: url("data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 2 2' width='16' height='16'><path fill='black' d='M0 0L1 1L2 0>'/></svg>");
-			position: absolute;
-			bottom: 24px;
-			right: 24px;
-			width: 29px;
-			height: 29px;
-			border: 1px solid black;
-			border-radius: 50%;
 		}
 	}
 	div:nth-child(even) {
