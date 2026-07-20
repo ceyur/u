@@ -20,7 +20,7 @@ Object.keys(objects).forEach(key => {
   code.appendChild(div);
 
   let div1 = document.createElement("div");
-  div.innerHTML = `<p class="html"></p>
+  div1.innerHTML = `<p class="html"></p>
   <p class="css" style="display: none;"></p>
   <p class="js" style="display: none;"></p>`;
   div1.querySelector('.html').textContent = objects[key].html;
