@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding: 12.5px;
-	iframe {
+	div:nth-child(odd) {
 		flex: 1 1 46%;
 		display: block;
 		margin: 12.5px;
@@ -20,7 +20,7 @@
 			height: 29px;
 		}
 	}
-	div {
+	div:nth-child(even) {
 		flex: 1 1 46%;
 		margin: 12.5px;
 		p {
