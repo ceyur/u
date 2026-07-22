@@ -37,7 +37,7 @@ Object.keys(objects).forEach(key => {
     }
     else {
       div1.style.display = "none";
-      button.style.scale = "1 -1";
+      button.style.scale = "1";
     }
   };
 });
