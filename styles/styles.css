@@ -64,6 +64,12 @@ button {
 	background: transparent;
 	cursor: pointer;
 }
+svg {
+	fill: none;
+	stroke: black;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
 p {
 	margin: 25px;
 	padding: 6px;
@@ -150,8 +156,6 @@ header {
 		svg {
 			width: 29px;
 			height: 29px;
-			stroke: black;
-			stroke-linecap: round;
 		}
 		&:hover {
 			box-shadow: 0 0 10px green;
