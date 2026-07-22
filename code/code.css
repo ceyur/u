@@ -38,6 +38,14 @@
 		}
 	}
 }
+@media (max-width: 690px) {
+	#code > div:nth-child(even) {
+		display: none;
+	}
+	#code > div:nth-child(odd) button {
+		display: block;
+	}
+}
 /*.code {
 	display: flex;
 	flex-wrap: wrap;
@@ -139,11 +147,5 @@ body .two {
 				}
 			}
 		}	
-	}
-}
-@media (max-width: 600px) {
-	.code>div,
-	.code>style {
-		flex: 1 0 80%;
 	}
 }*/
