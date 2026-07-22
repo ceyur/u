@@ -33,7 +33,7 @@ Object.keys(objects).forEach(key => {
   button.onclick = () => {
     if (button.style.rotate == "0deg") {
       div1.style.display = "block";
-      button.style.rotate = "90deg";
+      button.style.rotate = "180deg";
     }
     else {
       div1.style.display = "none";
