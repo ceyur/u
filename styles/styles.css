@@ -247,11 +247,7 @@ nav {
 	svg {
 		width: 50px;
 		height: 50px;
-		fill: none;
-		stroke: black;
 		stroke-width: 5;
-		stroke-linecap: round;
-		stroke-linejoin: round;
 	}
 	&:hover {
 		background: #9cdaff;
