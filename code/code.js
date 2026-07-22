@@ -33,11 +33,11 @@ Object.keys(objects).forEach(key => {
   button.onclick = () => {
     if (div1.style.display == "none") {
       div1.style.display = "block";
-      button.style.rotate = "180deg";
+      button.style.scale = "1 -1";
     }
     else {
       div1.style.display = "none";
-      button.style.rotate = "0deg";
+      button.style.scale = "1 -1";
     }
   };
 });
