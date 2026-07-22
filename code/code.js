@@ -19,6 +19,7 @@ Object.keys(objects).forEach(key => {
   div.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
   div.querySelector("iframe").srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style>`;
   code.appendChild(div);
+  let button = div.querySelector("button");
 
   let div1 = document.createElement("div");
   div1.innerHTML = `<p class="html"></p>
@@ -28,4 +29,15 @@ Object.keys(objects).forEach(key => {
   div1.querySelector('.css').textContent = objects[key].css;
   div1.querySelector('.js').textContent = objects[key].js;
   code.appendChild(div1);
+
+  button.onclick = () => {
+    if (button.style.rotate == "0deg") {
+      div1.style.display = "block";
+      button.style.rotate = "90deg";
+    }
+    else {
+      div1.style.display = "none";
+      button.style.rotate = "0deg";
+    }
+  };
 });
