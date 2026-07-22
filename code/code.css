@@ -5,11 +5,12 @@
 	div:nth-child(odd) {
 		min-width: 334px;
 		flex: 1 1 46%;
+		margin: 12.5px;
 		position: relative;
 		button {
 			position: absolute;
-			bottom: 24px;
-			right: 24px;
+			bottom: 12px;
+			right: 12px;
 			width: 31px;
 			height: 31px;
 			border: 1px solid black;
@@ -22,9 +23,8 @@
 		}
 		iframe {
 			display: block;
-			margin: 12.5px;
 			padding: 6px;
-			width: calc(100% - 37px);
+			width: calc(100% - 12px);
 			border: none;
 			box-shadow: 0 0 10px black;
 			border-radius: 15px;
