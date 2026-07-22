@@ -31,6 +31,7 @@
 		}
 	}
 	div:nth-child(even) {
+		min-width: 334px;
 		flex: 1 1 46%;
 		margin: 12.5px;
 		p {
@@ -39,7 +40,7 @@
 		}
 	}
 }
-@media (max-width: 690px) {
+@media (max-width: 717px) {
 	#code > div:nth-child(even) {
 		display: none;
 	}
