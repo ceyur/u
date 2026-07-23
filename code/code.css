@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding: 12.5px;
-	div:nth-child(odd) {
+	> div:nth-child(odd) {
 		min-width: 320px;
 		flex: 1 1 46%;
 		margin: 12.5px;
@@ -30,7 +30,7 @@
 			border-radius: 15px;
 		}
 	}
-	div:nth-child(even) {
+	> div:nth-child(even) {
 		min-width: 320px;
 		flex: 1 1 46%;
 		margin: 12.5px;
@@ -45,6 +45,9 @@
 			border-radius: 15px;
 			padding: 3px;
 			display: flex;
+			box-shadow: 0 0 10px black;
+			width: 90px;
+			height: 29px;
 			div {
 				border-radius: 50%;
 				background: blue;
@@ -53,6 +56,8 @@
 			button {
 				flex: 1 1 30%;
 				marging: 3px;
+				width: 20px;
+				height: 20px;
 			}
 		}
 	}
