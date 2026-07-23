@@ -38,6 +38,23 @@
 			margin: 0;
 			height: calc(100% - 12px);
 		}
+		> div {
+			position: absolute;
+			top: 12px;
+			right: 12px;
+			border-radius: 15px;
+			padding: 3px;
+			display: flex;
+			div {
+				border-radius: 50%;
+				background: blue;
+				paddding: 3px;
+			}
+			button {
+				flex: 1 1 30%;
+				marging: 3px;
+			}
+		}
 	}
 }
 @media (max-width: 714px) {
