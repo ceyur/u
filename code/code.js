@@ -19,17 +19,23 @@ Object.keys(objects).forEach(key => {
   div.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
   div.querySelector("iframe").srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style>`;
   code.appendChild(div);
-  let button = div.querySelector("button");
 
   let div1 = document.createElement("div");
   div1.innerHTML = `<p class="html"></p>
   <p class="css" style="display: none;"></p>
-  <p class="js" style="display: none;"></p>`;
+  <p class="js" style="display: none;"></p>
+  <div>
+    <button class="Bhtml"></button>
+    <button class="Bcss"></button>
+    <button class="Bjs"></button>
+    <div class="circle"></div>
+  </div>`;
   div1.querySelector('.html').textContent = objects[key].html;
   div1.querySelector('.css').textContent = objects[key].css;
   div1.querySelector('.js').textContent = objects[key].js;
   code.appendChild(div1);
 
+  let button = div.querySelector("button");
   button.onclick = () => {
     if (div1.style.display == "block") {
       div1.style.display = "none";
