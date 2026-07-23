@@ -55,6 +55,7 @@
 				padding: 3px;
 				width: 29px;
 				height: 29px;
+				position: absolute;
 			}
 			button {
 				flex: 1 1 30%;
