@@ -57,6 +57,7 @@
 				width: 20px;
 				height: 20px;
 				box-shadow: 0 0 2px black;
+				border-radius: 50%;
 			}
 			div {
 				margin: 3px;
