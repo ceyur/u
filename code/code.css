@@ -45,24 +45,24 @@
 			top: 12px;
 			right: 12px;
 			border-radius: 15px;
-			padding: 3px;
+			padding: 2.5px;
 			display: flex;
 			box-shadow: 0 0 10px black;
-			width: 69px;
-			height: 23px;
+			width: 72px;
+			height: 24px;
 			background: white;
 			button {
 				flex: 1 1 30%;
-				margin: 3px;
-				width: 17px;
-				height: 17px;
+				margin: 2.5px;
+				width: 19px;
+				height: 19px;
 				background: aquamarine;
 				border-radius: 50%;
 			}
 			div {
-				margin: 3px;
-				width: 17px;
-				height: 17px;
+				margin: 2.5px;
+				width: 19px;
+				height: 19px;
 				position: absolute;
 				border-radius: 50%;
 				background: black;
