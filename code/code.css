@@ -8,6 +8,7 @@
 		margin: 12.5px;
 		position: relative;
 		button {
+			display: none;
 			position: absolute;
 			bottom: 12px;
 			right: 12px;
@@ -72,11 +73,14 @@
 	}
 }
 @media (max-width: 714px) {
-	#code > div:nth-child(even) {
-		display: none;
-	}
 	#code > div:nth-child(odd) button {
 		display: block;
+		button {
+			display: block;
+		}
+	}
+	#code > div:nth-child(even) {
+		display: none;
 	}
 }
 /*.code {
