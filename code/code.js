@@ -44,6 +44,7 @@ Object.keys(objects).forEach(key => {
     else {
       button.querySelector("svg").style.scale = "1 -1";
       div1.style.display = "block";
+      div1.querySelector(".html").style.height = "initial";
       div1.querySelector(".css").style.display = "block";
       div1.querySelector(".css").style.height = "initial";
       div1.querySelector(".css").style.marginTop = "25px";
