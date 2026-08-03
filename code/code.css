@@ -72,7 +72,7 @@
 }
 @media (max-width: 610px) {
 	#code > div:nth-child(odd) {
-		display: block;
+		flex: 1 1 80%;
 		button {
 			display: block;
 		}
