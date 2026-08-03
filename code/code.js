@@ -38,14 +38,20 @@ Object.keys(objects).forEach(key => {
   let button = div.querySelector("button");
   button.onclick = () => {
     if (div1.style.display == "block") {
-      div1.style.display = "none";
-      // button.style.scale = "1";
       button.querySelector("svg").style.scale = "1";
+      div1.style.display = "none";
     }
     else {
-      div1.style.display = "block";
-      // button.style.scale = "1 -1";
       button.querySelector("svg").style.scale = "1 -1";
+      div1.style.display = "block";
+      div1.querySelector(".css").style.display = "block";
+      div1.querySelector(".css").style.heigth = "auto";
+      div1.querySelector(".css").style.marginBottom = "25px";
+      if (objects[key].js != "") {
+        div1.querySelector(".js").style.display = "block";
+        div1.querySelector(".js").style.height = "auto";
+        div1.querySelector(".js").style.marginBottom = "25px";
+      }
     }
   };
 });
