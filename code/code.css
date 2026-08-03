@@ -72,8 +72,8 @@
 		}
 	}
 }
-@media (max-width: 714px) {
-	#code > div:nth-child(odd) button {
+@media (max-width: 610px) {
+	#code > div:nth-child(odd) {
 		display: block;
 		button {
 			display: block;
