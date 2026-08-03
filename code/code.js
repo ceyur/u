@@ -45,11 +45,11 @@ Object.keys(objects).forEach(key => {
       button.querySelector("svg").style.scale = "1 -1";
       div1.style.display = "block";
       div1.querySelector(".css").style.display = "block";
-      div1.querySelector(".css").style.height = "auto";
+      div1.querySelector(".css").style.height = "initial";
       div1.querySelector(".css").style.marginTop = "25px";
       if (objects[key].js != "") {
         div1.querySelector(".js").style.display = "block";
-        div1.querySelector(".js").style.height = "auto";
+        div1.querySelector(".js").style.height = "initial";
         div1.querySelector(".js").style.marginTop = "25px";
       }
     }
