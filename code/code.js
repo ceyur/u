@@ -26,10 +26,10 @@ Object.keys(objects).forEach(key => {
     <button class="Bcss">css</button>
     <button class="Bjs">js</button>
   </div>
-    // <div class="circle"></div>
   <p class="html"></p>
   <p class="css" style="display: none;"></p>
   <p class="js" style="display: none;"></p>`;
+    // <div class="circle"></div>
   div1.querySelector('.html').textContent = objects[key].html;
   div1.querySelector('.css').textContent = objects[key].css;
   div1.querySelector('.js').textContent = objects[key].js;
