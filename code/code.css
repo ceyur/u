@@ -35,6 +35,8 @@
 		margin: 12.5px;
 		position: relative;
 		background: white;
+		box-shadow: 0 0 10px black;
+		border-radius: 15px;
 		p {
 			margin: 0;
 			box-shadow: none;
@@ -43,7 +45,6 @@
 			padding: 2.5px;
 			display: flex;
 			background: white;
-			box-shadow: 0 0 10px black;
 			border-radius: 15px;
 			button {
 				flex: 1 1 30%;
