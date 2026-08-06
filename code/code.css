@@ -42,19 +42,19 @@
 			box-shadow: none;
 		}
 		> div {
-			padding: 2.5px;
+			padding: 3px;
 			display: flex;
 			background: white;
 			border-radius: 15px;
 			button {
 				flex: 1 1 30%;
-				margin: 2.5px;
+				margin: 3px;
 				background: aquamarine;
 				border-radius: 15px;
 			}
 			div {
 				display: none;
-				margin: 2.5px;
+				margin: 3px;
 				width: 19px;
 				height: 19px;
 				position: absolute;
