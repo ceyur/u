@@ -25,8 +25,8 @@ Object.keys(objects).forEach(key => {
     <button class="Bhtml">html</button>
     <button class="Bcss">css</button>
     <button class="Bjs">js</button>
-    // <div class="circle"></div>
   </div>
+    // <div class="circle"></div>
   <p class="html"></p>
   <p class="css" style="display: none;"></p>
   <p class="js" style="display: none;"></p>`;
