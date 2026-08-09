@@ -49,7 +49,7 @@
 			button {
 				flex: 1 1 30%;
 				margin: 3px;
-				background: aquamarine;
+				border: 1px solid black;
 				border-radius: 15px;
 			}
 			div {
