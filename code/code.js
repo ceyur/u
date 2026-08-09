@@ -20,16 +20,17 @@ Object.keys(objects).forEach(key => {
   div.querySelector("iframe").srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
   code.appendChild(div);
 
+  const js = objects[key].js !== "" ? '<button class="bJs">js</button>' : '';
+  
   let div1 = document.createElement("div");
   div1.innerHTML = `<div class="buttons">
     <button class="bHtml">html</button>
     <button class="bCss">css</button>
-    <button class="bJs">js</button>
+    ${js}
   </div>
   <p class="html"></p>
   <p class="css" style="display: none;"></p>
   <p class="js" style="display: none;"></p>`;
-    // <div class="circle"></div>
   div1.querySelector('.html').textContent = objects[key].html;
   div1.querySelector('.css').textContent = objects[key].css;
   div1.querySelector('.js').textContent = objects[key].js;
@@ -44,16 +45,6 @@ Object.keys(objects).forEach(key => {
     else {
       button.querySelector("svg").style.scale = "1 -1";
       div1.style.display = "block";
-      // div1.querySelector("div").style.display = "none";
-      // div1.querySelector(".html").style.height = "initial";
-      // div1.querySelector(".css").style.display = "block";
-      // div1.querySelector(".css").style.height = "initial";
-      // div1.querySelector(".css").style.marginTop = "25px";
-      // if (objects[key].js != "") {
-      //   div1.querySelector(".js").style.display = "block";
-      //   div1.querySelector(".js").style.height = "initial";
-      //   div1.querySelector(".js").style.marginTop = "25px";
-      // }
     }
   };
 
