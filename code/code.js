@@ -21,10 +21,10 @@ Object.keys(objects).forEach(key => {
   code.appendChild(div);
 
   let div1 = document.createElement("div");
-  div1.innerHTML = `<div>
-    <button class="Bhtml">html</button>
-    <button class="Bcss">css</button>
-    <button class="Bjs">js</button>
+  div1.innerHTML = `<div class="buttons">
+    <button class="bHtml">html</button>
+    <button class="bCss">css</button>
+    <button class="bJs">js</button>
   </div>
   <p class="html"></p>
   <p class="css" style="display: none;"></p>
@@ -55,5 +55,26 @@ Object.keys(objects).forEach(key => {
       //   div1.querySelector(".js").style.marginTop = "25px";
       // }
     }
+  };
+
+  let bHtml = div1.querySelector(".bHtml");
+  bHtml.onclick = () => {
+    div1.querySelector('.html').style.display = "block";
+    div1.querySelector('.css').style.display = "none";
+    div1.querySelector('.js').style.display = "none";
+  };
+
+  let bCss = div1.querySelector(".bCss");
+  bCss.onclick = () => {
+    div1.querySelector('.html').style.display = "none";
+    div1.querySelector('.css').style.display = "block";
+    div1.querySelector('.js').style.display = "none";
+  };
+
+  let bJs = div1.querySelector(".bJs");
+  bJs.onclick = () => {
+    div1.querySelector('.html').style.display = "none";
+    div1.querySelector('.css').style.display = "none";
+    div1.querySelector('.js').style.display = "block";
   };
 });
