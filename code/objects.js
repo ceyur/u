@@ -181,7 +181,9 @@ export default {
 		"js": ""
 	},
 	"arrow-round": {
-		"html": `<a id="arrow-round"></a>`,
+		"html": `<a id="arrow-round">
+	<div></div>
+</a>`,
 		"css": `#arrow-round {
 	display: flex;
 	align-items: center;
@@ -191,7 +193,7 @@ export default {
 	box-shadow: 0 0 10px #000;
 	border-radius: 50%;
 	transition: 0.25s;
-	u {
+	div {
 		position: absolute;
 		width: 10px;
 		height: 51px;
