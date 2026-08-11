@@ -54,6 +54,7 @@
 }
 .buttons {
 	padding: 3px;
+	width: stretch;
 	display: flex;
 	border-radius: 15px;
 	position: absolute;
