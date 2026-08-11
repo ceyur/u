@@ -6,6 +6,7 @@
 		flex: 1 1 45%;
 		margin: 12.5px;
 		height: 200px;
+		max-height: 300px;
 		position: relative;
 		background: white;
 		box-shadow: 0 0 10px black;
@@ -94,7 +95,6 @@
 	}
 	#code > div:nth-child(even) {
 		display: none;
-		height: 300px;
 	}
 }
 /*.code {
