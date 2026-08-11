@@ -213,6 +213,7 @@ export default {
 		rotate: 45deg;
 	}
 	&:after {
+		margin: 0 0 21.6px 21.6px;
 		rotate: -45deg;
 	}
 	&:hover {
