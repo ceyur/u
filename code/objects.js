@@ -219,7 +219,7 @@ export default {
 		background: #9cdaff;
 		box-shadow: 0 0 10px #00008b;
 		scale: 1.15;
-		u, 
+		div, 
 		&:before, 
 		&:after {
 			background: blue;
