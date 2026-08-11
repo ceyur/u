@@ -5,7 +5,7 @@
 	> div:nth-child(odd) {
 		flex: 1 1 45%;
 		margin: 12.5px;
-		height: 200px;
+		min-height: 200px;
 		position: relative;
 		background: white;
 		box-shadow: 0 0 10px black;
@@ -90,7 +90,7 @@
 @media (max-width: 610px) {
 	#code > div:nth-child(odd) {
 		flex: 1 1 80%;
-		height: fit-content;
+		min-height: fit-content;
 		button {
 			display: block;
 		}
