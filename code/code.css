@@ -43,9 +43,9 @@
 		border-radius: 15px;
 		p {
 			margin: 0;
-			padding: 0 6px 6px;
+			padding: 38px 6px 6px;
 			width: stretch;
-			height: stretch;
+			height: calc(100% - 38px - 6px);
 			box-shadow: none;
 			overflow: auto;
 			scrollbar-width: none;
