@@ -24,7 +24,7 @@
 		iframe {
 			display: block;
 			padding: 6px;
-			width: calc(100% - 12px);
+			width: stretch;
 			height: -webkit-fill-available;
 			border: none;
 			box-shadow: 0 0 10px black;
@@ -40,7 +40,14 @@
 		border-radius: 15px;
 		p {
 			margin: 0;
+			padding: 0 6px 6px;
+			width: stretch;
+			height: stretch;
 			box-shadow: none;
+			position: absolute;
+			top: 43px;
+			overflow: auto;
+			scrollbar-width: none;
 		}
 	}
 }
