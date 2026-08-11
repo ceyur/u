@@ -5,7 +5,11 @@
 	> div:nth-child(odd) {
 		flex: 1 1 45%;
 		margin: 12.5px;
+		height: 200px;
 		position: relative;
+		background: white;
+		box-shadow: 0 0 10px black;
+		border-radius: 15px;
 		button {
 			display: none;
 			position: absolute;
@@ -25,10 +29,8 @@
 			display: block;
 			padding: 6px;
 			width: stretch;
-			height: -webkit-fill-available;
+			height: stretch;
 			border: none;
-			box-shadow: 0 0 10px black;
-			border-radius: 15px;
 		}
 	}
 	> div:nth-child(even) {
@@ -85,6 +87,7 @@
 @media (max-width: 610px) {
 	#code > div:nth-child(odd) {
 		flex: 1 1 80%;
+		height: fit-content;
 		button {
 			display: block;
 		}
