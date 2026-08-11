@@ -82,8 +82,8 @@ export default {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 75px;
-		height: 10px;
+		width: 75%;
+		height: 10%;
 		background: #000;
 		rotate: 45deg;
 	}
@@ -117,10 +117,10 @@ export default {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 75px;
-		height: 10px;
+		width: 75%;
+		height: 10%;
 		background: #000;
-		border-radius: 5px;
+		border-radius: 5%;
 		rotate: 45deg;
 	}
 	&:after {
@@ -152,8 +152,8 @@ export default {
 	&:before {
 		content: "";
 		position: absolute;
-		width: 30px;
-		height: 30px;
+		width: 30%;
+		height: 30%;
 		border-top: 10px solid #000;
 		border-left: 10px solid #000;
 		rotate: 45deg;
@@ -161,10 +161,10 @@ export default {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 10px;
-		height: 51px;
+		width: 10%;
+		height: 51%;
 		background: #000;
-		margin-top: 6px;
+		margin-top: 6%;
 	}
 	&:hover {
 		background: #9cdaff;
@@ -195,37 +195,31 @@ export default {
 	transition: 0.25s;
 	div {
 		position: absolute;
-		width: 10px;
-		height: 51px;
+		width: 10%;
+		height: 51%;
 		background: #000;
-		border-radius: 9px;
-		margin-top: 6px;
+		border-radius: 9%;
+		margin-top: 6%;
 	}
-	&:before {
-		content: "";
-		position: absolute;
-		width: 10px;
-		height: 40px;
-		background: #000;
-		border-radius: 9px;
-		margin: 0 21.6px 21.6px 0;
-		rotate: 45deg;
-	}
+	&:before,
 	&:after {
 		content: "";
 		position: absolute;
-		width: 10px;
-		height: 40px;
+		width: 10%;
+		height: 40%;
 		background: #000;
-		border-radius: 9px;
-		margin: 0 0 21.6px 21.6px;
+		border-radius: 9%;
+		margin: 0 21.6% 21.6% 0;
+		rotate: 45deg;
+	}
+	&:after {
 		rotate: -45deg;
 	}
 	&:hover {
 		background: #9cdaff;
 		box-shadow: 0 0 10px #00008b;
 		scale: 1.15;
-		u, 
+		div, 
 		&:before, 
 		&:after {
 			background: blue;
