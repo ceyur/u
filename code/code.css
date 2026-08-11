@@ -94,6 +94,7 @@
 	}
 	#code > div:nth-child(even) {
 		display: none;
+		height: 300px;
 	}
 }
 /*.code {
