@@ -232,7 +232,6 @@ export default {
 	"switch-light": {
 		"html": `<input id="switch-light" type="checkbox">`,
 		"css": `#switch-light {
-	visibility: hidden;
 	position: relative;
 	width: 120px;
 	height: 68px;
@@ -284,7 +283,6 @@ export default {
 	"switch-day": {
 		"html": `<input id="switch-day" type="checkbox">`,
 		"css": `#switch-day {
-	visibility: hidden;
 	position: relative;
 	width: 120px;
 	height: 68px;
@@ -360,6 +358,7 @@ export default {
 	input {
 		position: absolute;
 		visibility: hidden;
+		margin: 0;
 		cursor: pointer;
 		&:before {
 			content: "";
@@ -437,6 +436,7 @@ export default {
 	input {
 		position: absolute;
 		visibility: hidden;
+		margin: 0;
 		cursor: pointer;
 		&:before {
 			content: "";
