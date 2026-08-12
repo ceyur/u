@@ -29,7 +29,7 @@
 			display: block;
 			padding: 6px;
 			width: stretch;
-			height: stretch;
+			height: calc(100% - 12px);
 			border: none;
 		}
 	}
