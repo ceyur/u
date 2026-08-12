@@ -513,5 +513,221 @@ export default {
 	}
 }`,
 		"js": ""
+	},
+	"calculation": {
+		"html": `<div id="calculation">
+	<input id="text" style="font-family: 'Times New Roman';"></input>
+	<div>
+		<a id="c">C</a>
+		<a id="del" style="font-size: 15px;">⌫</a>
+		<a id="pi">π</a>
+		<a id="sum" style="font-weight: bold;">+</a>
+		<a id="number7">7</a>
+		<a id="number8">8</a>
+		<a id="number9">9</a>
+		<a id="minus" style="font-weight: bold;">−</a>
+		<a id="number4">4</a>
+		<a id="number5">5</a>
+		<a id="number6">6</a>
+		<a id="mult">𐄂</a>
+		<a id="number1">1</a>
+		<a id="number2">2</a>
+		<a id="number3">3</a>
+		<a id="div" style="font-size: 20px;">÷</a>
+		<a id="point">,</a>
+		<a id="number0">0</a>
+		<a id="run">=</a>
+	</div>
+</div>`,
+	"css": `* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+#calculation {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	padding: 30px;
+	width: 165px;
+	height: 245px;
+	border: 1px solid #000;
+	background: rgba(0, 0, 0, 0.06);
+	border-radius: 15px;
+	input {
+		margin: 0 0 16.5px;
+		width: 165px;
+		background: #fff;
+		border: none;
+		text-align: right;
+	}
+	div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		a {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 15px 15px 0;
+			width: 28px;
+			height: 28px;
+			background: #fff;
+			border: 1px solid #000;
+			border-radius: 5px;
+			&:nth-child(4),
+			&:nth-child(8),
+			&:nth-child(12),
+			&:nth-child(16),
+			&:nth-child(19) {
+				margin-right: 0;
+			}
+			&:nth-child(17),
+			&:nth-child(18),
+			&:nth-child(19) {
+				margin-bottom: 0;
+			}
+			&:last-child {
+				width: 73px;
+			}
+			&:hover {
+				border: 1px solid blue;
+			}
+		}
+	}
+}`,
+		"js": `const text = document.querySelector("#text")
+
+const create = {
+	calculation: function() {
+		for (let key in buttons) {
+			document.querySelector("#" + key).onclick = buttons[key]
+		}
+	},
+	keydown: function() {
+		text.addEventListener("keydown", (e) => {
+			if (!["Delete", "Backspace", "ArrowRight", "ArrowLeft"].includes(e.key)) {
+				calculation.div_null()
+				e.preventDefault()
+			}
+			if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(e.key)) {
+				calculation.number(e.key)
+			}
+			if ([",", "."].includes(e.key)) {
+				buttons.point()
+			}
+			if (["+", "-", "*", ":", "/"].includes(e.key)) {
+				calculation.operation(e.key)
+			}
+			if (["Enter", "="].includes(e.key)) {
+				buttons.run()
+			}
+		})
+	}
+}
+
+const calculation = {
+	div_null: function() {
+		if (text.value == "Нельзя делить на 0") {
+			text.value = ""
+		}
+	},
+	operation: function(symbol) {
+		calculation.div_null()
+		if (!["+", "-", "×", ":", ","].includes(text.value.slice(-1))) {
+			if (text.value != "") {
+				if (["+", "-"].includes(symbol)) text.value += symbol
+				if (["*", "×"].includes(symbol)) text.value += "×"
+				if ([":", "/"].includes(symbol)) text.value += ":"
+			}
+			else if (symbol == "-") {
+				text.value += "-"
+			}
+		}
+	},
+	number: function(symbol) {
+		calculation.div_null()
+		if (text.value == "") {
+			text.value += symbol
+		}
+		else if (!["π", "0"].includes(text.value.slice(-1))) {
+			text.value += symbol
+		}
+		else if (text.value.length > 1 & text.value.slice(-1) == "0" & !["+", "-", "×", ":"].includes(text.value.slice(-2, -1))) {
+			text.value += symbol
+		}
+	}
+}
+
+const buttons = {
+	c: function() {
+		text.value = ""
+	},
+	del: function() {
+		calculation.div_null()
+		text.value = text.value.slice(0, -1)
+	},
+	pi: function() {
+		calculation.div_null()
+		if (!["π", ","].includes(text.value.slice(-1))) {
+			text.value += "π"
+		}
+	},
+	point: function() {
+		calculation.div_null()
+		if (!["+", "-", "×", ":", "π", ","].includes(text.value.slice(-1))) {
+			for (let i = text.value.length - 1; i >= 0; i--) {
+				if (text.value[i] == ",") break
+				if (i == 0 | ["+", "-", "×", ":"].includes(text.value[i])) {
+					text.value += ","
+					break
+				}
+			}
+		}
+	},
+	run: function() {
+		calculation.div_null()
+		if (text.value != "" & !["+", "-", "×", ":", ","].includes(text.value.slice(-1))) {
+			if (text.value.includes(":0+") | text.value.includes(":0-") | text.value.includes(":0×") | text.value.includes(":0:") | text.value.slice(-1) == "0" & text.value.slice(-2, -1) == ":") {
+				text.value = "Нельзя делить на 0"
+			}
+			else {
+				text.value = text.value.replace(/×/g, "*").replace(/:/g, "/").replace(/,/g, ".")
+				while (text.value.includes("π")) {
+					let index_pi = text.value.indexOf("π")
+					if (index_pi == 0 | ["+", "-", "*", "/"].includes(text.value[index_pi - 1])) {
+						text.value = text.value.slice(0, index_pi) + "3.14" + text.value.slice(index_pi + 1)
+					}
+					else {
+						text.value = text.value.slice(0, index_pi) + "*3.14" + text.value.slice(index_pi + 1)
+					}
+				}
+				text.value = String(eval(text.value)).replace(/\./g, ",")
+			}
+		}
+	},
+
+	sum: () => calculation.operation("+"),
+	minus: () => calculation.operation("-"),
+	mult: () => calculation.operation("×"),
+	div: () => calculation.operation(":"),
+
+	number0: () => calculation.number("0"),
+	number1: () => calculation.number("1"),
+	number2: () => calculation.number("2"),
+	number3: () => calculation.number("3"),
+	number4: () => calculation.number("4"),
+	number5: () => calculation.number("5"),
+	number6: () => calculation.number("6"),
+	number7: () => calculation.number("7"),
+	number8: () => calculation.number("8"),
+	number9: () => calculation.number("9")
+}
+
+create.keydown()
+create.calculation()`
 	}
 };
