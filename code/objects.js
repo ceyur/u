@@ -705,7 +705,7 @@ const buttons = {
 						text.value = text.value.slice(0, index_pi) + "*3.14" + text.value.slice(index_pi + 1)
 					}
 				}
-				text.value = String(eval(text.value)).replace(/\./g, ",")
+				text.value = String(eval(text.value)).replace(".", ",")
 			}
 		}
 	},
