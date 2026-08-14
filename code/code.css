@@ -48,6 +48,7 @@
 			height: calc(100% - 38px - 6px);
 			box-shadow: none;
 			overflow: auto;
+			overflow-wrap: break-wrap;
 			scrollbar-width: none;
 		}
 	}
