@@ -51,6 +51,9 @@
 			scrollbar-width: none;
 		}
 	}
+	#calculation + div {
+		max-height: 400px;
+	}
 }
 .buttons {
 	padding: 3px;
