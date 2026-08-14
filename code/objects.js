@@ -554,14 +554,15 @@ export default {
 	padding: 30px;
 	width: 165px;
 	height: 245px;
-	border: 1px solid #000;
+	border: 1px solid black;
 	background: rgba(0, 0, 0, 0.06);
 	border-radius: 15px;
 	input {
 		margin: 0 0 16.5px;
 		width: 165px;
-		background: #fff;
-		border: none;
+		background: white;
+		border: 1px solid black;
+		border-radius: 5px;
 		text-align: right;
 	}
 	div {
@@ -575,8 +576,8 @@ export default {
 			margin: 0 15px 15px 0;
 			width: 28px;
 			height: 28px;
-			background: #fff;
-			border: 1px solid #000;
+			background: white;
+			border: 1px solid black;
 			border-radius: 5px;
 			&:nth-child(4),
 			&:nth-child(8),
@@ -695,7 +696,7 @@ const buttons = {
 				text.value = "Нельзя делить на 0"
 			}
 			else {
-				text.value = text.value.replace(/×/g, "*").replace(/:/g, "/").replace(/,/g, ".")
+				text.value = text.value.replace("×", "*").replace(":", "/").replace(",", ".")
 				while (text.value.includes("π")) {
 					let index_pi = text.value.indexOf("π")
 					if (index_pi == 0 | ["+", "-", "*", "/"].includes(text.value[index_pi - 1])) {
