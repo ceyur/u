@@ -545,12 +545,6 @@ export default {
 	user-select: none;
 }
 #calculation {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
 	padding: 30px;
 	width: 165px;
 	height: 245px;
@@ -564,6 +558,9 @@ export default {
 		border: 1px solid black;
 		border-radius: 5px;
 		text-align: right;
+		&:hover {
+			border: 1px solid blue;
+		}
 	}
 	div {
 		display: flex;
