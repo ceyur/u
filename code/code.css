@@ -51,8 +51,11 @@
 			scrollbar-width: none;
 		}
 	}
-	#calculation + div {
-		max-height: 400px;
+	#calculation {
+		height: 400px;
+		+ div {
+			max-height: 400px;
+		}
 	}
 }
 .buttons {
