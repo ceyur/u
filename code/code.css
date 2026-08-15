@@ -58,6 +58,9 @@
 			max-height: 400px;
 		}
 	}
+	#snake {
+		height: 300px;
+	}
 }
 .buttons {
 	padding: 3px;
