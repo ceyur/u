@@ -15,6 +15,7 @@ let styleInIframe = `html,
 document.addEventListener('keydown', function(event) {
     if (event.key == "ArrowUp" || event.key == "ArrowDown") {
         event.preventDefault();
+		console.log("вверх-вниз");
     }
 });
 
