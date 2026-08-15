@@ -727,5 +727,235 @@ const buttons = {
 
 create.keydown()
 create.calculation()`
+	},
+	"snake": {
+		"html": `<div id="snake">
+	<button id="start">Старт</button>
+	<button id="replay">Вы проиграли! Попробовать снова</button>
+	<button id="win">Вы прошли игру! Попробовать снова</button>
+	<div id="table"></div>
+	<div id="coins">0</div>
+</div>`,
+		"css": `* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+#snake {
+	width: 225px;
+	height: 245px;
+	border: 1px solid #000;
+	button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 20px;
+		left: 0;
+		margin: auto;
+		z-index: 1;
+		width: 100px;
+		height: 50px;
+	}
+	#replay,
+	#win {
+		display: none;
+		width: 150px;
+		height: 60px;
+	}
+	#table {
+		display: flex;
+		flex-wrap: wrap;
+		width: 225px;
+		height: 225px;
+		div {
+			width: 23px;
+			height: 23px;
+			border: 1px solid #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&:before {
+				content: "";
+			}
+		}
+		.head:before {
+			background: #000;
+			width: 15px;
+			height: 15px;
+		}
+		.body:before {
+			background: #000;
+			width: 13px;
+			height: 13px;
+		}
+		.apple:before {
+			background: green;
+			width: 17px;
+			height: 17px;
+			border-radius: 50%;
+		}
+	}
+	#coins {
+		height: 18px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+}`,
+		"js": `const table = document.querySelector("#table")
+const start = document.querySelector("#start")
+const replay = document.querySelector("#replay")
+const win = document.querySelector("#win")
+const coins = document.querySelector("#coins")
+
+const vectors = {
+	top: [0, -1],
+	right: [1, 0],
+	bottom: [0, 1],
+	left: [-1, 0]
+}
+
+const operation = {
+	inXY: function(i) {
+		let x = i % 9
+		let y = Math.floor(i / 9)
+		return [x, y]
+	},
+	inI: function(x, y) {
+		let i = y * 9 + x
+		return i
+	}
+}
+
+const create = {
+	table: function() {
+		for (let i = 0; i < 81; i++) {
+			table.appendChild(document.createElement("div"))
+		}
+	},
+	keydown: function() {
+		window.addEventListener("keydown", (e) => {
+			switch (e.key) {
+				case "ArrowUp": {
+					if (vector != vector.bottom) vector = vectors.top
+					break
+				}
+				case "ArrowRight": {
+					if (vector != vectors.left) vector = vectors.right
+					break
+				}
+				case "ArrowDown": {
+					if (vector != vectors.top) vector = vectors.bottom
+					break
+				}
+				case "ArrowLeft": {
+					if (vector != vectors.right) vector = vectors.left
+					break
+				}
+			}
+		})
+	},
+	swipe: function() {
+		window.addEventListener("touchstart", (e) => {
+			startX = e.touches[0].clientX
+			startY = e.touches[0].clientY
+		})
+
+		window.addEventListener("touchmove", (e) => e.preventDefault(), {passive: false})
+
+		// window.addEventListener("touchmove", (e) => {
+		// 	e.preventDefault()
+		// }, { passive: false })
+
+		window.addEventListener("touchend", (e) => {
+			endX = e.changedTouches[0].clientX
+			endY = e.changedTouches[0].clientY
+
+			if (Math.abs(endX - startX) > Math.abs(endY - startY)) {
+				if (endX - startX > 50 & vector != vectors.left) vector = vectors.right
+				if (endX - startX < -50 & vector != vectors.right) vector = vectors.left
+			}
+			else {
+				if (endY - startY > 50 & vector != vectors.top) vector = vectors.bottom
+				if (endY - startY < -50 & vector != vectors.bottom) vector = vectors.top
+			}
+		})
+	},
+}
+
+const game = {
+	new_play: function() {
+		start.style.display = "none"
+		replay.style.display = "none"
+		win.style.display = "none"
+		snake_i = [38, 39, 40]
+		apple_i = 42
+		vector = vectors.right
+		coins.textContent = "0"
+		game.write()
+		timer = setInterval(game.run, 800)
+	},
+	end: function(button) {
+		clearInterval(timer)
+		Array.from(table.children).forEach((e) => {
+			e.className = ""
+		})
+		button.style.display = "block"
+		button.focus()
+	},
+	write: function() {
+		snake_i.forEach((e) => {
+			table.children[e].className = "body"
+		})
+		table.children[snake_i[snake_i.length - 1]].className = "head"
+		table.children[apple_i].className = "apple"
+	},
+	new_head: function() {
+		let [x, y] = operation.inXY(snake_i[snake_i.length - 1])
+		let [dx, dy] = vector;
+		let [next_x, next_y] = [x + dx, y + dy]
+		let next_i = operation.inI(next_x, next_y)
+		return [next_i, next_x, next_y]
+	},
+	run: function() {
+		let [new_i, new_x, new_y] = game.new_head()
+
+		if (new_x > 8 | new_y > 8 | new_x < 0 | new_y < 0) {
+			game.end(replay)
+		}
+		else if (snake_i.includes(new_i)) {
+			game.end(replay)
+		}
+		else if (new_i == apple_i) {
+			snake_i.push(new_i)
+
+			coins.textContent = parseInt(coins.textContent) + 1
+			if (coins.textContent == 78) end(win)
+			
+			let apple_x, apple_y
+			while (true) {
+				apple_x = Math.floor(Math.random() * 9)
+				apple_y = Math.floor(Math.random() * 9)
+				if (!snake_i.includes(operation.inI(apple_x, apple_y))) break
+			}
+
+			apple_i = operation.inI(apple_x, apple_y)
+			game.write()
+		}
+		else {
+			snake_i.push(new_i)
+			table.children[snake_i[0]].className = ""
+			snake_i.shift()
+			game.write()
+		}
+	}
+}
+
+create.table()
+create.keydown()
+create.swipe()
+start.onclick = game.new_play
+replay.onclick = game.new_play
+win.onclick = game.new_play
+start.focus()`
 	}
 };
