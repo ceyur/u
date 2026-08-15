@@ -12,6 +12,12 @@ let styleInIframe = `html,
 		align-items: center;
 	}`;
 
+document.addEventListener('keydown', function(event) {
+    if (event.key == "ArrowUp" || event.key == "ArrowDown") {
+        event.preventDefault();
+    }
+});
+
 Object.keys(objects).forEach(key => {
 	let div = document.createElement("div");
 	div.id = key;
