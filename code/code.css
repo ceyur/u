@@ -94,7 +94,7 @@
 		opacity: 0.5;
 	}
 }
-@media (max-width: 610px) {
+@media (max-width: 698px) {
 	#code > div:nth-child(odd) {
 		flex: 1 1 80%;
 		min-height: fit-content;
