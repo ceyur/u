@@ -733,8 +733,8 @@ create.calculation()`
 	<button id="start">Старт</button>
 	<button id="replay">Вы проиграли! Попробовать снова</button>
 	<button id="win">Вы прошли игру! Попробовать снова</button>
-	<div id="table"></div>
 	<div id="coins">0</div>
+	<div id="table"></div>
 </div>`,
 		"css": `* {
 	margin: 0;
@@ -749,7 +749,7 @@ create.calculation()`
 		position: absolute;
 		top: 0;
 		right: 0;
-		bottom: 20px;
+		bottom: 0;
 		left: 0;
 		margin: auto;
 		z-index: 1;
