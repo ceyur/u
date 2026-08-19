@@ -17,8 +17,8 @@ const go_info = document.querySelector("#go-info");
 const close_info = document.querySelectorAll(".close-info");
 
 function ifReload() {
-	if (window.location.search.includes("p=/")) {
-		let path = window.location.search.replace("?p=", "").replaceAll("/", "");
+	if (window.location.search.includes("p=")) {
+		let path = window.location.search.replace("?p=/u", "").replaceAll("/", "");
 		let ifInfo = path.includes("information");
 		let basePath = path.replace("information", "");
 		let newPath = paths.includes(basePath) || basePath === "code" ? basePath + "/" : "";
