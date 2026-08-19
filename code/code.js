@@ -71,3 +71,4 @@ Object.keys(objects).forEach(key => {
 		};
 	};
 });
+window.scrollTo(0, 0);
