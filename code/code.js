@@ -71,4 +71,4 @@ Object.keys(objects).forEach(key => {
 		};
 	};
 });
-window.scrollTo(0, 0);
+requestAnimationFrame(() => window.scrollTo(0, 0));
