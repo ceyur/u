@@ -235,6 +235,7 @@ export default {
 	position: relative;
 	width: 120px;
 	height: 68px;
+	visibility: hidden;
 	cursor: pointer;
 	-webkit-tap-highlight-color: transparent;
 	&:before {
@@ -286,6 +287,7 @@ export default {
 	position: relative;
 	width: 120px;
 	height: 68px;
+	visibility: hidden;
 	cursor: pointer;
 	-webkit-tap-highlight-color: transparent;
 	&:before {
@@ -834,6 +836,7 @@ const create = {
 	},
 	keydown: function() {
 		window.addEventListener("keydown", (e) => {
+			e.preventDefault()
 			switch (e.key) {
 				case "ArrowUp": {
 					if (vector != vector.bottom) vector = vectors.top
