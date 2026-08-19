@@ -24,7 +24,7 @@ function ifReload() {
 		let newPath = paths.includes(basePath) || basePath === "code" ? basePath + "/" : "";
 		let finalPath = ifInfo ? newPath + "information/" : newPath;
 		window.history.replaceState(null, null, "/u/" + finalPath);
-		console.log("Reload: ", window.location.pathname);
+		console.log("Reload:", window.location.pathname);
 	}
 }
 
@@ -40,7 +40,7 @@ function update() {
 	else goMain();
 	
 	if (ifInfo) info.visible();
-	console.log("Update: ", window.location.pathname);
+	console.log("Update:", window.location.pathname);
 }
 
 function createButtons() {
