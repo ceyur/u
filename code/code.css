@@ -85,6 +85,14 @@
 		&:nth-child(3):hover {
 			box-shadow: 0 0 10px #eddb4d;
 		}
+		.aktiv {
+			color: white;
+			border: none;
+		}
+		.noAktiv {
+			color: black;
+			border: 1px solid black;
+		}
 	}
 	div {
 		display: none;
