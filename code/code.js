@@ -72,4 +72,5 @@ Object.keys(objects).forEach(key => {
 	};
 });
 // requestAnimationFrame(() => window.scrollTo(0, 0));
+document.activeElement.blur();
 window.focus();
