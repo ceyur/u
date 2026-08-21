@@ -86,6 +86,15 @@
 		&.aktiv {
 			color: white;
 			border: none;
+			&:nth-child(1) {
+				background: #f16528;
+			}
+			&:nth-child(2) {
+				background: #29a8df;
+			}
+			&:nth-child(3) {
+				background: #eddb4d;
+			}
 		}
 		.noAktiv {
 			color: black;
