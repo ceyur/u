@@ -24,7 +24,7 @@ Object.keys(objects).forEach(key => {
 	
 	let div1 = document.createElement("div");
 	div1.innerHTML = `<div class="buttons">
-		<button class="bHtml">html</button>
+		<button class="bHtml aktiv">html</button>
 		<button class="bCss">css</button>
 		${js}
 	</div>
