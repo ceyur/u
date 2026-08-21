@@ -49,6 +49,7 @@ Object.keys(objects).forEach(key => {
 	};
 
 	let bHtml = div1.querySelector(".bHtml");
+	let bCss = div1.querySelector(".bCss");
 	bHtml.onclick = () => {
 		div1.querySelector('.html').style.display = "block";
 		div1.querySelector('.css').style.display = "none";
@@ -57,10 +58,8 @@ Object.keys(objects).forEach(key => {
 		bhtml.className = "aktiv";
 		bhtml.style.background = "#f16528";
 		bCss.className = "noAktiv";
-		bJs.className = "noAktiv";
+		if (js !== "") bJs.className = "noAktiv";
 	};
-
-	let bCss = div1.querySelector(".bCss");
 	bCss.onclick = () => {
 		div1.querySelector('.html').style.display = "none";
 		div1.querySelector('.css').style.display = "block";
@@ -69,9 +68,8 @@ Object.keys(objects).forEach(key => {
 		bhtml.className = "noAktiv";
 		bCss.className = "aktiv";
 		bCss.style.background = "#29a8df";
-		bJs.className = "noAktiv";
+		if (js !== "") bJs.className = "noAktiv";
 	};
-
 	if (js !== "") {
 		let bJs = div1.querySelector(".bJs");
 		bJs.onclick = () => {
@@ -85,4 +83,5 @@ Object.keys(objects).forEach(key => {
 			bJs.style.background = "#eddb4d";
 		};
 	};
+
 });
