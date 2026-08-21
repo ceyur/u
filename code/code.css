@@ -88,7 +88,6 @@
 		}
 		&.aktiv {
 			color: white;
-			border: none;
 			&:nth-child(1) {
 				background: #f16528;
 				&:hover {
