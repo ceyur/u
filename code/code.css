@@ -73,8 +73,6 @@
 	button {
 		flex: 1 1 30%;
 		margin: 3px;
-		border: 1px solid black;
-		background: white;
 		border-radius: 15px;
 		&:nth-child(1):hover {
 			box-shadow: 0 0 10px #f16528;
@@ -85,7 +83,7 @@
 		&:nth-child(3):hover {
 			box-shadow: 0 0 10px #eddb4d;
 		}
-		.aktiv {
+		&.aktiv {
 			color: white;
 			border: none;
 		}
