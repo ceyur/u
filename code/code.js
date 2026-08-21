@@ -56,17 +56,17 @@ Object.keys(objects).forEach(key => {
 		div1.querySelector('.js').style.display = "none";
 
 		bHtml.className = "aktiv";
-		bCss.className = "noAktiv";
-		if (js !== "") bJs.className = "noAktiv";
+		bCss.className = "";
+		if (js !== "") bJs.className = "";
 	};
 	bCss.onclick = () => {
 		div1.querySelector('.html').style.display = "none";
 		div1.querySelector('.css').style.display = "block";
 		div1.querySelector('.js').style.display = "none";
 
-		bHtml.className = "noAktiv";
+		bHtml.className = "";
 		bCss.className = "aktiv";
-		if (js !== "") bJs.className = "noAktiv";
+		if (js !== "") bJs.className = "";
 	};
 	if (js !== "") {
 		let bJs = div1.querySelector(".bJs");
@@ -75,8 +75,8 @@ Object.keys(objects).forEach(key => {
 			div1.querySelector('.css').style.display = "none";
 			div1.querySelector('.js').style.display = "block";
 
-			bHtml.className = "noAktiv";
-			bCss.className = "noAktiv";
+			bHtml.className = "";
+			bCss.className = "";
 			bJs.className = "aktiv";
 		};
 	};
