@@ -112,6 +112,7 @@ function goCode() {
 	document.title = "Готовый код";
 	h1.innerHTML = "Готовый код";
 	import("/u/code/code.js");
+	button.click();
 	window.scrollTo(0, 0);
 }
 
