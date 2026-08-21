@@ -71,6 +71,11 @@ Object.keys(objects).forEach(key => {
 		};
 	};
 });
-document.activeElement.blur();
-requestAnimationFrame(() => document.querySelector(".button").click());
-window.focus();
+requestAnimationFrame(() => {
+    document.body.focus();
+    document.activeElement?.blur();
+	document.querySelector(".button").click();
+});
+// document.activeElement.blur();
+// requestAnimationFrame(() => document.querySelector(".button").click());
+// window.focus();
