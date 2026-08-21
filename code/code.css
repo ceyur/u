@@ -88,12 +88,21 @@
 			border: none;
 			&:nth-child(1) {
 				background: #f16528;
+				&:hover {
+					box-shadow: none;
+				}
 			}
 			&:nth-child(2) {
 				background: #29a8df;
+				&:hover {
+					box-shadow: none;
+				}
 			}
 			&:nth-child(3) {
 				background: #eddb4d;
+				&:hover {
+					box-shadow: none;
+				}
 			}
 		}
 		.noAktiv {
