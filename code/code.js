@@ -78,6 +78,8 @@ Object.keys(objects).forEach(key => {
 // });
 window.addEventListener("load", () => {
     document.body.focus();
+	window.focus();
+	document.querySelector(".button").click();
 });
 // document.activeElement.blur();
 // requestAnimationFrame(() => document.querySelector(".button").click());
