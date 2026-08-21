@@ -80,5 +80,4 @@ Object.keys(objects).forEach(key => {
 			bJs.className = "aktiv";
 		};
 	};
-
 });
