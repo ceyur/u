@@ -988,12 +988,6 @@ win.onclick = game.new_play`
 	user-select: none;
 }
 #tic-tac-toe {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
 	width: 272px;
 	height: 308px;
 	button {
@@ -1082,9 +1076,12 @@ win.onclick = game.new_play`
 	}
 }
 #block {
+	display: none;
 	width: 100%;
 	height: 100vh;
 	position: absolute;
+	top: 0;
+	left: 0;
 }`,
 		"js": `let start = document.querySelector("#start")
 let win = document.querySelector("#win")
