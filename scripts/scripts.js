@@ -102,7 +102,7 @@ function goMain() {
 	window.scrollTo(0, 0);
 }
 
-async function goCode() {
+function goCode() {
 	go_code.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
@@ -111,12 +111,8 @@ async function goCode() {
 	close.style.display = "flex";
 	document.title = "Готовый код";
 	h1.innerHTML = "Готовый код";
-	await import("/u/code/code.js");
-	await new Promise(resolve => requestAnimationFrame(resolve));
-	await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+	import("/u/code/code.js");
 	window.scrollTo(0, 0);
-	button.click();
-	console.log("вверх");
 }
 
 function go(name) {
