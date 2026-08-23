@@ -102,7 +102,7 @@ function goMain() {
 	window.scrollTo(0, 0);
 }
 
-function goCode() {
+async function goCode() {
 	go_code.style.visibility = "hidden";
 	info.hidden();
 	nav.style.display = "none";
@@ -111,7 +111,7 @@ function goCode() {
 	close.style.display = "flex";
 	document.title = "Готовый код";
 	h1.innerHTML = "Готовый код";
-	import("/u/code/code.js");
+	await import("/u/code/code.js");
 	window.scrollTo(0, 0);
 }
 
