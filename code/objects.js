@@ -958,6 +958,7 @@ create.keydown()
 create.swipe()
 start.onclick = game.new_play
 replay.onclick = game.new_play
-win.onclick = game.new_play`
+win.onclick = game.new_play
+start.focus()`
 	}
 };
