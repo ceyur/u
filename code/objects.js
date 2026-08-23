@@ -517,7 +517,7 @@ export default {
 		"js": ""
 	},
 	"calculation": {
-		"html": `<div id="calculation">
+		"html": `<main id="calculation">
 	<input id="text" style="font-family: 'Times New Roman';"></input>
 	<div>
 		<a id="c">C</a>
@@ -540,7 +540,7 @@ export default {
 		<a id="number0">0</a>
 		<a id="run">=</a>
 	</div>
-</div>`,
+</main>`,
 	"css": `* {
 	margin: 0;
 	padding: 0;
@@ -731,13 +731,13 @@ create.keydown()
 create.calculation()`
 	},
 	"snake": {
-		"html": `<div id="snake">
+		"html": `<main id="snake">
 	<button id="start">Старт</button>
 	<button id="replay">Вы проиграли! Попробовать снова</button>
 	<button id="win">Вы прошли игру! Попробовать снова</button>
 	<div id="coins">0</div>
 	<div id="table"></div>
-</div>`,
+</main>`,
 		"css": `* {
 	margin: 0;
 	padding: 0;
@@ -959,5 +959,231 @@ create.swipe()
 start.onclick = game.new_play
 replay.onclick = game.new_play
 win.onclick = game.new_play`
+	},
+	"tic-tac-toe": {
+		"html": `<main id="tic-tac-toe">
+	<button id="start">Старт</button>
+	<button id="win"></button>
+	<div id="header">
+		<div id="leftText"></div>
+		<div id="rightText"></div>
+	</div>
+	<div id="table">
+		<p id="0"></p>
+		<p id="1"></p>
+		<p id="2"></p>
+		<p id="3"></p>
+		<p id="4"></p>
+		<p id="5"></p>
+		<p id="6"></p>
+		<p id="7"></p>
+		<p id="8"></p>
+	</div>
+	<div id="text"></div>
+	<div id="block"></div>
+</main>`,
+		"css": `* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+#tic-tac-toe {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 272px;
+	height: 308px;
+	button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		z-index: 1;
+		width: 100px;
+		height: 50px;
 	}
+	#win {
+		display: none;
+		width: 175px;
+		height: 60px;
+	}
+	#header {
+		display: flex;
+		justify-content: space-between;
+		* {
+			height: 18px;
+		}
+	}
+	#text {
+		height: 18px;
+	}
+	#table {
+		display: flex;
+		flex-wrap: wrap;
+		width: 270px;
+		height: 270px;
+		border: 1px solid #000;
+		p {
+			width: 88px;
+			height: 88px;
+			border: 1px solid #000;
+			position: relative;
+		}
+		.X {
+			&:before,
+			&:after {
+				content: "";
+				width: 50px;
+				height: 10px;
+				background: #000;
+				rotate: 45deg;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+			}
+			&:after {
+				rotate: -45deg;
+			}
+		}
+		.O {
+			&:before {
+				content: "";
+				width: 30px;
+				height: 30px;
+				border: 10px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+			}
+		}
+		.Xlast {
+			&:before,
+			&:after {
+				background: #999;
+			}
+		}
+		.Olast {
+			&:before {
+				border: 10px solid #999;
+			}
+		}
+	}
+}
+#block {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+}`,
+		"js": `let start = document.querySelector("#start")
+let win = document.querySelector("#win")
+let leftText = document.querySelector("#leftText")
+let rightText = document.querySelector("#rightText")
+let block = document.querySelector("#block")
+let table = document.querySelector("#table")
+let player = 1
+let list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+let history = []
+start.focus()
+
+start.onclick = () => {
+	leftText.textContent = "Ходит 1 игрок"
+	block.style.display = "none"
+	start.style.display = "none"
+}
+win.onclick = () => {
+	leftText.textContent = "Ходит 1 игрок"
+	block.style.display = "none"
+	win.style.display = "none"
+	player = 1
+	history = []
+	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+	document.querySelectorAll("p").forEach((e) => e.className = "")
+}
+
+document.querySelectorAll("p").forEach((e) => {
+	e.onclick = () => {
+		if (e.classList.length == 0) {
+			if (player == 1) {
+				history.push(e)
+				list[e.id] = 1
+				e.className = "X"
+				leftText.textContent = ""
+				rightText.textContent = "Ходит 2 игрок"
+				player++
+			}
+			else {
+				history.push(e)
+				list[e.id] = 0
+				e.className = "O"
+				leftText.textContent = "Ходит 1 игрок"
+				rightText.textContent = ""
+				player--
+			}
+			if (history.length > 6) {
+				history[0].className = ""
+				history.shift()
+			}
+			if (history.length == 6) {
+				if (history[0].className == "X") history[0].classList.add("Xlast")
+				if (history[0].className == "O") history[0].classList.add("Olast")
+			}
+			if (list[0] == 1 && list[1] == 1 && list[2] == 1 ||
+				list[3] == 1 && list[4] == 1 && list[5] == 1 ||
+				list[6] == 1 && list[7] == 1 && list[8] == 1 ||
+				list[0] == 1 && list[3] == 1 && list[6] == 1 ||
+				list[1] == 1 && list[4] == 1 && list[7] == 1 ||
+				list[2] == 1 && list[5] == 1 && list[8] == 1 ||
+				list[0] == 1 && list[4] == 1 && list[8] == 1 ||
+				list[2] == 1 && list[4] == 1 && list[6] == 1) {
+				win.style.display = "block"
+				win.textContent = "Первый игрок победил! Сыграть ещё"
+				block.style.display = "block"
+				leftText.textContent = ""
+				rightText.textContent = ""
+			}
+			if (list[0] == 0 && list[1] == 0 && list[2] == 0 ||
+				list[3] == 0 && list[4] == 0 && list[5] == 0 ||
+				list[6] == 0 && list[7] == 0 && list[8] == 0 ||
+				list[0] == 0 && list[3] == 0 && list[6] == 0 ||
+				list[1] == 0 && list[4] == 0 && list[7] == 0 ||
+				list[2] == 0 && list[5] == 0 && list[8] == 0 ||
+				list[0] == 0 && list[4] == 0 && list[8] == 0 ||
+				list[2] == 0 && list[4] == 0 && list[6] == 0) {
+				win.style.display = "block"
+				win.textContent = "Второй игрок победил! Сыграть ещё"
+				block.style.display = "block"
+				leftText.textContent = ""
+				rightText.textContent = ""
+			}
+		}
+	}
+})`
+	}
+// 	/*,
+// 	"shess": {
+// 		"html": `<main id="shess">
+// 	<button id="start">Старт</button>
+// 	<button id="win">Вы выиграли! Попробовать снова</button>
+// 	<div id="header">
+// 		<div id="first_player">Ходит 1 игрок</div>
+// 		<div id="last_player"></div>
+// 	</div>
+// 	<div id="table"></div>
+// 	<div id="block"></div>
+// </main>`,
+// 		"css": ``,
+// 		"js": ``
+// 	}*/
 };
