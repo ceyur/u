@@ -903,7 +903,6 @@ const game = {
 			e.className = ""
 		})
 		button.style.display = "block"
-		button.focus()
 	},
 	write: function() {
 		snake_i.forEach((e) => {
@@ -1083,16 +1082,15 @@ win.onclick = game.new_play`
 	top: 0;
 	left: 0;
 }`,
-		"js": `let start = document.querySelector("#start")
-let win = document.querySelector("#win")
-let leftText = document.querySelector("#leftText")
-let rightText = document.querySelector("#rightText")
-let block = document.querySelector("#block")
-let table = document.querySelector("#table")
+		"js": `const start = document.querySelector("#start")
+const win = document.querySelector("#win")
+const leftText = document.querySelector("#leftText")
+const rightText = document.querySelector("#rightText")
+const block = document.querySelector("#block")
+const table = document.querySelector("#table")
 let player = 1
 let list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 let history = []
-start.focus()
 
 start.onclick = () => {
 	leftText.textContent = "Ходит 1 игрок"
