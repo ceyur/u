@@ -61,6 +61,12 @@
 	#snake {
 		height: 300px;
 	}
+	#tic-tac-toe {
+		height: 400px;
+		+ div {
+			max-height: 400px;
+		}
+	}
 }
 .buttons {
 	padding: 3px;
