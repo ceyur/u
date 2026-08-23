@@ -50,6 +50,18 @@ Object.keys(objects).forEach(key => {
 
 	let bHtml = div1.querySelector(".bHtml");
 	let bCss = div1.querySelector(".bCss");
+	if (js !== "") {
+		let bJs = div1.querySelector(".bJs");
+		bJs.onclick = () => {
+			div1.querySelector('.html').style.display = "none";
+			div1.querySelector('.css').style.display = "none";
+			div1.querySelector('.js').style.display = "block";
+
+			bHtml.className = "";
+			bCss.className = "";
+			bJs.className = "aktiv";
+		};
+	};
 	bHtml.onclick = () => {
 		div1.querySelector('.html').style.display = "block";
 		div1.querySelector('.css').style.display = "none";
@@ -67,17 +79,5 @@ Object.keys(objects).forEach(key => {
 		bHtml.className = "";
 		bCss.className = "aktiv";
 		if (js !== "") bJs.className = "";
-	};
-	if (js !== "") {
-		let bJs = div1.querySelector(".bJs");
-		bJs.onclick = () => {
-			div1.querySelector('.html').style.display = "none";
-			div1.querySelector('.css').style.display = "none";
-			div1.querySelector('.js').style.display = "block";
-
-			bHtml.className = "";
-			bCss.className = "";
-			bJs.className = "aktiv";
-		};
 	};
 });
