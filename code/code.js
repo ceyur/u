@@ -50,8 +50,9 @@ Object.keys(objects).forEach(key => {
 
 	let bHtml = div1.querySelector(".bHtml");
 	let bCss = div1.querySelector(".bCss");
+	let bJs;
 	if (js !== "") {
-		let bJs = div1.querySelector(".bJs");
+		bJs = div1.querySelector(".bJs");
 		bJs.onclick = () => {
 			div1.querySelector('.html').style.display = "none";
 			div1.querySelector('.css').style.display = "none";
