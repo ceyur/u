@@ -113,6 +113,8 @@ async function goCode() {
 	h1.innerHTML = "Готовый код";
 	await import("/u/code/code.js");
 	window.scrollTo(0, 0);
+	button.click();
+	console.log("вверх");
 }
 
 function go(name) {
