@@ -1265,7 +1265,7 @@ document.querySelectorAll("p").forEach((e) => {
 	// }
 
 	.wpawn {
-		background: url(../img/wpawn.png) center/100% 100%;
+		background: url(../img/shess/wpawn.png) center/100% 100%;
 	}
 	.bpawn {
 		background: url(../img/bpawn.png) center/100% 100%;
@@ -1280,7 +1280,7 @@ document.querySelectorAll("p").forEach((e) => {
 		background: url(../img/wknight.png) center/100% 100%;
 	}
 	.bknight {
-		background: url(../img/bknight.png) center/100% 100%;
+		background: url(../img/shees/bknight.png) center/100% 100%;
 	}
 	.wbishop {
 		background: url(../img/wbishop.png) center/100% 100%;
@@ -1289,10 +1289,10 @@ document.querySelectorAll("p").forEach((e) => {
 		background: url(../img/bbishop.png) center/100% 100%;
 	}
 	.wking {
-		background: url(../img/wking.png) center/100% 100%;
+		background: url(img/shess/wking.png) center/100% 100%;
 	}
 	.bking {
-		background: url(../img/bking.png) center/100% 100%;
+		background: url(/img/shees/bking.png) center/100% 100%;
 	}
 	.wqueen {
 		background: url(../img/wqueen.png) center/100% 100%;
