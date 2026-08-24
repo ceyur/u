@@ -1168,8 +1168,8 @@ document.querySelectorAll("p").forEach((e) => {
 	<button id="start">Старт</button>
 	<button id="win">Вы выиграли! Попробовать снова</button>
 	<div id="header">
-		<div id="first_player">Ходит 1 игрок</div>
-		<div id="last_player"></div>
+		<div id="firstPlayer"></div>
+		<div id="lastPlayer"></div>
 	</div>
 	<div id="table"></div>
 	<div id="text"></div>
@@ -1270,8 +1270,8 @@ document.querySelectorAll("p").forEach((e) => {
 const block = document.querySelector("#block")
 const start = document.querySelector("#start")
 const win = document.querySelector("#win")
-const first_player = document.querySelector("#first_player")
-const last_player = document.querySelector("#last_player")
+const firstPlayer = document.querySelector("#firstPlayer")
+const lastPlayer = document.querySelector("#lastPlayer")
 
 const players = {
 	white: "w",
@@ -1359,12 +1359,12 @@ const pieces = {
 			table.children[click_piece.i].className = ""
 			
 			if (player == players.white) {
-				first_player.textContent = "Ходит 1 игрок"
-				last_player.textContent = ""
+				firstPlayer.textContent = "Ходит 1 игрок"
+				lastPlayer.textContent = ""
 			}
 			else {
-				first_player.textContent = ""
-				last_player.textContent = "Ходит 2 игрок"
+				firstPlayer.textContent = ""
+				lastPlayer.textContent = "Ходит 2 игрок"
 			}
 		}
 	},
