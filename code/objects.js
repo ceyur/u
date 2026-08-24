@@ -1075,7 +1075,6 @@ win.onclick = game.new_play`
 	}
 }
 #block {
-	display: none;
 	width: 100%;
 	height: 100vh;
 	position: absolute;
@@ -1165,20 +1164,337 @@ document.querySelectorAll("p").forEach((e) => {
 		}
 	}
 })`
+	},
+	"shess": {
+		"html": `<main id="shess">
+	<button id="start">Старт</button>
+	<button id="win">Вы выиграли! Попробовать снова</button>
+	<div id="header">
+		<div id="first_player">Ходит 1 игрок</div>
+		<div id="last_player"></div>
+	</div>
+	<div id="table"></div>
+	<div id="block"></div>
+</main>`,
+		"css": `* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+#shess {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 40px;
+	left: 0;
+	margin: auto;
+	width: 400px;
+	height: 400px;
+	button {
+		position: absolute;
+		top: 40px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		z-index: 1;
+		width: 100px;
+		height: 50px;
 	}
-// 	/*,
-// 	"shess": {
-// 		"html": `<main id="shess">
-// 	<button id="start">Старт</button>
-// 	<button id="win">Вы выиграли! Попробовать снова</button>
-// 	<div id="header">
-// 		<div id="first_player">Ходит 1 игрок</div>
-// 		<div id="last_player"></div>
-// 	</div>
-// 	<div id="table"></div>
-// 	<div id="block"></div>
-// </main>`,
-// 		"css": ``,
-// 		"js": ``
-// 	}*/
+	#win {
+		display: none;
+		width: 150px;
+		height: 60px;
+	}
+	#header {
+		display: flex;
+		div {
+			flex: 50% 1 1;
+			height: 20px;
+		}
+	}
+	#table {
+		display: flex;
+		flex-wrap: wrap;
+		width: 400px;
+		height: 400px;
+		border: 1px solid #000;
+		div {
+			width: 48px;
+			height: 48px;
+			border: 1px solid #000;
+		}
+	}
+	#block {
+		width: 400px;
+		height: 400px;
+		position: absolute;
+		top: 20px;
+	}
+	#last_player {
+		text-align: right;
+	}
+	.wpawn {
+		background: url(../img/БПешка.png) center/100% 100%;
+	}
+	.bpawn {
+		background: url(../img/ЧПешка.png) center/100% 100%;
+	}
+	.wrook {
+		background: url(../img/БЛадья.png) center/100% 100%;
+	}
+	.brook {
+		background: url(../img/ЧЛадья.png) center/100% 100%;
+	}
+	.wknight {
+		background: url(../img/БКонь.png) center/100% 100%;
+	}
+	.bknight {
+		background: url(../img/ЧКонь.png) center/100% 100%;
+	}
+	.wbishop {
+		background: url(../img/БСлон.png) center/100% 100%;
+	}
+	.bbishop {
+		background: url(../img/ЧСлон.png) center/100% 100%;
+	}
+	.wking {
+		background: url(../img/БКороль.png) center/100% 100%;
+	}
+	.bking {
+		background: url(../img/ЧКороль.png) center/100% 100%;
+	}
+	.wqueen {
+		background: url(../img/БКоролева.png) center/100% 100%;
+	}
+	.bqueen {
+		background: url(../img/ЧКоролева.png) center/100% 100%;
+	}
+}`,
+		"js": `const table = document.querySelector("#table")
+const block = document.querySelector("#block")
+const start = document.querySelector("#start")
+const win = document.querySelector("#win")
+const first_player = document.querySelector("#first_player")
+const last_player = document.querySelector("#last_player")
+
+const players = {
+	white: "w",
+	black: "b"
+}
+
+const operations = {
+	inXY: function(i) {
+		let x = i % 8
+		let y = Math.floor(i / 8)
+		return [x, y]
+	},
+	inI: function(x, y) {
+		let i = y * 8 + x
+		return i
+	}
+}
+
+const create = {
+	table: function() {
+		for (let i = 0; i < 64; i++) {
+			table.appendChild(document.createElement("div"))
+		}
+	},
+	game: function() {
+		Array.from(table.children).forEach((e) => {
+			e.className = ""
+		})
+		for (let key in new_pieces) {
+			table.children[key].className = new_pieces[key]
+		}
+		Array.from(table.children).forEach((e, index) => {
+			e.onclick = () => pieces.click(e, index)
+		})
+		click_piece = {
+			on: false,
+			class: "",
+			i: 0,
+			x: 0,
+			y: 0
+		}
+		player = players.white
+	}
+}
+
+const buttons = {
+	start: function() {
+		start.style.display = "none"
+		block.style.display = "none"
+	},
+	win: function() {
+		game.new_game()
+		win.style.display = "none"
+		block.style.display = "none"
+	}
+}
+
+const pieces = {
+	click: function(e, index) {
+		if (!click_piece.on & e.className[0] == player) {
+			[click_x, click_y] = operations.inXY(index)
+			click_piece = {
+				on: true,
+				class: e.className,
+				i: index,
+				x: click_x,
+				y: click_y
+			}
+			e.style.outline = "black solid 2px"
+		}
+		else if (e.style.outline == "black solid 2px") {
+			e.style.outline = "none"
+			click_piece.on = false
+		}
+		else if (pieces[click_piece.class.slice(1)].run(e, index) & e.className[0] != click_piece.class[0]) {
+			if (["wking", "bking"].includes(e.className)) {
+				win.style.display = "block"
+				block.style.display = "block"
+			}
+
+			click_piece.on = false
+			e.className = click_piece.class
+			player = (player == players.black) ? players.white : players.black
+			table.children[click_piece.i].style.outline = "none"
+			table.children[click_piece.i].className = ""
+			
+			if (player == players.white) {
+				first_player.textContent = "Ходит 1 игрок"
+				last_player.textContent = ""
+			}
+			else {
+				first_player.textContent = ""
+				last_player.textContent = "Ходит 2 игрок"
+			}
+		}
+	},
+	pawn: {
+		name: "pawn",
+		run: function(e, index) {
+			let [new_x, new_y] = operations.inXY(index)
+			let [dx, dy] = [Math.abs(click_piece.x - new_x), click_piece.y - new_y]
+
+			if ((dx == 0 & e.className == "" | dx == 1 & e.className != "") &
+				(dy == -1 & click_piece.class[0] == players.white | dy == 1 & click_piece.class[0] == players.black)) return true
+			if (dx == 0 & Math.abs(dy) == 2 & (click_piece.y == 1 & table.children[operations.inI(click_piece.x, 2)].className == "" |
+				click_piece.y == 6 & table.children[operations.inI(click_piece.x, 5)].className == "")) return true
+		}
+	},
+	rook: {
+		name: "rook",
+		run: function(e, index) {
+			let [new_x, new_y] = operations.inXY(index)
+				if (new_x != click_piece.x & new_y != click_piece.y) return false
+
+			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
+				if (dx + dy < 2) return true
+
+			let small, big
+			if (dx == 0) {
+				dx = dy
+				[small, big] = [Math.min(click_piece.y, new_y), Math.max(click_piece.y, new_y)]
+			}
+			else {
+				[small, big] = [Math.min(click_piece.x, new_x), Math.max(click_piece.x, new_x)]
+			}
+
+			for (let j = small + 1; j < big; j++) {
+				if (click_piece.x == new_x & table.children[operations.inI(click_piece.x, j)].className != "" |
+					click_piece.y == new_y & table.children[operations.inI(j, click_piece.y)].className != "") return false
+			}
+			return true
+		}
+	},
+	knight: {
+		name: "knight",
+		run: function(e, index) {
+			let [new_x, new_y] = operations.inXY(index)
+			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
+
+			if (dx + dy == 3 & dx < 3 & dy < 3) return true
+		}
+	},
+	bishop: {
+		name: "bishop",
+		run: function(e, index) {
+			let [new_x, new_y] = operations.inXY(index)
+				if (new_x == click_piece.x | new_y == click_piece.y) return false
+
+			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
+				if (dx + dy < 2) return true
+				if (dx != dy) return false
+
+			let [small, big] = [Math.min(click_piece.x, new_x), Math.max(click_piece.x, new_x)]
+			
+			for (let j = small + 1; j < big; j++) {
+				(new_x > click_piece.x) ? new_x-- : new_x++
+				(new_y > click_piece.y) ? new_y-- : new_y++
+
+				if (table.children[operations.inI(new_x, new_y)].className != "") return false
+			}
+			return true
+		} 
+	},
+	king: {
+		name: "king",
+		run: function(e, index) {
+			let [new_x, new_y] = operations.inXY(index)
+			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
+
+			if (dx + dy < 3 & dx < 2 & dy < 2) return true
+		}
+	},
+	queen: {
+		name: "queen",
+		run: function(e, index) {
+			return pieces.rook.run(e, index) | pieces.bishop.run(e, index)
+		}
+	}
+}
+
+const new_pieces = {
+	0: players.white + pieces.rook.name,
+	1: players.white + pieces.knight.name,
+	2: players.white + pieces.bishop.name,
+	3: players.white + pieces.king.name,
+	4: players.white + pieces.queen.name,
+	5: players.white + pieces.bishop.name,
+	6: players.white + pieces.knight.name,
+	7: players.white + pieces.rook.name,
+	8: players.white + pieces.pawn.name,
+	9: players.white + pieces.pawn.name,
+	10: players.white + pieces.pawn.name,
+	11: players.white + pieces.pawn.name,
+	12: players.white + pieces.pawn.name,
+	13: players.white + pieces.pawn.name,
+	14: players.white + pieces.pawn.name,
+	15: players.white + pieces.pawn.name,
+	48: players.black + pieces.pawn.name,
+	49: players.black + pieces.pawn.name,
+	50: players.black + pieces.pawn.name,
+	51: players.black + pieces.pawn.name,
+	52: players.black + pieces.pawn.name,
+	53: players.black + pieces.pawn.name,
+	54: players.black + pieces.pawn.name,
+	55: players.black + pieces.pawn.name,
+	56: players.black + pieces.rook.name,
+	57: players.black + pieces.knight.name,
+	58: players.black + pieces.bishop.name,
+	59: players.black + pieces.king.name,
+	60: players.black + pieces.queen.name,
+	61: players.black + pieces.bishop.name,
+	62: players.black + pieces.knight.name,
+	63: players.black + pieces.rook.name
+}
+
+create.table()
+create.game()
+start.onclick = buttons.start
+win.onclick = buttons.win`
+	}
 };
