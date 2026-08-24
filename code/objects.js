@@ -1287,7 +1287,7 @@ document.querySelectorAll("p").forEach((e) => {
 		background: url(../img/bbishop.png) center/100% 100%;
 	}
 	.wking {
-		background: url(u/img/shess/wking.png) center/100% 100%;
+		background: url(/u/img/shess/wking.png) center/100% 100%;
 	}
 	.bking {
 		background: url(/img/shess/bking.png) center/100% 100%;
