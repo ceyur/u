@@ -1225,78 +1225,41 @@ document.querySelectorAll("p").forEach((e) => {
 	#last_player {
 		text-align: right;
 	}
-	// .wpawn {
-	// 	background: url(../img/БПешка.png) center/100% 100%;
-	// }
-	// .bpawn {
-	// 	background: url(../img/ЧПешка.png) center/100% 100%;
-	// }
-	// .wrook {
-	// 	background: url(../img/БЛадья.png) center/100% 100%;
-	// }
-	// .brook {
-	// 	background: url(../img/ЧЛадья.png) center/100% 100%;
-	// }
-	// .wknight {
-	// 	background: url(../img/БКонь.png) center/100% 100%;
-	// }
-	// .bknight {
-	// 	background: url(../img/ЧКонь.png) center/100% 100%;
-	// }
-	// .wbishop {
-	// 	background: url(../img/БСлон.png) center/100% 100%;
-	// }
-	// .bbishop {
-	// 	background: url(../img/ЧСлон.png) center/100% 100%;
-	// }
-	// .wking {
-	// 	background: url(../img/БКороль.png) center/100% 100%;
-	// }
-	// .bking {
-	// 	background: url(../img/ЧКороль.png) center/100% 100%;
-	// }
-	// .wqueen {
-	// 	background: url(../img/БКоролева.png) center/100% 100%;
-	// }
-	// .bqueen {
-	// 	background: url(../img/ЧКоролева.png) center/100% 100%;
-	// }
-
 	.wpawn {
-		background: url(../img/shess/wpawn.png) center/100% 100%;
+		background: url(/u/img/shess/wpawn.png) center/100% 100%;
 	}
 	.bpawn {
-		background: url(../img/bpawn.png) center/100% 100%;
+		background: url(/u/img/shess/bpawn.png) center/100% 100%;
 	}
 	.wrook {
-		background: url(../img/wrook.png) center/100% 100%;
+		background: url(/u/img/shess/wrook.png) center/100% 100%;
 	}
 	.brook {
-		background: url(../img/brook.png) center/100% 100%;
+		background: url(/u/img/shess/brook.png) center/100% 100%;
 	}
 	.wknight {
-		background: url(../img/wknight.png) center/100% 100%;
+		background: url(/u/img/shess/wknight.png) center/100% 100%;
 	}
 	.bknight {
-		background: url(../img/shess/bknight.png) center/100% 100%;
+		background: url(/u/img/shess/bknight.png) center/100% 100%;
 	}
 	.wbishop {
-		background: url(../img/wbishop.png) center/100% 100%;
+		background: url(/u/img/shess/wbishop.png) center/100% 100%;
 	}
 	.bbishop {
-		background: url(../img/bbishop.png) center/100% 100%;
+		background: url(/u/img/shess/bbishop.png) center/100% 100%;
 	}
 	.wking {
 		background: url(/u/img/shess/wking.png) center/100% 100%;
 	}
 	.bking {
-		background: url(/img/shess/bking.png) center/100% 100%;
+		background: url(/u/img/shess/bking.png) center/100% 100%;
 	}
 	.wqueen {
-		background: url(../img/wqueen.png) center/100% 100%;
+		background: url(/u/img/shess/wqueen.png) center/100% 100%;
 	}
 	.bqueen {
-		background: url(img/shess/bqueen.png) center/100% 100%;
+		background: url(/u/img/shess/bqueen.png) center/100% 100%;
 	}
 }`,
 		"js": `const table = document.querySelector("#table")
