@@ -1006,7 +1006,7 @@ win.onclick = game.new_play`
 	#header {
 		display: flex;
 		justify-content: space-between;
-		* {
+		div {
 			height: 18px;
 		}
 	}
@@ -1172,6 +1172,7 @@ document.querySelectorAll("p").forEach((e) => {
 		<div id="last_player"></div>
 	</div>
 	<div id="table"></div>
+	<div id="text"></div>
 	<div id="block"></div>
 </main>`,
 		"css": `* {
@@ -1198,10 +1199,13 @@ document.querySelectorAll("p").forEach((e) => {
 	}
 	#header {
 		display: flex;
+		justify-content: space-between;
 		div {
-			flex: 50% 1 1;
-			height: 20px;
+			height: 18px;
 		}
+	}
+	#text {
+		height: 18px;
 	}
 	#table {
 		display: flex;
