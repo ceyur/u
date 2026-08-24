@@ -1296,7 +1296,7 @@ document.querySelectorAll("p").forEach((e) => {
 		background: url(../img/wqueen.png) center/100% 100%;
 	}
 	.bqueen {
-		background: url(../img/bqueen.png) center/100% 100%;
+		background: url(img/shess/bqueen.png) center/100% 100%;
 	}
 }`,
 		"js": `const table = document.querySelector("#table")
