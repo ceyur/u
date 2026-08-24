@@ -987,8 +987,6 @@ win.onclick = game.new_play`
 	user-select: none;
 }
 #tic-tac-toe {
-	width: 272px;
-	height: 308px;
 	button {
 		position: absolute;
 		top: 0;
