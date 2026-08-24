@@ -1235,31 +1235,31 @@ document.querySelectorAll("p").forEach((e) => {
 		text-align: right;
 	}
 	.wpawn {
-		background: url(../img/БПешка.png) center/100% 100%;
+		background: url(u/img/БПешка.png) center/100% 100%;
 	}
 	.bpawn {
-		background: url(../img/ЧПешка.png) center/100% 100%;
+		background: url(u/img/ЧПешка.png) center/100% 100%;
 	}
 	.wrook {
-		background: url(../img/БЛадья.png) center/100% 100%;
+		background: url(u/img/БЛадья.png) center/100% 100%;
 	}
 	.brook {
-		background: url(../img/ЧЛадья.png) center/100% 100%;
+		background: url(u/img/ЧЛадья.png) center/100% 100%;
 	}
 	.wknight {
-		background: url(../img/БКонь.png) center/100% 100%;
+		background: url(u/img/БКонь.png) center/100% 100%;
 	}
 	.bknight {
-		background: url(../img/ЧКонь.png) center/100% 100%;
+		background: url(u/img/ЧКонь.png) center/100% 100%;
 	}
 	.wbishop {
-		background: url(../img/БСлон.png) center/100% 100%;
+		background: url(u/img/БСлон.png) center/100% 100%;
 	}
 	.bbishop {
-		background: url(../img/ЧСлон.png) center/100% 100%;
+		background: url(u/img/ЧСлон.png) center/100% 100%;
 	}
 	.wking {
-		background: url(../img/БКороль.png) center/100% 100%;
+		background: url(u/img/БКороль.png) center/100% 100%;
 	}
 	.bking {
 		background: url(../img/ЧКороль.png) center/100% 100%;
