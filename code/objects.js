@@ -1018,12 +1018,12 @@ win.onclick = game.new_play`
 	#table {
 		display: flex;
 		flex-wrap: wrap;
-		width: 270px;
-		height: 270px;
+		width: 240px;
+		height: 240px;
 		border: 1px solid #000;
 		p {
-			width: 88px;
-			height: 88px;
+			width: 78px;
+			height: 78px;
 			border: 1px solid #000;
 			position: relative;
 		}
@@ -1182,17 +1182,9 @@ document.querySelectorAll("p").forEach((e) => {
 	user-select: none;
 }
 #shess {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 40px;
-	left: 0;
-	margin: auto;
-	width: 400px;
-	height: 400px;
 	button {
 		position: absolute;
-		top: 40px;
+		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -1216,59 +1208,97 @@ document.querySelectorAll("p").forEach((e) => {
 	#table {
 		display: flex;
 		flex-wrap: wrap;
-		width: 400px;
-		height: 400px;
+		width: 240px;
+		height: 240px;
 		border: 1px solid #000;
 		div {
-			width: 48px;
-			height: 48px;
+			width: 28px;
+			height: 28px;
 			border: 1px solid #000;
 		}
 	}
 	#block {
-		width: 400px;
-		height: 400px;
+		width: 100%;
+		height: 100vh;
 		position: absolute;
-		top: 20px;
+		top: 0;
+		left: 0;
 	}
 	#last_player {
 		text-align: right;
 	}
+	// .wpawn {
+	// 	background: url(../img/БПешка.png) center/100% 100%;
+	// }
+	// .bpawn {
+	// 	background: url(../img/ЧПешка.png) center/100% 100%;
+	// }
+	// .wrook {
+	// 	background: url(../img/БЛадья.png) center/100% 100%;
+	// }
+	// .brook {
+	// 	background: url(../img/ЧЛадья.png) center/100% 100%;
+	// }
+	// .wknight {
+	// 	background: url(../img/БКонь.png) center/100% 100%;
+	// }
+	// .bknight {
+	// 	background: url(../img/ЧКонь.png) center/100% 100%;
+	// }
+	// .wbishop {
+	// 	background: url(../img/БСлон.png) center/100% 100%;
+	// }
+	// .bbishop {
+	// 	background: url(../img/ЧСлон.png) center/100% 100%;
+	// }
+	// .wking {
+	// 	background: url(../img/БКороль.png) center/100% 100%;
+	// }
+	// .bking {
+	// 	background: url(../img/ЧКороль.png) center/100% 100%;
+	// }
+	// .wqueen {
+	// 	background: url(../img/БКоролева.png) center/100% 100%;
+	// }
+	// .bqueen {
+	// 	background: url(../img/ЧКоролева.png) center/100% 100%;
+	// }
+
 	.wpawn {
-		background: url(../img/БПешка.png) center/100% 100%;
+		background: url(../img/wpawn.png) center/100% 100%;
 	}
 	.bpawn {
-		background: url(../img/ЧПешка.png) center/100% 100%;
+		background: url(../img/bpawn.png) center/100% 100%;
 	}
 	.wrook {
-		background: url(../img/БЛадья.png) center/100% 100%;
+		background: url(../img/wrook.png) center/100% 100%;
 	}
 	.brook {
-		background: url(../img/ЧЛадья.png) center/100% 100%;
+		background: url(../img/brook.png) center/100% 100%;
 	}
 	.wknight {
-		background: url(../img/БКонь.png) center/100% 100%;
+		background: url(../img/wknight.png) center/100% 100%;
 	}
 	.bknight {
-		background: url(../img/ЧКонь.png) center/100% 100%;
+		background: url(../img/bknight.png) center/100% 100%;
 	}
 	.wbishop {
-		background: url(../img/БСлон.png) center/100% 100%;
+		background: url(../img/wbishop.png) center/100% 100%;
 	}
 	.bbishop {
-		background: url(../img/ЧСлон.png) center/100% 100%;
+		background: url(../img/bbishop.png) center/100% 100%;
 	}
 	.wking {
-		background: url(../img/БКороль.png) center/100% 100%;
+		background: url(../img/wking.png) center/100% 100%;
 	}
 	.bking {
-		background: url(../img/ЧКороль.png) center/100% 100%;
+		background: url(../img/bking.png) center/100% 100%;
 	}
 	.wqueen {
-		background: url(../img/БКоролева.png) center/100% 100%;
+		background: url(../img/wqueen.png) center/100% 100%;
 	}
 	.bqueen {
-		background: url(../img/ЧКоролева.png) center/100% 100%;
+		background: url(../img/bqueen.png) center/100% 100%;
 	}
 }`,
 		"js": `const table = document.querySelector("#table")
