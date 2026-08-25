@@ -1083,25 +1083,25 @@ win.onclick = game.new_play`
 const win = document.querySelector("#win")
 const firstPlayer = document.querySelector("#firstPlayer")
 const secondPlayer = document.querySelector("#secondPlayer")
-const block = document.querySelector("#block")
 const table = document.querySelector("#table")
+const block = document.querySelector("#block")
 let player = 1
 let list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 let history = []
 
 start.onclick = () => {
 	firstPlayer.textContent = "Ходит 1 игрок"
-	block.style.display = "none"
 	start.style.display = "none"
+	block.style.display = "none"
 }
 win.onclick = () => {
 	leftText.textContent = "Ходит 1 игрок"
-	block.style.display = "none"
 	win.style.display = "none"
-	player = 1
-	history = []
-	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+	block.style.display = "none"
 	document.querySelectorAll("p").forEach((e) => e.className = "")
+	player = 1
+	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+	history = []
 }
 
 document.querySelectorAll("p").forEach((e) => {
@@ -1316,11 +1316,13 @@ const create = {
 
 const buttons = {
 	start: function() {
+		firstPlayer.textContent = "Ходит 1 игрок"
 		start.style.display = "none"
 		block.style.display = "none"
 	},
 	win: function() {
 		create.game()
+		firstPlayer.textContent = "Ходит 1 игрок"
 		win.style.display = "none"
 		block.style.display = "none"
 	}
