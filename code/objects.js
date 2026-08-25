@@ -1095,7 +1095,7 @@ start.onclick = () => {
 	block.style.display = "none"
 }
 win.onclick = () => {
-	leftText.textContent = "Ходит 1 игрок"
+	firstPlayer.textContent = "Ходит 1 игрок"
 	win.style.display = "none"
 	block.style.display = "none"
 	document.querySelectorAll("p").forEach((e) => e.className = "")
