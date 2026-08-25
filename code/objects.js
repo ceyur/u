@@ -1226,9 +1226,6 @@ document.querySelectorAll("p").forEach((e) => {
 		top: 0;
 		left: 0;
 	}
-	#last_player {
-		text-align: right;
-	}
 	.wpawn {
 		background: url(/u/img/shess/wpawn.png) center/100% 100%;
 	}
@@ -1278,181 +1275,7 @@ const players = {
 	black: "b"
 }
 
-const operations = {
-	inXY: function(i) {
-		let x = i % 8
-		let y = Math.floor(i / 8)
-		return [x, y]
-	},
-	inI: function(x, y) {
-		let i = y * 8 + x
-		return i
-	}
-}
-
-const create = {
-	table: function() {
-		for (let i = 0; i < 64; i++) {
-			table.appendChild(document.createElement("div"))
-		}
-	},
-	game: function() {
-		Array.from(table.children).forEach((e) => {
-			e.className = ""
-		})
-		for (let key in new_pieces) {
-			table.children[key].className = new_pieces[key]
-		}
-		Array.from(table.children).forEach((e, index) => {
-			e.onclick = () => pieces.click(e, index)
-		})
-		click_piece = {
-			on: false,
-			class: "",
-			i: 0,
-			x: 0,
-			y: 0
-		}
-		player = players.white
-	}
-}
-
-const buttons = {
-	start: function() {
-		start.style.display = "none"
-		block.style.display = "none"
-	},
-	win: function() {
-		game.new_game()
-		win.style.display = "none"
-		block.style.display = "none"
-	}
-}
-
-const pieces = {
-	click: function(e, index) {
-		if (!click_piece.on & e.className[0] == player) {
-			[click_x, click_y] = operations.inXY(index)
-			click_piece = {
-				on: true,
-				class: e.className,
-				i: index,
-				x: click_x,
-				y: click_y
-			}
-			e.style.outline = "black solid 2px"
-		}
-		else if (e.style.outline == "black solid 2px") {
-			e.style.outline = "none"
-			click_piece.on = false
-		}
-		else if (pieces[click_piece.class.slice(1)].run(e, index) & e.className[0] != click_piece.class[0]) {
-			if (["wking", "bking"].includes(e.className)) {
-				win.style.display = "block"
-				block.style.display = "block"
-			}
-
-			click_piece.on = false
-			e.className = click_piece.class
-			player = (player == players.black) ? players.white : players.black
-			table.children[click_piece.i].style.outline = "none"
-			table.children[click_piece.i].className = ""
-			
-			if (player == players.white) {
-				firstPlayer.textContent = "Ходит 1 игрок"
-				lastPlayer.textContent = ""
-			}
-			else {
-				firstPlayer.textContent = ""
-				lastPlayer.textContent = "Ходит 2 игрок"
-			}
-		}
-	},
-	pawn: {
-		name: "pawn",
-		run: function(e, index) {
-			let [new_x, new_y] = operations.inXY(index)
-			let [dx, dy] = [Math.abs(click_piece.x - new_x), click_piece.y - new_y]
-
-			if ((dx == 0 & e.className == "" | dx == 1 & e.className != "") &
-				(dy == -1 & click_piece.class[0] == players.white | dy == 1 & click_piece.class[0] == players.black)) return true
-			if (dx == 0 & Math.abs(dy) == 2 & (click_piece.y == 1 & table.children[operations.inI(click_piece.x, 2)].className == "" |
-				click_piece.y == 6 & table.children[operations.inI(click_piece.x, 5)].className == "")) return true
-		}
-	},
-	rook: {
-		name: "rook",
-		run: function(e, index) {
-			let [new_x, new_y] = operations.inXY(index)
-				if (new_x != click_piece.x & new_y != click_piece.y) return false
-
-			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
-				if (dx + dy < 2) return true
-
-			let small, big
-			if (dx == 0) {
-				dx = dy
-				[small, big] = [Math.min(click_piece.y, new_y), Math.max(click_piece.y, new_y)]
-			}
-			else {
-				[small, big] = [Math.min(click_piece.x, new_x), Math.max(click_piece.x, new_x)]
-			}
-
-			for (let j = small + 1; j < big; j++) {
-				if (click_piece.x == new_x & table.children[operations.inI(click_piece.x, j)].className != "" |
-					click_piece.y == new_y & table.children[operations.inI(j, click_piece.y)].className != "") return false
-			}
-			return true
-		}
-	},
-	knight: {
-		name: "knight",
-		run: function(e, index) {
-			let [new_x, new_y] = operations.inXY(index)
-			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
-
-			if (dx + dy == 3 & dx < 3 & dy < 3) return true
-		}
-	},
-	bishop: {
-		name: "bishop",
-		run: function(e, index) {
-			let [new_x, new_y] = operations.inXY(index)
-				if (new_x == click_piece.x | new_y == click_piece.y) return false
-
-			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
-				if (dx + dy < 2) return true
-				if (dx != dy) return false
-
-			let [small, big] = [Math.min(click_piece.x, new_x), Math.max(click_piece.x, new_x)]
-			
-			for (let j = small + 1; j < big; j++) {
-				(new_x > click_piece.x) ? new_x-- : new_x++
-				(new_y > click_piece.y) ? new_y-- : new_y++
-
-				if (table.children[operations.inI(new_x, new_y)].className != "") return false
-			}
-			return true
-		} 
-	},
-	king: {
-		name: "king",
-		run: function(e, index) {
-			let [new_x, new_y] = operations.inXY(index)
-			let [dx, dy] = [Math.abs(click_piece.x - new_x), Math.abs(click_piece.y - new_y)]
-
-			if (dx + dy < 3 & dx < 2 & dy < 2) return true
-		}
-	},
-	queen: {
-		name: "queen",
-		run: function(e, index) {
-			return pieces.rook.run(e, index) | pieces.bishop.run(e, index)
-		}
-	}
-}
-
-const new_pieces = {
+const newPieces = {
 	0: players.white + pieces.rook.name,
 	1: players.white + pieces.knight.name,
 	2: players.white + pieces.bishop.name,
@@ -1485,6 +1308,180 @@ const new_pieces = {
 	61: players.black + pieces.bishop.name,
 	62: players.black + pieces.knight.name,
 	63: players.black + pieces.rook.name
+}
+
+const operations = {
+	inXY: function(i) {
+		let x = i % 8
+		let y = Math.floor(i / 8)
+		return [x, y]
+	},
+	inI: function(x, y) {
+		let i = y * 8 + x
+		return i
+	}
+}
+
+const create = {
+	table: function() {
+		for (let i = 0; i < 64; i++) {
+			table.appendChild(document.createElement("div"))
+		}
+	},
+	game: function() {
+		Array.from(table.children).forEach((e) => {
+			e.className = ""
+		})
+		for (let key in new_pieces) {
+			table.children[key].className = newPieces[key]
+		}
+		Array.from(table.children).forEach((e, index) => {
+			e.onclick = () => pieces.click(e, index)
+		})
+		clickPiece = {
+			on: false,
+			class: "",
+			i: 0,
+			x: 0,
+			y: 0
+		}
+		player = players.white
+	}
+}
+
+const buttons = {
+	start: function() {
+		start.style.display = "none"
+		block.style.display = "none"
+	},
+	win: function() {
+		create.game()
+		win.style.display = "none"
+		block.style.display = "none"
+	}
+}
+
+const pieces = {
+	click: function(e, index) {
+		if (!clickPiece.on & e.className[0] == player) {
+			[clickX, clickY] = operations.inXY(index)
+			clickPiece = {
+				on: true,
+				class: e.className,
+				i: index,
+				x: clickX,
+				y: clickY
+			}
+			e.style.outline = "black solid 2px"
+		}
+		else if (e.style.outline == "black solid 2px") {
+			e.style.outline = "none"
+			clickPiece.on = false
+		}
+		else if (pieces[clickPiece.class.slice(1)].run(e, index) & e.className[0] != clickPiece.class[0]) {
+			if (["wking", "bking"].includes(e.className)) {
+				win.style.display = "block"
+				block.style.display = "block"
+			}
+
+			clickPiece.on = false
+			e.className = clickPiece.class
+			player = (player == players.black) ? players.white : players.black
+			table.children[clickPiece.i].style.outline = "none"
+			table.children[clickPiece.i].className = ""
+			
+			if (player == players.white) {
+				firstPlayer.textContent = "Ходит 1 игрок"
+				lastPlayer.textContent = ""
+			}
+			else {
+				firstPlayer.textContent = ""
+				lastPlayer.textContent = "Ходит 2 игрок"
+			}
+		}
+	},
+	pawn: {
+		name: "pawn",
+		run: function(e, index) {
+			let [newX, newY] = operations.inXY(index)
+			let [dx, dy] = [Math.abs(clickPiece.x - newX), clickPiece.y - newY]
+
+			if ((dx == 0 & e.className == "" | dx == 1 & e.className != "") &
+				(dy == -1 & clickPiece.class[0] == players.white | dy == 1 & clickPiece.class[0] == players.black)) return true
+			if (dx == 0 & Math.abs(dy) == 2 & (clickPiece.y == 1 & table.children[operations.inI(clickPiece.x, 2)].className == "" |
+				clickPiece.y == 6 & table.children[operations.inI(clickPiece.x, 5)].className == "")) return true
+		}
+	},
+	rook: {
+		name: "rook",
+		run: function(e, index) {
+			let [newX, newY] = operations.inXY(index)
+				if (newX != clickPiece.x & newY != clickPiece.y) return false
+
+			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
+				if (dx + dy < 2) return true
+
+			let small, big
+			if (dx == 0) {
+				dx = dy
+				[small, big] = [Math.min(clickPiece.y, newY), Math.max(clickPiece.y, newY)]
+			}
+			else {
+				[small, big] = [Math.min(clickPiece.x, newX), Math.max(clickPiece.x, newX)]
+			}
+
+			for (let j = small + 1; j < big; j++) {
+				if (clickPiece.x == newX & table.children[operations.inI(clickPiece.x, j)].className != "" |
+					clickPiece.y == newY & table.children[operations.inI(j, clickPiece.y)].className != "") return false
+			}
+			return true
+		}
+	},
+	knight: {
+		name: "knight",
+		run: function(e, index) {
+			let [newX, newY] = operations.inXY(index)
+			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
+
+			if (dx + dy == 3 & dx < 3 & dy < 3) return true
+		}
+	},
+	bishop: {
+		name: "bishop",
+		run: function(e, index) {
+			let [newX, newY] = operations.inXY(index)
+				if (newX == clickPiece.x | newY == clickPiece.y) return false
+
+			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
+				if (dx + dy < 2) return true
+				if (dx != dy) return false
+
+			let [small, big] = [Math.min(clickPiece.x, newX), Math.max(clickPiece.x, newX)]
+			
+			for (let j = small + 1; j < big; j++) {
+				(newX > clickPiece.x) ? newX-- : newX++
+				(newY > clickPiece.y) ? newY-- : newY++
+
+				if (table.children[operations.inI(newX, newY)].className != "") return false
+			}
+			return true
+		} 
+	},
+	king: {
+		name: "king",
+		run: function(e, index) {
+			let [newX, newY] = operations.inXY(index)
+			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
+
+			if (dx + dy < 3 & dx < 2 & dy < 2) return true
+		}
+	},
+	queen: {
+		name: "queen",
+		run: function(e, index) {
+			return pieces.rook.run(e, index) | pieces.bishop.run(e, index)
+		}
+	}
 }
 
 create.table()
