@@ -963,10 +963,10 @@ win.onclick = game.new_play`
 		"html": `<main id="tic-tac-toe">
 	<button id="start">Старт</button>
 	<button id="win"></button>
-	<div id="header">
-		<div id="leftText"></div>
-		<div id="rightText"></div>
-	</div>
+	<header>
+		<div id="firstPlayer"></div>
+		<div id="secondPlayer"></div>
+	</header>
 	<div id="table">
 		<p id="0"></p>
 		<p id="1"></p>
@@ -978,7 +978,7 @@ win.onclick = game.new_play`
 		<p id="7"></p>
 		<p id="8"></p>
 	</div>
-	<div id="text"></div>
+	<footer></footer>
 	<div id="block"></div>
 </main>`,
 		"css": `* {
@@ -1003,14 +1003,14 @@ win.onclick = game.new_play`
 		width: 175px;
 		height: 60px;
 	}
-	#header {
+	header {
 		display: flex;
 		justify-content: space-between;
 		div {
 			height: 18px;
 		}
 	}
-	#text {
+	footer {
 		height: 18px;
 	}
 	#table {
@@ -1081,8 +1081,8 @@ win.onclick = game.new_play`
 }`,
 		"js": `const start = document.querySelector("#start")
 const win = document.querySelector("#win")
-const leftText = document.querySelector("#leftText")
-const rightText = document.querySelector("#rightText")
+const firstPlayer = document.querySelector("#firstPlayer")
+const secondPlayer = document.querySelector("#secondPlayer")
 const block = document.querySelector("#block")
 const table = document.querySelector("#table")
 let player = 1
@@ -1090,7 +1090,7 @@ let list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 let history = []
 
 start.onclick = () => {
-	leftText.textContent = "Ходит 1 игрок"
+	firstPlayer.textContent = "Ходит 1 игрок"
 	block.style.display = "none"
 	start.style.display = "none"
 }
@@ -1111,16 +1111,16 @@ document.querySelectorAll("p").forEach((e) => {
 				history.push(e)
 				list[e.id] = 1
 				e.className = "X"
-				leftText.textContent = ""
-				rightText.textContent = "Ходит 2 игрок"
+				firstPlayer.textContent = ""
+				secondPlayer.textContent = "Ходит 2 игрок"
 				player++
 			}
 			else {
 				history.push(e)
 				list[e.id] = 0
 				e.className = "O"
-				leftText.textContent = "Ходит 1 игрок"
-				rightText.textContent = ""
+				firstPlayer.textContent = "Ходит 1 игрок"
+				secondPlayer.textContent = ""
 				player--
 			}
 			if (history.length > 6) {
@@ -1142,8 +1142,8 @@ document.querySelectorAll("p").forEach((e) => {
 				win.style.display = "block"
 				win.textContent = "Первый игрок победил! Сыграть ещё"
 				block.style.display = "block"
-				leftText.textContent = ""
-				rightText.textContent = ""
+				firstPlayer.textContent = ""
+				secondPlayer.textContent = ""
 			}
 			if (list[0] == 0 && list[1] == 0 && list[2] == 0 ||
 				list[3] == 0 && list[4] == 0 && list[5] == 0 ||
@@ -1156,8 +1156,8 @@ document.querySelectorAll("p").forEach((e) => {
 				win.style.display = "block"
 				win.textContent = "Второй игрок победил! Сыграть ещё"
 				block.style.display = "block"
-				leftText.textContent = ""
-				rightText.textContent = ""
+				firstPlayer.textContent = ""
+				secondPlayer.textContent = ""
 			}
 		}
 	}
@@ -1167,12 +1167,12 @@ document.querySelectorAll("p").forEach((e) => {
 		"html": `<main id="shess">
 	<button id="start">Старт</button>
 	<button id="win">Вы выиграли! Попробовать снова</button>
-	<div id="header">
+	<header>
 		<div id="firstPlayer"></div>
-		<div id="lastPlayer"></div>
-	</div>
+		<div id="secondPlayer"></div>
+	</header>
 	<div id="table"></div>
-	<div id="text"></div>
+	<footer></footer>
 	<div id="block"></div>
 </main>`,
 		"css": `* {
@@ -1197,14 +1197,14 @@ document.querySelectorAll("p").forEach((e) => {
 		width: 150px;
 		height: 60px;
 	}
-	#header {
+	header {
 		display: flex;
 		justify-content: space-between;
 		div {
 			height: 18px;
 		}
 	}
-	#text {
+	footer {
 		height: 18px;
 	}
 	#table {
@@ -1263,12 +1263,12 @@ document.querySelectorAll("p").forEach((e) => {
 		background: url(/u/img/shess/bqueen.png) center/100% 100%;
 	}
 }`,
-		"js": `const table = document.querySelector("#table")
-const block = document.querySelector("#block")
-const start = document.querySelector("#start")
+		"js": `const start = document.querySelector("#start")
 const win = document.querySelector("#win")
 const firstPlayer = document.querySelector("#firstPlayer")
-const lastPlayer = document.querySelector("#lastPlayer")
+const secondPlayer = document.querySelector("#lastPlayer")
+const table = document.querySelector("#table")
+const block = document.querySelector("#block")
 
 const players = {
 	white: "w",
@@ -1392,11 +1392,11 @@ const pieces = {
 			
 			if (player == players.white) {
 				firstPlayer.textContent = "Ходит 1 игрок"
-				lastPlayer.textContent = ""
+				secondPlayer.textContent = ""
 			}
 			else {
 				firstPlayer.textContent = ""
-				lastPlayer.textContent = "Ходит 2 игрок"
+				secondPlayer.textContent = "Ходит 2 игрок"
 			}
 		}
 	},
