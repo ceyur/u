@@ -59,12 +59,21 @@
 		}
 	}
 	#snake {
-		height: 300px;
+		height: 350px;
+		+ div {
+			max-height: 350px;
+		}
 	}
 	#tic-tac-toe {
-		height: 400px;
+		height: 350px;
 		+ div {
-			max-height: 400px;
+			max-height: 350px;
+		}
+	}
+	#shess {
+		height: 350px;
+		+ div {
+			max-height: 350px;
 		}
 	}
 }
