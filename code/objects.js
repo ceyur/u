@@ -1297,7 +1297,7 @@ const create = {
 		Array.from(table.children).forEach((e) => {
 			e.className = ""
 		})
-		for (let key in new_pieces) {
+		for (let key in newPieces) {
 			table.children[key].className = newPieces[key]
 		}
 		Array.from(table.children).forEach((e, index) => {
