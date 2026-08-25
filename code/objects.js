@@ -1266,7 +1266,7 @@ document.querySelectorAll("p").forEach((e) => {
 		"js": `const start = document.querySelector("#start")
 const win = document.querySelector("#win")
 const firstPlayer = document.querySelector("#firstPlayer")
-const secondPlayer = document.querySelector("#lastPlayer")
+const secondPlayer = document.querySelector("#secondPlayer")
 const table = document.querySelector("#table")
 const block = document.querySelector("#block")
 
