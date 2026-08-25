@@ -1275,41 +1275,6 @@ const players = {
 	black: "b"
 }
 
-const newPieces = {
-	0: players.white + pieces.rook.name,
-	1: players.white + pieces.knight.name,
-	2: players.white + pieces.bishop.name,
-	3: players.white + pieces.king.name,
-	4: players.white + pieces.queen.name,
-	5: players.white + pieces.bishop.name,
-	6: players.white + pieces.knight.name,
-	7: players.white + pieces.rook.name,
-	8: players.white + pieces.pawn.name,
-	9: players.white + pieces.pawn.name,
-	10: players.white + pieces.pawn.name,
-	11: players.white + pieces.pawn.name,
-	12: players.white + pieces.pawn.name,
-	13: players.white + pieces.pawn.name,
-	14: players.white + pieces.pawn.name,
-	15: players.white + pieces.pawn.name,
-	48: players.black + pieces.pawn.name,
-	49: players.black + pieces.pawn.name,
-	50: players.black + pieces.pawn.name,
-	51: players.black + pieces.pawn.name,
-	52: players.black + pieces.pawn.name,
-	53: players.black + pieces.pawn.name,
-	54: players.black + pieces.pawn.name,
-	55: players.black + pieces.pawn.name,
-	56: players.black + pieces.rook.name,
-	57: players.black + pieces.knight.name,
-	58: players.black + pieces.bishop.name,
-	59: players.black + pieces.king.name,
-	60: players.black + pieces.queen.name,
-	61: players.black + pieces.bishop.name,
-	62: players.black + pieces.knight.name,
-	63: players.black + pieces.rook.name
-}
-
 const operations = {
 	inXY: function(i) {
 		let x = i % 8
@@ -1482,6 +1447,41 @@ const pieces = {
 			return pieces.rook.run(e, index) | pieces.bishop.run(e, index)
 		}
 	}
+}
+
+const newPieces = {
+	0: players.white + pieces.rook.name,
+	1: players.white + pieces.knight.name,
+	2: players.white + pieces.bishop.name,
+	3: players.white + pieces.king.name,
+	4: players.white + pieces.queen.name,
+	5: players.white + pieces.bishop.name,
+	6: players.white + pieces.knight.name,
+	7: players.white + pieces.rook.name,
+	8: players.white + pieces.pawn.name,
+	9: players.white + pieces.pawn.name,
+	10: players.white + pieces.pawn.name,
+	11: players.white + pieces.pawn.name,
+	12: players.white + pieces.pawn.name,
+	13: players.white + pieces.pawn.name,
+	14: players.white + pieces.pawn.name,
+	15: players.white + pieces.pawn.name,
+	48: players.black + pieces.pawn.name,
+	49: players.black + pieces.pawn.name,
+	50: players.black + pieces.pawn.name,
+	51: players.black + pieces.pawn.name,
+	52: players.black + pieces.pawn.name,
+	53: players.black + pieces.pawn.name,
+	54: players.black + pieces.pawn.name,
+	55: players.black + pieces.pawn.name,
+	56: players.black + pieces.rook.name,
+	57: players.black + pieces.knight.name,
+	58: players.black + pieces.bishop.name,
+	59: players.black + pieces.king.name,
+	60: players.black + pieces.queen.name,
+	61: players.black + pieces.bishop.name,
+	62: players.black + pieces.knight.name,
+	63: players.black + pieces.rook.name
 }
 
 create.table()
