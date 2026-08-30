@@ -779,22 +779,22 @@ create.calculation()`
 			&:before {
 				content: "";
 			}
-		}
-		.head:before {
-			background: #000;
-			width: 15px;
-			height: 15px;
-		}
-		.body:before {
-			background: #000;
-			width: 13px;
-			height: 13px;
-		}
-		.apple:before {
-			background: green;
-			width: 17px;
-			height: 17px;
-			border-radius: 50%;
+			&.head:before {
+				background: #000;
+				width: 15px;
+				height: 15px;
+			}
+			&.body:before {
+				background: #000;
+				width: 13px;
+				height: 13px;
+			}
+			&.apple:before {
+				background: green;
+				width: 17px;
+				height: 17px;
+				border-radius: 50%;
+			}
 		}
 	}
 	#coins {
@@ -968,15 +968,15 @@ win.onclick = game.new_play`
 		<div id="secondPlayer"></div>
 	</header>
 	<div id="table">
-		<p id="0"></p>
-		<p id="1"></p>
-		<p id="2"></p>
-		<p id="3"></p>
-		<p id="4"></p>
-		<p id="5"></p>
-		<p id="6"></p>
-		<p id="7"></p>
-		<p id="8"></p>
+		<div id="0"></div>
+		<div id="1"></div>
+		<div id="2"></div>
+		<div id="3"></div>
+		<div id="4"></div>
+		<div id="5"></div>
+		<div id="6"></div>
+		<div id="7"></div>
+		<div id="8"></div>
 	</div>
 	<footer></footer>
 	<div id="block"></div>
@@ -1019,53 +1019,53 @@ win.onclick = game.new_play`
 		width: 240px;
 		height: 240px;
 		border: 1px solid #000;
-		p {
+		div {
 			width: 78px;
 			height: 78px;
 			border: 1px solid #000;
 			position: relative;
-		}
-		.X {
-			&:before,
-			&:after {
-				content: "";
-				width: 50px;
-				height: 10px;
-				background: #000;
-				rotate: 45deg;
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				margin: auto;
+			&.X {
+				&:before,
+				&:after {
+					content: "";
+					width: 50px;
+					height: 10px;
+					background: #000;
+					rotate: 45deg;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+				}
+				&:after {
+					rotate: -45deg;
+				}
 			}
-			&:after {
-				rotate: -45deg;
+			&.O {
+				&:before {
+					content: "";
+					width: 30px;
+					height: 30px;
+					border: 10px solid #000;
+					border-radius: 50%;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+				}
 			}
 		}
-		.O {
-			&:before {
-				content: "";
-				width: 30px;
-				height: 30px;
-				border: 10px solid #000;
-				border-radius: 50%;
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				margin: auto;
-			}
-		}
-		.Xlast {
+		&.Xlast {
 			&:before,
 			&:after {
 				background: #999;
 			}
 		}
-		.Olast {
+		&.Olast {
 			&:before {
 				border: 10px solid #999;
 			}
@@ -1131,33 +1131,33 @@ document.querySelectorAll("p").forEach((e) => {
 				if (history[0].className == "X") history[0].classList.add("Xlast")
 				if (history[0].className == "O") history[0].classList.add("Olast")
 			}
-			if (list[0] == 1 && list[1] == 1 && list[2] == 1 ||
-				list[3] == 1 && list[4] == 1 && list[5] == 1 ||
-				list[6] == 1 && list[7] == 1 && list[8] == 1 ||
-				list[0] == 1 && list[3] == 1 && list[6] == 1 ||
-				list[1] == 1 && list[4] == 1 && list[7] == 1 ||
-				list[2] == 1 && list[5] == 1 && list[8] == 1 ||
-				list[0] == 1 && list[4] == 1 && list[8] == 1 ||
-				list[2] == 1 && list[4] == 1 && list[6] == 1) {
-				win.style.display = "block"
+			if (list[0] == 1 & list[1] == 1 & list[2] == 1 |
+				list[3] == 1 & list[4] == 1 & list[5] == 1 |
+				list[6] == 1 & list[7] == 1 & list[8] == 1 |
+				list[0] == 1 & list[3] == 1 & list[6] == 1 |
+				list[1] == 1 & list[4] == 1 & list[7] == 1 |
+				list[2] == 1 & list[5] == 1 & list[8] == 1 |
+				list[0] == 1 & list[4] == 1 & list[8] == 1 |
+				list[2] == 1 & list[4] == 1 & list[6] == 1) {
+				block.style.display = "block"
+				firstPlayer.textContent = ""
+				secondPlayer.textContent = ""
 				win.textContent = "Первый игрок победил! Сыграть ещё"
-				block.style.display = "block"
-				firstPlayer.textContent = ""
-				secondPlayer.textContent = ""
-			}
-			if (list[0] == 0 && list[1] == 0 && list[2] == 0 ||
-				list[3] == 0 && list[4] == 0 && list[5] == 0 ||
-				list[6] == 0 && list[7] == 0 && list[8] == 0 ||
-				list[0] == 0 && list[3] == 0 && list[6] == 0 ||
-				list[1] == 0 && list[4] == 0 && list[7] == 0 ||
-				list[2] == 0 && list[5] == 0 && list[8] == 0 ||
-				list[0] == 0 && list[4] == 0 && list[8] == 0 ||
-				list[2] == 0 && list[4] == 0 && list[6] == 0) {
 				win.style.display = "block"
-				win.textContent = "Второй игрок победил! Сыграть ещё"
+			}
+			if (list[0] == 0 & list[1] == 0 & list[2] == 0 |
+				list[3] == 0 & list[4] == 0 & list[5] == 0 |
+				list[6] == 0 & list[7] == 0 & list[8] == 0 |
+				list[0] == 0 & list[3] == 0 & list[6] == 0 |
+				list[1] == 0 & list[4] == 0 & list[7] == 0 |
+				list[2] == 0 & list[5] == 0 & list[8] == 0 |
+				list[0] == 0 & list[4] == 0 & list[8] == 0 |
+				list[2] == 0 & list[4] == 0 & list[6] == 0) {
 				block.style.display = "block"
 				firstPlayer.textContent = ""
 				secondPlayer.textContent = ""
+				win.textContent = "Второй игрок победил! Сыграть ещё"
+				win.style.display = "block"
 			}
 		}
 	}
@@ -1166,7 +1166,7 @@ document.querySelectorAll("p").forEach((e) => {
 	"shess": {
 		"html": `<main id="shess">
 	<button id="start">Старт</button>
-	<button id="win">Вы выиграли! Попробовать снова</button>
+	<button id="win"></button>
 	<header>
 		<div id="firstPlayer"></div>
 		<div id="secondPlayer"></div>
@@ -1347,6 +1347,8 @@ const pieces = {
 		}
 		else if (pieces[clickPiece.class.slice(1)].run(e, index) & e.className[0] != clickPiece.class[0]) {
 			if (["wking", "bking"].includes(e.className)) {
+				if (e.className[0] == players.white) win.textContent = "Первый игрок победил! Сыграть ещё";
+				if (e.className[0] == players.black) win.textContent = "Второй игрок победил! Сыграть ещё";
 				win.style.display = "block"
 				block.style.display = "block"
 			}
@@ -1357,14 +1359,14 @@ const pieces = {
 			table.children[clickPiece.i].style.outline = "none"
 			table.children[clickPiece.i].className = ""
 			
-			if (player == players.white) {
-				firstPlayer.textContent = "Ходит 1 игрок"
-				secondPlayer.textContent = ""
-			}
-			else {
-				firstPlayer.textContent = ""
-				secondPlayer.textContent = "Ходит 2 игрок"
-			}
+			// if (player == players.white) {
+			// 	firstPlayer.textContent = "Ходит 1 игрок"
+			// 	secondPlayer.textContent = ""
+			// }
+			// else {
+			// 	firstPlayer.textContent = ""
+			// 	secondPlayer.textContent = "Ходит 2 игрок"
+			// }
 		}
 	},
 	pawn: {
