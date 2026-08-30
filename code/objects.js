@@ -1104,7 +1104,7 @@ win.onclick = () => {
 	history = []
 }
 
-document.querySelectorAll("p").forEach((e) => {
+document.querySelectorAll("div").forEach((e) => {
 	e.onclick = () => {
 		if (e.classList.length == 0) {
 			if (player == 1) {
