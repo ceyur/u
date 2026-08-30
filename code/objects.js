@@ -1359,14 +1359,14 @@ const pieces = {
 			table.children[clickPiece.i].style.outline = "none"
 			table.children[clickPiece.i].className = ""
 			
-			// if (player == players.white) {
-			// 	firstPlayer.textContent = "Ходит 1 игрок"
-			// 	secondPlayer.textContent = ""
-			// }
-			// else {
-			// 	firstPlayer.textContent = ""
-			// 	secondPlayer.textContent = "Ходит 2 игрок"
-			// }
+			if (player == players.white) {
+				firstPlayer.textContent = "Ходит 1 игрок"
+				secondPlayer.textContent = ""
+			}
+			else {
+				firstPlayer.textContent = ""
+				secondPlayer.textContent = "Ходит 2 игрок"
+			}
 		}
 	},
 	pawn: {
