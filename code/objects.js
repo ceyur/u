@@ -1098,7 +1098,7 @@ win.onclick = () => {
 	firstPlayer.textContent = "Ходит 1 игрок"
 	win.style.display = "none"
 	block.style.display = "none"
-	document.querySelectorAll("p").forEach((e) => e.className = "")
+	table.querySelectorAll("div").forEach((e) => e.className = "")
 	player = 1
 	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 	history = []
