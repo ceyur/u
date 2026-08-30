@@ -1058,16 +1058,16 @@ win.onclick = game.new_play`
 					margin: auto;
 				}
 			}
-		}
-		&.Xlast {
-			&:before,
-			&:after {
-				background: #999;
+			&.Xlast {
+				&:before,
+				&:after {
+					background: #999;
+				}
 			}
-		}
-		&.Olast {
-			&:before {
-				border: 10px solid #999;
+			&.Olast {
+				&:before {
+					border: 10px solid #999;
+				}
 			}
 		}
 	}
