@@ -1354,20 +1354,21 @@ const pieces = {
 				if (e.className[0] == players.white) win.textContent = "Второй игрок победил! Сыграть ещё";
 				win.style.display = "block"
 			}
-
-			clickPiece.on = false
-			e.className = clickPiece.class
-			player = (player == players.black) ? players.white : players.black
-			table.children[clickPiece.i].style.outline = "none"
-			table.children[clickPiece.i].className = ""
-			
-			if (player == players.white) {
-				firstPlayer.textContent = "Ходит 1 игрок"
-				secondPlayer.textContent = ""
-			}
 			else {
-				firstPlayer.textContent = ""
-				secondPlayer.textContent = "Ходит 2 игрок"
+				clickPiece.on = false
+				e.className = clickPiece.class
+				player = (player == players.black) ? players.white : players.black
+				table.children[clickPiece.i].style.outline = "none"
+				table.children[clickPiece.i].className = ""
+				
+				if (player == players.white) {
+					firstPlayer.textContent = "Ходит 1 игрок"
+					secondPlayer.textContent = ""
+				}
+				else {
+					firstPlayer.textContent = ""
+					secondPlayer.textContent = "Ходит 2 игрок"
+				}
 			}
 		}
 	},
