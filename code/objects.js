@@ -886,12 +886,12 @@ const create = {
 }
 
 const game = {
-	new_play: function() {
+	newPlay: function() {
 		start.style.display = "none"
 		replay.style.display = "none"
 		win.style.display = "none"
-		snake_i = [38, 39, 40]
-		apple_i = 42
+		snakeI = [38, 39, 40]
+		appleI = 42
 		vector = vectors.right
 		coins.textContent = "0"
 		game.write()
@@ -905,48 +905,48 @@ const game = {
 		button.style.display = "block"
 	},
 	write: function() {
-		snake_i.forEach((e) => {
+		snakeI.forEach((e) => {
 			table.children[e].className = "body"
 		})
-		table.children[snake_i[snake_i.length - 1]].className = "head"
-		table.children[apple_i].className = "apple"
+		table.children[snakeI[snakeI.length - 1]].className = "head"
+		table.children[appleI].className = "apple"
 	},
-	new_head: function() {
+	newHead: function() {
 		let [x, y] = operation.inXY(snake_i[snake_i.length - 1])
 		let [dx, dy] = vector;
-		let [next_x, next_y] = [x + dx, y + dy]
-		let next_i = operation.inI(next_x, next_y)
-		return [next_i, next_x, next_y]
+		let [nextX, nextY] = [x + dx, y + dy]
+		let nextI = operation.inI(nextX, nextY)
+		return [nextI, nextX, nextY]
 	},
 	run: function() {
-		let [new_i, new_x, new_y] = game.new_head()
+		let [newI, newX, newY] = game.newHead()
 
-		if (new_x > 8 | new_y > 8 | new_x < 0 | new_y < 0) {
+		if (newX > 8 | newY > 8 | newX < 0 | newY < 0) {
 			game.end(replay)
 		}
-		else if (snake_i.includes(new_i)) {
+		else if (snakeI.includes(newI)) {
 			game.end(replay)
 		}
-		else if (new_i == apple_i) {
-			snake_i.push(new_i)
+		else if (newI == appleI) {
+			snakeI.push(newI)
 
 			coins.textContent = parseInt(coins.textContent) + 1
 			if (coins.textContent == 78) end(win)
 			
-			let apple_x, apple_y
+			let appleX, appleY
 			while (true) {
-				apple_x = Math.floor(Math.random() * 9)
-				apple_y = Math.floor(Math.random() * 9)
-				if (!snake_i.includes(operation.inI(apple_x, apple_y))) break
+				appleX = Math.floor(Math.random() * 9)
+				appleY = Math.floor(Math.random() * 9)
+				if (!snakeI.includes(operation.inI(appleX, appleY))) break
 			}
 
-			apple_i = operation.inI(apple_x, apple_y)
+			appleI = operation.inI(appleX, appleY)
 			game.write()
 		}
 		else {
-			snake_i.push(new_i)
-			table.children[snake_i[0]].className = ""
-			snake_i.shift()
+			snakeI.push(newI)
+			table.children[snakeI[0]].className = ""
+			snakeI.shift()
 			game.write()
 		}
 	}
@@ -955,9 +955,9 @@ const game = {
 create.table()
 create.keydown()
 create.swipe()
-start.onclick = game.new_play
-replay.onclick = game.new_play
-win.onclick = game.new_play`
+start.onclick = game.newPlay
+replay.onclick = game.newPlay
+win.onclick = game.newPlay`
 	},
 	"tic-tac-toe": {
 		"html": `<main id="tic-tac-toe">
@@ -1217,6 +1217,42 @@ table.querySelectorAll("div").forEach((e) => {
 			width: 28px;
 			height: 28px;
 			border: 1px solid #000;
+			&.wpawn {
+				background: url(/u/img/shess/wpawn.png) center/100% 100%;
+			}
+			&.bpawn {
+				background: url(/u/img/shess/bpawn.png) center/100% 100%;
+			}
+			&.wrook {
+				background: url(/u/img/shess/wrook.png) center/100% 100%;
+			}
+			&.brook {
+				background: url(/u/img/shess/brook.png) center/100% 100%;
+			}
+			&.wknight {
+				background: url(/u/img/shess/wknight.png) center/100% 100%;
+			}
+			&.bknight {
+				background: url(/u/img/shess/bknight.png) center/100% 100%;
+			}
+			&.wbishop {
+				background: url(/u/img/shess/wbishop.png) center/100% 100%;
+			}
+			&.bbishop {
+				background: url(/u/img/shess/bbishop.png) center/100% 100%;
+			}
+			&.wking {
+				background: url(/u/img/shess/wking.png) center/100% 100%;
+			}
+			&.bking {
+				background: url(/u/img/shess/bking.png) center/100% 100%;
+			}
+			&.wqueen {
+				background: url(/u/img/shess/wqueen.png) center/100% 100%;
+			}
+			&.bqueen {
+				background: url(/u/img/shess/bqueen.png) center/100% 100%;
+			}
 		}
 	}
 	#block {
@@ -1225,42 +1261,6 @@ table.querySelectorAll("div").forEach((e) => {
 		position: absolute;
 		top: 0;
 		left: 0;
-	}
-	.wpawn {
-		background: url(/u/img/shess/wpawn.png) center/100% 100%;
-	}
-	.bpawn {
-		background: url(/u/img/shess/bpawn.png) center/100% 100%;
-	}
-	.wrook {
-		background: url(/u/img/shess/wrook.png) center/100% 100%;
-	}
-	.brook {
-		background: url(/u/img/shess/brook.png) center/100% 100%;
-	}
-	.wknight {
-		background: url(/u/img/shess/wknight.png) center/100% 100%;
-	}
-	.bknight {
-		background: url(/u/img/shess/bknight.png) center/100% 100%;
-	}
-	.wbishop {
-		background: url(/u/img/shess/wbishop.png) center/100% 100%;
-	}
-	.bbishop {
-		background: url(/u/img/shess/bbishop.png) center/100% 100%;
-	}
-	.wking {
-		background: url(/u/img/shess/wking.png) center/100% 100%;
-	}
-	.bking {
-		background: url(/u/img/shess/bking.png) center/100% 100%;
-	}
-	.wqueen {
-		background: url(/u/img/shess/wqueen.png) center/100% 100%;
-	}
-	.bqueen {
-		background: url(/u/img/shess/bqueen.png) center/100% 100%;
 	}
 }`,
 		"js": `const start = document.querySelector("#start")
