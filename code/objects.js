@@ -979,7 +979,7 @@ win.onclick = game.newPlay`
 		<div id="8"></div>
 	</div>
 	<footer></footer>
-	<div id="block"></div>
+	<div id="overlay"></div>
 </main>`,
 		"css": `* {
 	margin: 0;
@@ -1072,7 +1072,7 @@ win.onclick = game.newPlay`
 		}
 	}
 }
-#block {
+#overlay {
 	width: 100%;
 	height: 100vh;
 	position: absolute;
@@ -1084,7 +1084,7 @@ const win = document.querySelector("#win")
 const firstPlayer = document.querySelector("#firstPlayer")
 const secondPlayer = document.querySelector("#secondPlayer")
 const table = document.querySelector("#table")
-const block = document.querySelector("#block")
+const overlay = document.querySelector("#overlay")
 let player = 1
 let list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 let history = []
@@ -1092,12 +1092,12 @@ let history = []
 start.onclick = () => {
 	firstPlayer.textContent = "Ходит 1 игрок"
 	start.style.display = "none"
-	block.style.display = "none"
+	overlay.style.display = "none"
 }
 win.onclick = () => {
 	firstPlayer.textContent = "Ходит 1 игрок"
 	win.style.display = "none"
-	block.style.display = "none"
+	overlay.style.display = "none"
 	table.querySelectorAll("div").forEach((e) => e.className = "")
 	player = 1
 	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
@@ -1139,7 +1139,7 @@ table.querySelectorAll("div").forEach((e) => {
 				list[2] == 1 & list[5] == 1 & list[8] == 1 |
 				list[0] == 1 & list[4] == 1 & list[8] == 1 |
 				list[2] == 1 & list[4] == 1 & list[6] == 1) {
-				block.style.display = "block"
+				overlay.style.display = "block"
 				firstPlayer.textContent = ""
 				secondPlayer.textContent = ""
 				win.textContent = "Первый игрок победил! Сыграть ещё"
@@ -1153,7 +1153,7 @@ table.querySelectorAll("div").forEach((e) => {
 				list[2] == 0 & list[5] == 0 & list[8] == 0 |
 				list[0] == 0 & list[4] == 0 & list[8] == 0 |
 				list[2] == 0 & list[4] == 0 & list[6] == 0) {
-				block.style.display = "block"
+				overlay.style.display = "block"
 				firstPlayer.textContent = ""
 				secondPlayer.textContent = ""
 				win.textContent = "Второй игрок победил! Сыграть ещё"
@@ -1173,7 +1173,7 @@ table.querySelectorAll("div").forEach((e) => {
 	</header>
 	<div id="table"></div>
 	<footer></footer>
-	<div id="block"></div>
+	<div id="overlay"></div>
 </main>`,
 		"css": `* {
 	margin: 0;
@@ -1255,7 +1255,7 @@ table.querySelectorAll("div").forEach((e) => {
 			}
 		}
 	}
-	#block {
+	#overlay {
 		width: 100%;
 		height: 100vh;
 		position: absolute;
@@ -1268,7 +1268,7 @@ const win = document.querySelector("#win")
 const firstPlayer = document.querySelector("#firstPlayer")
 const secondPlayer = document.querySelector("#secondPlayer")
 const table = document.querySelector("#table")
-const block = document.querySelector("#block")
+const overlay = document.querySelector("#overlay")
 
 const players = {
 	white: "w",
@@ -1318,13 +1318,13 @@ const buttons = {
 	start: function() {
 		firstPlayer.textContent = "Ходит 1 игрок"
 		start.style.display = "none"
-		block.style.display = "none"
+		overlay.style.display = "none"
 	},
 	win: function() {
 		create.game()
 		firstPlayer.textContent = "Ходит 1 игрок"
 		win.style.display = "none"
-		block.style.display = "none"
+		overlay.style.display = "none"
 	}
 }
 
@@ -1347,7 +1347,7 @@ const pieces = {
 		}
 		else if (pieces[clickPiece.class.slice(1)].run(e, index) & e.className[0] != clickPiece.class[0]) {
 			if (["wking", "bking"].includes(e.className)) {
-				block.style.display = "block"
+				overlay.style.display = "block"
 				firstPlayer.textContent = ""
 				secondPlayer.textContent = ""
 				if (e.className[0] == players.black) win.textContent = "Первый игрок победил! Сыграть ещё";
