@@ -1346,12 +1346,6 @@ const pieces = {
 			clickPiece.on = false
 		}
 		else if (pieces[clickPiece.class.slice(1)].run(e, index) & e.className[0] != clickPiece.class[0]) {
-			clickPiece.on = false
-			e.className = clickPiece.class
-			player = (player == players.black) ? players.white : players.black
-			table.children[clickPiece.i].style.outline = "none"
-			table.children[clickPiece.i].className = ""
-
 			if (["wking", "bking"].includes(e.className)) {
 				overlay.style.display = "block"
 				firstPlayer.textContent = ""
@@ -1359,14 +1353,25 @@ const pieces = {
 				if (e.className[0] == players.black) win.textContent = "Первый игрок победил! Сыграть ещё";
 				if (e.className[0] == players.white) win.textContent = "Второй игрок победил! Сыграть ещё";
 				win.style.display = "block"
-			}
-			else if (player == players.white) {
-				firstPlayer.textContent = "Ходит 1 игрок"
-				secondPlayer.textContent = ""
+				e.className = clickPiece.class
+				table.children[clickPiece.i].style.outline = "none"
+				table.children[clickPiece.i].className = ""
 			}
 			else {
-				firstPlayer.textContent = ""
-				secondPlayer.textContent = "Ходит 2 игрок"
+				clickPiece.on = false
+				e.className = clickPiece.class
+				player = (player == players.black) ? players.white : players.black
+				table.children[clickPiece.i].style.outline = "none"
+				table.children[clickPiece.i].className = ""
+	
+				if (player == players.white) {
+					firstPlayer.textContent = "Ходит 1 игрок"
+					secondPlayer.textContent = ""
+				}
+				else {
+					firstPlayer.textContent = ""
+					secondPlayer.textContent = "Ходит 2 игрок"
+				}
 			}
 		}
 	},
