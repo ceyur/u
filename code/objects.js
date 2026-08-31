@@ -1194,7 +1194,7 @@ table.querySelectorAll("div").forEach((e) => {
 	}
 	#win {
 		display: none;
-		width: 150px;
+		width: 175px;
 		height: 60px;
 	}
 	header {
