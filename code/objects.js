@@ -1347,10 +1347,12 @@ const pieces = {
 		}
 		else if (pieces[clickPiece.class.slice(1)].run(e, index) & e.className[0] != clickPiece.class[0]) {
 			if (["wking", "bking"].includes(e.className)) {
-				if (e.className[0] == players.white) win.textContent = "Первый игрок победил! Сыграть ещё";
-				if (e.className[0] == players.black) win.textContent = "Второй игрок победил! Сыграть ещё";
-				win.style.display = "block"
 				block.style.display = "block"
+				firstPlayer.textContent = ""
+				secondPlayer.textContent = ""
+				if (e.className[0] == players.black) win.textContent = "Первый игрок победил! Сыграть ещё";
+				if (e.className[0] == players.white) win.textContent = "Второй игрок победил! Сыграть ещё";
+				win.style.display = "block"
 			}
 
 			clickPiece.on = false
