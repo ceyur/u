@@ -912,7 +912,7 @@ const game = {
 		table.children[appleI].className = "apple"
 	},
 	newHead: function() {
-		let [x, y] = operation.inXY(snake_i[snake_i.length - 1])
+		let [x, y] = operation.inXY(snakeI[snakeI.length - 1])
 		let [dx, dy] = vector;
 		let [nextX, nextY] = [x + dx, y + dy]
 		let nextI = operation.inI(nextX, nextY)
