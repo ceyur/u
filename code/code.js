@@ -102,3 +102,14 @@ Object.keys(objects).forEach(key => {
 	code.appendChild(div1);
 	code.appendChild(div2);
 });
+
+const textareas = document.querySelectorAll('textarea');
+
+textareas.forEach(textarea => {
+	const autoResize = () => {
+		const scrollHeight = textarea.scrollHeight;
+		textarea.style.height = scrollHeight + 'px';
+	};
+	textarea.addEventListener('input', autoResize);
+	autoResize();
+});
