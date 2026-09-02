@@ -189,6 +189,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 	width: 100px;
 	height: 100px;
 	box-shadow: 0 0 10px #000;
@@ -196,8 +197,8 @@ export default {
 	transition: 0.25s;
 	div {
 		position: absolute;
-		width: 10px;
-		height: 51px;
+		width: 10%;
+		height: 51%;
 		background: #000;
 		border-radius: 9px;
 		margin-top: 6px;
@@ -206,8 +207,8 @@ export default {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 10px;
-		height: 40px;
+		width: 10%;
+		height: 40%;
 		background: #000;
 		border-radius: 9px;
 		margin: 0 21.6px 21.6px 0;
