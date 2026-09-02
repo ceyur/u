@@ -13,7 +13,7 @@ let styleInIframe = `html,
 	}`;
 
 Object.keys(objects).forEach(key => {
-	div1 = document.createElement("div");
+	let div1 = document.createElement("div");
 	div1.id = key;
 	div1.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
 	iframe = div1.querySelector("iframe")
