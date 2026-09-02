@@ -21,8 +21,8 @@ Object.keys(objects).forEach(key => {
 
 	const ifJs = objects[key].js !== "" ? '<button class="bJs">js</button>' : '';
 	
-	let div1 = document.createElement("div");
-	div1.innerHTML = `<div class="buttons">
+	let div2 = document.createElement("div");
+	div2.innerHTML = `<div class="buttons">
 		<button class="bHtml aktiv">html</button>
 		<button class="bCss">css</button>
 		${js}
