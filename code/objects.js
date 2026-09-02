@@ -5,7 +5,6 @@ export default {
 	width: 150px;
 	height: 112px;
 	background: black;
-	margin: 0 10px;
 	transform: skew(-10deg);
 }`,
 		"js": ""
@@ -16,7 +15,6 @@ export default {
 	width: 100px;
 	height: 100px;
 	background: black;
-	margin: 19.3px;
 	rotate: 45deg;
 }`,
 		"js": ""
