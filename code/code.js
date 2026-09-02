@@ -64,6 +64,7 @@ Object.keys(objects).forEach(key => {
 		else {
 			button.querySelector("svg").style.scale = "1 -1";
 			div2.style.display = "block";
+			autoHeight(html);
 		}
 	};
 
@@ -105,9 +106,9 @@ Object.keys(objects).forEach(key => {
 		if (ifJs !== "") bJs.className = "";
 	};
 
-	bhtml.clck();
-	bCss.clck();
-	if (ifJs !== "") bJs.clck();
+	// bhtml.click();
+	// bCss.click();
+	// if (ifJs !== "") bJs.click();
 	code.appendChild(div1);
 	code.appendChild(div2);
 });
