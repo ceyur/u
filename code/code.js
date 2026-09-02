@@ -107,5 +107,7 @@ const textareas = document.querySelectorAll('textarea');
 
 textareas.forEach(textarea => {
 	textarea.style.height = textarea.scrollHeight + "px";
-	textarea.addEventListener("input", textarea.style.height = textarea.scrollHeight + "px");
+	textarea.addEventListener("input", () => {
+		textarea.style.height = textarea.scrollHeight + "px";
+	});
 });
