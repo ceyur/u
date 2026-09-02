@@ -12,6 +12,11 @@ let styleInIframe = `html,
 		align-items: center;
 	}`;
 
+const autoHeight = function(element) {
+	element.style.height = 0;
+	element.style.height = element.scrollHeight + "px";
+}
+
 Object.keys(objects).forEach(key => {
 	let div1 = document.createElement("div");
 	div1.id = key;
@@ -72,7 +77,7 @@ Object.keys(objects).forEach(key => {
 			html.style.display = "none";
 			css.style.display = "none";
 			js.style.display = "block";
-			js.style.height = js.scrollHeight + "px";
+			autoHeight(js);
 
 			bHtml.className = "";
 			bCss.className = "";
@@ -81,7 +86,7 @@ Object.keys(objects).forEach(key => {
 	};
 	bHtml.onclick = () => {
 		html.style.display = "block";
-		html.style.height = html.scrollHeight + "px";
+		autoHeight(html);
 		css.style.display = "none";
 		js.style.display = "none";
 
@@ -92,7 +97,7 @@ Object.keys(objects).forEach(key => {
 	bCss.onclick = () => {
 		html.style.display = "none";
 		css.style.display = "block";
-		css.style.height = css.scrollHeight + "px";
+		autoHeight(css);
 		js.style.display = "none";
 
 		bHtml.className = "";
