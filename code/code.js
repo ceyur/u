@@ -106,18 +106,6 @@ Object.keys(objects).forEach(key => {
 		if (ifJs !== "") bJs.className = "";
 	};
 
-	// bhtml.click();
-	// bCss.click();
-	// if (ifJs !== "") bJs.click();
 	code.appendChild(div1);
 	code.appendChild(div2);
 });
-
-// const textareas = document.querySelectorAll('textarea');
-
-// textareas.forEach(textarea => {
-// 	textarea.style.height = textarea.scrollHeight + "px";
-// 	textarea.addEventListener("input", () => {
-// 		textarea.style.height = textarea.scrollHeight + "px";
-// 	});
-// });
