@@ -41,7 +41,7 @@
 		background: white;
 		box-shadow: 0 0 10px black;
 		border-radius: 15px;
-		p {
+		input {
 			margin: 0;
 			padding: 38px 6px 6px;
 			width: stretch;
