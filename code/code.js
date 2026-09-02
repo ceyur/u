@@ -78,7 +78,7 @@ Object.keys(objects).forEach(key => {
 			html.style.display = "none";
 			css.style.display = "none";
 			js.style.display = "block";
-			autoHeight(js);
+			if (window.innerWidth < 699) autoHeight(js);
 
 			bHtml.className = "";
 			bCss.className = "";
@@ -87,7 +87,7 @@ Object.keys(objects).forEach(key => {
 	};
 	bHtml.onclick = () => {
 		html.style.display = "block";
-		autoHeight(html);
+		if (window.innerWidth < 699) autoHeight(html);
 		css.style.display = "none";
 		js.style.display = "none";
 
@@ -98,7 +98,7 @@ Object.keys(objects).forEach(key => {
 	bCss.onclick = () => {
 		html.style.display = "none";
 		css.style.display = "block";
-		autoHeight(css);
+		if (window.innerWidth < 699) autoHeight(css);
 		js.style.display = "none";
 
 		bHtml.className = "";
