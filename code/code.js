@@ -41,9 +41,9 @@ Object.keys(objects).forEach(key => {
 	let js = div2.querySelector('.js');
 
 
-	html.textContent = objects[key].html;
-	css.textContent = objects[key].css;
-	js.textContent = objects[key].js;
+	html.value = objects[key].html;
+	css.value = objects[key].css;
+	js.value = objects[key].js;
 	autoHeight(html);
 	autoHeight(css);
 	autoHeight(js);
