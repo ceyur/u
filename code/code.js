@@ -33,7 +33,7 @@ Object.keys(objects).forEach(key => {
 		<button class="bCss">css</button>
 		${ifJs}
 	</div>
-	<textarea class="html"></textarea>
+	<textarea class="html" style="display: block;"></textarea>
 	<textarea class="css" style="display: none;"></textarea>
 	<textarea class="js" style="display: none;"></textarea>`;
 	let html = div2.querySelector('.html');
