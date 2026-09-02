@@ -19,7 +19,7 @@ Object.keys(objects).forEach(key => {
 	iframe = div1.querySelector("iframe")
 	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
 
-	const ifJs = objects[key].js !== "" ? "<button class="bJs">js</button>" : "";
+	const ifJs = objects[key].js !== "" ? '<button class="bJs">js</button>' : "";
 	
 	div2 = document.createElement("div");
 	div2.innerHTML = `<div class="buttons">
