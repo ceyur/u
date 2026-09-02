@@ -16,12 +16,12 @@ Object.keys(objects).forEach(key => {
 	let div1 = document.createElement("div");
 	div1.id = key;
 	div1.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
-	iframe = div1.querySelector("iframe")
+	let iframe = div1.querySelector("iframe")
 	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
 
 	const ifJs = objects[key].js !== "" ? '<button class="bJs">js</button>' : "";
 	
-	div2 = document.createElement("div");
+	let div2 = document.createElement("div");
 	div2.innerHTML = `<div class="buttons">
 		<button class="bHtml aktiv">html</button>
 		<button class="bCss">css</button>
@@ -30,9 +30,9 @@ Object.keys(objects).forEach(key => {
 	<textarea class="html"></textarea>
 	<textarea class="css" style="display: none;"></textarea>
 	<textarea class="js" style="display: none;"></textarea>`;
-	html = div2.querySelector('.html');
-	css = div2.querySelector('.css');
-	js = div2.querySelector('.js');
+	let html = div2.querySelector('.html');
+	let css = div2.querySelector('.css');
+	let js = div2.querySelector('.js');
 
 
 	html.textContent = objects[key].html;
@@ -43,7 +43,7 @@ Object.keys(objects).forEach(key => {
 	});
 	
 
-	button = div1.querySelector("button");
+	let button = div1.querySelector("button");
 	button.onclick = () => {
 		if (div2.style.display == "block") {
 			button.querySelector("svg").style.scale = "1";
@@ -55,9 +55,9 @@ Object.keys(objects).forEach(key => {
 		}
 	};
 
-	bHtml = div2.querySelector(".bHtml");
-	bCss = div2.querySelector(".bCss");
-	bJs;
+	let bHtml = div2.querySelector(".bHtml");
+	let bCss = div2.querySelector(".bCss");
+	let bJs;
 	if (ifJs !== "") {
 		bJs = div2.querySelector(".bJs");
 		bJs.onclick = () => {
