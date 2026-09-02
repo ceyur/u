@@ -14,7 +14,7 @@ let styleInIframe = `html,
 
 const autoHeight = function(element) {
 	element.style.height = 0;
-	element.style.height = element.scrollHeight + "px";
+	element.style.height = (element.scrollHeight - 38 - 6) + "px";
 }
 
 Object.keys(objects).forEach(key => {
