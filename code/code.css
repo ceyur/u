@@ -47,9 +47,7 @@
 			height: calc(100% - 38px - 6px);
 			border: none;
 			border-radius: 15px;
-			box-shadow: none;
-			overflow: auto;
-			overflow-wrap: anywhere;
+			resize: none;
 			scrollbar-width: none;
 		}
 	}
