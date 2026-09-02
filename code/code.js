@@ -41,7 +41,7 @@ Object.keys(objects).forEach(key => {
 	js.textContent = objects[key].js;
 	html.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
-		console.log("html input");
+		html.
 	});
 	css.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
@@ -106,10 +106,6 @@ Object.keys(objects).forEach(key => {
 const textareas = document.querySelectorAll('textarea');
 
 textareas.forEach(textarea => {
-	const autoResize = () => {
-		const scrollHeight = textarea.scrollHeight;
-		textarea.style.height = scrollHeight + 'px';
-	};
-	textarea.addEventListener('input', autoResize);
-	autoResize();
+	textarea.style.height = textarea.scrollHeight + "px";
+	textarea.addEventListener("input", textarea.style.height = textarea.scrollHeight + "px");
 });
