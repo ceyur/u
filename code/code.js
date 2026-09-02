@@ -28,9 +28,9 @@ Object.keys(objects).forEach(key => {
 		<button class="bCss">css</button>
 		${js}
 	</div>
-	<p class="html"></p>
-	<p class="css" style="display: none;"></p>
-	<p class="js" style="display: none;"></p>`;
+	<input class="html"></input>
+	<input class="css" style="display: none;"></input>
+	<input class="js" style="display: none;"></input>`;
 	div1.querySelector('.html').textContent = objects[key].html;
 	div1.querySelector('.css').textContent = objects[key].css;
 	div1.querySelector('.js').textContent = objects[key].js;
