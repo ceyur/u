@@ -44,6 +44,9 @@ Object.keys(objects).forEach(key => {
 	html.textContent = objects[key].html;
 	css.textContent = objects[key].css;
 	js.textContent = objects[key].js;
+	autoHeight(html);
+	autoHeight(css);
+	autoHeight(js);
 	html.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
 	});
