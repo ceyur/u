@@ -71,6 +71,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 	width: 100px;
 	height: 100px;
 	box-shadow: 0 0 10px #000;
@@ -80,8 +81,8 @@ export default {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 75px;
-		height: 10px;
+		width: 75%;
+		height: 10%;
 		background: #000;
 		rotate: 45deg;
 	}
@@ -106,6 +107,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 	width: 100px;
 	height: 100px;
 	box-shadow: 0 0 10px #000;
@@ -115,8 +117,8 @@ export default {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 75px;
-		height: 10px;
+		width: 75%;
+		height: 10%;
 		background: #000;
 		border-radius: 5px;
 		rotate: 45deg;
@@ -142,6 +144,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 	width: 100px;
 	height: 100px;
 	box-shadow: 0 0 10px #000;
@@ -150,8 +153,8 @@ export default {
 	&:before {
 		content: "";
 		position: absolute;
-		width: 30px;
-		height: 30px;
+		width: 30%;
+		height: 30%;
 		border-top: 10px solid #000;
 		border-left: 10px solid #000;
 		rotate: 45deg;
@@ -159,8 +162,8 @@ export default {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 10px;
-		height: 51px;
+		width: 10%;
+		height: 51%;
 		background: #000;
 		margin-top: 6px;
 	}
