@@ -36,7 +36,6 @@
 	> div:nth-child(even) {
 		flex: 1 1 45%;
 		margin: 12.5px;
-		max-height: 300px;
 		position: relative;
 		background: white;
 		box-shadow: 0 0 10px black;
@@ -56,27 +55,15 @@
 	}
 	#calculation {
 		height: 400px;
-		+ div {
-			max-height: 400px;
-		}
 	}
 	#snake {
 		height: 350px;
-		+ div {
-			max-height: 350px;
-		}
 	}
 	#tic-tac-toe {
 		height: 350px;
-		+ div {
-			max-height: 350px;
-		}
 	}
 	#shess {
 		height: 350px;
-		+ div {
-			max-height: 350px;
-		}
 	}
 }
 .buttons {
