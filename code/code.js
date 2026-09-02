@@ -19,6 +19,7 @@ Object.keys(objects).forEach(key => {
 	let iframe = div1.querySelector("iframe")
 	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
 
+
 	const ifJs = objects[key].js !== "" ? '<button class="bJs">js</button>' : "";
 	
 	let div2 = document.createElement("div");
@@ -38,7 +39,13 @@ Object.keys(objects).forEach(key => {
 	html.textContent = objects[key].html;
 	css.textContent = objects[key].css;
 	js.textContent = objects[key].js;
-	html.addEventListener('input', () => {
+	html.addEventListener("input", () => {
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
+	});
+	css.addEventListener("input", () => {
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
+	});
+	js.addEventListener("input", () => {
 		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
 	});
 	
@@ -55,6 +62,7 @@ Object.keys(objects).forEach(key => {
 		}
 	};
 
+	
 	let bHtml = div2.querySelector(".bHtml");
 	let bCss = div2.querySelector(".bCss");
 	let bJs;
@@ -88,6 +96,7 @@ Object.keys(objects).forEach(key => {
 		bCss.className = "aktiv";
 		if (ifJs !== "") bJs.className = "";
 	};
+
 	
 	code.appendChild(div1);
 	code.appendChild(div2);
