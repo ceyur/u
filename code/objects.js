@@ -211,11 +211,11 @@ export default {
 		height: 40%;
 		background: #000;
 		border-radius: 9px;
-		margin: 0 21.6px 21.6px 0;
+		margin: 0 21.6% 21.6% 0;
 		rotate: 45deg;
 	}
 	&:after {
-		margin: 0 0 21.6px 21.6px;
+		margin: 0 0 21.6% 21.6%;
 		rotate: -45deg;
 	}
 	&:hover {
