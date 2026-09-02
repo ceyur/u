@@ -45,6 +45,7 @@
 			padding: 38px 6px 6px;
 			width: stretch;
 			height: calc(100% - 38px - 6px);
+			max-height: 500px;
 			border: none;
 			border-radius: 15px;
 			resize: none;
