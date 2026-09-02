@@ -44,9 +44,6 @@ Object.keys(objects).forEach(key => {
 	html.value = objects[key].html;
 	css.value = objects[key].css;
 	js.value = objects[key].js;
-	autoHeight(html);
-	autoHeight(css);
-	autoHeight(js);
 	html.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
 	});
@@ -108,7 +105,9 @@ Object.keys(objects).forEach(key => {
 		if (ifJs !== "") bJs.className = "";
 	};
 
-	
+	bhtml.clck();
+	bCss.clck();
+	if (ifJs !== "") bJs.clck();
 	code.appendChild(div1);
 	code.appendChild(div2);
 });
