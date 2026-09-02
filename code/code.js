@@ -25,7 +25,7 @@ Object.keys(objects).forEach(key => {
 	div2.innerHTML = `<div class="buttons">
 		<button class="bHtml aktiv">html</button>
 		<button class="bCss">css</button>
-		${js}
+		${ifJs}
 	</div>
 	<textarea class="html"></textarea>
 	<textarea class="css" style="display: none;"></textarea>
