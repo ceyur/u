@@ -72,6 +72,7 @@ Object.keys(objects).forEach(key => {
 			html.style.display = "none";
 			css.style.display = "none";
 			js.style.display = "block";
+			js.style.height = js.scrollHeight + "px";
 
 			bHtml.className = "";
 			bCss.className = "";
@@ -80,6 +81,7 @@ Object.keys(objects).forEach(key => {
 	};
 	bHtml.onclick = () => {
 		html.style.display = "block";
+		html.style.height = html.scrollHeight + "px";
 		css.style.display = "none";
 		js.style.display = "none";
 
@@ -90,6 +92,7 @@ Object.keys(objects).forEach(key => {
 	bCss.onclick = () => {
 		html.style.display = "none";
 		css.style.display = "block";
+		css.style.height = css.scrollHeight + "px";
 		js.style.display = "none";
 
 		bHtml.className = "";
@@ -102,11 +105,11 @@ Object.keys(objects).forEach(key => {
 	code.appendChild(div2);
 });
 
-const textareas = document.querySelectorAll('textarea');
+// const textareas = document.querySelectorAll('textarea');
 
-textareas.forEach(textarea => {
-	textarea.style.height = textarea.scrollHeight + "px";
-	textarea.addEventListener("input", () => {
-		textarea.style.height = textarea.scrollHeight + "px";
-	});
-});
+// textareas.forEach(textarea => {
+// 	textarea.style.height = textarea.scrollHeight + "px";
+// 	textarea.addEventListener("input", () => {
+// 		textarea.style.height = textarea.scrollHeight + "px";
+// 	});
+// });
