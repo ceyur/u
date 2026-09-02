@@ -31,9 +31,9 @@ Object.keys(objects).forEach(key => {
 	<input class="html"></input>
 	<input class="css" style="display: none;"></input>
 	<input class="js" style="display: none;"></input>`;
-	div1.querySelector('.html').textContent = objects[key].html;
-	div1.querySelector('.css').textContent = objects[key].css;
-	div1.querySelector('.js').textContent = objects[key].js;
+	div1.querySelector('.html').value = objects[key].html;
+	div1.querySelector('.css').value = objects[key].css;
+	div1.querySelector('.js').value = objects[key].js;
 	code.appendChild(div1);
 
 	let button = div.querySelector("button");
