@@ -41,7 +41,6 @@ Object.keys(objects).forEach(key => {
 	js.textContent = objects[key].js;
 	html.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
-		html.
 	});
 	css.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
