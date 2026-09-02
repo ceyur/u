@@ -13,14 +13,13 @@ let styleInIframe = `html,
 	}`;
 
 Object.keys(objects).forEach(key => {
-	let div = document.createElement("div");
-	div.id = key;
-	// <svg viewBox="0 0 2 2" width="29px" height="29px"><path d="M0 0L1 1L2 0"/></svg>
-	div.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
-	div.querySelector("iframe").srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
-	code.appendChild(div);
+	let div1 = document.createElement("div");
+	div1.id = key;
+	div1.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
+	let iframe = div.querySelector("iframe")
+	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
 
-	const js = objects[key].js !== "" ? '<button class="bJs">js</button>' : '';
+	const ifJs = objects[key].js !== "" ? '<button class="bJs">js</button>' : '';
 	
 	let div1 = document.createElement("div");
 	div1.innerHTML = `<div class="buttons">
@@ -31,32 +30,40 @@ Object.keys(objects).forEach(key => {
 	<textarea class="html"></textarea>
 	<textarea class="css" style="display: none;"></textarea>
 	<textarea class="js" style="display: none;"></textarea>`;
-	div1.querySelector('.html').textContent = objects[key].html;
-	div1.querySelector('.css').textContent = objects[key].css;
-	div1.querySelector('.js').textContent = objects[key].js;
-	code.appendChild(div1);
+	let html = div2.querySelector('.html');
+	let css = div2.querySelector('.css');
+	let js = div2.querySelector('.js');
 
-	let button = div.querySelector("button");
+
+	html.textContent = objects[key].html;
+	css.textContent = objects[key].css;
+	js.textContent = objects[key].js;
+	html.addEventListener('input', () => {
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
+	});
+	
+
+	let button = div1.querySelector("button");
 	button.onclick = () => {
-		if (div1.style.display == "block") {
+		if (div2.style.display == "block") {
 			button.querySelector("svg").style.scale = "1";
-			div1.style.display = "none";
+			div2.style.display = "none";
 		}
 		else {
 			button.querySelector("svg").style.scale = "1 -1";
-			div1.style.display = "block";
+			div2.style.display = "block";
 		}
 	};
 
-	let bHtml = div1.querySelector(".bHtml");
-	let bCss = div1.querySelector(".bCss");
+	let bHtml = div2.querySelector(".bHtml");
+	let bCss = div2.querySelector(".bCss");
 	let bJs;
-	if (js !== "") {
-		bJs = div1.querySelector(".bJs");
+	if (ifJs !== "") {
+		bJs = div2.querySelector(".bJs");
 		bJs.onclick = () => {
-			div1.querySelector('.html').style.display = "none";
-			div1.querySelector('.css').style.display = "none";
-			div1.querySelector('.js').style.display = "block";
+			html.style.display = "none";
+			css.style.display = "none";
+			js.style.display = "block";
 
 			bHtml.className = "";
 			bCss.className = "";
@@ -64,21 +71,24 @@ Object.keys(objects).forEach(key => {
 		};
 	};
 	bHtml.onclick = () => {
-		div1.querySelector('.html').style.display = "block";
-		div1.querySelector('.css').style.display = "none";
-		div1.querySelector('.js').style.display = "none";
+		html.style.display = "block";
+		css.style.display = "none";
+		js.style.display = "none";
 
 		bHtml.className = "aktiv";
 		bCss.className = "";
 		if (js !== "") bJs.className = "";
 	};
 	bCss.onclick = () => {
-		div1.querySelector('.html').style.display = "none";
-		div1.querySelector('.css').style.display = "block";
-		div1.querySelector('.js').style.display = "none";
+		html.style.display = "none";
+		css.style.display = "block";
+		js.style.display = "none";
 
 		bHtml.className = "";
 		bCss.className = "aktiv";
-		if (js !== "") bJs.className = "";
+		if (ifJs !== "") bJs.className = "";
 	};
+	
+	code.appendChild(div1);
+	code.appendChild(div2);
 });
