@@ -62,9 +62,9 @@ Object.keys(objects).forEach(key => {
 			div2.style.display = "none";
 		}
 		else {
+			autoHeight(html);
 			button.querySelector("svg").style.scale = "1 -1";
 			div2.style.display = "block";
-			autoHeight(html);
 		}
 	};
 
@@ -75,35 +75,35 @@ Object.keys(objects).forEach(key => {
 	if (ifJs !== "") {
 		bJs = div2.querySelector(".bJs");
 		bJs.onclick = () => {
-			html.style.display = "none";
-			css.style.display = "none";
-			js.style.display = "block";
-			if (window.innerWidth < 699) autoHeight(js);
-
 			bHtml.className = "";
 			bCss.className = "";
 			bJs.className = "aktiv";
+			
+			js.style.display = "block";
+			if (window.innerWidth < 699) autoHeight(js);
+			html.style.display = "none";
+			css.style.display = "none";
 		};
 	};
 	bHtml.onclick = () => {
+		bHtml.className = "aktiv";
+		bCss.className = "";
+		if (ifJs !== "") bJs.className = "";
+		
 		html.style.display = "block";
 		if (window.innerWidth < 699) autoHeight(html);
 		css.style.display = "none";
 		js.style.display = "none";
-
-		bHtml.className = "aktiv";
-		bCss.className = "";
-		if (ifJs !== "") bJs.className = "";
 	};
 	bCss.onclick = () => {
-		html.style.display = "none";
-		css.style.display = "block";
-		if (window.innerWidth < 699) autoHeight(css);
-		js.style.display = "none";
-
 		bHtml.className = "";
 		bCss.className = "aktiv";
 		if (ifJs !== "") bJs.className = "";
+		
+		css.style.display = "block";
+		if (window.innerWidth < 699) autoHeight(css);
+		html.style.display = "none";
+		js.style.display = "none";
 	};
 
 	code.appendChild(div1);
