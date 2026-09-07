@@ -41,9 +41,9 @@ Object.keys(objects).forEach(key => {
 	let js = div2.querySelector('.js');
 
 
-	html.value = objects[key].html;
-	css.value = objects[key].css;
-	js.value = objects[key].js;
+	html.textarea = objects[key].html;
+	css.textarea = objects[key].css;
+	js.textarea = objects[key].js;
 	html.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
 	});
