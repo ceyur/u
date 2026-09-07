@@ -33,9 +33,9 @@ Object.keys(objects).forEach(key => {
 		<button class="bCss">css</button>
 		${ifJs}
 	</div>
-	<textarea class="html" style="display: block;"><pre class="line-numbers"><code class="language-html"></code></pre></textarea>
-	<textarea class="css" style="display: block;"><pre class="line-numbers"><code class="language-css"></code></pre></textarea>
-	<textarea class="js" style="display: block;"><pre class="line-numbers"><code class="language-js"></code></pre></textarea>`;
+	<textarea class="html" style="display: block;"></textarea>
+	<textarea class="css" style="display: block;"></textarea>
+	<textarea class="js" style="display: block;"></textarea>`;
 	let html = div2.querySelector('.html');
 	let css = div2.querySelector('.css');
 	let js = div2.querySelector('.js');
