@@ -54,6 +54,27 @@ Object.keys(objects).forEach(key => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
 	});
 	
+	CodeMirror.fromTextArea(document.getElementById("html"), {
+	    mode: "html",
+	    theme: "eclipse",
+	    lineNumbers: true,
+	    tabSize: 4
+	});
+	
+	CodeMirror.fromTextArea(document.getElementById("css"), {
+	    mode: "css",
+	    theme: "eclipse",
+	    lineNumbers: true,
+	    tabSize: 4
+	});
+	
+	CodeMirror.fromTextArea(document.getElementById("js"), {
+	    mode: "js",
+	    theme: "eclipse",
+	    lineNumbers: true,
+	    tabSize: 4
+	});
+	
 
 	let button = div1.querySelector("button");
 	button.onclick = () => {
