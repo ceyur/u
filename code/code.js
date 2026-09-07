@@ -41,9 +41,9 @@ Object.keys(objects).forEach(key => {
 	let js = div2.querySelector('.js');
 
 
-	html.textarea = objects[key].html;
-	css.textarea = objects[key].css;
-	js.textarea = objects[key].js;
+	html.textContent = objects[key].html;
+	css.textContent = objects[key].css;
+	js.textContent = objects[key].js;
 	html.addEventListener("input", () => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
 	});
@@ -55,21 +55,21 @@ Object.keys(objects).forEach(key => {
 	});
 	
 	CodeMirror.fromTextArea(document.getElementById("html"), {
-	    mode: "html",
+	    mode: "htmlmixed",
 	    theme: "eclipse",
 	    lineNumbers: true,
 	    tabSize: 4
 	});
 	
 	CodeMirror.fromTextArea(document.getElementById("css"), {
-	    mode: "css",
+	    mode: "sass",
 	    theme: "eclipse",
 	    lineNumbers: true,
 	    tabSize: 4
 	});
 	
 	CodeMirror.fromTextArea(document.getElementById("js"), {
-	    mode: "js",
+	    mode: "javascript",
 	    theme: "eclipse",
 	    lineNumbers: true,
 	    tabSize: 4
