@@ -54,21 +54,21 @@ Object.keys(objects).forEach(key => {
 		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
 	});
 	
-	CodeMirror.fromTextArea(html), {
+	CodeMirror.fromTextArea(html, {
 	    mode: "htmlmixed",
 	    theme: "eclipse",
 	    lineNumbers: true,
 	    tabSize: 4
 	});
 	
-	CodeMirror.fromTextArea(css), {
+	CodeMirror.fromTextArea(css, {
 	    mode: "sass",
 	    theme: "eclipse",
 	    lineNumbers: true,
 	    tabSize: 4
 	});
 	
-	CodeMirror.fromTextArea(js), {
+	CodeMirror.fromTextArea(js, {
 	    mode: "javascript",
 	    theme: "eclipse",
 	    lineNumbers: true,
