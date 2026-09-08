@@ -34,8 +34,8 @@ Object.keys(objects).forEach(key => {
 		${ifJs}
 	</div>
 	<textarea class="html" style="display: block;"></textarea>
-	<textarea class="css" style="display: block;"></textarea>
-	<textarea class="js" style="display: block;"></textarea>`;
+	<textarea class="css" style="display: none;"></textarea>
+	<textarea class="js" style="display: none;"></textarea>`;
 	let html = div2.querySelector('.html');
 	let css = div2.querySelector('.css');
 	let js = div2.querySelector('.js');
