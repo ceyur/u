@@ -38,7 +38,7 @@ Object.keys(objects).forEach(key => {
 	<textarea class="js" style="display: block;"></textarea>`;
 	let html = div2.querySelector('.html');
 	let css = div2.querySelector('.css');
-	let js = div2.querySelector('.js');\
+	let js = div2.querySelector('.js');
 
 	html.textContent = objects[key].html;
 	css.textContent = objects[key].css;
