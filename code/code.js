@@ -12,11 +12,6 @@ let styleInIframe = `html,
 		align-items: center;
 	}`;
 
-//const autoHeight = function(element) {
-//	element.style.height = 0;
-//	element.style.height = (element.scrollHeight - 38 - 6) + "px";
-//}
-
 Object.keys(objects).forEach(key => {
 	let div1 = document.createElement("div");
 	div1.id = key;
@@ -61,7 +56,6 @@ Object.keys(objects).forEach(key => {
 			div2.style.display = "none";
 		}
 		else {
-			//autoHeight(html);
 			button.querySelector("svg").style.scale = "1 -1";
 			div2.style.display = "block";
 		}
@@ -79,7 +73,6 @@ Object.keys(objects).forEach(key => {
 			bJs.className = "aktiv";
 			
 			js.style.display = "block";
-			//if (window.innerWidth < 699) autoHeight(js);
 			html.style.display = "none";
 			css.style.display = "none";
 		};
@@ -90,7 +83,6 @@ Object.keys(objects).forEach(key => {
 		if (ifJs !== "") bJs.className = "";
 		
 		html.style.display = "block";
-		//if (window.innerWidth < 699) autoHeight(html);
 		css.style.display = "none";
 		js.style.display = "none";
 	};
@@ -100,7 +92,6 @@ Object.keys(objects).forEach(key => {
 		if (ifJs !== "") bJs.className = "";
 		
 		css.style.display = "block";
-		//if (window.innerWidth < 699) autoHeight(css);
 		html.style.display = "none";
 		js.style.display = "none";
 	};
