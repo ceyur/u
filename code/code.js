@@ -44,13 +44,13 @@ Object.keys(objects).forEach(key => {
 	css.textContent = objects[key].css;
 	js.textContent = objects[key].js;
 	html.addEventListener("input", () => {
-		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
 	});
 	css.addEventListener("input", () => {
-		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
 	});
 	js.addEventListener("input", () => {
-		iframe.srcdoc = `${html.value}<style>${styleInIframe}${css.value}</style><script>${js.value}</script>`;
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
 	});
 	
 
