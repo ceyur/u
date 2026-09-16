@@ -39,15 +39,12 @@
 		max-height: 300px;
 		position: relative;
 		background: white;
-		box-shadow: 0 0 10px black;
 		border-radius: 15px;
 	    p {
 			margin: 0;
 			padding: 38px 6px 6px;
 			width: stretch;
 			height: calc(100% - 38px - 6px);
-			border: none;
-            box-shadow: none;
 			overflow: auto;
 			overflow-wrap: anywhere;
 			scrollbar-width: none;
