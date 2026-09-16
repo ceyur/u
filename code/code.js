@@ -12,10 +12,10 @@ let styleInIframe = `html,
 		align-items: center;
 	}`;
 
-const autoHeight = function(element) {
-	element.style.height = 0;
-	element.style.height = (element.scrollHeight - 38 - 6) + "px";
-}
+//const autoHeight = function(element) {
+//	element.style.height = 0;
+//	element.style.height = (element.scrollHeight - 38 - 6) + "px";
+//}
 
 Object.keys(objects).forEach(key => {
 	let div1 = document.createElement("div");
@@ -33,9 +33,9 @@ Object.keys(objects).forEach(key => {
 		<button class="bCss">css</button>
 		${ifJs}
 	</div>
-	<textarea class="html" style="display: block;"></textarea>
-	<textarea class="css" style="display: none;"></textarea>
-	<textarea class="js" style="display: none;"></textarea>`;
+	<p class="html" style="display: block;" contenteditable></p>
+	<p class="css" style="display: none;" contenteditable></p>
+	<p class="js" style="display: none;" contenteditable></p>`;
 	let html = div2.querySelector('.html');
 	let css = div2.querySelector('.css');
 	let js = div2.querySelector('.js');
@@ -79,7 +79,7 @@ Object.keys(objects).forEach(key => {
 			bJs.className = "aktiv";
 			
 			js.style.display = "block";
-			if (window.innerWidth < 699) autoHeight(js);
+			//if (window.innerWidth < 699) autoHeight(js);
 			html.style.display = "none";
 			css.style.display = "none";
 		};
@@ -90,7 +90,7 @@ Object.keys(objects).forEach(key => {
 		if (ifJs !== "") bJs.className = "";
 		
 		html.style.display = "block";
-		if (window.innerWidth < 699) autoHeight(html);
+		//if (window.innerWidth < 699) autoHeight(html);
 		css.style.display = "none";
 		js.style.display = "none";
 	};
@@ -100,7 +100,7 @@ Object.keys(objects).forEach(key => {
 		if (ifJs !== "") bJs.className = "";
 		
 		css.style.display = "block";
-		if (window.innerWidth < 699) autoHeight(css);
+		//if (window.innerWidth < 699) autoHeight(css);
 		html.style.display = "none";
 		js.style.display = "none";
 	};
