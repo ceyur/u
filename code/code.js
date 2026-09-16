@@ -61,7 +61,7 @@ Object.keys(objects).forEach(key => {
 			div2.style.display = "none";
 		}
 		else {
-			autoHeight(html);
+			//autoHeight(html);
 			button.querySelector("svg").style.scale = "1 -1";
 			div2.style.display = "block";
 		}
