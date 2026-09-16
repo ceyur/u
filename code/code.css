@@ -67,18 +67,6 @@
 			max-height: 350px;
 		}
 	}
-	/*#tic-tac-toe {
-		height: 350px;
-		+ div {
-			max-height: 350px
-		}
-	}
-	#shess {
-		height: 350px;
-		+ div {
-			max-height: 350px
-		}
-	}*/
 }
 .buttons {
 	padding: 3px;
