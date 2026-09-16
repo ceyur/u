@@ -40,30 +40,43 @@
 		background: white;
 		box-shadow: 0 0 10px black;
 		border-radius: 15px;
-		textarea {
+	    p {
 			margin: 0;
 			padding: 38px 6px 6px;
 			width: stretch;
 			height: calc(100% - 38px - 6px);
 			max-height: 500px;
 			border: none;
-			border-radius: 15px;
-			resize: none;
+            box-shadow: none;
 			scrollbar-width: none;
 		}
 	}
 	#calculation {
 		height: 400px;
+		+ div {
+			max-height: 400px;
+		}
 	}
-	#snake {
+	#snake,
+	#tic-tac-toe,
+	#shess {
 		height: 350px;
+		+ div {
+			max-height: 350px;
+		}
 	}
-	#tic-tac-toe {
+	/*#tic-tac-toe {
 		height: 350px;
+		+ div {
+			max-height: 350px
+		}
 	}
 	#shess {
 		height: 350px;
-	}
+		+ div {
+			max-height: 350px
+		}
+	}*/
 }
 .buttons {
 	padding: 3px;
