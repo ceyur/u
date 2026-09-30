@@ -520,7 +520,7 @@ export default {
 	},
 	"calculation": {
 		"html": `<main id="calculation">
-	<input id="text" style="font-family: 'Times New Roman';"></input>
+	<input id="text"></input>
 	<div>
 		<a id="c">C</a>
 		<a id="del" style="font-size: 15px;">⌫</a>
@@ -557,10 +557,11 @@ export default {
 	border-radius: 15px;
 	input {
 		margin: 0 0 16.5px;
-		width: 165px;
+		width: 100%;
 		background: white;
 		border: 1px solid black;
 		border-radius: 5px;
+		font-family: "Times New Roman";
 		text-align: right;
 		&:hover {
 			border: 1px solid blue;
