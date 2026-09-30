@@ -557,7 +557,7 @@ export default {
 	border-radius: 15px;
 	input {
 		margin: 0 0 16.5px;
-		width: 100%;
+		width: calc(100% - 2px);
 		background: white;
 		border: 1px solid black;
 		border-radius: 5px;
