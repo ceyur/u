@@ -572,7 +572,7 @@ export default {
 		flex-wrap: wrap;
 		justify-content: space-between;
 		a {
-			display: inline-flex;
+			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin: 0 15px 15px 0;
