@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">-->
 		<title>Свойства элементов css</title>
 		<link rel="icon" href="/u/img/mobile-svg.svg">
 		<link rel="manifest" href="/u/manifest.json">
@@ -11,8 +11,8 @@
 	</head>
 	<body>
 		<div id="information">
-			<button class="close-info" type="button"></button>
-			<p><button class="close-info close" type="button"></button><b>свойство</b>: значение; – объяснение свойства, его особенности
+			<button class="close-info" type="button" aria-label="Закрыть"></button>
+			<p><button class="close-info close" type="button" aria-label="Закрыть"></button><b>свойство</b>: значение; – объяснение свойства, его особенности
 Значения:
 1.
 2.
@@ -33,10 +33,10 @@
 5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
 </p>
 		</div>
-		<button id="overlay" class="close-info" type="button"></button>
+		<button id="overlay" class="close-info" type="button" aria-label="Закрыть"></button>
 		<main>
-			<button id="close" class="close" type="button" style="display: none;"></button>
-			<button id="button" class="button" type="button" style="display: none;">
+			<button id="close" class="close" type="button" style="display: none;" aria-label="Закрыть"></button>
+			<button id="button" class="button" type="button" style="display: none;" aria-label="Наверх">
 				<svg viewbox="0 0 50 50">
 					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
 				</svg>
@@ -49,7 +49,7 @@
 					</svg>
 				</button>
 				<h1>Свойства элементов css</h1>
-				<button id="go-code" type="button">
+				<button id="go-code" type="button" aria-label="Готовый код">
 					<svg viewbox="0 0 29 29">
 						<path stroke-width="1.75" d="M19.75 9.25 25 14.5l-5.25 5.25m-10.5 0L4 14.5l5.25-5.25m7.5-3-4.5 16.5"/>
 					</svg>
