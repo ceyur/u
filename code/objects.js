@@ -581,6 +581,9 @@ export default {
 			background: white;
 			border: 1px solid black;
 			border-radius: 5px;
+			#run {
+				width: 73px;
+			}
 			&:hover {
 				border: 1px solid blue;
 			}
