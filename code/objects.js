@@ -550,14 +550,14 @@ export default {
 }
 #calculation {
 	padding: 30px;
-	width: 165px;
-	height: 245px;
+	width: 180px;
+	height: 259.5px;
 	border: 1px solid black;
 	background: rgba(0, 0, 0, 0.06);
 	border-radius: 15px;
 	input {
-		margin: 0 0 16.5px;
-		width: calc(100% - 2px);
+		margin: 7.5px 7.5px 9px;
+		width: calc(100% - 17px);
 		background: white;
 		border: 1px solid black;
 		border-radius: 5px;
@@ -575,27 +575,12 @@ export default {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin: 0 15px 15px 0;
+			margin: 7.5px;
 			width: 28px;
 			height: 28px;
 			background: white;
 			border: 1px solid black;
 			border-radius: 5px;
-			&:nth-child(4),
-			&:nth-child(8),
-			&:nth-child(12),
-			&:nth-child(16),
-			&:nth-child(19) {
-				margin-right: 0;
-			}
-			&:nth-child(17),
-			&:nth-child(18),
-			&:nth-child(19) {
-				margin-bottom: 0;
-			}
-			&:last-child {
-				width: 73px;
-			}
 			&:hover {
 				border: 1px solid blue;
 			}
