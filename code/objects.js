@@ -581,7 +581,7 @@ export default {
 			background: white;
 			border: 1px solid black;
 			border-radius: 5px;
-			#run {
+			&#run {
 				width: 73px;
 			}
 			&:hover {
@@ -748,12 +748,12 @@ create.calculation()`
 		z-index: 1;
 		width: 100px;
 		height: 50px;
-	}
-	#replay,
-	#win {
-		display: none;
-		width: 150px;
-		height: 60px;
+		&#replay,
+		&#win {
+			display: none;
+			width: 150px;
+			height: 60px;
+		}
 	}
 	#table {
 		display: flex;
