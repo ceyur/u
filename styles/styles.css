@@ -79,6 +79,7 @@ p {
 	border-radius: 15px;
 	box-shadow: 0 0 10px black;
 	white-space: pre-wrap;
+	line-height: 1.16;
 }
 i {
 	color: green;
