@@ -532,7 +532,7 @@ export default {
 		<button id="minus" style="font-weight: bold;" type="button">−</button>
 		<button id="number4" type="button">4</button>
 		<button id="number5" type="button">5</button>
-		<button id="number6" type="button">6</button>ф
+		<button id="number6" type="button">6</button>
 		<button id="mult" type="button">𐄂</button>
 		<button id="number1" type="button">1</button>
 		<button id="number2" type="button">2</button>
