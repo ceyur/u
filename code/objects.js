@@ -520,27 +520,27 @@ export default {
 	},
 	"calculation": {
 		"html": `<main id="calculation">
-	<input id="text"></input>
-	<div>
-		<a id="c">C</a>
-		<a id="del" style="font-size: 15px;">⌫</a>
-		<a id="pi">π</a>
-		<a id="sum" style="font-weight: bold;">+</a>
-		<a id="number7">7</a>
-		<a id="number8">8</a>
-		<a id="number9">9</a>
-		<a id="minus" style="font-weight: bold;">−</a>
-		<a id="number4">4</a>
-		<a id="number5">5</a>
-		<a id="number6">6</a>
-		<a id="mult">𐄂</a>
-		<a id="number1">1</a>
-		<a id="number2">2</a>
-		<a id="number3">3</a>
-		<a id="div" style="font-size: 20px;">÷</a>
-		<a id="point">,</a>
-		<a id="number0">0</a>
-		<a id="run">=</a>
+	<input></input>
+	<div id="buttons">
+		<button id="c" type="button">C</button>
+		<button id="del" style="font-size: 15px;" type="button">⌫</button>
+		<button id="pi" type="button">π</button>
+		<button id="sum" style="font-weight: bold;" type="button">+</button>
+		<button id="number7" type="button">7</button>
+		<button id="number8" type="button">8</button>
+		<button id="number9" type="button">9</button>
+		<button id="minus" style="font-weight: bold;" type="button">−</button>
+		<button id="number4" type="button">4</button>
+		<button id="number5" type="button">5</button>
+		<button id="number6" type="button">6</button>ф
+		<button id="mult" type="button">𐄂</button>
+		<button id="number1" type="button">1</button>
+		<button id="number2" type="button">2</button>
+		<button id="number3" type="button">3</button>
+		<button id="div" style="font-size: 20px;" type="button">÷</button>
+		<button id="point" type="button">,</button>
+		<button id="number0" type="button">0</button>
+		<button id="run" type="button">=</button>
 	</div>
 </main>`,
 	"css": `* {
@@ -567,11 +567,11 @@ export default {
 			border: 1px solid blue;
 		}
 	}
-	div {
+	#buttons {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		a {
+		button {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -590,20 +590,19 @@ export default {
 		}
 	}
 }`,
-		"js": `const text = document.querySelector("#text")
+		"js": `const main = document.querySelector("#calculation")
+const input = main.querySelector("input")
 
 const create = {
 	calculation: function() {
 		for (let key in buttons) {
-			document.querySelector("#" + key).onclick = buttons[key]
+			main.querySelector("#" + key).onclick = buttons[key]
 		}
 	},
 	keydown: function() {
-		text.addEventListener("keydown", (e) => {
-			if (!["Delete", "Backspace", "ArrowRight", "ArrowLeft"].includes(e.key)) {
-				calculation.div_null()
-				e.preventDefault()
-			}
+		input.addEventListener("keydown", (e) => {
+			e.preventDefault()
+			calculation.div_null()
 			if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(e.key)) {
 				calculation.number(e.key)
 			}
@@ -622,58 +621,60 @@ const create = {
 
 const calculation = {
 	div_null: function() {
-		if (text.value == "Нельзя делить на 0") {
-			text.value = ""
+		if (input.value == "Нельзя делить на 0") {
+			input.value = ""
 		}
 	},
 	operation: function(symbol) {
 		calculation.div_null()
-		if (!["+", "-", "×", ":", ","].includes(text.value.slice(-1))) {
-			if (text.value != "") {
-				if (["+", "-"].includes(symbol)) text.value += symbol
-				if (["*", "×"].includes(symbol)) text.value += "×"
-				if ([":", "/"].includes(symbol)) text.value += ":"
+		if (!["+", "-", "×", ":", ","].includes(input.value.slice(-1))) {
+			if (input.value != "") {
+				if (["+", "-"].includes(symbol)) input.value += symbol
+				if (["*", "×"].includes(symbol)) input.value += "×"
+				if ([":", "/"].includes(symbol)) input.value += ":"
 			}
 			else if (symbol == "-") {
-				text.value += "-"
+				input.value += "-"
 			}
 		}
 	},
 	number: function(symbol) {
 		calculation.div_null()
-		if (text.value == "") {
-			text.value += symbol
+		if (input.value == "") {
+			input.value += symbol
 		}
-		else if (!["π", "0"].includes(text.value.slice(-1))) {
-			text.value += symbol
+		else if (!["π", "0"].includes(input.value.slice(-1))) {
+			input.value += symbol
 		}
-		else if (text.value.length > 1 & text.value.slice(-1) == "0" & !["+", "-", "×", ":"].includes(text.value.slice(-2, -1))) {
-			text.value += symbol
+		else if (input.value.length > 1 &&
+			input.value.slice(-1) == "0" &&
+			!["+", "-", "×", ":"].includes(input.value.slice(-2, -1))) {
+			input.value += symbol
 		}
 	}
 }
 
 const buttons = {
 	c: function() {
-		text.value = ""
+		input.value = ""
 	},
 	del: function() {
 		calculation.div_null()
-		text.value = text.value.slice(0, -1)
+		input.value = input.value.slice(0, -1)
 	},
 	pi: function() {
 		calculation.div_null()
-		if (!["π", ","].includes(text.value.slice(-1))) {
-			text.value += "π"
+		if (!["π", ","].includes(input.value.slice(-1))) {
+			input.value += "π"
 		}
 	},
 	point: function() {
 		calculation.div_null()
-		if (!["+", "-", "×", ":", "π", ","].includes(text.value.slice(-1))) {
-			for (let i = text.value.length - 1; i >= 0; i--) {
-				if (text.value[i] == ",") break
-				if (i == 0 | ["+", "-", "×", ":"].includes(text.value[i])) {
-					text.value += ","
+		if (!["+", "-", "×", ":", "π", ","].includes(input.value.slice(-1))) {
+			for (let i = input.value.length - 1; i >= 0; i--) {
+				if (input.value[i] == ",") break
+				if (i == 0 || ["+", "-", "×", ":"].includes(input.value[i])) {
+					input.value += ","
 					break
 				}
 			}
@@ -681,22 +682,27 @@ const buttons = {
 	},
 	run: function() {
 		calculation.div_null()
-		if (text.value != "" & !["+", "-", "×", ":", ","].includes(text.value.slice(-1))) {
-			if (text.value.includes(":0+") | text.value.includes(":0-") | text.value.includes(":0×") | text.value.includes(":0:") | text.value.slice(-1) == "0" & text.value.slice(-2, -1) == ":") {
-				text.value = "Нельзя делить на 0"
+		if (input.value != "" && !["+", "-", "×", ":", ","].includes(input.value.slice(-1))) {
+			if (input.value.includes(":0+") ||
+				input.value.includes(":0-") ||
+				input.value.includes(":0×") ||
+				input.value.includes(":0:") ||
+				input.value.slice(-1) == "0" &&
+				input.value.slice(-2, -1) == ":") {
+				input.value = "Нельзя делить на 0"
 			}
 			else {
-				text.value = text.value.replace("×", "*").replace(":", "/").replace(",", ".")
-				while (text.value.includes("π")) {
-					let index_pi = text.value.indexOf("π")
-					if (index_pi == 0 | ["+", "-", "*", "/"].includes(text.value[index_pi - 1])) {
-						text.value = text.value.slice(0, index_pi) + "3.14" + text.value.slice(index_pi + 1)
+				input.value = input.value.replace("×", "*").replace(":", "/").replace(",", ".")
+				while (input.value.includes("π")) {
+					let index_pi = input.value.indexOf("π")
+					if (index_pi == 0 || ["+", "-", "*", "/"].includes(input.value[index_pi - 1])) {
+						input.value = input.value.slice(0, index_pi) + "3.14" + input.value.slice(index_pi + 1)
 					}
 					else {
-						text.value = text.value.slice(0, index_pi) + "*3.14" + text.value.slice(index_pi + 1)
+						input.value = input.value.slice(0, index_pi) + "*3.14" + input.value.slice(index_pi + 1)
 					}
 				}
-				text.value = String(eval(text.value)).replace(".", ",")
+				input.value = String(eval(input.value)).replace(".", ",")
 			}
 		}
 	},
