@@ -520,7 +520,7 @@ export default {
 	},
 	"calculation": {
 		"html": `<main id="calculation">
-	<input></input>
+	<input name="result"></input>
 	<div id="buttons">
 		<button id="clear" type="button">C</button>
 		<button id="del" style="font-size: 15px;" type="button">⌫</button>
