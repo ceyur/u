@@ -547,7 +547,7 @@ export default {
 	margin: 0;
 	padding: 0;
 	user-select: none;
-	font-family: auto;
+	font-family: serif;
 	font-size: medium;
 }
 #calculation {
