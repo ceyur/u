@@ -522,7 +522,7 @@ export default {
 		"html": `<main id="calculation">
 	<input></input>
 	<div id="buttons">
-		<button id="c" type="button">C</button>
+		<button id="clear" type="button">C</button>
 		<button id="del" style="font-size: 15px;" type="button">⌫</button>
 		<button id="pi" type="button">π</button>
 		<button id="sum" style="font-weight: bold;" type="button">+</button>
@@ -657,7 +657,7 @@ const calculation = {
 }
 
 const buttons = {
-	c: function() {
+	clear: function() {
 		input.value = ""
 	},
 	del: function() {
