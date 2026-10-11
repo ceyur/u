@@ -578,13 +578,13 @@ export default {
 			justify-content: center;
 			align-items: center;
 			margin: 7.5px;
-			width: 28px;
-			height: 28px;
+			width: 30px;
+			height: 30px;
 			background: white;
 			border: 1px solid black;
 			border-radius: 5px;
 			&#run {
-				width: 73px;
+				width: 75px;
 			}
 			&:hover {
 				border: 1px solid blue;
