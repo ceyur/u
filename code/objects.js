@@ -520,7 +520,7 @@ export default {
 	},
 	"calculation": {
 		"html": `<main id="calculation">
-	<input id="result" name="result" type="text">
+	<input id="result" name="result" type="text" autocomplete="off">
 	<div id="buttons">
 		<button id="clear" type="button">C</button>
 		<button id="del" style="font-size: 15px;" type="button">⌫</button>
@@ -695,10 +695,8 @@ const buttons = {
 				input.value.includes(":0,0-") ||
 				input.value.includes(":0,0×") ||
 				input.value.includes(":0,0:") ||
-				input.value.slice(-1) == "0" &&
-				input.value.slice(-2, -1) == ":" ||
-				input.value.slice(-1) == "0" &&
-				input.value.slice(-4, -1) == ":0,") {
+				input.value.endsWith(":0") ||
+				input.value.endsWith(":0,0")) {
 				input.value = "Нельзя делить на 0"
 			}
 			else {
@@ -712,7 +710,7 @@ const buttons = {
 						input.value = input.value.slice(0, index_pi) + "*3.14" + input.value.slice(index_pi + 1)
 					}
 				}
-				input.value = String(eval(input.value)).replace(".", ",")
+				input.value = String(eval(input.value)).replaceAll(".", ",")
 			}
 		}
 	},
@@ -739,9 +737,9 @@ create.calculation()`
 	},
 	"snake": {
 		"html": `<main id="snake">
-	<button id="start">Старт</button>
-	<button id="replay">Вы проиграли! Попробовать снова</button>
-	<button id="win">Вы прошли игру! Попробовать снова</button>
+	<button id="start" type="button">Старт</button>
+	<button id="replay" type="button">Вы проиграли! Попробовать снова</button>
+	<button id="win" type="button">Вы прошли игру! Попробовать снова</button>
 	<div id="coins">0</div>
 	<div id="table"></div>
 </main>`,
