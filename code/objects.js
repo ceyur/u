@@ -596,7 +596,7 @@ export default {
 const input = main.querySelector("input")
 
 const create = {
-	calculation: function() {
+	buttons: function() {
 		for (let key in buttons) {
 			main.querySelector("#" + key).onclick = buttons[key]
 		}
@@ -732,8 +732,8 @@ const buttons = {
 	number9: () => calculation.number("9")
 }
 
-create.keydown()
-create.calculation()`
+create.buttons()
+create.keydown()`
 	},
 	"snake": {
 		"html": `<main id="snake">
@@ -781,20 +781,20 @@ create.calculation()`
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			&:before {
-				content: "";
-			}
 			&.head:before {
+				content: "";
 				background: black;
 				width: 15px;
 				height: 15px;
 			}
 			&.body:before {
+				content: "";
 				background: black;
 				width: 13px;
 				height: 13px;
 			}
 			&.apple:before {
+				content: "";
 				background: green;
 				width: 17px;
 				height: 17px;
@@ -808,11 +808,12 @@ create.calculation()`
 		border: 1px solid black;
 	}
 }`,
-		"js": `const table = document.querySelector("#table")
-const start = document.querySelector("#start")
-const replay = document.querySelector("#replay")
-const win = document.querySelector("#win")
-const coins = document.querySelector("#coins")
+		"js": `const main = document.querySelector("#snake")
+const start = main.querySelector("#start")
+const replay = main.querySelector("#replay")
+const win = main.querySelector("#win")
+const coins = main.querySelector("#coins")
+const table = main.querySelector("#table")
 
 const vectors = {
 	top: [0, -1],
