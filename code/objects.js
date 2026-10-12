@@ -691,12 +691,18 @@ const buttons = {
 				input.value.includes(":0-") ||
 				input.value.includes(":0×") ||
 				input.value.includes(":0:") ||
+				input.value.includes(":0,0+") ||
+				input.value.includes(":0,0-") ||
+				input.value.includes(":0,0×") ||
+				input.value.includes(":0,0:") ||
 				input.value.slice(-1) == "0" &&
-				input.value.slice(-2, -1) == ":") {
+				input.value.slice(-2, -1) == ":" ||
+				input.value.slice(-1) == "0" &&
+				input.value.slice(-4, -1) == ":0,") {
 				input.value = "Нельзя делить на 0"
 			}
 			else {
-				input.value = input.value.replace("×", "*").replace(":", "/").replace(",", ".")
+				input.value = input.value.replaceAll("×", "*").replaceAll(":", "/").replaceAll(",", ".")
 				while (input.value.includes("π")) {
 					let index_pi = input.value.indexOf("π")
 					if (index_pi == 0 || ["+", "-", "*", "/"].includes(input.value[index_pi - 1])) {
