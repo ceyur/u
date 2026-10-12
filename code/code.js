@@ -12,6 +12,36 @@ let styleInIframe = `html,
 		align-items: center;
 	}`;
 
+const f = function(e) {
+	if (e.key === "Tab") {
+	    // Отменяем стандартный переход фокуса на другой элемент
+	    e.preventDefault();
+	
+	    // Получаем текущее выделение и диапазон (позицию курсора)
+	    const selection = window.getSelection();
+	    if (!selection.rangeCount) return;
+	    
+	    const range = selection.getRangeAt(0);
+	
+	    // Создаем текстовый узел с символом табуляции
+	    // Рекомендуется использовать '\t', но в HTML-контексте 
+	    // для корректного отображения может потребоваться CSS (см. шаг ниже)
+	    const tabNode = document.createTextNode('\t');
+	
+	    // Вставляем символ в позицию курсора
+	    range.insertNode(tabNode);
+	
+	    // Перемещаем курсор сразу после вставленного символа Tab
+	    range.setStartAfter(tabNode);
+	    range.setEndAfter(tabNode);
+	    
+	    // Сбрасываем старое выделение и добавляем обновленный диапазон
+	    selection.removeAllRanges();
+	    selection.addRange(range);
+	  }
+}
+
+
 Object.keys(objects).forEach(key => {
 	let div1 = document.createElement("div");
 	div1.id = key;
@@ -47,6 +77,10 @@ Object.keys(objects).forEach(key => {
 	js.addEventListener("input", () => {
 		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
 	});
+
+	html.addEventListener("keydown", (e) => f(e));
+	css.addEventListener("keydown", (e) => f(e));
+	js.addEventListener("keydown", (e) => f(e));
 	
 
 	let button = div1.querySelector("button");
