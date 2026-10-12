@@ -520,7 +520,7 @@ export default {
 	},
 	"calculation": {
 		"html": `<main id="calculation">
-	<input name="result"></input>
+	<input id="result" name="result" type="text">
 	<div id="buttons">
 		<button id="clear" type="button">C</button>
 		<button id="del" style="font-size: 15px;" type="button">⌫</button>
@@ -603,8 +603,10 @@ const create = {
 	},
 	keydown: function() {
 		input.addEventListener("keydown", (e) => {
-			e.preventDefault()
 			calculation.div_null()
+			if (!["Delete", "Backspace", "ArrowRight", "ArrowLeft"].includes(e.key)) {
+				e.preventDefault()
+			}
 			if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(e.key)) {
 				calculation.number(e.key)
 			}
