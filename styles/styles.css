@@ -268,7 +268,7 @@ nav {
 /*Все media-----------------------------------------------------------------------------------------------------*/
 @media (min-width: 850px) and (min-height: 745px) {
 	#information {
-		height: 724px;
+		height: 745px;
 	}
 }
 @media (min-width: 943px) {
