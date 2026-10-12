@@ -74,7 +74,7 @@ export default {
 	position: relative;
 	width: 100px;
 	height: 100px;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px black;
 	border-radius: 50%;
 	transition: 0.25s;
 	&:before, 
@@ -83,7 +83,7 @@ export default {
 		position: absolute;
 		width: 75%;
 		height: 10%;
-		background: #000;
+		background: black;
 		rotate: 45deg;
 	}
 	&:after {
@@ -110,7 +110,7 @@ export default {
 	position: relative;
 	width: 100px;
 	height: 100px;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px black;
 	border-radius: 50%;
 	transition: 0.25s;
 	&:before, 
@@ -119,7 +119,7 @@ export default {
 		position: absolute;
 		width: 75%;
 		height: 10%;
-		background: #000;
+		background: black;
 		border-radius: 5px;
 		rotate: 45deg;
 	}
@@ -147,7 +147,7 @@ export default {
 	position: relative;
 	width: 100px;
 	height: 100px;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px black;
 	border-radius: 50%;
 	transition: 0.25s;
 	&:before {
@@ -155,8 +155,8 @@ export default {
 		position: absolute;
 		width: 30%;
 		height: 30%;
-		border-top: 10px solid #000;
-		border-left: 10px solid #000;
+		border-top: 10px solid black;
+		border-left: 10px solid black;
 		rotate: 45deg;
 	}
 	&:after {
@@ -164,7 +164,7 @@ export default {
 		position: absolute;
 		width: 10%;
 		height: 51%;
-		background: #000;
+		background: black;
 		margin-top: 6px;
 	}
 	&:hover {
@@ -192,14 +192,14 @@ export default {
 	position: relative;
 	width: 100px;
 	height: 100px;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px black;
 	border-radius: 50%;
 	transition: 0.25s;
 	div {
 		position: absolute;
 		width: 10%;
 		height: 51%;
-		background: #000;
+		background: black;
 		border-radius: 9px;
 		margin-top: 6px;
 	}
@@ -209,7 +209,7 @@ export default {
 		position: absolute;
 		width: 10%;
 		height: 40%;
-		background: #000;
+		background: black;
 		border-radius: 9px;
 		margin: 0 21.6% 21.6% 0;
 		rotate: 45deg;
@@ -751,7 +751,7 @@ create.calculation()`
 #snake {
 	width: 225px;
 	height: 245px;
-	border: 1px solid #000;
+	border: 1px solid black;
 	button {
 		position: absolute;
 		top: 0;
@@ -777,7 +777,7 @@ create.calculation()`
 		div {
 			width: 23px;
 			height: 23px;
-			border: 1px solid #000;
+			border: 1px solid black;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -785,12 +785,12 @@ create.calculation()`
 				content: "";
 			}
 			&.head:before {
-				background: #000;
+				background: black;
 				width: 15px;
 				height: 15px;
 			}
 			&.body:before {
-				background: #000;
+				background: black;
 				width: 13px;
 				height: 13px;
 			}
@@ -805,7 +805,7 @@ create.calculation()`
 	#coins {
 		height: 18px;
 		text-align: center;
-		border: 1px solid #000;
+		border: 1px solid black;
 	}
 }`,
 		"js": `const table = document.querySelector("#table")
@@ -1023,11 +1023,11 @@ win.onclick = game.newPlay`
 		flex-wrap: wrap;
 		width: 240px;
 		height: 240px;
-		border: 1px solid #000;
+		border: 1px solid black;
 		div {
 			width: 78px;
 			height: 78px;
-			border: 1px solid #000;
+			border: 1px solid black;
 			position: relative;
 			&.X {
 				&:before,
@@ -1035,7 +1035,7 @@ win.onclick = game.newPlay`
 					content: "";
 					width: 50px;
 					height: 10px;
-					background: #000;
+					background: black;
 					rotate: 45deg;
 					position: absolute;
 					top: 0;
@@ -1053,7 +1053,7 @@ win.onclick = game.newPlay`
 					content: "";
 					width: 30px;
 					height: 30px;
-					border: 10px solid #000;
+					border: 10px solid black;
 					border-radius: 50%;
 					position: absolute;
 					top: 0;
@@ -1217,11 +1217,11 @@ table.querySelectorAll("div").forEach((e) => {
 		flex-wrap: wrap;
 		width: 240px;
 		height: 240px;
-		border: 1px solid #000;
+		border: 1px solid black;
 		div {
 			width: 28px;
 			height: 28px;
-			border: 1px solid #000;
+			border: 1px solid black;
 			&.wpawn {
 				background: url(/u/img/shess/wpawn.png) center/100% 100%;
 			}
