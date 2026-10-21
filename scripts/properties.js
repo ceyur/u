@@ -91,7 +91,7 @@ export default {
 7. 700 – bold
 8. 800 – extrabold (ultrabold)
 9. 900 – black (heavy)
-10. 950	– extrablack (ultrablack)`,
+10. 950 – extrablack (ultrablack)`,
 "example": "font-weight: bold;",
 "default": " (normal)"
 		},
