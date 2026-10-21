@@ -82,15 +82,16 @@ export default {
 "name": "font-weight",
 "value": `: степень■жирности; – задаёт жирность текста
 Степени жирности:
-1. 100 – thin
-2. 200 – ultralight
+1. 100 – thin (hairline)
+2. 200 – extralight (ultralight)
 3. 300 – light
 4. 400 – normal
 5. 500 – medium
-6. 600 – semibold
+6. 600 – semibold (demibold)
 7. 700 – bold
-8. 800 – heavy
-9. 900 – black`,
+8. 800 – extrabold (ultrabold)
+9. 900 – black (heavy)
+10. 950	– extrablack (ultrablack)`,
 "example": "font-weight: bold;",
 "default": " (normal)"
 		},
