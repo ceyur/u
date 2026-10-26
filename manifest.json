@@ -14,13 +14,13 @@
 	"icons": [
 		{
 			"purpose": "maskable",
-			"src": "/u/img/mobile-svg.svg",
+			"src": "/u/img/new_manifest.svg",
 			"sizes": "any",
 			"type": "image/svg+xml"
 		},
 		{
 			"purpose": "any",
-			"src": "/u/img/black-svg.svg",
+			"src": "/u/img/new.svg",
 			"sizes": "any",
 			"type": "image/svg+xml"
 		}
