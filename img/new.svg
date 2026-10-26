@@ -5,7 +5,7 @@
 			stroke-width:1;
 			stroke-linecap:round;
 			fill:none;
-		}   
+		}
 	</style>
 	
 	<clipPath id="mask">
