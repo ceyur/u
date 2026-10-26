@@ -1,4 +1,4 @@
-const version = "v1";//gh
+const version = "v1";
 const files = [
  // "./",
  // "./index.html",
