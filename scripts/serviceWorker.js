@@ -52,12 +52,12 @@
 
 const version = "v1";
 const files = [
- "./",
- "./index.html",
- "./styles/styles.css",
- "./scripts/scripts.js",
- "./scripts/properties.js",
- "./manifest.json"
+ "/u/",
+ "/u/index.html",
+ "/u/styles/styles.css",
+ "/u/scripts/scripts.js",
+ "/u/scripts/properties.js",
+ "/u/manifest.json"
 ];
 
 self.addEventListener("install", e => {
