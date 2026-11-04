@@ -14,7 +14,7 @@
 	"icons": [
 		{
 			"purpose": "maskable",
-			"src": "/u/img/new.svg",
+			"src": "/u/img/new_manifest.svg",
 			"sizes": "any",
 			"type": "image/svg+xml"
 		},
