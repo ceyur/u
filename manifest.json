@@ -1,0 +1,28 @@
+{
+	"name": "Справочник css свойств",
+	"short_name": "CSS",
+	"description": "Удобный интерактивный справочник по свойствам элементов CSS. От базовых стилей текста и фона до анимации и трансформации. Всё самое важное для верстки в одном месте.",
+	"id": "/u/",
+	"start_url": "/u/",
+	"version": "1",
+	"lang": "ru-RU",
+	"theme_color": "#57f7cf",
+	"background_color": "#57f7cf",
+	"display": "standalone",
+	"display_override": ["standalone"],
+	"orientation": "portrait",
+	"icons": [
+		{
+			"purpose": "maskable",
+			"src": "/u/img/new.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		},
+		{
+			"purpose": "any",
+			"src": "/u/img/new.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	]
+}

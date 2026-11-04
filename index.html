@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Удобный интерактивный справочник по свойствам элементов CSS. От базовых стилей текста и фона до анимации и трансформации. Всё самое важное для верстки в одном месте.">
+		<title>Свойства элементов css</title>
+		<link rel="icon" href="/u/img/new.svg">
+		<link rel="manifest" href="/u/manifest.json">
+		<link rel="stylesheet" href="/u/styles/styles.css">
+		<link rel="stylesheet" href="/u/code/code.css">
+	</head>
+	<body>
+		<div id="information">
+			<button class="close-info" type="button" aria-label="Закрыть"></button>
+			<p><button class="close-info close" type="button" aria-label="Закрыть"></button><b>свойство</b>: значение; – объяснение свойства, его особенности
+Значения:
+1.
+2.
+<i>пример</i> (значение по умолчанию)
+Подобные свойства:
+1.
+2.
+</p>
+			<p>Обозначения:
+1. ↓ – свойство наследуется
+2. ■ – объединение
+</p>
+			<p>Значения, применяющиеся для всех свойств:
+1. inherit – элемент должен унаследовать родительское значение
+2. initial – элемент должен использовать значение по умолчанию (не браузерное)
+3. revert – элемент должен использовать браузерное значение, а не по умолчанию
+4. revert-layer – откатывает значение свойства к значению свойства в предыдущем каскадном слое
+5. unset – для наследуемых свойств значение работает так же, как inherit; для ненаследуемых свойств значение работает так же, как initial
+</p>
+		</div>
+		<button id="overlay" class="close-info" type="button" aria-label="Закрыть"></button>
+		<main>
+			<button id="close" class="close" type="button" style="display: none;" aria-label="Закрыть"></button>
+			<button id="button" class="button" type="button" style="display: none;" aria-label="Наверх">
+				<svg viewbox="0 0 50 50">
+					<path d="M13.75 24.75L25 13.5L36.25 24.75M25 13.5V36.5"/>
+				</svg>
+			</button>
+			<header>
+				<button id="go-info" type="button" aria-label="Информация">
+					<svg viewbox="0 0 29 29">
+						<circle fill="black" cx="14.5" cy="7" r="1"/>
+						<path stroke-width="2" d="M14.5 13l0 10"/>
+					</svg>
+				</button>
+				<h1>Свойства элементов css</h1>
+				<button id="go-code" type="button" aria-label="Готовый код">
+					<svg viewbox="0 0 29 29">
+						<path stroke-width="1.75" d="M19.75 9.25 25 14.5l-5.25 5.25m-10.5 0L4 14.5l5.25-5.25m7.5-3-4.5 16.5"/>
+					</svg>
+				</button>
+			</header>
+			<nav>
+				<button id="go-text" type="button">Свойства текста</button>
+				<button id="go-elements" type="button">Свойства элементов</button>
+				<button id="go-border" type="button">Свойства границы</button>
+				<button id="go-background" type="button">Свойства фона</button>
+				<button id="go-position" type="button">Позиционирование</button>
+				<button id="go-flex-containers" type="button">Флекс-контейнеры</button>
+				<button id="go-flex-elements" type="button">Флекс-элементы</button>
+				<button id="go-scrollbar" type="button">Свойства скроллбара</button>
+				<button id="go-pseudoclasses" type="button">Псевдоклассы</button>
+				<button id="go-pseudoelements" type="button">Псевдоэлементы</button>
+				<button id="go-transitions" type="button">Переходы</button>
+				<button id="go-animation" type="button">Анимация</button>
+				<button id="go-transform" type="button">Трансформация</button>
+			</nav>
+			<div id="content"></div>
+			<div id="code" style="display: none;"></div>
+		</main>
+		<script type="module" src="/u/scripts/scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,135 @@
+import objects from "/u/code/objects.js";
+const code = document.querySelector("#code");
+
+let styleInIframe = `html,
+	body {
+		margin: 0;
+		height: 100%;
+	}
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}`;
+
+const f = function(e) {
+	if (e.key === "Tab") {
+	    // Отменяем стандартный переход фокуса на другой элемент
+	    e.preventDefault();
+	
+	    // Получаем текущее выделение и диапазон (позицию курсора)
+	    const selection = window.getSelection();
+	    if (!selection.rangeCount) return;
+	    
+	    const range = selection.getRangeAt(0);
+	
+	    // Создаем текстовый узел с символом табуляции
+	    // Рекомендуется использовать '\t', но в HTML-контексте 
+	    // для корректного отображения может потребоваться CSS (см. шаг ниже)
+	    const tabNode = document.createTextNode('\t');
+	
+	    // Вставляем символ в позицию курсора
+	    range.insertNode(tabNode);
+	
+	    // Перемещаем курсор сразу после вставленного символа Tab
+	    range.setStartAfter(tabNode);
+	    range.setEndAfter(tabNode);
+	    
+	    // Сбрасываем старое выделение и добавляем обновленный диапазон
+	    selection.removeAllRanges();
+	    selection.addRange(range);
+	  }
+}
+
+
+Object.keys(objects).forEach(key => {
+	let div1 = document.createElement("div");
+	div1.id = key;
+	div1.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
+	let iframe = div1.querySelector("iframe")
+	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
+
+
+	const ifJs = objects[key].js !== "" ? '<button class="bJs">js</button>' : "";
+	
+	let div2 = document.createElement("div");
+	div2.innerHTML = `<div class="buttons">
+		<button class="bHtml aktiv">html</button>
+		<button class="bCss">css</button>
+		${ifJs}
+	</div>
+	<p class="html" style="display: block;" contenteditable></p>
+	<p class="css" style="display: none;" contenteditable></p>
+	<p class="js" style="display: none;" contenteditable></p>`;
+	let html = div2.querySelector('.html');
+	let css = div2.querySelector('.css');
+	let js = div2.querySelector('.js');
+
+	html.textContent = objects[key].html;
+	css.textContent = objects[key].css;
+	js.textContent = objects[key].js;
+	html.addEventListener("input", () => {
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
+	});
+	css.addEventListener("input", () => {
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
+	});
+	js.addEventListener("input", () => {
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
+	});
+
+	html.addEventListener("keydown", (e) => f(e));
+	css.addEventListener("keydown", (e) => f(e));
+	js.addEventListener("keydown", (e) => f(e));
+	
+
+	let button = div1.querySelector("button");
+	button.onclick = () => {
+		if (div2.style.display == "block") {
+			button.querySelector("svg").style.scale = "1";
+			div2.style.display = "none";
+		}
+		else {
+			button.querySelector("svg").style.scale = "1 -1";
+			div2.style.display = "block";
+		}
+	};
+
+	
+	let bHtml = div2.querySelector(".bHtml");
+	let bCss = div2.querySelector(".bCss");
+	let bJs;
+	if (ifJs !== "") {
+		bJs = div2.querySelector(".bJs");
+		bJs.onclick = () => {
+			bHtml.className = "";
+			bCss.className = "";
+			bJs.className = "aktiv";
+			
+			js.style.display = "block";
+			html.style.display = "none";
+			css.style.display = "none";
+		};
+	};
+	bHtml.onclick = () => {
+		bHtml.className = "aktiv";
+		bCss.className = "";
+		if (ifJs !== "") bJs.className = "";
+		
+		html.style.display = "block";
+		css.style.display = "none";
+		js.style.display = "none";
+	};
+	bCss.onclick = () => {
+		bHtml.className = "";
+		bCss.className = "aktiv";
+		if (ifJs !== "") bJs.className = "";
+		
+		css.style.display = "block";
+		html.style.display = "none";
+		js.style.display = "none";
+	};
+
+	code.appendChild(div1);
+	code.appendChild(div2);
+});
