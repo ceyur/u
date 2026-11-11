@@ -82,11 +82,11 @@ function createButtons() {
 	});
 	
 	paths.forEach(name => {
-	    document.querySelector(`#go-${name}`).onclick = () => {
-	    	history.pushState(null, null, "/u/" + name + "/");
+		document.querySelector(`#go-${name}`).onclick = () => {
+			history.pushState(null, null, "/u/" + name + "/");
 			go(name);
 			console.log(`go-${name}.click`);
-	    };
+		};
 	});
 }
 
@@ -152,9 +152,11 @@ ifReload();
 window.addEventListener("popstate", update);
 update();
 createButtons();
-navigator.serviceWorker.register("/u/serviceWorker.js", { scope: "/u/" })
-  .then(reg => console.log("Service Worker зарегистрирован, scope:", reg.scope))
-  .catch(err => console.error("Ошибка регистрации Service Worker:", err));
+window.addEventListener("load", () => {
+	navigator.serviceWorker.register("/u/serviceWorker.js", { scope: "/u/" })
+		.then(reg => console.log("Service Worker зарегистрирован, scope:", reg.scope))
+		.catch(err => console.error("Ошибка регистрации Service Worker:", err));
+});
 
 
 // if ("serviceWorker" in navigator) {
@@ -166,8 +168,8 @@ navigator.serviceWorker.register("/u/serviceWorker.js", { scope: "/u/" })
 // }
 
 // fetch("/u/properties.json")
-// .then(response => response.json())
-// .then(data => {
-// 	properties = data;
-// 	createApp();
-// });
+// 	.then(response => response.json())
+// 	.then(data => {
+// 		properties = data;
+// 		createApp();
+// 	});
