@@ -592,13 +592,12 @@ export default {
 		}
 	}
 }`,
-		"js": `const main = document.querySelector("#calculation")
-const input = main.querySelector("input")
+		"js": `const input = document.querySelector("input")
 
 const create = {
 	buttons: function() {
 		for (let key in buttons) {
-			main.querySelector("#" + key).onclick = buttons[key]
+			document.querySelector("#" + key).onclick = buttons[key]
 		}
 	},
 	keydown: function() {
@@ -808,12 +807,11 @@ create.keydown()`
 		border: 1px solid black;
 	}
 }`,
-		"js": `const main = document.querySelector("#snake")
-const start = main.querySelector("#start")
-const replay = main.querySelector("#replay")
-const win = main.querySelector("#win")
-const coins = main.querySelector("#coins")
-const table = main.querySelector("#table")
+		"js": `const start = document.querySelector("#start")
+const replay = document.querySelector("#replay")
+const win = document.querySelector("#win")
+const coins = document.querySelector("#coins")
+const table = document.querySelector("#table")
 
 const vectors = {
 	top: [0, -1],
@@ -1091,14 +1089,14 @@ const firstPlayer = document.querySelector("#firstPlayer")
 const secondPlayer = document.querySelector("#secondPlayer")
 const table = document.querySelector("#table")
 const overlay = document.querySelector("#overlay")
-let player = 1
-let list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
-let history = []
 
 start.onclick = () => {
 	firstPlayer.textContent = "Ходит 1 игрок"
 	start.style.display = "none"
 	overlay.style.display = "none"
+	player = 1
+	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+	history = []
 }
 win.onclick = () => {
 	firstPlayer.textContent = "Ходит 1 игрок"
@@ -1137,28 +1135,28 @@ table.querySelectorAll("div").forEach((e) => {
 				if (history[0].className == "X") history[0].classList.add("Xlast")
 				if (history[0].className == "O") history[0].classList.add("Olast")
 			}
-			if (list[0] == 1 & list[1] == 1 & list[2] == 1 |
-				list[3] == 1 & list[4] == 1 & list[5] == 1 |
-				list[6] == 1 & list[7] == 1 & list[8] == 1 |
-				list[0] == 1 & list[3] == 1 & list[6] == 1 |
-				list[1] == 1 & list[4] == 1 & list[7] == 1 |
-				list[2] == 1 & list[5] == 1 & list[8] == 1 |
-				list[0] == 1 & list[4] == 1 & list[8] == 1 |
-				list[2] == 1 & list[4] == 1 & list[6] == 1) {
+			if (list[0] == 1 && list[1] == 1 && list[2] == 1 ||
+				list[3] == 1 && list[4] == 1 && list[5] == 1 ||
+				list[6] == 1 && list[7] == 1 && list[8] == 1 ||
+				list[0] == 1 && list[3] == 1 && list[6] == 1 ||
+				list[1] == 1 && list[4] == 1 && list[7] == 1 ||
+				list[2] == 1 && list[5] == 1 && list[8] == 1 ||
+				list[0] == 1 && list[4] == 1 && list[8] == 1 ||
+				list[2] == 1 && list[4] == 1 && list[6] == 1) {
 				overlay.style.display = "block"
 				firstPlayer.textContent = ""
 				secondPlayer.textContent = ""
 				win.textContent = "Первый игрок победил! Сыграть ещё"
 				win.style.display = "block"
 			}
-			if (list[0] == 0 & list[1] == 0 & list[2] == 0 |
-				list[3] == 0 & list[4] == 0 & list[5] == 0 |
-				list[6] == 0 & list[7] == 0 & list[8] == 0 |
-				list[0] == 0 & list[3] == 0 & list[6] == 0 |
-				list[1] == 0 & list[4] == 0 & list[7] == 0 |
-				list[2] == 0 & list[5] == 0 & list[8] == 0 |
-				list[0] == 0 & list[4] == 0 & list[8] == 0 |
-				list[2] == 0 & list[4] == 0 & list[6] == 0) {
+			if (list[0] == 0 && list[1] == 0 && list[2] == 0 ||
+				list[3] == 0 && list[4] == 0 && list[5] == 0 ||
+				list[6] == 0 && list[7] == 0 && list[8] == 0 ||
+				list[0] == 0 && list[3] == 0 && list[6] == 0 ||
+				list[1] == 0 && list[4] == 0 && list[7] == 0 ||
+				list[2] == 0 && list[5] == 0 && list[8] == 0 ||
+				list[0] == 0 && list[4] == 0 && list[8] == 0 ||
+				list[2] == 0 && list[4] == 0 && list[6] == 0) {
 				overlay.style.display = "block"
 				firstPlayer.textContent = ""
 				secondPlayer.textContent = ""
@@ -1336,8 +1334,8 @@ const buttons = {
 
 const pieces = {
 	click: function(e, index) {
-		if (!clickPiece.on & e.className[0] == player) {
-			[clickX, clickY] = operations.inXY(index)
+		if (!clickPiece.on && e.className[0] == player) {
+			let [clickX, clickY] = operations.inXY(index)
 			clickPiece = {
 				on: true,
 				class: e.className,
@@ -1348,10 +1346,10 @@ const pieces = {
 			e.style.outline = "black solid 2px"
 		}
 		else if (e.style.outline == "black solid 2px") {
-			e.style.outline = "none"
 			clickPiece.on = false
+			e.style.outline = "none"
 		}
-		else if (pieces[clickPiece.class.slice(1)].run(e, index) & e.className[0] != clickPiece.class[0]) {
+		else if (pieces[clickPiece.class.slice(1)].run(e, index) && e.className[0] != player) {
 			if (["wking", "bking"].includes(e.className)) {
 				overlay.style.display = "block"
 				firstPlayer.textContent = ""
@@ -1369,7 +1367,7 @@ const pieces = {
 				player = (player == players.black) ? players.white : players.black
 				table.children[clickPiece.i].style.outline = "none"
 				table.children[clickPiece.i].className = ""
-	
+
 				if (player == players.white) {
 					firstPlayer.textContent = "Ходит 1 игрок"
 					secondPlayer.textContent = ""
@@ -1387,24 +1385,25 @@ const pieces = {
 			let [newX, newY] = operations.inXY(index)
 			let [dx, dy] = [Math.abs(clickPiece.x - newX), clickPiece.y - newY]
 
-			if ((dx == 0 & e.className == "" | dx == 1 & e.className != "") &
-				(dy == -1 & clickPiece.class[0] == players.white | dy == 1 & clickPiece.class[0] == players.black)) return true
-			if (dx == 0 & Math.abs(dy) == 2 & (clickPiece.y == 1 & table.children[operations.inI(clickPiece.x, 2)].className == "" |
-				clickPiece.y == 6 & table.children[operations.inI(clickPiece.x, 5)].className == "")) return true
+			if ((dx == 0 && !e.className || dx == 1 && e.className) &&
+				(dy == -1 && clickPiece.class[0] == players.white ||
+				dy == 1 && clickPiece.class[0] == players.black)) return true
+			if (dx == 0 && Math.abs(dy) == 2 &&
+				(clickPiece.y == 1 && !table.children[operations.inI(clickPiece.x, 2)].className ||
+				clickPiece.y == 6 && !table.children[operations.inI(clickPiece.x, 5)].className)) return true
 		}
 	},
 	rook: {
 		name: "rook",
 		run: function(e, index) {
 			let [newX, newY] = operations.inXY(index)
-				if (newX != clickPiece.x & newY != clickPiece.y) return false
+				if (newX != clickPiece.x && newY != clickPiece.y) return false
 
 			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
-				if (dx + dy < 2) return true
+				if (dx + dy == 1) return true
 
 			let small, big
 			if (dx == 0) {
-				dx = dy
 				[small, big] = [Math.min(clickPiece.y, newY), Math.max(clickPiece.y, newY)]
 			}
 			else {
@@ -1412,8 +1411,8 @@ const pieces = {
 			}
 
 			for (let j = small + 1; j < big; j++) {
-				if (clickPiece.x == newX & table.children[operations.inI(clickPiece.x, j)].className != "" |
-					clickPiece.y == newY & table.children[operations.inI(j, clickPiece.y)].className != "") return false
+				if (clickPiece.x == newX && table.children[operations.inI(clickPiece.x, j)].className != "" ||
+					clickPiece.y == newY && table.children[operations.inI(j, clickPiece.y)].className != "") return false
 			}
 			return true
 		}
