@@ -169,7 +169,7 @@ export default {
 	}
 	&:hover {
 		background: #9cdaff;
-		box-shadow: 0 0 10px #00008b
+		box-shadow: 0 0 10px #00008b;
 		scale: 1.15;
 		&:before {
 			border-color: blue;
@@ -203,7 +203,7 @@ export default {
 		border-radius: 9px;
 		margin-top: 6px;
 	}
-	&:before,
+	&:before, 
 	&:after {
 		content: "";
 		position: absolute;
@@ -388,9 +388,9 @@ export default {
 				}
 				#dark {
 					display: block;
-				}	
+				} 
 			}
-		}	
+		} 
 	}
 	div {
 		position: absolute;
@@ -403,7 +403,7 @@ export default {
 		background: linear-gradient(white, #ddd);
 		box-shadow: inset 0 0 2px #999;
 		border-radius: 50%;
-		#light,
+		#light, 
 		#dark {
 			width: 36px;
 			height: 36px;
@@ -475,7 +475,7 @@ export default {
 				background: #222;
 			}
 			&:after {
-				box-shadow: 0 0 4px black;	
+				box-shadow: 0 0 4px black;
 			}
 			+div {
 				left: 52px;
@@ -486,14 +486,14 @@ export default {
 				}
 				#night {
 					display: block;
-				}	
+				} 
 			}
 			&:hover {
 				&:after {
 					box-shadow: 0 0 10px black;
 				}
 			}
-		}	
+		} 
 	}
 	div {
 		position: absolute;
@@ -506,7 +506,7 @@ export default {
 		background: linear-gradient(yellow, #ffb300);
 		box-shadow: inset 0 0 2px #d8860b;
 		border-radius: 50%;
-		#day,
+		#day, 
 		#night {
 			width: 36px;
 			height: 36px;
@@ -643,7 +643,7 @@ const calculation = {
 	},
 	number: function(symbol) {
 		calculation.div_null()
-		if (input.value == "") {
+		if (!input.value) {
 			input.value += symbol
 		}
 		else if (!["π", "0"].includes(input.value.slice(-1))) {
@@ -685,7 +685,7 @@ const buttons = {
 	},
 	run: function() {
 		calculation.div_null()
-		if (input.value != "" && !["+", "-", "×", ":", ","].includes(input.value.slice(-1))) {
+		if (input.value && !["+", "-", "×", ":", ","].includes(input.value.slice(-1))) {
 			if (input.value.includes(":0+") ||
 				input.value.includes(":0-") ||
 				input.value.includes(":0×") ||
@@ -870,7 +870,7 @@ const create = {
 		window.addEventListener("touchmove", (e) => e.preventDefault(), {passive: false})
 
 		// window.addEventListener("touchmove", (e) => {
-		// 	e.preventDefault()
+		//  e.preventDefault()
 		// }, { passive: false })
 
 		window.addEventListener("touchend", (e) => {
@@ -878,12 +878,12 @@ const create = {
 			endY = e.changedTouches[0].clientY
 
 			if (Math.abs(endX - startX) > Math.abs(endY - startY)) {
-				if (endX - startX > 50 & vector != vectors.left) vector = vectors.right
-				if (endX - startX < -50 & vector != vectors.right) vector = vectors.left
+				if (endX - startX > 50 && vector != vectors.left) vector = vectors.right
+				if (endX - startX < -50 && vector != vectors.right) vector = vectors.left
 			}
 			else {
-				if (endY - startY > 50 & vector != vectors.top) vector = vectors.bottom
-				if (endY - startY < -50 & vector != vectors.bottom) vector = vectors.top
+				if (endY - startY > 50 && vector != vectors.top) vector = vectors.bottom
+				if (endY - startY < -50 && vector != vectors.bottom) vector = vectors.top
 			}
 		})
 	},
@@ -925,7 +925,7 @@ const game = {
 	run: function() {
 		let [newI, newX, newY] = game.newHead()
 
-		if (newX > 8 | newY > 8 | newX < 0 | newY < 0) {
+		if (newX > 8 || newY > 8 || newX < 0 || newY < 0) {
 			game.end(replay)
 		}
 		else if (snakeI.includes(newI)) {
@@ -935,7 +935,7 @@ const game = {
 			snakeI.push(newI)
 
 			coins.textContent = parseInt(coins.textContent) + 1
-			if (coins.textContent == 78) end(win)
+			if (coins.textContent == 78) game.end(win)
 			
 			let appleX, appleY
 			while (true) {
@@ -1411,8 +1411,8 @@ const pieces = {
 			}
 
 			for (let j = small + 1; j < big; j++) {
-				if (clickPiece.x == newX && table.children[operations.inI(clickPiece.x, j)].className != "" ||
-					clickPiece.y == newY && table.children[operations.inI(j, clickPiece.y)].className != "") return false
+				if (clickPiece.x == newX && table.children[operations.inI(clickPiece.x, j)].className ||
+					clickPiece.y == newY && table.children[operations.inI(j, clickPiece.y)].className) return false
 			}
 			return true
 		}
@@ -1423,14 +1423,14 @@ const pieces = {
 			let [newX, newY] = operations.inXY(index)
 			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
 
-			if (dx + dy == 3 & dx < 3 & dy < 3) return true
+			if (dx + dy == 3 && dx < 3 && dy < 3) return true
 		}
 	},
 	bishop: {
 		name: "bishop",
 		run: function(e, index) {
 			let [newX, newY] = operations.inXY(index)
-				if (newX == clickPiece.x | newY == clickPiece.y) return false
+				if (newX == clickPiece.x || newY == clickPiece.y) return false
 
 			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
 				if (dx + dy < 2) return true
@@ -1442,7 +1442,7 @@ const pieces = {
 				(newX > clickPiece.x) ? newX-- : newX++
 				(newY > clickPiece.y) ? newY-- : newY++
 
-				if (table.children[operations.inI(newX, newY)].className != "") return false
+				if (table.children[operations.inI(newX, newY)].className) return false
 			}
 			return true
 		} 
@@ -1453,13 +1453,13 @@ const pieces = {
 			let [newX, newY] = operations.inXY(index)
 			let [dx, dy] = [Math.abs(clickPiece.x - newX), Math.abs(clickPiece.y - newY)]
 
-			if (dx + dy < 3 & dx < 2 & dy < 2) return true
+			if (dx + dy < 3 && dx < 2 && dy < 2) return true
 		}
 	},
 	queen: {
 		name: "queen",
 		run: function(e, index) {
-			return pieces.rook.run(e, index) | pieces.bishop.run(e, index)
+			return pieces.rook.run(e, index) || pieces.bishop.run(e, index)
 		}
 	}
 }
