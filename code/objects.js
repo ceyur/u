@@ -1096,7 +1096,7 @@ start.onclick = () => {
 	overlay.style.display = "none"
 	player = 1
 	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
-	history = []
+	historyClick = []
 }
 win.onclick = () => {
 	firstPlayer.textContent = "Ходит 1 игрок"
@@ -1105,14 +1105,14 @@ win.onclick = () => {
 	table.querySelectorAll("div").forEach((e) => e.className = "")
 	player = 1
 	list = [ 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
-	history = []
+	historyClick = []
 }
 
 table.querySelectorAll("div").forEach((e) => {
 	e.onclick = () => {
 		if (e.classList.length == 0) {
 			if (player == 1) {
-				history.push(e)
+				historyClick.push(e)
 				list[e.id] = 1
 				e.className = "X"
 				firstPlayer.textContent = ""
@@ -1120,20 +1120,20 @@ table.querySelectorAll("div").forEach((e) => {
 				player++
 			}
 			else {
-				history.push(e)
+				historyClick.push(e)
 				list[e.id] = 0
 				e.className = "O"
 				firstPlayer.textContent = "Ходит 1 игрок"
 				secondPlayer.textContent = ""
 				player--
 			}
-			if (history.length > 6) {
-				history[0].className = ""
-				history.shift()
+			if (historyClick.length > 6) {
+				historyClick[0].className = ""
+				historyClick.shift()
 			}
-			if (history.length == 6) {
-				if (history[0].className == "X") history[0].classList.add("Xlast")
-				if (history[0].className == "O") history[0].classList.add("Olast")
+			if (historyClick.length == 6) {
+				if (historyClick[0].className == "X") historyClick[0].classList.add("Xlast")
+				if (historyClick[0].className == "O") historyClick[0].classList.add("Olast")
 			}
 			if (list[0] == 1 && list[1] == 1 && list[2] == 1 ||
 				list[3] == 1 && list[4] == 1 && list[5] == 1 ||
