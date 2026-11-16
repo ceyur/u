@@ -90,6 +90,8 @@
 		}
 		&.bCopy {
 			flex: 0 0 31px;
+			fill: black;
+			stroke: none;
 			&:hover {
 				box-shadow: 0 0 10px green;
 			}
