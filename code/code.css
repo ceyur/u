@@ -88,8 +88,11 @@
 		&.bJs:hover {
 			box-shadow: 0 0 10px #eddb4d;
 		}
-		&.bCopy:hover {
-			box-shadow: 0 0 10px green;
+		&.bCopy {
+			width: 31px;
+			&:hover {
+				box-shadow: 0 0 10px green;
+			}
 		}
 		&.aktiv {
 			color: white;
