@@ -79,31 +79,40 @@
 		background: white;
 		border: 1px solid black;
 		border-radius: 15px;
-		&:nth-child(1):hover {
+		&.bHtml:hover {
 			box-shadow: 0 0 10px #f16528;
 		}
-		&:nth-child(2):hover {
+		&.bCss:hover {
 			box-shadow: 0 0 10px #29a8df;
 		}
-		&:nth-child(3):hover {
+		&.bJs:hover {
 			box-shadow: 0 0 10px #eddb4d;
+		}
+		&.bCopy:hover {
+			box-shadow: 0 0 10px green;
 		}
 		&.aktiv {
 			color: white;
-			&:nth-child(1) {
+			&.bHtml{
 				background: #f16528;
 				&:hover {
 					box-shadow: none;
 				}
 			}
-			&:nth-child(2) {
+			&.bCss {
 				background: #29a8df;
 				&:hover {
 					box-shadow: none;
 				}
 			}
-			&:nth-child(3) {
+			&.bJs {
 				background: #eddb4d;
+				&:hover {
+					box-shadow: none;
+				}
+			}
+			&.bCopy {
+				background: green;
 				&:hover {
 					box-shadow: none;
 				}
