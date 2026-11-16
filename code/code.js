@@ -137,6 +137,16 @@ Object.keys(objects).forEach(key => {
 		css.style.display = "none";
 	};
 
+	// Кнопка копировать
+	bCopy.onclick = () => {
+		let code = "";
+		if (html.style.display == "block") code = html.textContent;
+		else if (css.style.display == "block") code = css.textContent;
+		else if (js.style.display == "block") code = js.textContent;
+		
+		navigator.clipboard.writeText(code);
+	};
+
 	// Добавление объектов в DOM
 	code.appendChild(div1);
 	code.appendChild(div2);
