@@ -127,7 +127,7 @@ Object.keys(objects).forEach(key => {
 		html.style.display = "none";
 		js.style.display = "none";
 	};
-	bJs.onclick = () => {
+	if (objects[key].js) bJs.onclick = () => {
 		bHtml.className = "";
 		bCss.className = "";
 		if (objects[key].js) bJs.className = "aktiv";
