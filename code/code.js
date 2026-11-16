@@ -138,6 +138,7 @@ Object.keys(objects).forEach(key => {
 	};
 
 	// Кнопка копировать
+	let bCopy = div2.querySelector(".bCopy");
 	bCopy.onclick = () => {
 		let code = "";
 		if (html.style.display == "block") code = html.textContent;
