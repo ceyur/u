@@ -72,11 +72,11 @@ Object.keys(objects).forEach(key => {
 	
 	let html = div2.querySelector(".html");
 	let css = div2.querySelector(".css");
-	if (objects[key].js) let js = div2.querySelector(".js");
+	let js = div2.querySelector(".js");
 
 	html.textContent = objects[key].html;
 	css.textContent = objects[key].css;
-	if (objects[key].js) js.textContent = objects[key].js;
+	js.textContent = objects[key].js;
 	
 	html.addEventListener("input", () => {
 		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
@@ -84,15 +84,13 @@ Object.keys(objects).forEach(key => {
 	css.addEventListener("input", () => {
 		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
 	});
-	if (objects[key].js) {
-		js.addEventListener("input", () => {
-			iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
-		});
-	}
+	js.addEventListener("input", () => {
+		iframe.srcdoc = `${html.textContent}<style>${styleInIframe}${css.textContent}</style><script>${js.textContent}</script>`;
+	});
 
 	html.addEventListener("keydown", (e) => keydown(e));
 	css.addEventListener("keydown", (e) => keydown(e));
-	if (objects[key].js) js.addEventListener("keydown", (e) => keydown(e));
+	js.addEventListener("keydown", (e) => keydown(e));
 	
 	// Стрелка
 	let button = div1.querySelector("button");
@@ -110,7 +108,7 @@ Object.keys(objects).forEach(key => {
 	// Переключатели кода
 	let bHtml = div2.querySelector(".bHtml");
 	let bCss = div2.querySelector(".bCss");
-	if (objects[key].js) let bJs = div2.querySelector(".bJs");
+	let bJs = objects[key].js ? div2.querySelector(".bJs") : "";
 	bHtml.onclick = () => {
 		bHtml.className = "aktiv";
 		bCss.className = "";
