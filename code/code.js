@@ -1,7 +1,7 @@
 import objects from "/u/code/objects.js";
 const code = document.querySelector("#code");
 
-let styleInIframe = `html,
+const styleInIframe = `html,
 	body {
 		margin: 0;
 		height: 100%;
@@ -10,50 +10,15 @@ let styleInIframe = `html,
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}`;
-
-const f = function(e) {
-	if (e.key === "Tab") {
-	    // Отменяем стандартный переход фокуса на другой элемент
-	    e.preventDefault();
-	
-	    // Получаем текущее выделение и диапазон (позицию курсора)
-	    const selection = window.getSelection();
-	    if (!selection.rangeCount) return;
-	    
-	    const range = selection.getRangeAt(0);
-	
-	    // Создаем текстовый узел с символом табуляции
-	    // Рекомендуется использовать '\t', но в HTML-контексте 
-	    // для корректного отображения может потребоваться CSS (см. шаг ниже)
-	    const tabNode = document.createTextNode('\t');
-	
-	    // Вставляем символ в позицию курсора
-	    range.insertNode(tabNode);
-	
-	    // Перемещаем курсор сразу после вставленного символа Tab
-	    range.setStartAfter(tabNode);
-	    range.setEndAfter(tabNode);
-	    
-	    // Сбрасываем старое выделение и добавляем обновленный диапазон
-	    selection.removeAllRanges();
-	    selection.addRange(range);
-	  }
-}
-
-
-Object.keys(objects).forEach(key => {
-	let div1 = document.createElement("div");
-	div1.id = key;
-	div1.innerHTML = `<button><svg viewBox="0 0 4 4" width="29px" height="29px" stroke-width="0.28"><path d="M1 1.65l1 1l1 -1"/></svg></button><iframe></iframe>`;
-	let iframe = div1.querySelector("iframe")
-	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
-
-
-	const ifJs = objects[key].js !== "" ? '<button class="bJs">js</button>' : "";
-	
-	let div2 = document.createElement("div");
-	div2.innerHTML = `<div class="buttons">
+	}
+	`;
+const htmlInDiv1 = `<button>
+	<svg width="29px" height="29px" viewBox="0 0 4 4" stroke-width="0.28">
+		<path d="M1 1.65l1 1l1 -1"/>
+	</svg>
+</button>
+<iframe></iframe>`;
+const htmlInDiv2 = `<div class="buttons">
 		<button class="bHtml aktiv">html</button>
 		<button class="bCss">css</button>
 		${ifJs}
@@ -61,9 +26,52 @@ Object.keys(objects).forEach(key => {
 	<p class="html" style="display: block;" contenteditable></p>
 	<p class="css" style="display: none;" contenteditable></p>
 	<p class="js" style="display: none;" contenteditable></p>`;
-	let html = div2.querySelector('.html');
-	let css = div2.querySelector('.css');
-	let js = div2.querySelector('.js');
+
+const f = function(e) {
+	if (e.key === "Tab") {
+		e.preventDefault();
+	
+		// Получаем текущее выделение и диапазон (позицию курсора)
+		const selection = window.getSelection();
+		if (!selection.rangeCount) return;
+		
+		const range = selection.getRangeAt(0);
+	
+		// Создаем текстовый узел с символом табуляции
+		// Рекомендуется использовать '\t', но в HTML-контексте 
+		// для корректного отображения может потребоваться CSS (см. шаг ниже)
+		const tabNode = document.createTextNode("\t");
+	
+		// Вставляем символ в позицию курсора
+		range.insertNode(tabNode);
+	
+		// Перемещаем курсор сразу после вставленного символа Tab
+		range.setStartAfter(tabNode);
+		range.setEndAfter(tabNode);
+		
+		// Сбрасываем старое выделение и добавляем обновленный диапазон
+		selection.removeAllRanges();
+		selection.addRange(range);
+	  }
+}
+
+
+Object.keys(objects).forEach(key => {
+	// Первый блок с iframe
+	let div1 = document.createElement("div");
+	div1.id = key;
+	div1.innerHTML = htmlInDiv1;
+	let iframe = div1.querySelector("iframe");
+	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
+
+	// Второй блок с кодом
+	const ifJs = objects[key].js ? `<button class="bJs">js</button>` : "";
+	
+	let div2 = document.createElement("div");
+	div2.innerHTML = htmlInDiv2;
+	let html = div2.querySelector(".html");
+	let css = div2.querySelector(".css");
+	let js = div2.querySelector(".js");
 
 	html.textContent = objects[key].html;
 	css.textContent = objects[key].css;
