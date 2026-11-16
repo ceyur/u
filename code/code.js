@@ -18,14 +18,6 @@ const htmlInDiv1 = `<button>
 	</svg>
 </button>
 <iframe></iframe>`;
-const htmlInDiv2 = `<div class="buttons">
-		<button class="bHtml aktiv">html</button>
-		<button class="bCss">css</button>
-		${ifJs}
-	</div>
-	<p class="html" style="display: block;" contenteditable></p>
-	<p class="css" style="display: none;" contenteditable></p>
-	<p class="js" style="display: none;" contenteditable></p>`;
 
 const f = function(e) {
 	if (e.key === "Tab") {
@@ -68,7 +60,14 @@ Object.keys(objects).forEach(key => {
 	const ifJs = objects[key].js ? `<button class="bJs">js</button>` : "";
 	
 	let div2 = document.createElement("div");
-	div2.innerHTML = htmlInDiv2;
+	div2.innerHTML = `<div class="buttons">
+		<button class="bHtml aktiv">html</button>
+		<button class="bCss">css</button>
+		${ifJs}
+	</div>
+	<p class="html" style="display: block;" contenteditable></p>
+	<p class="css" style="display: none;" contenteditable></p>
+	<p class="js" style="display: none;" contenteditable></p>`;
 	let html = div2.querySelector(".html");
 	let css = div2.querySelector(".css");
 	let js = div2.querySelector(".js");
