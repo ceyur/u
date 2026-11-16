@@ -89,7 +89,7 @@
 			box-shadow: 0 0 10px #eddb4d;
 		}
 		&.bCopy {
-			width: 31px;
+			flex: 0 0 31px;
 			&:hover {
 				box-shadow: 0 0 10px green;
 			}
@@ -110,12 +110,6 @@
 			}
 			&.bJs {
 				background: #eddb4d;
-				&:hover {
-					box-shadow: none;
-				}
-			}
-			&.bCopy {
-				background: green;
 				&:hover {
 					box-shadow: none;
 				}
