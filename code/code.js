@@ -61,8 +61,8 @@ Object.keys(objects).forEach(key => {
 		<button class="bCss">css</button>
 		${objects[key].js ? `<button class="bJs">js</button>` : ""}
 		<button class="bCopy">
-			<svg width="16" height="16" viewBox="0 0 21 21">
-			  <rect x="1" y="6" width="14" height="14" stroke="black" fill="transparent" stroke-width="2" rx="2"></rect>
+			<svg viewBox="0 0 21 21">
+			  <rect x="1" y="6" width="14" height="14" stroke="black" fill="white" stroke-width="2" rx="2"></rect>
 			  <rect x="6" y="1" width="14" height="14" stroke="black" fill="white" stroke-width="2" rx="2"></rect>
 			</svg>
 		</button>
