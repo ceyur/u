@@ -91,6 +91,8 @@
 		&.bCopy {
 			flex: 0 0 31px;
 			svg {
+				width: 16px;
+				height: 16px;
 				fill: black;
 				stroke: none;
 			}
@@ -141,5 +143,12 @@
 	}
 	#code > div:nth-child(even) {
 		display: none;
+		.buttons button.bCopy {
+			width: 25.5px;
+			svg {
+				width: 13px;
+				height: 13px;
+			}
+		}
 	}
 }
