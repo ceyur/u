@@ -1,3 +1,36 @@
+// const topics = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
+// const apps = ["calculation", "snake", "tic-tac-toe", "shess"];
+// const routes = [ 
+// 	{path: (first) => first == "", handler: () => goMain()},
+// 	{path: (first) => first == "information", handler: () => info.visible()},
+
+// 	{path: (first) => topics.includes(first), handler: (params) => go(params.topic)},
+// 	{path: (first, second) => topics.includes(first) && second == "information", handler: (params) => {
+// 		go(params.topic);
+// 		info.visible();
+// 	}},
+
+// 	{path: (first) => first == "code", handler: () => goCode()},
+// 	{path: (first, second) => first == "code" && second == "information", handler: () => {
+// 		goCode(); 
+// 		info.visible(); 
+// 	}},
+// 	{path: (first, second) => first == "code" && apps.includes(second), handler: (params) => {
+// 		goCode();
+// 		goApp(params.app);
+// 	}}
+// ];
+
+// function update() {
+// 	let path = window.location.pathname.split("/");
+// 	let lastPath = path.at(-2);
+// 	let secondLastPath = path.at(-3);
+// 	routes.forEach((e) => {
+// 		if (e.path(secondLastPath, lastPath)) e.handler();
+// 	});
+// 	console.log("Update:", window.location.pathname);
+// }
+
 import properties from "/u/scripts/properties.js";
 const paths = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 
@@ -32,6 +65,7 @@ function update() {
 	let path = window.location.pathname.split("/");
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
+	console.log("secondLastPath", secondLastPath);
 	let ifInfo = lastPath.includes("information");
 	let basePath = ifInfo ? secondLastPath : lastPath;
 
