@@ -79,13 +79,13 @@
 		background: white;
 		border: 1px solid black;
 		border-radius: 15px;
-		&.bHtml:hover {
+		&:hth-child(1):hover {
 			box-shadow: 0 0 10px #f16528;
 		}
-		&.bCss:hover {
+		&:nth-child(2):hover {
 			box-shadow: 0 0 10px #29a8df;
 		}
-		&.bJs:hover {
+		&:nth-child(3):hover {
 			box-shadow: 0 0 10px #eddb4d;
 		}
 		&.bCopy {
@@ -98,19 +98,19 @@
 		}
 		&.aktiv {
 			color: white;
-			&.bHtml{
+			&:nth-child(1) {
 				background: #f16528;
 				&:hover {
 					box-shadow: none;
 				}
 			}
-			&.bCss {
+			&:nth-child(2) {
 				background: #29a8df;
 				&:hover {
 					box-shadow: none;
 				}
 			}
-			&.bJs {
+			&:nth-child(3) {
 				background: #eddb4d;
 				&:hover {
 					box-shadow: none;
