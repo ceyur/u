@@ -89,6 +89,9 @@
 			box-shadow: 0 0 10px #eddb4d;
 		}
 		&.bCopy {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			flex: 0 0 31px;
 			svg {
 				width: 16px;
