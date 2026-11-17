@@ -144,7 +144,7 @@
 	#code > div:nth-child(even) {
 		display: none;
 		.buttons button.bCopy {
-			width: 25.5px;
+			flex: 0 0 25.5px;
 			svg {
 				width: 13px;
 				height: 13px;
