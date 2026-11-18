@@ -1,3 +1,21 @@
+import properties from "/u/scripts/properties.js";
+
+const information = document.querySelector("#information");
+const overlay = document.querySelector("#overlay");
+const main = document.querySelector("main");
+// const header = document.querySelector("header");
+const h1 = document.querySelector("h1");
+const nav = document.querySelector("nav");
+const content = document.querySelector("#content");
+const code = document.querySelector("#code");
+
+const close = document.querySelector("#close");
+const button = document.querySelector("#button");
+const go_code = document.querySelector("#go-code");
+const go_info = document.querySelector("#go-info");
+const close_info = document.querySelectorAll(".close-info");
+
+// const paths = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const topics = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const apps = ["calculation", "snake", "tic-tac-toe", "shess"];
 const routes = [ 
@@ -5,7 +23,6 @@ const routes = [
 	{path: (first, second) => first === "u" && second === "information", handler: () => {
 		goMain();
 		info.visible();
-		console.log("i");
 	}},
 
 	{path: (first, second) => first === "u" && topics.includes(second), handler: (first, second) => go(second)},
@@ -25,34 +42,6 @@ const routes = [
 	}}
 ];
 
-function update() {
-	let path = window.location.pathname.split("/");
-	let lastPath = path.at(-2);
-	let secondLastPath = path.at(-3);
-	routes.forEach((e) => {
-		if (e.path(secondLastPath, lastPath)) e.handler(secondLastPath, lastPath);
-	});
-	console.log("Update:", window.location.pathname);
-}
-
-import properties from "/u/scripts/properties.js";
-// const paths = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
-
-const information = document.querySelector("#information");
-const overlay = document.querySelector("#overlay");
-const main = document.querySelector("main");
-// const header = document.querySelector("header");
-const h1 = document.querySelector("h1");
-const nav = document.querySelector("nav");
-const content = document.querySelector("#content");
-const code = document.querySelector("#code");
-
-const close = document.querySelector("#close");
-const button = document.querySelector("#button");
-const go_code = document.querySelector("#go-code");
-const go_info = document.querySelector("#go-info");
-const close_info = document.querySelectorAll(".close-info");
-
 function ifReload() {
 	if (window.location.search.includes("?")) {
 		let path = window.location.search.replace("?p=/u", "").replaceAll("/", "");
@@ -65,6 +54,15 @@ function ifReload() {
 	}
 }
 
+function update() {
+	let path = window.location.pathname.split("/");
+	let lastPath = path.at(-2);
+	let secondLastPath = path.at(-3);
+	routes.forEach((e) => {
+		if (e.path(secondLastPath, lastPath)) e.handler(secondLastPath, lastPath);
+	});
+	console.log("Update:", window.location.pathname);
+}
 // function update() {
 // 	let path = window.location.pathname.split("/");
 // 	let lastPath = path.at(-2);
