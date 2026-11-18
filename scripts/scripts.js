@@ -44,15 +44,27 @@ const routes = [
 
 function ifReload() {
 	if (window.location.search.includes("?")) {
-		let path = window.location.search.replace("?p=/u", "").replaceAll("/", "");
-		let ifInfo = path.includes("information");
-		let basePath = path.replace("information", "");
-		let newPath = topics.includes(basePath) || basePath === "code" ? basePath + "/" : "";
-		let finalPath = ifInfo ? newPath + "information/" : newPath;
-		window.history.replaceState(null, null, "/u/" + finalPath);
+		let path = window.location.search.replace("?p=", "").split("/");
+		let lastPath = path.at(-2);
+		let secondLastPath = path.at(-3);
+		routes.forEach((e) => {
+			if (e.path(secondLastPath, lastPath)) window.history.replaceState(null, null, window.location.search.replace("?p=", ""));
+		});
 		console.log("Reload:", window.location.pathname);
 	}
 }
+
+// function ifReload() {
+// 	if (window.location.search.includes("?")) {
+// 		let path = window.location.search.replace("?p=/u", "").replaceAll("/", "");
+// 		let ifInfo = path.includes("information");
+// 		let basePath = path.replace("information", "");
+// 		let newPath = topics.includes(basePath) || basePath === "code" ? basePath + "/" : "";
+// 		let finalPath = ifInfo ? newPath + "information/" : newPath;
+// 		window.history.replaceState(null, null, "/u/" + finalPath);
+// 		console.log("Reload:", window.location.pathname);
+// 	}
+// }
 
 function update() {
 	let path = window.location.pathname.split("/");
