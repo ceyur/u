@@ -38,7 +38,7 @@ const routes = [
 	}},
 	{path: (first, second) => first == "code" && apps.includes(second), handler: (first, second) => {
 		goCode();
-		// goApp(second);
+		goApp(second);
 	}}
 ];
 
@@ -63,20 +63,6 @@ function update() {
 	});
 	console.log("Update:", window.location.pathname);
 }
-// function update() {
-// 	let path = window.location.pathname.split("/");
-// 	let lastPath = path.at(-2);
-// 	let secondLastPath = path.at(-3);
-// 	let ifInfo = lastPath === "information";
-// 	let basePath = ifInfo ? secondLastPath : lastPath;
-
-// 	if (paths.includes(basePath)) go(basePath);
-// 	else if (basePath === "code") goCode();
-// 	else goMain();
-	
-// 	if (ifInfo) info.visible();
-// 	console.log("Update:", window.location.pathname);
-// }
 
 function createButtons() {
 	close.onclick = () => {
@@ -148,6 +134,11 @@ function goCode() {
 	h1.innerHTML = "Готовый код";
 	import("/u/code/code.js");
 	window.scrollTo(0, 0);
+}
+
+function goApp(path) {
+	// code.querySelector("#${path} iframe").className = "";
+	main.style.position = "fixed";
 }
 
 function go(name) {
