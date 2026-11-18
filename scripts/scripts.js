@@ -66,7 +66,7 @@ function update() {
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
 	console.log("lastPath", lastPath);
-	let ifInfo = lastPath.includes("information");
+	let ifInfo = lastPath == "information";
 	let basePath = ifInfo ? secondLastPath : lastPath;
 
 	if (paths.includes(basePath)) go(basePath);
