@@ -14,7 +14,7 @@ const routes = [
 		info.visible();
 	}},
 
-	{path: (first, second) => first === "u" && first == "code", handler: () => goCode()},
+	{path: (first, second) => first === "u" && second == "code", handler: () => goCode()},
 	{path: (first, second) => first == "code" && second == "information", handler: () => {
 		goCode(); 
 		info.visible(); 
