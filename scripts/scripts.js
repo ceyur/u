@@ -1,38 +1,38 @@
-// const topics = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
-// const apps = ["calculation", "snake", "tic-tac-toe", "shess"];
-// const routes = [ 
-// 	{path: (first) => first == "", handler: () => goMain()},
-// 	{path: (first) => first == "information", handler: () => info.visible()},
+const topics = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
+const apps = ["calculation", "snake", "tic-tac-toe", "shess"];
+const routes = [ 
+	{path: (first) => first == "", handler: () => goMain()},
+	{path: (first) => first == "information", handler: () => info.visible()},
 
-// 	{path: (first) => topics.includes(first), handler: (params) => go(params.topic)},
-// 	{path: (first, second) => topics.includes(first) && second == "information", handler: (params) => {
-// 		go(params.topic);
-// 		info.visible();
-// 	}},
+	{path: (first) => topics.includes(first), handler: (params) => go(params.topic)},
+	{path: (first, second) => topics.includes(first) && second == "information", handler: (params) => {
+		go(params.topic);
+		info.visible();
+	}},
 
-// 	{path: (first) => first == "code", handler: () => goCode()},
-// 	{path: (first, second) => first == "code" && second == "information", handler: () => {
-// 		goCode(); 
-// 		info.visible(); 
-// 	}},
-// 	{path: (first, second) => first == "code" && apps.includes(second), handler: (params) => {
-// 		goCode();
-// 		goApp(params.app);
-// 	}}
-// ];
+	{path: (first) => first == "code", handler: () => goCode()},
+	{path: (first, second) => first == "code" && second == "information", handler: () => {
+		goCode(); 
+		info.visible(); 
+	}},
+	{path: (first, second) => first == "code" && apps.includes(second), handler: (params) => {
+		goCode();
+		goApp(params.app);
+	}}
+];
 
-// function update() {
-// 	let path = window.location.pathname.split("/");
-// 	let lastPath = path.at(-2);
-// 	let secondLastPath = path.at(-3);
-// 	routes.forEach((e) => {
-// 		if (e.path(secondLastPath, lastPath)) e.handler();
-// 	});
-// 	console.log("Update:", window.location.pathname);
-// }
+function update() {
+	let path = window.location.pathname.split("/");
+	let lastPath = path.at(-2);
+	let secondLastPath = path.at(-3);
+	routes.forEach((e) => {
+		if (e.path(secondLastPath, lastPath)) e.handler();
+	});
+	console.log("Update:", window.location.pathname);
+}
 
 import properties from "/u/scripts/properties.js";
-const paths = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
+// const paths = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 
 const information = document.querySelector("#information");
 const overlay = document.querySelector("#overlay");
@@ -54,27 +54,27 @@ function ifReload() {
 		let path = window.location.search.replace("?p=/u", "").replaceAll("/", "");
 		let ifInfo = path.includes("information");
 		let basePath = path.replace("information", "");
-		let newPath = paths.includes(basePath) || basePath === "code" ? basePath + "/" : "";
+		let newPath = topics.includes(basePath) || basePath === "code" ? basePath + "/" : "";
 		let finalPath = ifInfo ? newPath + "information/" : newPath;
 		window.history.replaceState(null, null, "/u/" + finalPath);
 		console.log("Reload:", window.location.pathname);
 	}
 }
 
-function update() {
-	let path = window.location.pathname.split("/");
-	let lastPath = path.at(-2);
-	let secondLastPath = path.at(-3);
-	let ifInfo = lastPath === "information";
-	let basePath = ifInfo ? secondLastPath : lastPath;
+// function update() {
+// 	let path = window.location.pathname.split("/");
+// 	let lastPath = path.at(-2);
+// 	let secondLastPath = path.at(-3);
+// 	let ifInfo = lastPath === "information";
+// 	let basePath = ifInfo ? secondLastPath : lastPath;
 
-	if (paths.includes(basePath)) go(basePath);
-	else if (basePath === "code") goCode();
-	else goMain();
+// 	if (paths.includes(basePath)) go(basePath);
+// 	else if (basePath === "code") goCode();
+// 	else goMain();
 	
-	if (ifInfo) info.visible();
-	console.log("Update:", window.location.pathname);
-}
+// 	if (ifInfo) info.visible();
+// 	console.log("Update:", window.location.pathname);
+// }
 
 function createButtons() {
 	close.onclick = () => {
@@ -114,7 +114,7 @@ function createButtons() {
 		}
 	});
 	
-	paths.forEach(name => {
+	topics.forEach(name => {
 		document.querySelector(`#go-${name}`).onclick = () => {
 			history.pushState(null, null, "/u/" + name + "/");
 			go(name);
