@@ -8,20 +8,20 @@ const routes = [
 		console.log("i");
 	}},
 
-	{path: (first, second) => first === "u" && topics.includes(second), handler: (path) => go(path)},
-	{path: (first, second) => topics.includes(first) && second == "information", handler: (path) => {
-		go(path);
+	{path: (first, second) => first === "u" && topics.includes(second), handler: (first, second) => go(second)},
+	{path: (first, second) => topics.includes(first) && second == "information", handler: (first, second) => {
+		go(first);
 		info.visible();
 	}},
 
-	{path: (first, second) => first === "u" && first == "code", handler: (path) => goCode()},
+	{path: (first, second) => first === "u" && first == "code", handler: () => goCode()},
 	{path: (first, second) => first == "code" && second == "information", handler: () => {
 		goCode(); 
 		info.visible(); 
 	}},
-	{path: (first, second) => first == "code" && apps.includes(second), handler: (path) => {
+	{path: (first, second) => first == "code" && apps.includes(second), handler: (first, second) => {
 		goCode();
-		// goApp(path);
+		// goApp(second);
 	}}
 ];
 
@@ -29,9 +29,8 @@ function update() {
 	let path = window.location.pathname.split("/");
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
-	console.log(secondLastPath, lastPath);
 	routes.forEach((e) => {
-		if (e.path(secondLastPath, lastPath)) e.handler();
+		if (e.path(secondLastPath, lastPath)) e.handler(secondLastPath, lastPath);
 	});
 	console.log("Update:", window.location.pathname);
 }
