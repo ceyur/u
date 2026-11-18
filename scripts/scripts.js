@@ -2,7 +2,11 @@ const topics = ["text", "elements", "border", "background", "position", "flex-co
 const apps = ["calculation", "snake", "tic-tac-toe", "shess"];
 const routes = [ 
 	{path: (first) => first == "", handler: (path) => goMain()},
-	{path: (first) => first == "information", handler: (path) => info.visible()},
+	{path: (first) => first == "information", handler: (path) => {
+		goMain();
+		info.visible();
+		console.log("i");
+	}},
 
 	{path: (first) => topics.includes(first), handler: (path) => go(path)},
 	{path: (first, second) => topics.includes(first) && second == "information", handler: (path) => {
