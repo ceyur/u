@@ -65,7 +65,6 @@ function update() {
 	let path = window.location.pathname.split("/");
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
-	console.log("lastPath", lastPath);
 	let ifInfo = lastPath == "information";
 	let basePath = ifInfo ? secondLastPath : lastPath;
 
