@@ -137,7 +137,7 @@ function goCode() {
 }
 
 function goApp(path) {
-	// code.querySelector("#${path} iframe").className = "";
+	code.querySelector("#${path} iframe").className = "open";
 	main.style.position = "fixed";
 }
 
