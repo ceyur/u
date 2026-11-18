@@ -1,21 +1,21 @@
 const topics = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const apps = ["calculation", "snake", "tic-tac-toe", "shess"];
 const routes = [ 
-	{path: (first) => first == "", handler: (path) => goMain()},
-	{path: (first) => first == "information", handler: (path) => {
+	{path: (first, second) => !first && !second, handler: () => goMain()},
+	{path: (first, second) => !first && second === "information", handler: () => {
 		goMain();
 		info.visible();
 		console.log("i");
 	}},
 
-	{path: (first) => topics.includes(first), handler: (path) => go(path)},
+	{path: (first, second) => !first && topics.includes(second), handler: (path) => go(path)},
 	{path: (first, second) => topics.includes(first) && second == "information", handler: (path) => {
 		go(path);
 		info.visible();
 	}},
 
-	{path: (first) => first == "code", handler: (path) => goCode()},
-	{path: (first, second) => first == "code" && second == "information", handler: (path) => {
+	{path: (first, second) => !first && first == "code", handler: (path) => goCode()},
+	{path: (first, second) => first == "code" && second == "information", handler: () => {
 		goCode(); 
 		info.visible(); 
 	}},
@@ -29,6 +29,7 @@ function update() {
 	let path = window.location.pathname.split("/");
 	let lastPath = path.at(-2);
 	let secondLastPath = path.at(-3);
+	console.log(secondLastPath, lastPath);
 	routes.forEach((e) => {
 		if (e.path(secondLastPath, lastPath)) e.handler();
 	});
