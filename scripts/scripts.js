@@ -1,20 +1,20 @@
 const topics = ["text", "elements", "border", "background", "position", "flex-containers", "flex-elements", "scrollbar", "pseudoclasses", "pseudoelements", "transitions", "animation", "transform"];
 const apps = ["calculation", "snake", "tic-tac-toe", "shess"];
 const routes = [ 
-	{path: (first, second) => !first && !second, handler: () => goMain()},
-	{path: (first, second) => !first && second === "information", handler: () => {
+	{path: (first, second) => second === "u", handler: () => goMain()},
+	{path: (first, second) => first === "u" && second === "information", handler: () => {
 		goMain();
 		info.visible();
 		console.log("i");
 	}},
 
-	{path: (first, second) => !first && topics.includes(second), handler: (path) => go(path)},
+	{path: (first, second) => first === "u" && topics.includes(second), handler: (path) => go(path)},
 	{path: (first, second) => topics.includes(first) && second == "information", handler: (path) => {
 		go(path);
 		info.visible();
 	}},
 
-	{path: (first, second) => !first && first == "code", handler: (path) => goCode()},
+	{path: (first, second) => first === "u" && first == "code", handler: (path) => goCode()},
 	{path: (first, second) => first == "code" && second == "information", handler: () => {
 		goCode(); 
 		info.visible(); 
