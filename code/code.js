@@ -46,12 +46,7 @@ Object.keys(objects).forEach(key => {
 	// Первый блок с iframe
 	let div1 = document.createElement("div");
 	div1.id = key;
-	div1.innerHTML = `<button class="code">
-		<svg width="29px" height="29px" viewBox="0 0 4 4" stroke-width="0.28">
-			<path d="M1 1.65l1 1l1 -1"/>
-		</svg>
-	</button>
-	${apps.includes(div1.id) ? `<button class="fullscreen">
+	div1.innerHTML = `${apps.includes(div1.id) ? `<button class="fullscreen">
 	  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
 		  <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
 		</svg>
@@ -61,6 +56,11 @@ Object.keys(objects).forEach(key => {
 		  <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
 		</svg>
 	  </button>` : ""}
+  <button class="code">
+		<svg width="29px" height="29px" viewBox="0 0 4 4" stroke-width="0.28">
+			<path d="M1 1.65l1 1l1 -1"/>
+		</svg>
+	</button>
 	<iframe></iframe>`;
 	let iframe = div1.querySelector("iframe");
 	iframe.srcdoc = `${objects[key].html}<style>${styleInIframe}${objects[key].css}</style><script>${objects[key].js}</script>`;
@@ -105,13 +105,15 @@ Object.keys(objects).forEach(key => {
 	js.addEventListener("keydown", (e) => keydown(e));
 
 	// Развернуть на весь экран
-	let fullscreen = div1.querySelector(".fullscreen");
-	fullscreen.onclick = () => {
-		div1.querySelector(".close").style.display = "flex";
-		iframe.className = "open";
-		document.querySelector("main").style.position = "fixed";
-		
-	};
+	if (apps.includes(div1.id)) {
+		let fullscreen = div1.querySelector(".fullscreen");
+		fullscreen.onclick = () => {
+			div1.querySelector(".close").style.display = "flex";
+			iframe.className = "open";
+			document.querySelector("main").style.position = "fixed";
+			
+		};
+	}
 	
 	// Стрелка
 	let buttonCode = div1.querySelector(".code");
