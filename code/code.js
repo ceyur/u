@@ -103,11 +103,17 @@ Object.keys(objects).forEach(key => {
 	// Развернуть на весь экран
 	if (apps.includes(div1.id)) {
 		let fullscreen = div1.querySelector(".fullscreen");
+		let close = div1.querySelector(".close");
 		fullscreen.onclick = () => {
-			div1.querySelector(".close").style.display = "flex";
+			close.style.display = "flex";
 			iframe.className = "open";
 			document.querySelector("main").style.position = "fixed";
-			
+		};
+
+		close.onclick = () => {
+			close.style.display = "none";
+			iframe.className = "";
+			document.querySelector("main").style.position = "relative";
 		};
 	}
 	
