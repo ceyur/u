@@ -37,6 +37,9 @@
 				scale: 1.15;
 			}
 			&.fullscreen {
+				display: flex;
+				justify-content: center;
+            	align-items: center;
 				top: 12px;
 			}
 			&.code {
@@ -166,12 +169,5 @@
 	}
 	#code > div:nth-child(even) {
 		display: none;
-		.buttons button.bCopy {
-			flex: 0 0 25.5px;
-			svg {
-				width: 13px;
-				height: 13px;
-			}
-		}
 	}
 }
