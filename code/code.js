@@ -105,7 +105,7 @@ Object.keys(objects).forEach(key => {
 		let fullscreen = div1.querySelector(".fullscreen");
 		let close = div1.querySelector(".close");
 		fullscreen.onclick = () => {
-			history.pushState(null, null, `/u/${div1.id}/`);
+			history.pushState(null, null, `/u/code/${div1.id}/`);
 			close.style.display = "flex";
 			iframe.className = "open";
 			document.querySelector("main").style.position = "fixed";
