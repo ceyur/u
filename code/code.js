@@ -105,12 +105,14 @@ Object.keys(objects).forEach(key => {
 		let fullscreen = div1.querySelector(".fullscreen");
 		let close = div1.querySelector(".close");
 		fullscreen.onclick = () => {
+			history.pushState(null, null, `/u/${div1.id}/`);
 			close.style.display = "flex";
 			iframe.className = "open";
 			document.querySelector("main").style.position = "fixed";
 		};
 
 		close.onclick = () => {
+			history.pushState(null, null, "/u/code/");
 			close.style.display = "none";
 			iframe.className = "";
 			document.querySelector("main").style.position = "relative";
