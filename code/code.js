@@ -103,16 +103,25 @@ Object.keys(objects).forEach(key => {
 	html.addEventListener("keydown", (e) => keydown(e));
 	css.addEventListener("keydown", (e) => keydown(e));
 	js.addEventListener("keydown", (e) => keydown(e));
+
+	// Развернуть на весь экран
+	let fullscreen = div1.querySelector(".fullscreen");
+	fullscreen.onclick = () => {
+		div1.querySelector(".close").style.display = "flex";
+		iframe.className = "open";
+		document.querySelector("main").style.position = "fixed";
+		
+	};
 	
 	// Стрелка
-	let button = div1.querySelector("button");
-	button.onclick = () => {
+	let buttonCode = div1.querySelector(".code");
+	buttonCode.onclick = () => {
 		if (div2.style.display == "block") {
-			button.querySelector("svg").style.scale = "1";
+			buttonCode.querySelector("svg").style.scale = "1";
 			div2.style.display = "none";
 		}
 		else {
-			button.querySelector("svg").style.scale = "1 -1";
+			buttonCode.querySelector("svg").style.scale = "1 -1";
 			div2.style.display = "block";
 		}
 	};
