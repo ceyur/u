@@ -10,10 +10,22 @@
 		background: white;
 		box-shadow: 0 0 10px black;
 		border-radius: 15px;
+		&#calculation {
+			height: 400px;
+			+ div {
+				max-height: 400px;
+			}
+		}
+		&#snake,
+		&#tic-tac-toe,
+		&#shess {
+			height: 350px;
+			+ div {
+				max-height: 350px;
+			}
+		}
 		button {
-			display: none;
 			position: absolute;
-			bottom: 12px;
 			right: 12px;
 			width: 31px;
 			height: 31px;
@@ -24,10 +36,19 @@
 				box-shadow: 0 0 10px #cd00cd;
 				scale: 1.15;
 			}
-		}
-		.close {
-			position: fixed;
-			z-index: 3;
+			&.fullscreen {
+				top: 12px;
+			}
+			&.code {
+				display: none;
+				bottom: 12px;
+			}
+			&.close {
+				display: none;
+				position: fixed;
+				z-index: 3;
+				top: 12px;
+			}
 		}
 		iframe {
 			display: block;
@@ -60,20 +81,6 @@
 			overflow: auto;
 			overflow-wrap: anywhere;
 			scrollbar-width: none;
-		}
-	}
-	#calculation {
-		height: 400px;
-		+ div {
-			max-height: 400px;
-		}
-	}
-	#snake,
-	#tic-tac-toe,
-	#shess {
-		height: 350px;
-		+ div {
-			max-height: 350px;
 		}
 	}
 }
@@ -138,7 +145,7 @@
 			}
 		}
 	}
-	div {
+	/*div {
 		display: none;
 		margin: 3px;
 		width: 19px;
@@ -147,13 +154,13 @@
 		border-radius: 50%;
 		background: black;
 		opacity: 0.5;
-	}
+	}*/
 }
 @media (max-width: 698px) {
 	#code > div:nth-child(odd) {
 		flex: 1 1 80%;
 		min-height: fit-content;
-		button {
+		button.code {
 			display: block;
 		}
 	}
